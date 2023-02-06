@@ -612,6 +612,11 @@ This request can be used to search for subscriber. You can search for subscriber
   }
 }
 ```
+#### Remark(s)
+
+- The request here is searching for the exact activation, hence the request will always return 0 or 1 subscriber/sim
+
+
 # Error codes
 | Code | Description |
 |------|---|
