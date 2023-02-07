@@ -6,6 +6,10 @@
 
 [2.1 listSubscriber](#21-listsubscriber)
 
+## [3 Prepaid package](#31-listprepaidpackagetemplate)
+
+[3.1 ListPrepaidPackageTemplate](#31-listprepaidpackagetemplate)
+
 ## [Error codes](#error-codes)
 
 # 1. Reseller
@@ -34,14 +38,14 @@ or all accounts of all your reseller.
   "listResellerAccount" : {
     "reseller" : [ {
       "id" : 1,
-      "name" : "PDEL Reseller",
+      "name" : "Test Reseller",
       "account" : [ {
         "id" : 4,
-        "name" : "PDEL - Second account",
+        "name" : "Test - Second account",
         "balance" : 660.5500000000001
       }, {
         "id" : 7,
-        "name" : "PDEL - Subs X",
+        "name" : "Test - Subs X",
         "balance" : 1000.0
       }, {
         "id" : 55,
@@ -58,7 +62,7 @@ or all accounts of all your reseller.
       } ]
     }, {
       "id" : 10,
-      "name" : "PDEL Reseller 3",
+      "name" : "Test Reseller 3",
       "account" : [ {
         "id" : 37,
         "name" : "TestSubscribers",
@@ -100,7 +104,7 @@ or all accounts of all your reseller.
   "listResellerAccount" : {
     "reseller" : [ {
       "id" : 10,
-      "name" : "PDEL Reseller 3",
+      "name" : "Test Reseller 3",
       "account" : [ {
         "id" : 37,
         "name" : "TestSubscribers",
@@ -192,8 +196,8 @@ This request can be used to search for subscriber. You can search for subscriber
       "allowedData" : true,
       "allowedMosms" : false,
       "allowedMtsms" : false,
-      "account" : "PDEL - Second account",
-      "reseller" : "PDEL Reseller"
+      "account" : "Test - Second account",
+      "reseller" : "Test Reseller"
     }, {
       "imsiList" : [ {
         "id" : 44977,
@@ -247,8 +251,8 @@ This request can be used to search for subscriber. You can search for subscriber
       "allowedData" : true,
       "allowedMosms" : false,
       "allowedMtsms" : false,
-      "account" : "PDEL - Second account",
-      "reseller" : "PDEL Reseller"
+      "account" : "Test - Second account",
+      "reseller" : "Test Reseller"
     } ],
     "hasMore" : false,
     "nbFound" : 11
@@ -331,8 +335,8 @@ This request can be used to search for subscriber. You can search for subscriber
       "allowedData" : true,
       "allowedMosms" : false,
       "allowedMtsms" : false,
-      "account" : "PDEL - Second account",
-      "reseller" : "PDEL Reseller"
+      "account" : "Test - Second account",
+      "reseller" : "Test Reseller"
     }, {
       "imsiList" : [ {
         "id" : 44977,
@@ -386,8 +390,8 @@ This request can be used to search for subscriber. You can search for subscriber
       "allowedData" : true,
       "allowedMosms" : false,
       "allowedMtsms" : false,
-      "account" : "PDEL - Second account",
-      "reseller" : "PDEL Reseller"
+      "account" : "Test - Second account",
+      "reseller" : "Test Reseller"
     } ],
     "hasMore" : false,
     "nbFound" : 11
@@ -470,8 +474,8 @@ This request can be used to search for subscriber. You can search for subscriber
       "allowedData" : true,
       "allowedMosms" : false,
       "allowedMtsms" : false,
-      "account" : "PDEL - Second account",
-      "reseller" : "PDEL Reseller"
+      "account" : "Test - Second account",
+      "reseller" : "Test Reseller"
     }, {
       "imsiList" : [ {
         "id" : 44977,
@@ -525,8 +529,8 @@ This request can be used to search for subscriber. You can search for subscriber
       "allowedData" : true,
       "allowedMosms" : false,
       "allowedMtsms" : false,
-      "account" : "PDEL - Second account",
-      "reseller" : "PDEL Reseller"
+      "account" : "Test - Second account",
+      "reseller" : "Test Reseller"
     } ],
     "hasMore" : false,
     "nbFound" : 11
@@ -603,7 +607,7 @@ This request can be used to search for subscriber. You can search for subscriber
       "allowedMosms" : true,
       "allowedMtsms" : true,
       "account" : "TestSubscribers",
-      "reseller" : "PDEL Reseller 3",
+      "reseller" : "Test Reseller 3",
       "lastMcc" : 334,
       "lastMnc" : 50
     } ],
@@ -615,6 +619,392 @@ This request can be used to search for subscriber. You can search for subscriber
 #### Remark(s)
 
 - The request here is searching for the exact activation, hence the request will always return 0 or 1 subscriber/sim
+
+
+# 3. Prepaid package
+## 3.1 ListPrepaidPackageTemplate
+
+### Description
+This request can be used to list your prepaid package templates. You have several keys to search the templates:
+- Reseller: the request will return all the templates of the reseller.
+- Location zone: the request wil return all templates linked to that particular location zone.
+- Sponsor: The request will list all your templates linked to that particular sponsor.
+- Template: By providing a template id you will retrieve this template.
+
+You can also send the request without any search keys. In this case the request will return all your templates.
+
+
+### 3.1.1 By template Id
+#### Request
+```json
+{
+  "listPrepaidPackageTemplate" : {
+    "templateId" : 1
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "listPrepaidPackageTemplate" : {
+    "template" : [ {
+      "sponsors" : {
+        "sponsorid" : 1,
+        "sponsorname" : "Test-Spons-Display",
+        "displayname" : "Test-Spons-Display"
+      },
+      "reseller" : {
+        "resellerid" : 1,
+        "resellername" : "Test Reseller"
+      },
+      "rdbLocationZones" : {
+        "locationzoneid" : 5,
+        "locationzonename" : "Test - Benelux"
+      },
+      "prepaidpackagetemplateid" : 1153,
+      "prepaidpackagetemplatename" : "Test - Benelux 17Gb",
+      "resellerid" : 1,
+      "priority" : 1,
+      "locationzoneid" : 5,
+      "databyte" : 18253611008,
+      "perioddays" : 1,
+      "deleted" : false,
+      "esimSponsor" : 1,
+      "cost" : 11.0,
+      "uiStartAvailablePeriod" : "2022-03-01T17:18:00",
+      "uiEndAvailibilityPeriod" : "2022-06-15T17:18:00",
+      "uiVisible" : true,
+      "userUiName" : "Benelux_17Gb"
+    } ]
+  }
+}
+```
+### 3.1.2 By reseller
+#### Request
+```json
+{
+  "listPrepaidPackageTemplate" : {
+    "resellerId" : 1
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "listPrepaidPackageTemplate" : {
+    "template" : [ {
+      "sponsors" : {
+        "sponsorid" : 1,
+        "sponsorname" : "Test-Spons-Display",
+        "displayname" : "Test-Spons-Display"
+      },
+      "reseller" : {
+        "resellerid" : 1,
+        "resellername" : "Test Reseller"
+      },
+      "rdbLocationZones" : {
+        "locationzoneid" : 5,
+        "locationzonename" : "Test - Benelux"
+      },
+      "prepaidpackagetemplateid" : 1153,
+      "prepaidpackagetemplatename" : "Test - Benelux 17Gb",
+      "resellerid" : 1,
+      "priority" : 1,
+      "locationzoneid" : 5,
+      "databyte" : 18253611008,
+      "perioddays" : 1,
+      "deleted" : false,
+      "esimSponsor" : 1,
+      "cost" : 11.0,
+      "uiStartAvailablePeriod" : "2022-03-01T17:18:00",
+      "uiEndAvailibilityPeriod" : "2022-06-15T17:18:00",
+      "uiVisible" : true,
+      "userUiName" : "Benelux_17Gb"
+    }, {
+      "sponsors" : {
+        "sponsorid" : 1,
+        "sponsorname" : "Test-Spons-Display",
+        "displayname" : "Test-Spons-Display"
+      },
+      "reseller" : {
+        "resellerid" : 1,
+        "resellername" : "Test Reseller"
+      },
+      "rdbLocationZones" : {
+        "locationzoneid" : 2,
+        "locationzonename" : "Test - Belgium"
+      },
+      "prepaidpackagetemplateid" : 1154,
+      "prepaidpackagetemplatename" : "Test - Belgium 15GB",
+      "resellerid" : 1,
+      "priority" : 1,
+      "locationzoneid" : 2,
+      "databyte" : 16106127360,
+      "perioddays" : 30,
+      "deleted" : false,
+      "esimSponsor" : 1,
+      "cost" : 13.0,
+      "uiStartAvailablePeriod" : "2022-03-01T17:18:00",
+      "uiEndAvailibilityPeriod" : "2022-06-15T17:18:00",
+      "uiVisible" : true,
+      "userUiName" : "Belgium_15Gb"
+    }, {
+      "sponsors" : {
+        "sponsorid" : 1,
+        "sponsorname" : "Test-Spons-Display",
+        "displayname" : "Test-Spons-Display"
+      },
+      "reseller" : {
+        "resellerid" : 1,
+        "resellername" : "Test Reseller"
+      },
+      "rdbLocationZones" : {
+        "locationzoneid" : 5,
+        "locationzonename" : "Test - Benelux"
+      },
+      "prepaidpackagetemplateid" : 1155,
+      "prepaidpackagetemplatename" : "Test - Benelux 15Gb",
+      "resellerid" : 1,
+      "priority" : 1,
+      "locationzoneid" : 5,
+      "databyte" : 16106127360,
+      "perioddays" : 10,
+      "deleted" : false,
+      "esimSponsor" : 1,
+      "cost" : 12.0,
+      "uiStartAvailablePeriod" : "2022-03-01T17:18:00",
+      "uiEndAvailibilityPeriod" : "2022-06-15T17:18:00",
+      "uiVisible" : true,
+      "userUiName" : "Benelux_15Gb"
+    }, {
+      "sponsors" : {
+        "sponsorid" : 1,
+        "sponsorname" : "Test-Spons-Display",
+        "displayname" : "Test-Spons-Display"
+      },
+      "reseller" : {
+        "resellerid" : 1,
+        "resellername" : "Test Reseller"
+      },
+      "rdbLocationZones" : {
+        "locationzoneid" : 2,
+        "locationzonename" : "Test - Belgium"
+      },
+      "prepaidpackagetemplateid" : 1156,
+      "prepaidpackagetemplatename" : "Test - Belgium 10GB",
+      "resellerid" : 1,
+      "priority" : 1,
+      "locationzoneid" : 2,
+      "databyte" : 16106127360,
+      "perioddays" : 30,
+      "deleted" : false,
+      "esimSponsor" : 1,
+      "cost" : 15.0,
+      "uiStartAvailablePeriod" : "2022-03-01T17:18:00",
+      "uiEndAvailibilityPeriod" : "2022-06-15T17:18:00",
+      "uiVisible" : true,
+      "userUiName" : "Belgium_15Gb"
+    }, {
+      "sponsors" : {
+        "sponsorid" : 1,
+        "sponsorname" : "Test-Spons-Display",
+        "displayname" : "Test-Spons-Display"
+      },
+      "reseller" : {
+        "resellerid" : 1,
+        "resellername" : "Test Reseller"
+      },
+      "rdbLocationZones" : {
+        "locationzoneid" : 2,
+        "locationzonename" : "Test - Belgium"
+      },
+      "prepaidpackagetemplateid" : 1165,
+      "prepaidpackagetemplatename" : "Test - Belgium 10GB NEW",
+      "resellerid" : 1,
+      "priority" : 1,
+      "locationzoneid" : 2,
+      "databyte" : 10737418240,
+      "perioddays" : 36,
+      "deleted" : false,
+      "esimSponsor" : 1,
+      "cost" : 11.0,
+      "uiStartAvailablePeriod" : "2022-03-01T17:18:00",
+      "uiEndAvailibilityPeriod" : "2022-06-15T17:18:00",
+      "uiVisible" : true,
+      "userUiName" : "Belgium_10Gb"
+    }, {
+      "sponsors" : {
+        "sponsorid" : 1,
+        "sponsorname" : "Test-Spons-Display",
+        "displayname" : "Test-Spons-Display"
+      },
+      "reseller" : {
+        "resellerid" : 1,
+        "resellername" : "Test Reseller"
+      },
+      "rdbLocationZones" : {
+        "locationzoneid" : 21,
+        "locationzonename" : "Test - Spain"
+      },
+      "prepaidpackagetemplateid" : 1204,
+      "prepaidpackagetemplatename" : "Test - Spain 10Gb",
+      "resellerid" : 1,
+      "priority" : 1,
+      "locationzoneid" : 21,
+      "databyte" : 10737418240,
+      "perioddays" : 30,
+      "deleted" : false,
+      "esimSponsor" : 1,
+      "cost" : 66.0,
+      "uiStartAvailablePeriod" : "2022-03-01T17:18:00",
+      "uiEndAvailibilityPeriod" : "2022-06-15T17:18:00",
+      "uiVisible" : true,
+      "userUiName" : "Spain_10Gb"
+    }, {
+      "sponsors" : {
+        "sponsorid" : 1,
+        "sponsorname" : "Test-Spons-Display",
+        "displayname" : "Test-Spons-Display"
+      },
+      "reseller" : {
+        "resellerid" : 1,
+        "resellername" : "Test Reseller"
+      },
+      "rdbLocationZones" : {
+        "locationzoneid" : 2,
+        "locationzonename" : "Test - Belgium"
+      },
+      "prepaidpackagetemplateid" : 1224,
+      "prepaidpackagetemplatename" : "Denis Belgium 20 GB",
+      "resellerid" : 1,
+      "priority" : 1,
+      "locationzoneid" : 2,
+      "databyte" : 21474836480,
+      "mocsecond" : 3600,
+      "mtcsecond" : 3600,
+      "mosmsnumber" : 100,
+      "mtsmsnumber" : 200,
+      "perioddays" : 30,
+      "deleted" : false,
+      "esimSponsor" : 1,
+      "cost" : 24.0,
+      "uiStartAvailablePeriod" : "2022-03-01T17:18:00",
+      "uiEndAvailibilityPeriod" : "2022-06-15T17:18:00",
+      "uiVisible" : false,
+      "userUiName" : "Denis_Belgium_20GB"
+    }, {
+      "sponsors" : {
+        "sponsorid" : 1,
+        "sponsorname" : "Test-Spons-Display",
+        "displayname" : "Test-Spons-Display"
+      },
+      "reseller" : {
+        "resellerid" : 1,
+        "resellername" : "Test Reseller"
+      },
+      "rdbLocationZones" : {
+        "locationzoneid" : 18,
+        "locationzonename" : "Test - France"
+      },
+      "prepaidpackagetemplateid" : 1225,
+      "prepaidpackagetemplatename" : "France Test Denis New",
+      "resellerid" : 1,
+      "priority" : 1,
+      "locationzoneid" : 18,
+      "databyte" : 21474836480,
+      "mocsecond" : 3600,
+      "mtcsecond" : 3600,
+      "mosmsnumber" : 100,
+      "mtsmsnumber" : 200,
+      "perioddays" : 20,
+      "deleted" : false,
+      "esimSponsor" : 1,
+      "cost" : 25.0,
+      "uiVisible" : false,
+      "userUiName" : "France Test Denis New 20Gb"
+    } ]
+  }
+}
+```
+### 3.1.3 By sponsor
+#### Request
+```json
+{
+  "listPrepaidPackageTemplate" : {
+    "sponsorId" : 1
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Check answer in previous request
+
+
+### 3.1.4 By location zone
+#### Request
+```json
+{
+  "listPrepaidPackageTemplate" : {
+    "locationZoneId" : 1
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Check answer in previous request
+
+
+### 3.1.5 No search keys
+#### Request
+```json
+{
+  "listPrepaidPackageTemplate" : { }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- If you don't provide any search key, the request will return all the prepaid package templates of all your resellers
+- Check answer in previous request
 
 
 # Error codes
