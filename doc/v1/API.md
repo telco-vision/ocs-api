@@ -16,6 +16,8 @@
 
 [4.2 listSubscriberTariff](#42-listsubscribertariff)
 
+[4.3 listTariffRule](#43-listtariffrule)
+
 ## [Error codes](#error-codes)
 
 # 1. Reseller
@@ -1218,6 +1220,103 @@ its subscribers. You can list them all, or just the ones of a specific reseller.
 - If you don't provide any search key, the request will return all the subscriber tariff(s) of all your reseller(s)
 
 
+## 4.3 listTariffRule
+
+### Description
+This request can be used to list the rules (costs) of a specific tariff.
+
+
+### Request
+```json
+{
+  "listSubscriberTariff" : {
+    "resellerId" : 1
+  }
+}
+```
+### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "listTariffRule" : {
+    "rule" : [ {
+      "operator" : {
+        "networkId" : 79,
+        "continent" : "Europe",
+        "countryCode" : 32,
+        "countryName" : "Belgium",
+        "countryIso2" : "be",
+        "utcOffset" : "+01:00",
+        "operatorName" : "Proximus PLC",
+        "mccMncs" : [ {
+          "mcc" : "206",
+          "mnc" : "01"
+        } ],
+        "tadigs" : [ "BELTB" ]
+      },
+      "currency" : {
+        "currencyid" : 1,
+        "currencycode" : "EUR",
+        "currencyname" : "Euro"
+      },
+      "roamingplanruleid" : 7198,
+      "roamingplanid" : 1,
+      "networkid" : 79,
+      "sponsoridx" : -1,
+      "active" : true,
+      "mocallrate" : 2.0,
+      "mtcallrate" : 2.0,
+      "mosmsrate" : 2.0,
+      "mtsmsrate" : 2.0,
+      "datarate" : 2.0,
+      "currencyid" : 1,
+      "startdate" : "2021-11-16T08:16:49",
+      "isDiscounted" : true,
+      "hidden" : false,
+      "dailyCap" : false
+    }, {
+      "operator" : {
+        "networkId" : 477,
+        "continent" : "Europe",
+        "countryCode" : 39,
+        "countryName" : "Italy",
+        "countryIso2" : "it",
+        "utcOffset" : "+01:00",
+        "operatorName" : "H3G S p A ",
+        "mccMncs" : [ {
+          "mcc" : "222",
+          "mnc" : "99"
+        } ],
+        "tadigs" : [ "ITAH3" ]
+      },
+      "currency" : {
+        "currencyid" : 1,
+        "currencycode" : "EUR",
+        "currencyname" : "Euro"
+      },
+      "roamingplanruleid" : 4,
+      "roamingplanid" : 1,
+      "networkid" : 477,
+      "sponsoridx" : -1,
+      "active" : true,
+      "mocallrate" : 2.0,
+      "mtcallrate" : 2.0,
+      "mosmsrate" : 2.0,
+      "mtsmsrate" : 2.0,
+      "datarate" : 2.0,
+      "currencyid" : 1,
+      "startdate" : "2021-11-16T08:16:49",
+      "isDiscounted" : true,
+      "hidden" : false,
+      "dailyCap" : false
+    } ]
+  }
+}
+```
 # Error codes
 | Code | Description |
 |------|---|
