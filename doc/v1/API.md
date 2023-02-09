@@ -10,6 +10,8 @@
 
 [3.1 listPrepaidPackageTemplate](#31-listprepaidpackagetemplate)
 
+[3.2 listLocationZoneElement](#32-listlocationzoneelement)
+
 ## [4 Tariff](#41-listresellertariff)
 
 [4.1 listResellerTariff](#41-listresellertariff)
@@ -1015,6 +1017,49 @@ You can also send the request without any search keys. In this case the request 
 - Check answer in previous request
 
 
+## 3.2 listLocationZoneElement
+
+### Description
+This request can be used to list the operators composing a specific location zone.
+
+
+### Request
+```json
+{
+  "listLocationZoneElement" : 1
+}
+```
+### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "listLocationZoneElement" : {
+    "operator" : [ {
+      "networkId" : 769,
+      "continent" : "Asia",
+      "countryCode" : 79,
+      "countryName" : "Russian Federation",
+      "countryIso2" : "ru",
+      "utcOffset" : "+03:00",
+      "operatorName" : "OJSC MegaFon",
+      "mccMncs" : [ {
+        "mcc" : "250",
+        "mnc" : "02"
+      } ],
+      "tadigs" : [ "RUSNW" ]
+    } ]
+  }
+}
+```
+### Remark(s)
+
+- The numeric value of `listLocationZoneElement` is the id of the location zone
+
+
 # 4. Tariff
 ## 4.1 listResellerTariff
 
@@ -1229,9 +1274,7 @@ This request can be used to list the rules (costs) of a specific tariff.
 ### Request
 ```json
 {
-  "listSubscriberTariff" : {
-    "resellerId" : 1
-  }
+  "listTariffRule" : 1
 }
 ```
 ### Answer
@@ -1317,6 +1360,11 @@ This request can be used to list the rules (costs) of a specific tariff.
   }
 }
 ```
+### Remark(s)
+
+- The numeric value of `listTariffRule` is the id of the tariff
+
+
 # Error codes
 | Code | Description |
 |------|---|
