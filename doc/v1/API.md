@@ -8,7 +8,13 @@
 
 ## [3 Prepaid package](#31-listprepaidpackagetemplate)
 
-[3.1 ListPrepaidPackageTemplate](#31-listprepaidpackagetemplate)
+[3.1 listPrepaidPackageTemplate](#31-listprepaidpackagetemplate)
+
+## [4 Tariff](#41-listresellertariff)
+
+[4.1 listResellerTariff](#41-listresellertariff)
+
+[4.2 listSubscriberTariff](#42-listsubscribertariff)
 
 ## [Error codes](#error-codes)
 
@@ -622,7 +628,7 @@ This request can be used to search for subscriber. You can search for subscriber
 
 
 # 3. Prepaid package
-## 3.1 ListPrepaidPackageTemplate
+## 3.1 listPrepaidPackageTemplate
 
 ### Description
 This request can be used to list your prepaid package templates. You have several keys to search the templates:
@@ -1005,6 +1011,211 @@ You can also send the request without any search keys. In this case the request 
 
 - If you don't provide any search key, the request will return all the prepaid package templates of all your resellers
 - Check answer in previous request
+
+
+# 4. Tariff
+## 4.1 listResellerTariff
+
+### Description
+This request can be used to list the reseller (customer) tariffs (the cost for the customer). You can list them all, or just the
+ones of a specific reseller.
+
+
+### 4.1.1 By reseller
+#### Request
+```json
+{
+  "listResellerTariff" : {
+    "resellerId" : 1
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "listResellerTariff" : {
+    "tariff" : [ {
+      "resellers" : {
+        "resellerid" : 1,
+        "resellername" : "Test Reseller"
+      },
+      "roamingplanid" : 1,
+      "roamingplanname" : "Test - ResellerAccount",
+      "defaultoutgoingvoice" : 0.0,
+      "defaultterminatedvoice" : 0.0,
+      "defaulttext" : 0.0,
+      "defaultdata" : 0.0,
+      "resellerid" : 1,
+      "defaultmtsms" : 0.0,
+      "currencyid" : 1,
+      "isusedefaultprices" : false,
+      "tariffType" : "RESELLER"
+    } ]
+  }
+}
+```
+### 4.1.2 No search keys
+#### Request
+```json
+{
+  "listResellerTariff" : { }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "listResellerTariff" : {
+    "tariff" : [ {
+      "resellers" : {
+        "resellerid" : 1,
+        "resellername" : "Test Reseller"
+      },
+      "roamingplanid" : 1,
+      "roamingplanname" : "Test - ResellerAccount",
+      "defaultoutgoingvoice" : 0.0,
+      "defaultterminatedvoice" : 0.0,
+      "defaulttext" : 0.0,
+      "defaultdata" : 0.0,
+      "resellerid" : 1,
+      "defaultmtsms" : 0.0,
+      "currencyid" : 1,
+      "isusedefaultprices" : false,
+      "tariffType" : "RESELLER"
+    } ]
+  }
+}
+```
+#### Remark(s)
+
+- If you don't provide any search key, the request will return all the reseller tariff(s) of all your reseller(s)
+
+
+## 4.2 listSubscriberTariff
+
+### Description
+This request can be used to list the subscriber tariffs. The ones used by a customer to charge
+its subscribers. You can list them all, or just the ones of a specific reseller.
+
+
+### 4.2.1 By reseller
+#### Request
+```json
+{
+  "listSubscriberTariff" : {
+    "resellerId" : 1
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "listSubscriberTariff" : {
+    "tariff" : [ {
+      "resellers" : {
+        "resellerid" : 1,
+        "resellername" : "Test Reseller"
+      },
+      "roamingplanid" : 4,
+      "roamingplanname" : "Test - Account",
+      "defaultoutgoingvoice" : 0.0,
+      "defaultterminatedvoice" : 0.0,
+      "defaulttext" : 0.0,
+      "defaultdata" : 0.0,
+      "resellerid" : 1,
+      "defaultmtsms" : 0.0,
+      "currencyid" : 1,
+      "isusedefaultprices" : false,
+      "tariffType" : "SUBSCRIBER"
+    }, {
+      "resellers" : {
+        "resellerid" : 1,
+        "resellername" : "Test Reseller"
+      },
+      "roamingplanid" : 10,
+      "roamingplanname" : "Test - For Subs",
+      "defaultoutgoingvoice" : 0.0,
+      "defaultterminatedvoice" : 0.0,
+      "defaulttext" : 0.0,
+      "defaultdata" : 0.0,
+      "resellerid" : 1,
+      "defaultmtsms" : 0.0,
+      "currencyid" : 1,
+      "isusedefaultprices" : false,
+      "tariffType" : "SUBSCRIBER"
+    } ]
+  }
+}
+```
+### 4.2.2 No search keys
+#### Request
+```json
+{
+  "listSubscriberTariff" : { }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "listSubscriberTariff" : {
+    "tariff" : [ {
+      "resellers" : {
+        "resellerid" : 1,
+        "resellername" : "Test Reseller"
+      },
+      "roamingplanid" : 4,
+      "roamingplanname" : "Test - Account",
+      "defaultoutgoingvoice" : 0.0,
+      "defaultterminatedvoice" : 0.0,
+      "defaulttext" : 0.0,
+      "defaultdata" : 0.0,
+      "resellerid" : 1,
+      "defaultmtsms" : 0.0,
+      "currencyid" : 1,
+      "isusedefaultprices" : false,
+      "tariffType" : "SUBSCRIBER"
+    }, {
+      "resellers" : {
+        "resellerid" : 1,
+        "resellername" : "Test Reseller"
+      },
+      "roamingplanid" : 10,
+      "roamingplanname" : "Test - For Subs",
+      "defaultoutgoingvoice" : 0.0,
+      "defaultterminatedvoice" : 0.0,
+      "defaulttext" : 0.0,
+      "defaultdata" : 0.0,
+      "resellerid" : 1,
+      "defaultmtsms" : 0.0,
+      "currencyid" : 1,
+      "isusedefaultprices" : false,
+      "tariffType" : "SUBSCRIBER"
+    } ]
+  }
+}
+```
+#### Remark(s)
+
+- If you don't provide any search key, the request will return all the subscriber tariff(s) of all your reseller(s)
 
 
 # Error codes
