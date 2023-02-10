@@ -20,6 +20,10 @@
 
 [4.3 listTariffRule](#43-listtariffrule)
 
+## [5 Statistics](#51-getsubscriberactiveperiod)
+
+[5.1 getSubscriberActivePeriod](#51-getsubscriberactiveperiod)
+
 ## [Error codes](#error-codes)
 
 # 1. Reseller
@@ -1363,6 +1367,165 @@ This request can be used to list the rules (costs) of a specific tariff.
 ### Remark(s)
 
 - The numeric value of `listTariffRule` is the id of the tariff
+
+
+# 5. Statistics
+## 5.1 getSubscriberActivePeriod
+
+### Description
+This request can be used the active period of a subscriber by checking the subscriber usages in DB. The request
+will return the date of the first usage and the date of the last usage of the subscriber.
+
+
+### 5.1.1 By subscriber ID
+#### Request
+```json
+{
+  "getSubscriberActivePeriod" : {
+    "subscriberId" : 1000
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "getSubscriberActivePeriod" : {
+    "subscriberId" : 3235,
+    "period" : {
+      "start" : "2022-09-16T08:27:19",
+      "end" : "2022-09-19T19:58:43"
+    }
+  }
+}
+```
+### 5.1.2 By IMSI
+#### Request
+```json
+{
+  "getSubscriberActivePeriod" : {
+    "imsi" : "12345678901234"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "getSubscriberActivePeriod" : {
+    "subscriberId" : 3319
+  }
+}
+```
+### 5.1.3 By ICCID
+#### Request
+```json
+{
+  "getSubscriberActivePeriod" : {
+    "iccid" : "123456789012345678"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "getSubscriberActivePeriod" : {
+    "subscriberId" : 3235,
+    "period" : {
+      "start" : "2022-09-16T08:27:19",
+      "end" : "2022-09-19T19:58:43"
+    }
+  }
+}
+```
+### 5.1.4 By MSISDN
+#### Request
+```json
+{
+  "getSubscriberActivePeriod" : {
+    "msisdn" : "123456789123"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "getSubscriberActivePeriod" : {
+    "subscriberId" : 3319
+  }
+}
+```
+### 5.1.5 By multi imsi
+#### Request
+```json
+{
+  "getSubscriberActivePeriod" : {
+    "multiImsi" : "12345678901234"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "getSubscriberActivePeriod" : {
+    "subscriberId" : 3319
+  }
+}
+```
+### 5.1.6 By Activation code
+#### Request
+```json
+{
+  "getSubscriberActivePeriod" : {
+    "activationCode" : "Activation code"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "getSubscriberActivePeriod" : {
+    "subscriberId" : 3235,
+    "period" : {
+      "start" : "2022-09-16T08:27:19",
+      "end" : "2022-09-19T19:58:43"
+    }
+  }
+}
+```
+### Remark(s)
+
+- This request the best with the subscriber ID, if you already have it, use it.
+- This request always returns the subscriber id. So you can use in any following request with a subscriber as input.
+- If the subscriber is found, but there is no usage in DB, in the answer, getSubscriberActivePeriod.period is null
 
 
 # Error codes
