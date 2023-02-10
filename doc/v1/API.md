@@ -24,6 +24,8 @@
 
 [5.1 getSubscriberActivePeriod](#51-getsubscriberactiveperiod)
 
+[5.2 subscriberUsageOverPeriod](#52-subscriberusageoverperiod)
+
 ## [Error codes](#error-codes)
 
 # 1. Reseller
@@ -1523,8 +1525,456 @@ will return the date of the first usage and the date of the last usage of the su
 ```
 ### Remark(s)
 
-- This request the best with the subscriber ID, if you already have it, use it.
-- This request always returns the subscriber id. So you can use in any following request with a subscriber as input.
+- This request is best used with the subscriber ID, if you already have it, use it.
+- This request always returns the subscriber id. So you can use it in any following request with a subscriber as input.
+- If the subscriber is found, but there is no usage in DB, in the answer, getSubscriberActivePeriod.period is null
+
+
+## 5.2 subscriberUsageOverPeriod
+
+### Description
+This request can be used to retrieve the daily usage of a subscriber over a certain period. The period
+id delimited with a start date (included) and an end date (included). The period cannot exceed 1 week.
+If you need statistics about usages over a longer period, you can use the requests using aggregated data.
+
+
+### 5.2.1 By subscriber ID
+#### Request
+```json
+{
+  "getSubscriberActivePeriod" : {
+    "subscriberId" : 1000
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "subscriberUsageOverPeriod" : {
+    "total" : {
+      "cost" : 110.96954345703125,
+      "resellerCost" : 221.9390869140625,
+      "subscriberCost" : 0.0,
+      "quantityPerType" : {
+        "33" : 116360000
+      },
+      "quantityPerCountry" : [ {
+        "mcc" : 206,
+        "name" : "Belgium",
+        "alpha2" : "be",
+        "qty" : 116360000,
+        "quantityPerOperator" : [ {
+          "mnc" : 1,
+          "name" : "Proximus PLC",
+          "qty" : 116360000
+        } ]
+      } ]
+    },
+    "usages" : [ {
+      "subscriberId" : 45043,
+      "total" : {
+        "cost" : 110.96954345703125,
+        "resellerCost" : 221.9390869140625,
+        "subscriberCost" : 0.0,
+        "quantityPerType" : {
+          "33" : 116360000
+        },
+        "quantityPerCountry" : [ {
+          "mcc" : 206,
+          "name" : "Belgium",
+          "alpha2" : "be",
+          "qty" : 116360000,
+          "quantityPerOperator" : [ {
+            "mnc" : 1,
+            "name" : "Proximus PLC",
+            "qty" : 116360000
+          } ]
+        } ]
+      },
+      "subsPeriodUsages" : [ {
+        "day" : "2022-05-27",
+        "total" : {
+          "cost" : 110.96954345703125,
+          "resellerCost" : 221.9390869140625,
+          "subscriberCost" : 0.0,
+          "quantityPerType" : {
+            "33" : 116360000
+          },
+          "quantityPerCountry" : [ {
+            "mcc" : 206,
+            "name" : "Belgium",
+            "alpha2" : "be",
+            "qty" : 116360000,
+            "quantityPerOperator" : [ {
+              "mnc" : 1,
+              "name" : "Proximus PLC",
+              "qty" : 116360000
+            } ]
+          } ]
+        },
+        "subsDailyUsages" : [ {
+          "subscriberId" : 45043,
+          "sessionId" : "0003-diamproxy.roamability.gy-sctp-spgw-wro01.lte.orange.pl;1674744814;222111258;5f4b7491-31a02",
+          "usageDateUtc" : "2022-05-27T14:14:12",
+          "usageType" : 33,
+          "accountId" : 1,
+          "accountName" : "Unknown - 1",
+          "resellerId" : 1,
+          "resellerName" : "PDEL Reseller",
+          "mcc" : 206,
+          "country" : "Belgium",
+          "countryAlpha2" : "be",
+          "operator" : "Proximus PLC",
+          "mnc" : 1,
+          "quantity" : 10000000,
+          "cost" : 9.5367431640625,
+          "costPlanId" : 7,
+          "costPlanRuleId" : 7204,
+          "resellerCost" : 19.073486328125,
+          "resellerPlanId" : 1,
+          "resellerPlanRuleId" : 7198,
+          "resellerCurrencyId" : 1,
+          "resellerConvertRate" : 1.0,
+          "resellerPrepaidPackageQty" : 0,
+          "subscriberCost" : 0.0,
+          "subscriberPrepaidPackageId" : 10,
+          "subscriberPrepaidPackageQty" : 10000000,
+          "lac" : 3216,
+          "cellId" : 4866,
+          "rat" : "2G - GERAN",
+          "imei" : "351934048890953",
+          "upBitrate" : 472000,
+          "downBitrate" : 472000,
+          "qci" : 8,
+          "apn" : "data.rewicom.net",
+          "imsiPrefix" : 99999,
+          "sponsorImsi" : 999990000002000,
+          "accountChargeEntity" : false
+        }, {
+          "subscriberId" : 45043,
+          "sessionId" : "0003-diamproxy.roamability.gy-sctp-spgw-wro01.lte.orange.pl;1674744814;222111258;5f4b7491-31a02",
+          "usageDateUtc" : "2022-05-27T14:10:03",
+          "usageType" : 33,
+          "accountId" : 1,
+          "accountName" : "Unknown - 1",
+          "resellerId" : 1,
+          "resellerName" : "PDEL Reseller",
+          "mcc" : 206,
+          "country" : "Belgium",
+          "countryAlpha2" : "be",
+          "operator" : "Proximus PLC",
+          "mnc" : 1,
+          "quantity" : 10000000,
+          "cost" : 9.5367431640625,
+          "costPlanId" : 7,
+          "costPlanRuleId" : 7204,
+          "resellerCost" : 19.073486328125,
+          "resellerPlanId" : 1,
+          "resellerPlanRuleId" : 7198,
+          "resellerCurrencyId" : 1,
+          "resellerConvertRate" : 1.0,
+          "resellerPrepaidPackageQty" : 0,
+          "subscriberCost" : 0.0,
+          "subscriberPrepaidPackageId" : 4,
+          "subscriberPrepaidPackageQty" : 10000000,
+          "lac" : 3216,
+          "cellId" : 4866,
+          "rat" : "2G - GERAN",
+          "imei" : "351934048890953",
+          "upBitrate" : 472000,
+          "downBitrate" : 472000,
+          "qci" : 8,
+          "apn" : "data.rewicom.net",
+          "imsiPrefix" : 99999,
+          "sponsorImsi" : 999990000002000,
+          "accountChargeEntity" : false
+        }, {
+          "subscriberId" : 45043,
+          "sessionId" : "0003-diamproxy.roamability.gy-sctp-spgw-wro01.lte.orange.pl;1674744814;222111258;5f4b7491-31a02",
+          "usageDateUtc" : "2022-05-27T13:45:51",
+          "usageType" : 33,
+          "accountId" : 1,
+          "accountName" : "Unknown - 1",
+          "resellerId" : 1,
+          "resellerName" : "PDEL Reseller",
+          "mcc" : 206,
+          "country" : "Belgium",
+          "countryAlpha2" : "be",
+          "operator" : "Proximus PLC",
+          "mnc" : 1,
+          "quantity" : 10000000,
+          "cost" : 9.5367431640625,
+          "costPlanId" : 7,
+          "costPlanRuleId" : 7204,
+          "resellerCost" : 19.073486328125,
+          "resellerPlanId" : 1,
+          "resellerPlanRuleId" : 7198,
+          "resellerCurrencyId" : 1,
+          "resellerConvertRate" : 1.0,
+          "resellerPrepaidPackageQty" : 0,
+          "subscriberCost" : 0.0,
+          "subscriberPrepaidPackageId" : 4,
+          "subscriberPrepaidPackageQty" : 10000000,
+          "lac" : 3216,
+          "cellId" : 4866,
+          "rat" : "2G - GERAN",
+          "imei" : "351934048890953",
+          "upBitrate" : 472000,
+          "downBitrate" : 472000,
+          "qci" : 8,
+          "apn" : "data.rewicom.net",
+          "imsiPrefix" : 99999,
+          "sponsorImsi" : 999990000002000,
+          "accountChargeEntity" : false
+        }, {
+          "subscriberId" : 45043,
+          "sessionId" : "0003-diamproxy.roamability.gy-sctp-spgw-wro01.lte.orange.pl;1674744814;222111258;5f4b7491-31a02",
+          "usageDateUtc" : "2022-05-27T13:41:12",
+          "usageType" : 33,
+          "accountId" : 1,
+          "accountName" : "Unknown - 1",
+          "resellerId" : 1,
+          "resellerName" : "PDEL Reseller",
+          "mcc" : 206,
+          "country" : "Belgium",
+          "countryAlpha2" : "be",
+          "operator" : "Proximus PLC",
+          "mnc" : 1,
+          "quantity" : 38180000,
+          "cost" : 36.411285400390625,
+          "costPlanId" : 7,
+          "costPlanRuleId" : 7204,
+          "resellerCost" : 72.82257080078125,
+          "resellerPlanId" : 1,
+          "resellerPlanRuleId" : 7198,
+          "resellerCurrencyId" : 1,
+          "resellerConvertRate" : 1.0,
+          "resellerPrepaidPackageQty" : 0,
+          "subscriberCost" : 0.0,
+          "subscriberPrepaidPackageId" : 4,
+          "subscriberPrepaidPackageQty" : 38180000,
+          "lac" : 219,
+          "cellId" : 61478,
+          "rat" : "2G - GERAN",
+          "imei" : "868017031911303",
+          "upBitrate" : 64000,
+          "downBitrate" : 240000,
+          "qci" : 8,
+          "apn" : "uinternet",
+          "imsiPrefix" : 99999,
+          "sponsorImsi" : 999990000002000,
+          "accountChargeEntity" : false
+        }, {
+          "subscriberId" : 45043,
+          "sessionId" : "0003-diamproxy.roamability.gy-sctp-spgw-wro01.lte.orange.pl;1674744814;222111258;5f4b7491-31a02",
+          "usageDateUtc" : "2022-05-27T13:25:03",
+          "usageType" : 33,
+          "accountId" : 1,
+          "accountName" : "Unknown - 1",
+          "resellerId" : 1,
+          "resellerName" : "PDEL Reseller",
+          "mcc" : 206,
+          "country" : "Belgium",
+          "countryAlpha2" : "be",
+          "operator" : "Proximus PLC",
+          "mnc" : 1,
+          "quantity" : 10000000,
+          "cost" : 9.5367431640625,
+          "costPlanId" : 7,
+          "costPlanRuleId" : 7204,
+          "resellerCost" : 19.073486328125,
+          "resellerPlanId" : 1,
+          "resellerPlanRuleId" : 7198,
+          "resellerCurrencyId" : 1,
+          "resellerConvertRate" : 1.0,
+          "resellerPrepaidPackageQty" : 0,
+          "subscriberCost" : 0.0,
+          "subscriberPrepaidPackageId" : 4,
+          "subscriberPrepaidPackageQty" : 10000000,
+          "lac" : 3216,
+          "cellId" : 4866,
+          "rat" : "2G - GERAN",
+          "imei" : "351934048890953",
+          "upBitrate" : 472000,
+          "downBitrate" : 472000,
+          "qci" : 8,
+          "apn" : "data.rewicom.net",
+          "imsiPrefix" : 99999,
+          "sponsorImsi" : 999990000002000,
+          "accountChargeEntity" : false
+        }, {
+          "subscriberId" : 45043,
+          "sessionId" : "0003-diamproxy.roamability.gy-sctp-spgw-wro01.lte.orange.pl;1674744814;222111258;5f4b7491-31a02",
+          "usageDateUtc" : "2022-05-27T13:23:23",
+          "usageType" : 33,
+          "accountId" : 1,
+          "accountName" : "Unknown - 1",
+          "resellerId" : 1,
+          "resellerName" : "PDEL Reseller",
+          "mcc" : 206,
+          "country" : "Belgium",
+          "countryAlpha2" : "be",
+          "operator" : "Proximus PLC",
+          "mnc" : 1,
+          "quantity" : 38180000,
+          "cost" : 36.411285400390625,
+          "costPlanId" : 7,
+          "costPlanRuleId" : 7204,
+          "resellerCost" : 72.82257080078125,
+          "resellerPlanId" : 1,
+          "resellerPlanRuleId" : 7198,
+          "resellerCurrencyId" : 1,
+          "resellerConvertRate" : 1.0,
+          "resellerPrepaidPackageQty" : 0,
+          "subscriberCost" : 0.0,
+          "subscriberPrepaidPackageId" : 4,
+          "subscriberPrepaidPackageQty" : 38180000,
+          "lac" : 219,
+          "cellId" : 61478,
+          "rat" : "2G - GERAN",
+          "imei" : "868017031911303",
+          "upBitrate" : 64000,
+          "downBitrate" : 240000,
+          "qci" : 8,
+          "apn" : "uinternet",
+          "imsiPrefix" : 99999,
+          "sponsorImsi" : 999990000002000,
+          "accountChargeEntity" : false
+        } ]
+      } ]
+    } ]
+  }
+}
+```
+### 5.2.2 By IMSI
+#### Request
+```json
+{
+  "getSubscriberActivePeriod" : {
+    "imsi" : "12345678901234"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Same content as previous request
+
+
+### 5.2.3 By ICCID
+#### Request
+```json
+{
+  "getSubscriberActivePeriod" : {
+    "iccid" : "123456789012345678"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Same content as previous request
+
+
+### 5.2.4 By MSISDN
+#### Request
+```json
+{
+  "getSubscriberActivePeriod" : {
+    "msisdn" : "123456789123"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Same content as previous request
+
+
+### 5.2.5 By multi imsi
+#### Request
+```json
+{
+  "getSubscriberActivePeriod" : {
+    "multiImsi" : "12345678901234"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Same content as previous request
+
+
+### 5.2.6 By Activation code
+#### Request
+```json
+{
+  "getSubscriberActivePeriod" : {
+    "activationCode" : "Activation code"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Same content as previous request
+
+
+### Remark(s)
+
+- This request is best used with the subscriber ID, if you already have it, use it.
+- This request always returns the subscriber id. So you can use it in any following request with a subscriber as input.
 - If the subscriber is found, but there is no usage in DB, in the answer, getSubscriberActivePeriod.period is null
 
 
