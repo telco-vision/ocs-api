@@ -28,6 +28,10 @@
 
 [5.3 subscriberNetworkEventsOverPeriod](#53-subscribernetworkeventsoverperiod)
 
+## [6 SMS](#61-sendmtsms)
+
+[6.1 sendMtSms](#61-sendmtsms)
+
 ## [Error codes](#error-codes)
 
 # 1. Reseller
@@ -2210,6 +2214,34 @@ is delimited with a start date (included) and an end date (included). The period
 - This request is best used with the subscriber ID, if you already have it, use it.
 
 
+# 6. SMS
+## 6.1 sendMtSms
+
+### Description
+This request can be used to send a SMS to a subscriber belonging to a visible reseller. The SMS
+will be sent via MAP MT-Forward-Sm request.
+
+
+### Request
+```json
+{
+  "sendMtSms" : {
+    "imsi" : 123456789,
+    "text" : "Msg to send",
+    "senderId" : "Sender"
+  }
+}
+```
+### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
 # Error codes
 | Code | Description |
 |------|---|
@@ -2226,4 +2258,5 @@ is delimited with a start date (included) and an end date (included). The period
 | 10 | INVALID_RESELLER |
 | 11 | RESOURCE_NOT_VISIBLE |
 | 12 | RESOURCE_READ_ONLY |
+| 13 | SMS_API_ERROR |
 
