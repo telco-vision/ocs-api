@@ -26,6 +26,8 @@
 
 [5.2 subscriberUsageOverPeriod](#52-subscriberusageoverperiod)
 
+[5.3 subscriberNetworkEventsOverPeriod](#53-subscribernetworkeventsoverperiod)
+
 ## [Error codes](#error-codes)
 
 # 1. Reseller
@@ -1534,7 +1536,7 @@ will return the date of the first usage and the date of the last usage of the su
 
 ### Description
 This request can be used to retrieve the daily usage of a subscriber over a certain period. The period
-id delimited with a start date (included) and an end date (included). The period cannot exceed 1 week.
+is delimited with a start date (included) and an end date (included). The period cannot exceed 1 week.
 If you need statistics about usages over a longer period, you can use the requests using aggregated data.
 
 
@@ -1974,8 +1976,238 @@ If you need statistics about usages over a longer period, you can use the reques
 ### Remark(s)
 
 - This request is best used with the subscriber ID, if you already have it, use it.
-- This request always returns the subscriber id. So you can use it in any following request with a subscriber as input.
-- If the subscriber is found, but there is no usage in DB, in the answer, getSubscriberActivePeriod.period is null
+
+
+## 5.3 subscriberNetworkEventsOverPeriod
+
+### Description
+This request can be used to retrieve the network events of a subscriber over a certain period. The period
+is delimited with a start date (included) and an end date (included). The period cannot exceed 1 week.
+
+
+### 5.3.1 By subscriber ID
+#### Request
+```json
+{
+  "getSubscriberActivePeriod" : {
+    "subscriberId" : 1000
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "subscriberNetworkEventsOverPeriod" : {
+    "mapAnswer" : {
+      "events" : [ {
+        "eventTime" : "2022-11-21T23:08:51.333+01:00",
+        "mcc" : 0,
+        "mnc" : 0,
+        "countryName" : "N/A",
+        "countryAlpha2" : "N/A",
+        "operator" : "N/A",
+        "service" : "dmi",
+        "o_gt" : "972521100089",
+        "o_ssn" : "149",
+        "d_gt" : "37250980917",
+        "d_ssn" : "6",
+        "opcode" : "67",
+        "shortCode" : "P-MS",
+        "longCode" : "purgeMS",
+        "result" : "N/A",
+        "in_imsi" : "248010415100003",
+        "protocol" : "MAP",
+        "acn" : "04000001001b03",
+        "host" : "stp1"
+      } ]
+    },
+    "s6aAnswer" : {
+      "events" : [ {
+        "eventTime" : "2022-11-21T16:03:47.842+01:00",
+        "service" : "dmi_diam",
+        "cmdCode" : "321",
+        "cmdNameShort" : "PUR",
+        "cmdNameLong" : "Purge-UE-Request",
+        "protocol" : "S6a",
+        "sponsor_imsi" : "248010415100003",
+        "subs_imsi" : "248010415100003",
+        "mvno" : "Sparks",
+        "code" : "PUR_NOR",
+        "oper_allowed" : "N/A",
+        "customer" : "Sparks",
+        "session" : "bcmmor1.epc.mnc002.mcc425.3gppnetwork.org;0316107b;bd6d4e5b;5cab64ce",
+        "orig_realm" : "epc.mnc002.mcc425.3gppnetwork.org",
+        "orig_host" : "bcmmor1.epc.mnc002.mcc425.3gppnetwork.org",
+        "dest_realm" : "epc.mnc001.mcc248.3gppnetwork.org",
+        "host" : "stp2",
+        "user_apn" : "N/A",
+        "sponsor" : "SP01_RESTR",
+        "countryName" : "N/A",
+        "countryAlpha2" : "N/A",
+        "operator" : "N/A"
+      } ]
+    },
+    "gyAnswer" : {
+      "events" : [ {
+        "eventTime" : "2022-11-20T14:09:18.795+01:00",
+        "hopByHopS" : "607cb75f",
+        "endToEndS" : "e4fe080a",
+        "hopByHopL" : 1618786143,
+        "endToEndL" : 3841853450,
+        "originHost" : "travelsim-datak6.emt.ee",
+        "originRealm" : "emt.ee",
+        "requestType" : "Term",
+        "session" : "ee-cmg02cgy.pgw.epc.mnc001.mcc248.3gppnetwork.org;39607f64;637a268c;248010415100003-130303d5",
+        "msisdn" : "3728802100003",
+        "imei" : "353041112627481",
+        "apn" : "internet.emt.ee",
+        "ratTypes" : "3G - UTRAN",
+        "userLocationInfoMCC" : "425",
+        "userLocationInfoMNC" : "02",
+        "userLocationInfoLAC" : "42731",
+        "usedUnits" : "1792819",
+        "responseCode" : "2001",
+        "sgsnip" : "62.90.68.114",
+        "rreResponse" : "OK",
+        "ratingGroup" : "6",
+        "rreAllowedQuota" : "N/A",
+        "countryName" : "Israel",
+        "countryAlpha2" : "il",
+        "operator" : "Cellcom Israel Ltd ",
+        "userLocationInfoSAC" : "49814"
+      } ]
+    }
+  }
+}
+```
+### 5.3.2 By IMSI
+#### Request
+```json
+{
+  "getSubscriberActivePeriod" : {
+    "imsi" : "12345678901234"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Same content as previous request
+
+
+### 5.3.3 By ICCID
+#### Request
+```json
+{
+  "getSubscriberActivePeriod" : {
+    "iccid" : "123456789012345678"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Same content as previous request
+
+
+### 5.3.4 By MSISDN
+#### Request
+```json
+{
+  "getSubscriberActivePeriod" : {
+    "msisdn" : "123456789123"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Same content as previous request
+
+
+### 5.3.5 By multi imsi
+#### Request
+```json
+{
+  "getSubscriberActivePeriod" : {
+    "multiImsi" : "12345678901234"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Same content as previous request
+
+
+### 5.3.6 By Activation code
+#### Request
+```json
+{
+  "getSubscriberActivePeriod" : {
+    "activationCode" : "Activation code"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Same content as previous request
+
+
+### Remark(s)
+
+- This request is best used with the subscriber ID, if you already have it, use it.
 
 
 # Error codes
