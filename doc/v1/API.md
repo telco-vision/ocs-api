@@ -12,6 +12,8 @@
 
 [3.2 listLocationZoneElement](#32-listlocationzoneelement)
 
+[3.3 affectPackageToSubscriber](#33-affectpackagetosubscriber)
+
 ## [4 Tariff](#41-listresellertariff)
 
 [4.1 listResellerTariff](#41-listresellertariff)
@@ -1070,6 +1072,216 @@ This request can be used to list the operators composing a specific location zon
 ### Remark(s)
 
 - The numeric value of `listLocationZoneElement` is the id of the location zone
+
+
+## 3.3 affectPackageToSubscriber
+
+### Description
+This request can be used to affect a new prepaid package to a subscriber. The prepaid package
+affected to the subscriber will be created based on the package template provided in the request
+(you can get the list of template via request `listPrepaidPackageTemplate`).
+
+Please note that this request will activate the subscriber, if it is not active yet. Meaning after
+this request (successfully executed), the user can start using its prepaid package, no matter if it
+was active or not before the request.
+
+To identify the subscriber, you can use one of the following IDs:
+- Subscriber ID
+- IMSI
+- ICCID
+- MSISDN
+- Multi IMSI
+- Activation code
+
+The active period of the prepaid package is calculated as following:
+- An `activePeriod` with a `start` and `end` date and time is provided in the request: The `start`
+  and `end` will be used as start and end date and time for the active period of the package.
+  This overrides the validity period configured in the package template.
+- A `validityPeriod` expressed as a number of days is provided in the request: The start date
+  and time of package is the current date and time. The end date and time of the package is the
+  current date and time, plus the number of days mentioned in `validityPeriod`.
+- No `activePeriod nor `validityPeriod`: The start date and time will be the date and time of
+  the first successful of the prepaid package template. The end date and time of the package will be
+  the first successful usage date and time, plus the number of days for validity configured in the
+  package template.
+
+
+### 3.3.1 By subscriber ID
+#### Request
+```json
+{
+  "affectPackageToSubscriber" : {
+    "packageTemplateId" : 553,
+    "subscriber" : {
+      "subscriberId" : 1000
+    },
+    "activePeriod" : {
+      "start" : "2023-02-27T12:51:11.750103",
+      "end" : "2023-03-29T12:51:11.750721"
+    }
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "affectPackageToSubscriber" : {
+    "iccid" : "893720401615000106",
+    "smdpServer" : "smdp.io",
+    "activationCode" : "K2-1JL898-DKUTDC",
+    "urlQrCode" : "LPA:1$smdp.io$K2-1JL898-DKUTDC",
+    "subscriberId" : 18331,
+    "esimId" : 37147,
+    "subsPackageId" : 414,
+    "userSimName" : "Sparks_18331"
+  }
+}
+```
+### 3.3.2 By IMSI
+#### Request
+```json
+{
+  "affectPackageToSubscriber" : {
+    "packageTemplateId" : 553,
+    "subscriber" : {
+      "imsi" : "12345678901234"
+    },
+    "validityPeriod" : 30
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Same content as previous request
+
+
+### 3.3.3 By ICCID
+#### Request
+```json
+{
+  "affectPackageToSubscriber" : {
+    "packageTemplateId" : 553,
+    "subscriber" : {
+      "iccid" : "123456789012345678"
+    }
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Same content as previous request
+
+
+### 3.3.4 By MSISDN
+#### Request
+```json
+{
+  "affectPackageToSubscriber" : {
+    "packageTemplateId" : 553,
+    "subscriber" : {
+      "msisdn" : "123456789123"
+    }
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Same content as previous request
+
+
+### 3.3.5 By multi imsi
+#### Request
+```json
+{
+  "affectPackageToSubscriber" : {
+    "packageTemplateId" : 553,
+    "subscriber" : {
+      "multiImsi" : "12345678901234"
+    }
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Same content as previous request
+
+
+### 3.3.6 By Activation code
+#### Request
+```json
+{
+  "affectPackageToSubscriber" : {
+    "packageTemplateId" : 553,
+    "subscriber" : {
+      "activationCode" : "Activation code"
+    },
+    "validityPeriod" : 10
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Same content as previous request
+
+
+### Remark(s)
+
+- This request is best used with the subscriber ID, if you already have it, use it.
 
 
 # 4. Tariff
