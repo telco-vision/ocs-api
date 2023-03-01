@@ -44,6 +44,12 @@ This request can be used to retrieve the list of accounts. You can retrieve the 
 or all accounts of all your reseller.
 
 
+### Inputs
+|Parameter|Presence|Description|
+|---------|--------|-----------|
+|resellerId|Optional|The ID of the reseller|
+
+
 ### 1.1.1 Account of all resellers
 #### Request
 ```json
@@ -145,8 +151,17 @@ or all accounts of all your reseller.
 This request can be used to search for subscriber. You can search for subscribers by:
 - IMSI prefix
 - ICCID prefix
-- Account prefix
+- Account
 - eSIM activation code
+
+
+### Inputs
+|Parameter|Presence|Description|
+|---------|--------|-----------|
+|imsiPrefix|Optional|IMSI Prefix for the subscribers to list. Minimum 10 digits long|
+|iccidPrefix|Optional|ICCID prefix for the subscribers to list. Minimum 13 digits long|
+|accountId|Optional|The ID of the account. The request will return the list of all the subscriber attached to this account|
+|activationCode|Optional|The eSIM activation code. The request will return the subscriber with the eSIM having this activation code|
 
 
 ### 2.1.1 IMSI prefix
@@ -283,11 +298,6 @@ This request can be used to search for subscriber. You can search for subscriber
   }
 }
 ```
-#### Remark(s)
-
-- `imsiPrefix` the prefix must be minimum 10 digits
-
-
 ### 2.1.2 ICCID prefix
 #### Request
 ```json
@@ -422,11 +432,6 @@ This request can be used to search for subscriber. You can search for subscriber
   }
 }
 ```
-#### Remark(s)
-
-- `iccidPrefix` the prefix must be minimum 13 digits
-
-
 ### 2.1.3 Account Id
 #### Request
 ```json
@@ -1116,8 +1121,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2023-02-27T12:51:11.750103",
-      "end" : "2023-03-29T12:51:11.750721"
+      "start" : "2023-03-01T11:06:07.54848",
+      "end" : "2023-03-31T11:06:07.549205"
     }
   }
 }
@@ -2432,6 +2437,23 @@ is delimited with a start date (included) and an end date (included). The period
 ### Description
 This request can be used to send a SMS to a subscriber belonging to a visible reseller. The SMS
 will be sent via MAP MT-Forward-Sm request.
+
+This SMS to send can contain unicode characters. Unicode characters must be provided as /uXXXX,where XXXX is a hex value.
+In order to send just a `/u`, simply send it as `//u`.
+
+If there is at least one Unicode character in the text, then whole text will be converted into Unicode.
+
+Example:<br>
+Original message: `Test 123 Тест`<br>
+Message in JSON: `Test 123 /u0422/u0435/u0441/u0442`
+
+
+### Inputs
+|Parameter|Presence|Description|
+|---------|--------|-----------|
+|imsi|Mandatory|IMSI of the destination that will receive the SMS|
+|text|Mandatory|The text to send, with support of Unicode.|
+|senderId|Mandatory|MSISDN or any text identification of the sender|
 
 
 ### Request
