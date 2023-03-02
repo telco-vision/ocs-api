@@ -1121,8 +1121,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2023-03-01T13:04:01.58167",
-      "end" : "2023-03-31T13:04:01.582474"
+      "start" : "2023-03-02T14:03:00.285947",
+      "end" : "2023-04-01T14:03:00.286805"
     }
   }
 }
