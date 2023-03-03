@@ -6,6 +6,10 @@
 
 [2.1 listSubscriber](#21-listsubscriber)
 
+[2.2 affectSubscriberRealPhoneNumber](#22-affectsubscriberrealphonenumber)
+
+[2.3 affectSubscriberFakePhoneNumber](#23-affectsubscriberfakephonenumber)
+
 ## [3 Prepaid package](#31-listprepaidpackagetemplate)
 
 [3.1 listPrepaidPackageTemplate](#31-listprepaidpackagetemplate)
@@ -650,6 +654,341 @@ This request can be used to search for subscriber. You can search for subscriber
 - The request here is searching for the exact activation, hence the request will always return 0 or 1 subscriber/sim
 
 
+## 2.2 affectSubscriberRealPhoneNumber
+
+### Description
+This request can be used to affect a real phone number to a subscriber. A real phone number can
+be either a MSISDN or a DID.
+
+To identify the subscriber, you can use one of the following IDs:
+- Subscriber ID
+- IMSI
+- ICCID
+- MSISDN
+- Multi IMSI
+- Activation code
+
+
+### 2.2.1 By subscriber ID
+#### Request
+```json
+{
+  "affectSubscriberRealPhoneNumber" : {
+    "subscriber" : {
+      "subscriberId" : 1000
+    },
+    "phoneNumber" : 123456789
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 2.2.2 By IMSI
+#### Request
+```json
+{
+  "affectSubscriberRealPhoneNumber" : {
+    "subscriber" : {
+      "imsi" : "12345678901234"
+    },
+    "phoneNumber" : 123456789
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Same content as previous request
+
+
+### 2.2.3 By ICCID
+#### Request
+```json
+{
+  "affectSubscriberRealPhoneNumber" : {
+    "subscriber" : {
+      "iccid" : "123456789012345678"
+    },
+    "phoneNumber" : 123456789
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Same content as previous request
+
+
+### 2.2.4 By MSISDN
+#### Request
+```json
+{
+  "affectSubscriberRealPhoneNumber" : {
+    "subscriber" : {
+      "msisdn" : "123456789123"
+    },
+    "phoneNumber" : 123456789
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Same content as previous request
+
+
+### 2.2.5 By multi imsi
+#### Request
+```json
+{
+  "affectSubscriberRealPhoneNumber" : {
+    "subscriber" : {
+      "multiImsi" : "12345678901234"
+    },
+    "phoneNumber" : 123456789
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Same content as previous request
+
+
+### 2.2.6 By Activation code
+#### Request
+```json
+{
+  "affectSubscriberRealPhoneNumber" : {
+    "subscriber" : {
+      "activationCode" : "Activation code"
+    },
+    "phoneNumber" : 1123456789
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Same content as previous request
+
+
+### Remark(s)
+
+- This request is best used with the subscriber ID, if you already have it, use it.
+
+
+## 2.3 affectSubscriberFakePhoneNumber
+
+### Description
+This request can be used to re-affect a subscriber its fake phone number.
+
+To identify the subscriber, you can use one of the following IDs:
+- Subscriber ID
+- IMSI
+- ICCID
+- MSISDN
+- Multi IMSI
+- Activation code
+
+
+### 2.3.1 By subscriber ID
+#### Request
+```json
+{
+  "affectSubscriberFakePhoneNumber" : {
+    "subscriberId" : 1000
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 2.3.2 By IMSI
+#### Request
+```json
+{
+  "affectSubscriberFakePhoneNumber" : {
+    "imsi" : "12345678901234"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Same content as previous request
+
+
+### 2.3.3 By ICCID
+#### Request
+```json
+{
+  "affectSubscriberFakePhoneNumber" : {
+    "iccid" : "123456789012345678"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Same content as previous request
+
+
+### 2.3.4 By MSISDN
+#### Request
+```json
+{
+  "affectSubscriberFakePhoneNumber" : {
+    "msisdn" : "123456789123"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Same content as previous request
+
+
+### 2.3.5 By multi imsi
+#### Request
+```json
+{
+  "affectSubscriberFakePhoneNumber" : {
+    "multiImsi" : "12345678901234"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Same content as previous request
+
+
+### 2.3.6 By Activation code
+#### Request
+```json
+{
+  "affectSubscriberFakePhoneNumber" : {
+    "activationCode" : "Activation code"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Same content as previous request
+
+
+### Remark(s)
+
+- This request is best used with the subscriber ID, if you already have it, use it.
+
+
 # 3. Prepaid package
 ## 3.1 listPrepaidPackageTemplate
 
@@ -1105,7 +1444,7 @@ The active period of the prepaid package is calculated as following:
 - A `validityPeriod` expressed as a number of days is provided in the request: The start date
   and time of package is the current date and time. The end date and time of the package is the
   current date and time, plus the number of days mentioned in `validityPeriod`.
-- No `activePeriod nor `validityPeriod`: The start date and time will be the date and time of
+- No `activePeriod` nor `validityPeriod`: The start date and time will be the date and time of
   the first successful of the prepaid package template. The end date and time of the package will be
   the first successful usage date and time, plus the number of days for validity configured in the
   package template.
@@ -1121,8 +1460,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2023-03-02T14:03:00.285947",
-      "end" : "2023-04-01T14:03:00.286805"
+      "start" : "2023-03-03T14:45:05.214194",
+      "end" : "2023-04-02T14:45:05.21486"
     }
   }
 }
