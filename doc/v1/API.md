@@ -1543,8 +1543,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2023-03-28T10:13:12.543145",
-      "end" : "2023-04-27T10:13:12.544056"
+      "start" : "2023-03-28T11:13:03.462491",
+      "end" : "2023-04-27T11:13:03.46321"
     }
   }
 }
@@ -2458,8 +2458,14 @@ If you need statistics about usages over a longer period, you can use the reques
 #### Request
 ```json
 {
-  "getSubscriberActivePeriod" : {
-    "subscriberId" : 1000
+  "subscriberUsageOverPeriod" : {
+    "subscriber" : {
+      "subscriberId" : 1000
+    },
+    "period" : {
+      "start" : "2023-03-28",
+      "end" : "2023-03-23"
+    }
   }
 }
 ```
@@ -2473,293 +2479,268 @@ If you need statistics about usages over a longer period, you can use the reques
   },
   "subscriberUsageOverPeriod" : {
     "total" : {
-      "cost" : 110.96954345703125,
-      "resellerCost" : 221.9390869140625,
-      "subscriberCost" : 0.0,
+      "resellerCost" : 0.6963018882751465,
+      "subscriberCost" : 0.6963018882751465,
       "quantityPerType" : {
-        "33" : 116360000
+        "1" : 64,
+        "33" : 10485840,
+        "40" : 9
       },
       "quantityPerCountry" : [ {
-        "mcc" : 206,
-        "name" : "Belgium",
-        "alpha2" : "be",
-        "qty" : 116360000,
+        "mcc" : 250,
+        "name" : "Russian Federation",
+        "alpha2" : "ru",
+        "qty" : 10485913,
         "quantityPerOperator" : [ {
           "mnc" : 1,
-          "name" : "Proximus PLC",
-          "qty" : 116360000
+          "name" : "PJSC Mobile TeleSystems MTS",
+          "qty" : 10485913
         } ]
       } ]
     },
     "usages" : [ {
-      "subscriberId" : 45043,
+      "subscriberId" : 18037,
       "total" : {
-        "cost" : 110.96954345703125,
-        "resellerCost" : 221.9390869140625,
-        "subscriberCost" : 0.0,
+        "resellerCost" : 0.6963018882751465,
+        "subscriberCost" : 0.6963018882751465,
         "quantityPerType" : {
-          "33" : 116360000
+          "1" : 64,
+          "33" : 10485840,
+          "40" : 9
         },
         "quantityPerCountry" : [ {
-          "mcc" : 206,
-          "name" : "Belgium",
-          "alpha2" : "be",
-          "qty" : 116360000,
+          "mcc" : 250,
+          "name" : "Russian Federation",
+          "alpha2" : "ru",
+          "qty" : 10485913,
           "quantityPerOperator" : [ {
             "mnc" : 1,
-            "name" : "Proximus PLC",
-            "qty" : 116360000
+            "name" : "PJSC Mobile TeleSystems MTS",
+            "qty" : 10485913
           } ]
         } ]
       },
       "subsPeriodUsages" : [ {
-        "day" : "2022-05-27",
+        "day" : "2022-06-16",
         "total" : {
-          "cost" : 110.96954345703125,
-          "resellerCost" : 221.9390869140625,
-          "subscriberCost" : 0.0,
+          "resellerCost" : 0.6963018882751465,
+          "subscriberCost" : 0.6963018882751465,
           "quantityPerType" : {
-            "33" : 116360000
+            "1" : 64,
+            "33" : 10485840,
+            "40" : 9
           },
           "quantityPerCountry" : [ {
-            "mcc" : 206,
-            "name" : "Belgium",
-            "alpha2" : "be",
-            "qty" : 116360000,
+            "mcc" : 250,
+            "name" : "Russian Federation",
+            "alpha2" : "ru",
+            "qty" : 10485913,
             "quantityPerOperator" : [ {
               "mnc" : 1,
-              "name" : "Proximus PLC",
-              "qty" : 116360000
+              "name" : "PJSC Mobile TeleSystems MTS",
+              "qty" : 10485913
             } ]
           } ]
         },
         "subsDailyUsages" : [ {
-          "subscriberId" : 45043,
-          "sessionId" : "0003-diamproxy.roamability.gy-sctp-spgw-wro01.lte.orange.pl;1674744814;222111258;5f4b7491-31a02",
-          "usageDateUtc" : "2022-05-27T14:14:12",
+          "subscriberId" : 18037,
+          "sessionId" : "ee-cmg02cgy.pgw.epc.mnc001.mcc248.3gppnetwork.org;2347c4a1;62ab0e46;248010416000008-12c41685",
+          "usageDateUtc" : "2022-06-16T11:17:08",
           "usageType" : 33,
-          "accountId" : 1,
-          "accountName" : "Unknown - 1",
-          "resellerId" : 1,
-          "resellerName" : "PDEL Reseller",
-          "mcc" : 206,
-          "country" : "Belgium",
-          "countryAlpha2" : "be",
-          "operator" : "Proximus PLC",
+          "accountId" : 22,
+          "accountName" : "Unknown - 22",
+          "resellerId" : 7,
+          "resellerName" : "Sparks Test",
+          "mcc" : 250,
+          "country" : "Russian Federation",
+          "countryAlpha2" : "ru",
+          "operator" : "PJSC Mobile TeleSystems MTS",
           "mnc" : 1,
-          "quantity" : 10000000,
-          "cost" : 9.5367431640625,
-          "costPlanId" : 7,
-          "costPlanRuleId" : 7204,
-          "resellerCost" : 19.073486328125,
-          "resellerPlanId" : 1,
-          "resellerPlanRuleId" : 7198,
+          "quantity" : 10485760,
+          "resellerCost" : 0.2475,
+          "resellerPlanId" : 400,
+          "resellerPlanRuleId" : 1564,
           "resellerCurrencyId" : 1,
           "resellerConvertRate" : 1.0,
           "resellerPrepaidPackageQty" : 0,
-          "subscriberCost" : 0.0,
-          "subscriberPrepaidPackageId" : 10,
-          "subscriberPrepaidPackageQty" : 10000000,
-          "lac" : 3216,
-          "cellId" : 4866,
-          "rat" : "2G - GERAN",
-          "imei" : "351934048890953",
-          "upBitrate" : 472000,
-          "downBitrate" : 472000,
-          "qci" : 8,
-          "apn" : "data.rewicom.net",
-          "imsiPrefix" : 99999,
-          "sponsorImsi" : 999990000002000,
+          "subscriberCost" : 0.2475,
+          "subscriberPlanId" : 400,
+          "subscriberPlanRuleId" : 1564,
+          "subscriberCurrencyId" : 1,
+          "subscriberConvertRate" : 1.0,
+          "subscriberPrepaidPackageQty" : 0,
+          "lac" : 12361,
+          "cellId" : 116115764,
+          "rat" : "4G - LTE",
+          "imei" : "354647888013844",
+          "upBitrate" : 0,
+          "downBitrate" : 0,
+          "qci" : 0,
+          "apn" : "internet.emt.ee",
+          "imsiPrefix" : 24801,
+          "sponsorImsi" : 248010416000008,
           "accountChargeEntity" : false
         }, {
-          "subscriberId" : 45043,
-          "sessionId" : "0003-diamproxy.roamability.gy-sctp-spgw-wro01.lte.orange.pl;1674744814;222111258;5f4b7491-31a02",
-          "usageDateUtc" : "2022-05-27T14:10:03",
-          "usageType" : 33,
-          "accountId" : 1,
-          "accountName" : "Unknown - 1",
-          "resellerId" : 1,
-          "resellerName" : "PDEL Reseller",
-          "mcc" : 206,
-          "country" : "Belgium",
-          "countryAlpha2" : "be",
-          "operator" : "Proximus PLC",
+          "subscriberId" : 18037,
+          "sessionId" : "37945396-1655377585",
+          "usageDateUtc" : "2022-06-16T11:06:51",
+          "usageType" : 40,
+          "accountId" : 22,
+          "accountName" : "Unknown - 22",
+          "resellerId" : 7,
+          "resellerName" : "Sparks Test",
+          "mcc" : 250,
+          "country" : "Russian Federation",
+          "countryAlpha2" : "ru",
+          "operator" : "PJSC Mobile TeleSystems MTS",
           "mnc" : 1,
-          "quantity" : 10000000,
-          "cost" : 9.5367431640625,
-          "costPlanId" : 7,
-          "costPlanRuleId" : 7204,
-          "resellerCost" : 19.073486328125,
-          "resellerPlanId" : 1,
-          "resellerPlanRuleId" : 7198,
+          "quantity" : 4,
+          "resellerCost" : 0.0,
+          "resellerPlanId" : 4,
+          "resellerPlanRuleId" : 19,
           "resellerCurrencyId" : 1,
           "resellerConvertRate" : 1.0,
           "resellerPrepaidPackageQty" : 0,
           "subscriberCost" : 0.0,
-          "subscriberPrepaidPackageId" : 4,
-          "subscriberPrepaidPackageQty" : 10000000,
-          "lac" : 3216,
-          "cellId" : 4866,
-          "rat" : "2G - GERAN",
-          "imei" : "351934048890953",
-          "upBitrate" : 472000,
-          "downBitrate" : 472000,
-          "qci" : 8,
-          "apn" : "data.rewicom.net",
-          "imsiPrefix" : 99999,
-          "sponsorImsi" : 999990000002000,
+          "subscriberPlanId" : 4,
+          "subscriberPlanRuleId" : 19,
+          "subscriberCurrencyId" : 1,
+          "subscriberConvertRate" : 1.0,
+          "subscriberPrepaidPackageQty" : 0,
+          "otherPartyNumber" : "79811564198",
+          "imsiPrefix" : 24801,
+          "sponsorImsi" : 248010416000008,
           "accountChargeEntity" : false
         }, {
-          "subscriberId" : 45043,
-          "sessionId" : "0003-diamproxy.roamability.gy-sctp-spgw-wro01.lte.orange.pl;1674744814;222111258;5f4b7491-31a02",
-          "usageDateUtc" : "2022-05-27T13:45:51",
-          "usageType" : 33,
-          "accountId" : 1,
-          "accountName" : "Unknown - 1",
-          "resellerId" : 1,
-          "resellerName" : "PDEL Reseller",
-          "mcc" : 206,
-          "country" : "Belgium",
-          "countryAlpha2" : "be",
-          "operator" : "Proximus PLC",
+          "subscriberId" : 18037,
+          "sessionId" : "37945396-1655377585",
+          "usageDateUtc" : "2022-06-16T11:06:51",
+          "usageType" : 1,
+          "accountId" : 22,
+          "accountName" : "Unknown - 22",
+          "resellerId" : 7,
+          "resellerName" : "Sparks Test",
+          "mcc" : 250,
+          "country" : "Russian Federation",
+          "countryAlpha2" : "ru",
+          "operator" : "PJSC Mobile TeleSystems MTS",
           "mnc" : 1,
-          "quantity" : 10000000,
-          "cost" : 9.5367431640625,
-          "costPlanId" : 7,
-          "costPlanRuleId" : 7204,
-          "resellerCost" : 19.073486328125,
-          "resellerPlanId" : 1,
-          "resellerPlanRuleId" : 7198,
+          "quantity" : 4,
+          "resellerCost" : 0.028050000000000002,
+          "resellerPlanId" : 400,
+          "resellerPlanRuleId" : 1564,
           "resellerCurrencyId" : 1,
           "resellerConvertRate" : 1.0,
           "resellerPrepaidPackageQty" : 0,
-          "subscriberCost" : 0.0,
-          "subscriberPrepaidPackageId" : 4,
-          "subscriberPrepaidPackageQty" : 10000000,
-          "lac" : 3216,
-          "cellId" : 4866,
-          "rat" : "2G - GERAN",
-          "imei" : "351934048890953",
-          "upBitrate" : 472000,
-          "downBitrate" : 472000,
-          "qci" : 8,
-          "apn" : "data.rewicom.net",
-          "imsiPrefix" : 99999,
-          "sponsorImsi" : 999990000002000,
+          "subscriberCost" : 0.028050000000000002,
+          "subscriberPlanId" : 400,
+          "subscriberPlanRuleId" : 1564,
+          "subscriberCurrencyId" : 1,
+          "subscriberConvertRate" : 1.0,
+          "subscriberPrepaidPackageQty" : 0,
+          "otherPartyNumber" : "3726503919",
+          "imsiPrefix" : 24801,
+          "sponsorImsi" : 248010416000008,
           "accountChargeEntity" : false
         }, {
-          "subscriberId" : 45043,
-          "sessionId" : "0003-diamproxy.roamability.gy-sctp-spgw-wro01.lte.orange.pl;1674744814;222111258;5f4b7491-31a02",
-          "usageDateUtc" : "2022-05-27T13:41:12",
+          "subscriberId" : 18037,
+          "sessionId" : "ee-cmg01cgy.pgw.epc.mnc001.mcc248.3gppnetwork.org;08d2465b;62ab0c78;248010416000008-3f6e0a45",
+          "usageDateUtc" : "2022-06-16T11:04:36",
           "usageType" : 33,
-          "accountId" : 1,
-          "accountName" : "Unknown - 1",
-          "resellerId" : 1,
-          "resellerName" : "PDEL Reseller",
-          "mcc" : 206,
-          "country" : "Belgium",
-          "countryAlpha2" : "be",
-          "operator" : "Proximus PLC",
+          "accountId" : 22,
+          "accountName" : "Unknown - 22",
+          "resellerId" : 7,
+          "resellerName" : "Sparks Test",
+          "mcc" : 250,
+          "country" : "Russian Federation",
+          "countryAlpha2" : "ru",
+          "operator" : "PJSC Mobile TeleSystems MTS",
           "mnc" : 1,
-          "quantity" : 38180000,
-          "cost" : 36.411285400390625,
-          "costPlanId" : 7,
-          "costPlanRuleId" : 7204,
-          "resellerCost" : 72.82257080078125,
-          "resellerPlanId" : 1,
-          "resellerPlanRuleId" : 7198,
+          "quantity" : 80,
+          "resellerCost" : 1.888275146484375E-6,
+          "resellerPlanId" : 400,
+          "resellerPlanRuleId" : 1564,
           "resellerCurrencyId" : 1,
           "resellerConvertRate" : 1.0,
           "resellerPrepaidPackageQty" : 0,
-          "subscriberCost" : 0.0,
-          "subscriberPrepaidPackageId" : 4,
-          "subscriberPrepaidPackageQty" : 38180000,
-          "lac" : 219,
-          "cellId" : 61478,
-          "rat" : "2G - GERAN",
-          "imei" : "868017031911303",
-          "upBitrate" : 64000,
-          "downBitrate" : 240000,
-          "qci" : 8,
-          "apn" : "uinternet",
-          "imsiPrefix" : 99999,
-          "sponsorImsi" : 999990000002000,
+          "subscriberCost" : 1.888275146484375E-6,
+          "subscriberPlanId" : 400,
+          "subscriberPlanRuleId" : 1564,
+          "subscriberCurrencyId" : 1,
+          "subscriberConvertRate" : 1.0,
+          "subscriberPrepaidPackageQty" : 0,
+          "lac" : 12361,
+          "cellId" : 115609386,
+          "rat" : "4G - LTE",
+          "imei" : "354647888013844",
+          "upBitrate" : 0,
+          "downBitrate" : 0,
+          "qci" : 0,
+          "apn" : "internet.emt.ee",
+          "imsiPrefix" : 24801,
+          "sponsorImsi" : 248010416000008,
           "accountChargeEntity" : false
         }, {
-          "subscriberId" : 45043,
-          "sessionId" : "0003-diamproxy.roamability.gy-sctp-spgw-wro01.lte.orange.pl;1674744814;222111258;5f4b7491-31a02",
-          "usageDateUtc" : "2022-05-27T13:25:03",
-          "usageType" : 33,
-          "accountId" : 1,
-          "accountName" : "Unknown - 1",
-          "resellerId" : 1,
-          "resellerName" : "PDEL Reseller",
-          "mcc" : 206,
-          "country" : "Belgium",
-          "countryAlpha2" : "be",
-          "operator" : "Proximus PLC",
+          "subscriberId" : 18037,
+          "sessionId" : "38338685-1655377272",
+          "usageDateUtc" : "2022-06-16T11:01:39",
+          "usageType" : 40,
+          "accountId" : 22,
+          "accountName" : "Unknown - 22",
+          "resellerId" : 7,
+          "resellerName" : "Sparks Test",
+          "mcc" : 250,
+          "country" : "Russian Federation",
+          "countryAlpha2" : "ru",
+          "operator" : "PJSC Mobile TeleSystems MTS",
           "mnc" : 1,
-          "quantity" : 10000000,
-          "cost" : 9.5367431640625,
-          "costPlanId" : 7,
-          "costPlanRuleId" : 7204,
-          "resellerCost" : 19.073486328125,
-          "resellerPlanId" : 1,
-          "resellerPlanRuleId" : 7198,
+          "quantity" : 5,
+          "resellerCost" : 0.0,
+          "resellerPlanId" : 4,
+          "resellerPlanRuleId" : 19,
           "resellerCurrencyId" : 1,
           "resellerConvertRate" : 1.0,
           "resellerPrepaidPackageQty" : 0,
           "subscriberCost" : 0.0,
-          "subscriberPrepaidPackageId" : 4,
-          "subscriberPrepaidPackageQty" : 10000000,
-          "lac" : 3216,
-          "cellId" : 4866,
-          "rat" : "2G - GERAN",
-          "imei" : "351934048890953",
-          "upBitrate" : 472000,
-          "downBitrate" : 472000,
-          "qci" : 8,
-          "apn" : "data.rewicom.net",
-          "imsiPrefix" : 99999,
-          "sponsorImsi" : 999990000002000,
+          "subscriberPlanId" : 4,
+          "subscriberPlanRuleId" : 19,
+          "subscriberCurrencyId" : 1,
+          "subscriberConvertRate" : 1.0,
+          "subscriberPrepaidPackageQty" : 0,
+          "otherPartyNumber" : "79811564198",
+          "imsiPrefix" : 24801,
+          "sponsorImsi" : 248010416000008,
           "accountChargeEntity" : false
         }, {
-          "subscriberId" : 45043,
-          "sessionId" : "0003-diamproxy.roamability.gy-sctp-spgw-wro01.lte.orange.pl;1674744814;222111258;5f4b7491-31a02",
-          "usageDateUtc" : "2022-05-27T13:23:23",
-          "usageType" : 33,
-          "accountId" : 1,
-          "accountName" : "Unknown - 1",
-          "resellerId" : 1,
-          "resellerName" : "PDEL Reseller",
-          "mcc" : 206,
-          "country" : "Belgium",
-          "countryAlpha2" : "be",
-          "operator" : "Proximus PLC",
+          "subscriberId" : 18037,
+          "sessionId" : "38338685-1655377272",
+          "usageDateUtc" : "2022-06-16T11:01:39",
+          "usageType" : 1,
+          "accountId" : 22,
+          "accountName" : "Unknown - 22",
+          "resellerId" : 7,
+          "resellerName" : "Sparks Test",
+          "mcc" : 250,
+          "country" : "Russian Federation",
+          "countryAlpha2" : "ru",
+          "operator" : "PJSC Mobile TeleSystems MTS",
           "mnc" : 1,
-          "quantity" : 38180000,
-          "cost" : 36.411285400390625,
-          "costPlanId" : 7,
-          "costPlanRuleId" : 7204,
-          "resellerCost" : 72.82257080078125,
-          "resellerPlanId" : 1,
-          "resellerPlanRuleId" : 7198,
+          "quantity" : 60,
+          "resellerCost" : 0.42075,
+          "resellerPlanId" : 400,
+          "resellerPlanRuleId" : 1564,
           "resellerCurrencyId" : 1,
           "resellerConvertRate" : 1.0,
           "resellerPrepaidPackageQty" : 0,
-          "subscriberCost" : 0.0,
-          "subscriberPrepaidPackageId" : 4,
-          "subscriberPrepaidPackageQty" : 38180000,
-          "lac" : 219,
-          "cellId" : 61478,
-          "rat" : "2G - GERAN",
-          "imei" : "868017031911303",
-          "upBitrate" : 64000,
-          "downBitrate" : 240000,
-          "qci" : 8,
-          "apn" : "uinternet",
-          "imsiPrefix" : 99999,
-          "sponsorImsi" : 999990000002000,
+          "subscriberCost" : 0.42075,
+          "subscriberPlanId" : 400,
+          "subscriberPlanRuleId" : 1564,
+          "subscriberCurrencyId" : 1,
+          "subscriberConvertRate" : 1.0,
+          "subscriberPrepaidPackageQty" : 0,
+          "otherPartyNumber" : "3726503944",
+          "imsiPrefix" : 24801,
+          "sponsorImsi" : 248010416000008,
           "accountChargeEntity" : false
         } ]
       } ]
@@ -2771,8 +2752,14 @@ If you need statistics about usages over a longer period, you can use the reques
 #### Request
 ```json
 {
-  "getSubscriberActivePeriod" : {
-    "imsi" : "12345678901234"
+  "subscriberUsageOverPeriod" : {
+    "subscriber" : {
+      "imsi" : "12345678901234"
+    },
+    "period" : {
+      "start" : "2023-03-28",
+      "end" : "2023-03-23"
+    }
   }
 }
 ```
@@ -2795,8 +2782,14 @@ If you need statistics about usages over a longer period, you can use the reques
 #### Request
 ```json
 {
-  "getSubscriberActivePeriod" : {
-    "iccid" : "123456789012345678"
+  "subscriberUsageOverPeriod" : {
+    "subscriber" : {
+      "iccid" : "123456789012345678"
+    },
+    "period" : {
+      "start" : "2023-03-28",
+      "end" : "2023-03-23"
+    }
   }
 }
 ```
@@ -2819,8 +2812,14 @@ If you need statistics about usages over a longer period, you can use the reques
 #### Request
 ```json
 {
-  "getSubscriberActivePeriod" : {
-    "msisdn" : "123456789123"
+  "subscriberUsageOverPeriod" : {
+    "subscriber" : {
+      "msisdn" : "123456789123"
+    },
+    "period" : {
+      "start" : "2023-03-28",
+      "end" : "2023-03-23"
+    }
   }
 }
 ```
@@ -2843,8 +2842,14 @@ If you need statistics about usages over a longer period, you can use the reques
 #### Request
 ```json
 {
-  "getSubscriberActivePeriod" : {
-    "multiImsi" : "12345678901234"
+  "subscriberUsageOverPeriod" : {
+    "subscriber" : {
+      "multiImsi" : "12345678901234"
+    },
+    "period" : {
+      "start" : "2023-03-28",
+      "end" : "2023-03-23"
+    }
   }
 }
 ```
@@ -2867,8 +2872,14 @@ If you need statistics about usages over a longer period, you can use the reques
 #### Request
 ```json
 {
-  "getSubscriberActivePeriod" : {
-    "activationCode" : "Activation code"
+  "subscriberUsageOverPeriod" : {
+    "subscriber" : {
+      "activationCode" : "Activation code"
+    },
+    "period" : {
+      "start" : "2023-03-28",
+      "end" : "2023-03-23"
+    }
   }
 }
 ```
