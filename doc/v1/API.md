@@ -1543,8 +1543,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2023-03-28T11:13:03.462491",
-      "end" : "2023-04-27T11:13:03.46321"
+      "start" : "2023-03-28T12:50:11.349978",
+      "end" : "2023-04-27T12:50:11.350623"
     }
   }
 }
@@ -2452,6 +2452,18 @@ will return the date of the first usage and the date of the last usage of the su
 This request can be used to retrieve the daily usage of a subscriber over a certain period. The period
 is delimited with a start date (included) and an end date (included). The period cannot exceed 1 week.
 If you need statistics about usages over a longer period, you can use the requests using aggregated data.
+
+Usage type:
+
+| Numeric value | Usage type |
+| --- | --- |
+| 1 | MOC |
+| 15 | MTC |
+| 21 | MO-SMS |
+| 22 | MT-SMS |
+| 33 | Data |
+| 40 | MOC VoIP |
+| 41 | MTC VoIP |
 
 
 ### 5.2.1 By subscriber ID
