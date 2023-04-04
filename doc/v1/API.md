@@ -1543,8 +1543,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2023-04-02T15:59:30.735473",
-      "end" : "2023-05-02T15:59:30.736447"
+      "start" : "2023-04-03T11:06:59.30844",
+      "end" : "2023-05-03T11:06:59.309189"
     }
   }
 }
@@ -2475,8 +2475,8 @@ Usage type:
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2023-04-02",
-      "end" : "2023-03-28"
+      "start" : "2023-04-03",
+      "end" : "2023-03-29"
     }
   }
 }
@@ -2769,8 +2769,8 @@ Usage type:
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-04-02",
-      "end" : "2023-03-28"
+      "start" : "2023-04-03",
+      "end" : "2023-03-29"
     }
   }
 }
@@ -2799,8 +2799,8 @@ Usage type:
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2023-04-02",
-      "end" : "2023-03-28"
+      "start" : "2023-04-03",
+      "end" : "2023-03-29"
     }
   }
 }
@@ -2829,8 +2829,8 @@ Usage type:
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2023-04-02",
-      "end" : "2023-03-28"
+      "start" : "2023-04-03",
+      "end" : "2023-03-29"
     }
   }
 }
@@ -2859,8 +2859,8 @@ Usage type:
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-04-02",
-      "end" : "2023-03-28"
+      "start" : "2023-04-03",
+      "end" : "2023-03-29"
     }
   }
 }
@@ -2889,8 +2889,8 @@ Usage type:
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2023-04-02",
-      "end" : "2023-03-28"
+      "start" : "2023-04-03",
+      "end" : "2023-03-29"
     }
   }
 }
