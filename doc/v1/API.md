@@ -10,6 +10,8 @@
 
 [2.3 affectSubscriberFakePhoneNumber](#23-affectsubscriberfakephonenumber)
 
+[2.4 getSimProviderStatus](#24-getsimproviderstatus)
+
 ## [3 Prepaid package](#31-listprepaidpackagetemplate)
 
 [3.1 listPrepaidPackageTemplate](#31-listprepaidpackagetemplate)
@@ -215,6 +217,7 @@ This request can be used to search for subscriber. You can search for subscriber
         "status" : "Active"
       } ],
       "sim" : {
+        "id" : 36904,
         "subscriberId" : 45046,
         "esim" : true,
         "status" : "AFFECTED",
@@ -270,6 +273,7 @@ This request can be used to search for subscriber. You can search for subscriber
         "status" : "Active"
       } ],
       "sim" : {
+        "id" : 36905,
         "subscriberId" : 45049,
         "esim" : true,
         "status" : "AFFECTED",
@@ -349,6 +353,7 @@ This request can be used to search for subscriber. You can search for subscriber
         "status" : "Active"
       } ],
       "sim" : {
+        "id" : 36904,
         "subscriberId" : 45046,
         "esim" : true,
         "status" : "AFFECTED",
@@ -404,6 +409,7 @@ This request can be used to search for subscriber. You can search for subscriber
         "status" : "Active"
       } ],
       "sim" : {
+        "id" : 36905,
         "subscriberId" : 45049,
         "esim" : true,
         "status" : "AFFECTED",
@@ -483,6 +489,7 @@ This request can be used to search for subscriber. You can search for subscriber
         "status" : "Active"
       } ],
       "sim" : {
+        "id" : 36904,
         "subscriberId" : 45046,
         "esim" : true,
         "status" : "AFFECTED",
@@ -538,6 +545,7 @@ This request can be used to search for subscriber. You can search for subscriber
         "status" : "Active"
       } ],
       "sim" : {
+        "id" : 36905,
         "subscriberId" : 45049,
         "esim" : true,
         "status" : "AFFECTED",
@@ -617,6 +625,7 @@ This request can be used to search for subscriber. You can search for subscriber
         "status" : "Active"
       } ],
       "sim" : {
+        "id" : 36904,
         "subscriberId" : 21046,
         "esim" : true,
         "status" : "FREE",
@@ -989,6 +998,50 @@ To identify the subscriber, you can use one of the following IDs:
 ### Remark(s)
 
 - This request is best used with the subscriber ID, if you already have it, use it.
+
+
+## 2.4 getSimProviderStatus
+
+### Description
+This request can be used to retrieve the status of the eSIM from the eSIM provider system. It returns in fact the
+status history of the eSIM. The current status is the one with no `end` date.
+
+Note that the statuses are sorted by `start` date in descending order (most recent date first).
+
+
+### Request
+```json
+{
+  "getSimProviderStatus" : 1234
+}
+```
+### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "getSimProviderStatus" : [ {
+    "simId" : 36862,
+    "status" : "Enable",
+    "start" : "2023-04-06T09:55:08",
+    "profileType" : "SPRK_230218_NoApplet_SP02",
+    "statusModification" : "Executed-Success"
+  }, {
+    "simId" : 36862,
+    "status" : "Enable",
+    "start" : "2023-04-01T09:55:08",
+    "end" : "2023-04-06T09:55:08",
+    "profileType" : "SPRK_230218_NoApplet_SP02",
+    "statusModification" : "Executed-Success"
+  } ]
+}
+```
+### Remark(s)
+
+- The numeric value of `getSimProviderStatus` is the id of the eSIM. You can find it in the answer of `listSubscriber`: subscriberList -> sim -> id
 
 
 # 3. Prepaid package
@@ -1543,8 +1596,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2023-04-15T11:42:39.461097",
-      "end" : "2023-05-15T11:42:39.461687"
+      "start" : "2023-04-19T14:44:14.919878",
+      "end" : "2023-05-19T14:44:14.920665"
     }
   }
 }
@@ -2475,8 +2528,8 @@ Usage type:
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2023-04-15",
-      "end" : "2023-04-10"
+      "start" : "2023-04-19",
+      "end" : "2023-04-14"
     }
   }
 }
@@ -2769,8 +2822,8 @@ Usage type:
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-04-15",
-      "end" : "2023-04-10"
+      "start" : "2023-04-19",
+      "end" : "2023-04-14"
     }
   }
 }
@@ -2799,8 +2852,8 @@ Usage type:
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2023-04-15",
-      "end" : "2023-04-10"
+      "start" : "2023-04-19",
+      "end" : "2023-04-14"
     }
   }
 }
@@ -2829,8 +2882,8 @@ Usage type:
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2023-04-15",
-      "end" : "2023-04-10"
+      "start" : "2023-04-19",
+      "end" : "2023-04-14"
     }
   }
 }
@@ -2859,8 +2912,8 @@ Usage type:
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-04-15",
-      "end" : "2023-04-10"
+      "start" : "2023-04-19",
+      "end" : "2023-04-14"
     }
   }
 }
@@ -2889,8 +2942,8 @@ Usage type:
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2023-04-15",
-      "end" : "2023-04-10"
+      "start" : "2023-04-19",
+      "end" : "2023-04-14"
     }
   }
 }
