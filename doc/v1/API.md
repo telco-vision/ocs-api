@@ -2,6 +2,8 @@
 
 [1.1 listResellerAccount](#11-listreselleraccount)
 
+[1.2 modifyAccountBalance](#12-modifyaccountbalance)
+
 ## [2 Subscriber](#21-listsubscriber)
 
 [2.1 listSubscriber](#21-listsubscriber)
@@ -11,6 +13,12 @@
 [2.3 affectSubscriberFakePhoneNumber](#23-affectsubscriberfakephonenumber)
 
 [2.4 getSimProviderStatus](#24-getsimproviderstatus)
+
+[2.5 modifySubscriberBalance](#25-modifysubscriberbalance)
+
+[2.6 modifySubscriberPrepaidPackageLimits](#26-modifysubscriberprepaidpackagelimits)
+
+[2.7 modifySubscriberPrepaidPackageExpDate](#27-modifysubscriberprepaidpackageexpdate)
 
 ## [3 Prepaid package](#31-listprepaidpackagetemplate)
 
@@ -149,6 +157,45 @@ or all accounts of all your reseller.
         "balance" : 97.80718309495325
       } ]
     } ]
+  }
+}
+```
+## 1.2 modifyAccountBalance
+
+### Description
+This request can be used to adapt the balance of an account. The amount you need to provide in the
+request will be added to the current balance. You can provide a negative amount and the balance will
+be decreased. Please note that balance cannot become negative, in such a case the request will be
+rejected with an error.
+
+This request is logged in the system DB and you can see them in the UI, in the `Account` -> `Transaction` tab.
+
+
+### Inputs
+|Parameter|Presence|Description|
+|---------|--------|-----------|
+|accountId|Mandatory|The ID of the account to modify|
+|amount|Mandatory|The amount to add to the current balance|
+|description|Optional|A description giving information about the reason of this balance adjustment|
+
+
+### Request
+```json
+{
+  "modifyAccountBalance" : {
+    "accountId" : 132,
+    "amount" : -123.25,
+    "description" : "Optional description"
+  }
+}
+```
+### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
   }
 }
 ```
@@ -1044,6 +1091,130 @@ Note that the statuses are sorted by `start` date in descending order (most rece
 - The numeric value of `getSimProviderStatus` is the id of the eSIM. You can find it in the answer of `listSubscriber`: subscriberList -> sim -> id
 
 
+## 2.5 modifySubscriberBalance
+
+### Description
+This request can be used to adapt the balance of a subscriber. The amount you need to provide in the
+request will be added to the current balance. You can provide a negative amount and the balance will
+be decreased. Please note that balance cannot become negative, in such a case the request will be
+rejected with an error.
+
+This request is logged in the system DB and you can see them in the UI, in the `Subscriber` -> `Transaction` tab.
+
+
+### Inputs
+|Parameter|Presence|Description|
+|---------|--------|-----------|
+|subscriber|Mandatory|One of the subscriber identifier see `Subscriber identifiers` in [OcsObjects.md](OcsObjects.md)|
+|amount|Mandatory|The amount to add to the current balance|
+|description|Optional|A description giving information about the reason of this balance adjustment|
+
+
+### Request
+```json
+{
+  "modifySubscriberBalance" : {
+    "subscriber" : {
+      "subscriberId" : 123
+    },
+    "amount" : -123.25,
+    "description" : "Optional description"
+  }
+}
+```
+### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+## 2.6 modifySubscriberPrepaidPackageLimits
+
+### Description
+This request can be used to adapt one or more limits (max volume, max SMS, minutes of call) of a
+subscriber prepaid package.
+
+This request is logged in the system DB and you can see them in the UI, in the `Subscriber prepaid package` -> `History` tab.
+
+
+### Inputs
+|Parameter|Presence|Description|
+|---------|--------|-----------|
+|packageId|Mandatory|The ID of the subscriber prepaid package to adapt|
+|newLimits.dataByte|Mandatory|The new limit for the data volume of this package, in bytes. Set to `null` to leave unchanged.|
+|newLimits.mocSecond|Mandatory|The new limit for the MO calls of this package, in minutes. Set to `null` to leave unchanged.|
+|newLimits.mtcSecond|Mandatory|The new limit for the MT calls of this package, in minutes. Set to `null` to leave unchanged.|
+|newLimits.moSms|Mandatory|The new limit for the MO SMS of this package, in number of SMS. Set to `null` to leave unchanged.|
+|newLimits.mtSms|Mandatory|The new limit for the MT SMS of this package, number of SMS. Set to `null` to leave unchanged.|
+|comment|Optional|A description giving information about the reason of this adjustment|
+
+
+### Request
+```json
+{
+  "modifySubscriberPrepaidPackageLimits" : {
+    "packageId" : 123,
+    "newLimits" : {
+      "dataByte" : 1073741824,
+      "mocSecond" : 60,
+      "mtcSecond" : 90,
+      "moSms" : 100,
+      "mtSms" : 200
+    },
+    "comment" : "Optional comment"
+  }
+}
+```
+### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+## 2.7 modifySubscriberPrepaidPackageExpDate
+
+### Description
+This request can be used to adapt the expiration date of a subscriber prepaid package.
+
+This request is logged in the system DB and you can see them in the UI, in the `Subscriber prepaid package` -> `History` tab.
+
+
+### Inputs
+|Parameter|Presence|Description|
+|---------|--------|-----------|
+|packageId|Mandatory|The ID of the subscriber prepaid package to adapt.|
+|newPeriod|Mandatory|The number of days between the start validity date and the new expiration date. You don't really need to update this value, but if you want to keep data consistent, provide the correct value.|
+|newDateUtc|Optional|The new expiration date for the subscriber prepaid package.|
+
+
+### Request
+```json
+{
+  "modifySubscriberPrepaidPackageExpDate" : {
+    "packageId" : 123,
+    "newPeriod" : 45,
+    "newDateUtc" : "2023-04-23T16:13:49.641081"
+  }
+}
+```
+### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
 # 3. Prepaid package
 ## 3.1 listPrepaidPackageTemplate
 
@@ -1596,8 +1767,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2023-04-23T11:22:48.818113",
-      "end" : "2023-05-23T11:22:48.819485"
+      "start" : "2023-04-23T16:13:49.651149",
+      "end" : "2023-05-23T16:13:49.651162"
     }
   }
 }
@@ -3262,5 +3433,5 @@ Message in JSON: `Test 123 /u0422/u0435/u0441/u0442`
 | 10 | INVALID_RESELLER |
 | 11 | RESOURCE_NOT_VISIBLE |
 | 12 | RESOURCE_READ_ONLY |
-| 13 | SMS_API_ERROR |
+| 13 | OPERATION_IMPOSSIBLE |
 

@@ -1,4 +1,20 @@
-# Subscriber prepaid package
+# Request
+## Subscriber identifiers
+When present in a request, this object is used to identify a subscriber via one of its identifiers. Please note that only
+one identifier can be provided.
+
+| Attribute      | Presence | Description                                                                                                                                                                                 |
+|----------------|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| imsi           | Optional | The IMSI of the subscriber. In requests listing subscribers, you can provide an IMSI prefix, but in request that needs to identify one single subscriber you must provide exact IMSI.       |
+| iccid          | Optional | The ICCID of the subscriber. In requests listing subscribers, you can provide an ICCID prefix, but in request that needs to identify one single subscriber you must provide exact ICCID.    |
+| msisdn         | Optional | The MSISDN of the subscriber. In requests listing subscribers, you can provide an MSISDN prefix, but in request that needs to identify one single subscriber you must provide exact MSISDN. |
+| multiImsi      | Optional | One of the sponsor IMSI of the subscriber. Ony available for the customer using the Multi-IMSI feature.                                                                                     |
+| activationCode | Optional | The activation code of the eSIM of the user. Must be the exact value.                                                                                                                       |
+| subscriberId   | Optional | The ID of the subscriber.                                                                                                                                                                   |
+
+
+# Answer
+## Subscriber prepaid package
 
 | Attribute                  | Presence  | Description                                                                                                                                                                                                                 |
 |----------------------------|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
