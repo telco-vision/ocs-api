@@ -1201,7 +1201,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2023-06-14T21:43:22.109174"
+    "newDateUtc" : "2023-06-15T11:09:28.711178"
   }
 }
 ```
@@ -1767,8 +1767,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2023-06-14T21:43:22.12205",
-      "end" : "2023-07-14T21:43:22.122066"
+      "start" : "2023-06-15T11:09:28.723643",
+      "end" : "2023-07-15T11:09:28.723658"
     }
   }
 }
@@ -2699,8 +2699,8 @@ Usage type:
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2023-06-14",
-      "end" : "2023-06-09"
+      "start" : "2023-06-15",
+      "end" : "2023-06-10"
     }
   }
 }
@@ -2993,8 +2993,8 @@ Usage type:
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-06-14",
-      "end" : "2023-06-09"
+      "start" : "2023-06-15",
+      "end" : "2023-06-10"
     }
   }
 }
@@ -3023,8 +3023,8 @@ Usage type:
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2023-06-14",
-      "end" : "2023-06-09"
+      "start" : "2023-06-15",
+      "end" : "2023-06-10"
     }
   }
 }
@@ -3053,8 +3053,8 @@ Usage type:
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2023-06-14",
-      "end" : "2023-06-09"
+      "start" : "2023-06-15",
+      "end" : "2023-06-10"
     }
   }
 }
@@ -3083,8 +3083,8 @@ Usage type:
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-06-14",
-      "end" : "2023-06-09"
+      "start" : "2023-06-15",
+      "end" : "2023-06-10"
     }
   }
 }
@@ -3113,8 +3113,8 @@ Usage type:
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2023-06-14",
-      "end" : "2023-06-09"
+      "start" : "2023-06-15",
+      "end" : "2023-06-10"
     }
   }
 }
