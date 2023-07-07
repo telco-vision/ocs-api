@@ -1201,7 +1201,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2023-07-07T08:53:23.436912"
+    "newDateUtc" : "2023-07-07T10:53:17.054414"
   }
 }
 ```
@@ -1767,8 +1767,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2023-07-07T08:53:23.451099",
-      "end" : "2023-08-06T08:53:23.451118"
+      "start" : "2023-07-07T10:53:17.06789",
+      "end" : "2023-08-06T10:53:17.067911"
     }
   }
 }
