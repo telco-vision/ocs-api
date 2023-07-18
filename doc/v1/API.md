@@ -20,6 +20,8 @@
 
 [2.7 modifySubscriberPrepaidPackageExpDate](#27-modifysubscriberprepaidpackageexpdate)
 
+[2.8 modifySubscriberPrepaidPackageStatus](#28-modifysubscriberprepaidpackagestatus)
+
 ## [3 Prepaid package](#31-listprepaidpackagetemplate)
 
 [3.1 listPrepaidPackageTemplate](#31-listprepaidpackagetemplate)
@@ -1201,7 +1203,42 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2023-07-17T10:04:01.711096"
+    "newDateUtc" : "2023-07-18T09:21:39.95498"
+  }
+}
+```
+### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+## 2.8 modifySubscriberPrepaidPackageStatus
+
+### Description
+This request can be used to adapt the status of a subscriber prepaid package. You can activate or deactivate the package.
+A deactivated package can no longer be used by the subscriber.
+
+This request is logged in the system DB and you can see them in the UI, in the `Subscriber prepaid package` -> `History` tab.
+
+
+### Inputs
+|Parameter|Presence|Description|
+|---------|--------|-----------|
+|subsPrepaidPackageId|Mandatory|The ID of the subscriber prepaid package to adapt.|
+|active|Mandatory|`true` => prepaid package is active, `false` => prepaid package is blocked.|
+
+
+### Request
+```json
+{
+  "modifySubscriberPrepaidPackageStatus" : {
+    "subsPrepaidPackageId" : 123,
+    "active" : false
   }
 }
 ```
@@ -1767,8 +1804,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2023-07-17T10:04:01.724385",
-      "end" : "2023-08-16T10:04:01.724402"
+      "start" : "2023-07-18T09:21:39.969943",
+      "end" : "2023-08-17T09:21:39.969959"
     }
   }
 }
@@ -2699,8 +2736,8 @@ Usage type:
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2023-07-17",
-      "end" : "2023-07-12"
+      "start" : "2023-07-18",
+      "end" : "2023-07-13"
     }
   }
 }
@@ -2993,8 +3030,8 @@ Usage type:
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-07-17",
-      "end" : "2023-07-12"
+      "start" : "2023-07-18",
+      "end" : "2023-07-13"
     }
   }
 }
@@ -3023,8 +3060,8 @@ Usage type:
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2023-07-17",
-      "end" : "2023-07-12"
+      "start" : "2023-07-18",
+      "end" : "2023-07-13"
     }
   }
 }
@@ -3053,8 +3090,8 @@ Usage type:
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2023-07-17",
-      "end" : "2023-07-12"
+      "start" : "2023-07-18",
+      "end" : "2023-07-13"
     }
   }
 }
@@ -3083,8 +3120,8 @@ Usage type:
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-07-17",
-      "end" : "2023-07-12"
+      "start" : "2023-07-18",
+      "end" : "2023-07-13"
     }
   }
 }
@@ -3113,8 +3150,8 @@ Usage type:
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2023-07-17",
-      "end" : "2023-07-12"
+      "start" : "2023-07-18",
+      "end" : "2023-07-13"
     }
   }
 }
