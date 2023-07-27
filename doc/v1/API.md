@@ -90,23 +90,28 @@ or all accounts of all your reseller.
       "account" : [ {
         "id" : 4,
         "name" : "Test - Second account",
-        "balance" : 660.5500000000001
+        "balance" : 660.5500000000001,
+        "packageOnly" : false
       }, {
         "id" : 7,
         "name" : "Test - Subs X",
-        "balance" : 1000.0
+        "balance" : 1000.0,
+        "packageOnly" : false
       }, {
         "id" : 55,
         "name" : "FUT",
-        "balance" : 70.06
+        "balance" : 70.06,
+        "packageOnly" : false
       }, {
         "id" : 104,
         "name" : "test from UI",
-        "balance" : 100.0
+        "balance" : 100.0,
+        "packageOnly" : false
       }, {
         "id" : 125,
         "name" : "Denis new account",
-        "balance" : 0.0
+        "balance" : 0.0,
+        "packageOnly" : false
       } ]
     }, {
       "id" : 10,
@@ -114,7 +119,8 @@ or all accounts of all your reseller.
       "account" : [ {
         "id" : 37,
         "name" : "TestSubscribers",
-        "balance" : 97.80718309495325
+        "balance" : 97.80718309495325,
+        "packageOnly" : false
       } ]
     }, {
       "id" : 58,
@@ -122,11 +128,13 @@ or all accounts of all your reseller.
       "account" : [ {
         "id" : 118,
         "name" : "Test dev account name",
-        "balance" : 100.0
+        "balance" : 100.0,
+        "packageOnly" : false
       }, {
         "id" : 119,
         "name" : "Test dev account name 2",
-        "balance" : 100.0
+        "balance" : 100.0,
+        "packageOnly" : false
       } ]
     } ]
   }
@@ -156,7 +164,8 @@ or all accounts of all your reseller.
       "account" : [ {
         "id" : 37,
         "name" : "TestSubscribers",
-        "balance" : 97.80718309495325
+        "balance" : 97.80718309495325,
+        "packageOnly" : false
       } ]
     } ]
   }
@@ -1203,7 +1212,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2023-07-23T12:52:44.879769"
+    "newDateUtc" : "2023-07-27T09:44:25.96328"
   }
 }
 ```
@@ -1804,8 +1813,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2023-07-23T12:52:44.89351",
-      "end" : "2023-08-22T12:52:44.893529"
+      "start" : "2023-07-27T09:44:25.973192",
+      "end" : "2023-08-26T09:44:25.973205"
     }
   }
 }
@@ -2736,8 +2745,8 @@ Usage type:
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2023-07-23",
-      "end" : "2023-07-18"
+      "start" : "2023-07-27",
+      "end" : "2023-07-22"
     }
   }
 }
@@ -3030,8 +3039,8 @@ Usage type:
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-07-23",
-      "end" : "2023-07-18"
+      "start" : "2023-07-27",
+      "end" : "2023-07-22"
     }
   }
 }
@@ -3060,8 +3069,8 @@ Usage type:
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2023-07-23",
-      "end" : "2023-07-18"
+      "start" : "2023-07-27",
+      "end" : "2023-07-22"
     }
   }
 }
@@ -3090,8 +3099,8 @@ Usage type:
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2023-07-23",
-      "end" : "2023-07-18"
+      "start" : "2023-07-27",
+      "end" : "2023-07-22"
     }
   }
 }
@@ -3120,8 +3129,8 @@ Usage type:
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-07-23",
-      "end" : "2023-07-18"
+      "start" : "2023-07-27",
+      "end" : "2023-07-22"
     }
   }
 }
@@ -3150,8 +3159,8 @@ Usage type:
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2023-07-23",
-      "end" : "2023-07-18"
+      "start" : "2023-07-27",
+      "end" : "2023-07-22"
     }
   }
 }
