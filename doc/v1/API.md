@@ -1212,7 +1212,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2023-07-28T09:20:43.698892"
+    "newDateUtc" : "2023-07-28T13:24:57.592403"
   }
 }
 ```
@@ -1813,8 +1813,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2023-07-28T09:20:43.710573",
-      "end" : "2023-08-27T09:20:43.71059"
+      "start" : "2023-07-28T13:24:57.603895",
+      "end" : "2023-08-27T13:24:57.60391"
     }
   }
 }
@@ -1998,6 +1998,7 @@ To identify the subscriber, you can use one of the following IDs:
 ### Outputs
 |Parameter|Presence|Description|
 |---------|--------|-----------|
+|listSubscriberPrepaidPackages.callUseSingleCounter|Mandatory|Indicates if MOC and MTC are charged on the same counter.</br>If the flag is false MOC seconds are charged on `usedmocsecond` and the limit is `pckmocsecond`. While the MTC seconds are charged on `usedmtcsecond` and the limit is `pckmtcsecond`.</br>If the flag is true, no difference is made between MOC and MTC, they both are considered as calls charged on the same counter with the same limit. Both MOC and MTC seconds are charged on `usedmocsecond` counter. The limit for both MOC and MTC is `pckmocsecond`.|
 |listSubscriberPrepaidPackages.packages|Mandatory|Array of subscriber prepaid packages, see `Subscriber prepaid package` in [OcsObjects.md](OcsObjects.md). If the subscriber doesn't have any prepaid package, this array will be empty.|
 
 
@@ -2054,7 +2055,8 @@ To identify the subscriber, you can use one of the following IDs:
       "templateId" : 1132,
       "esimId" : 30919,
       "active" : true
-    } ]
+    } ],
+    "callUseSingleCounter" : true
   }
 }
 ```
@@ -2076,7 +2078,8 @@ To identify the subscriber, you can use one of the following IDs:
     "msg" : "OK"
   },
   "listSubscriberPrepaidPackages" : {
-    "packages" : [ ]
+    "packages" : [ ],
+    "callUseSingleCounter" : false
   }
 }
 ```
@@ -2103,7 +2106,8 @@ To identify the subscriber, you can use one of the following IDs:
     "msg" : "OK"
   },
   "listSubscriberPrepaidPackages" : {
-    "packages" : [ ]
+    "packages" : [ ],
+    "callUseSingleCounter" : false
   }
 }
 ```
@@ -2130,7 +2134,8 @@ To identify the subscriber, you can use one of the following IDs:
     "msg" : "OK"
   },
   "listSubscriberPrepaidPackages" : {
-    "packages" : [ ]
+    "packages" : [ ],
+    "callUseSingleCounter" : false
   }
 }
 ```
@@ -2157,7 +2162,8 @@ To identify the subscriber, you can use one of the following IDs:
     "msg" : "OK"
   },
   "listSubscriberPrepaidPackages" : {
-    "packages" : [ ]
+    "packages" : [ ],
+    "callUseSingleCounter" : false
   }
 }
 ```
@@ -2184,7 +2190,8 @@ To identify the subscriber, you can use one of the following IDs:
     "msg" : "OK"
   },
   "listSubscriberPrepaidPackages" : {
-    "packages" : [ ]
+    "packages" : [ ],
+    "callUseSingleCounter" : false
   }
 }
 ```
