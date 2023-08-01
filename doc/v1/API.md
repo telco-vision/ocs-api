@@ -1214,7 +1214,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2023-08-01T11:24:46.267317"
+    "newDateUtc" : "2023-08-01T15:33:31.290249"
   }
 }
 ```
@@ -1297,31 +1297,126 @@ You can also send the request without any search keys. In this case the request 
     "template" : [ {
       "sponsors" : {
         "sponsorid" : 1,
-        "sponsorname" : "Test-Spons-Display",
-        "displayname" : "Test-Spons-Display"
+        "sponsorname" : "PDEL-Spons-Display",
+        "displayname" : "PDEL-Spons-Display"
       },
       "reseller" : {
         "resellerid" : 1,
-        "resellername" : "Test Reseller"
+        "resellername" : "PDEL Reseller"
       },
       "rdbLocationZones" : {
-        "locationzoneid" : 5,
-        "locationzonename" : "Test - Benelux"
+        "locationzoneid" : 21,
+        "locationzonename" : "PDEL - Spain"
       },
-      "prepaidpackagetemplateid" : 1153,
-      "prepaidpackagetemplatename" : "Test - Benelux 17Gb",
+      "prepaidpackagetemplateid" : 1204,
+      "prepaidpackagetemplatename" : "PDEL - Spain 10Gb",
       "resellerid" : 1,
       "priority" : 1,
-      "locationzoneid" : 5,
-      "databyte" : 18253611008,
-      "perioddays" : 1,
+      "locationzoneid" : 21,
+      "databyte" : 10737418240,
+      "perioddays" : 30,
       "deleted" : false,
       "esimSponsor" : 1,
-      "cost" : 11.0,
+      "cost" : 66.0,
       "uiStartAvailablePeriod" : "2022-03-01T17:18:00",
       "uiEndAvailibilityPeriod" : "2022-06-15T17:18:00",
-      "uiVisible" : true,
-      "userUiName" : "Benelux_17Gb"
+      "uiVisible" : false,
+      "userUiName" : "Spain_10Gb"
+    }, {
+      "rdbDestinationZones" : {
+        "destinationzoneid" : 1,
+        "destinationzonename" : "PDEL Test - 7"
+      },
+      "reseller" : {
+        "resellerid" : 1,
+        "resellername" : "PDEL Reseller"
+      },
+      "rdbLocationZones" : {
+        "locationzoneid" : 2,
+        "locationzonename" : "PDEL - Belgium"
+      },
+      "prepaidpackagetemplateid" : 1207,
+      "prepaidpackagetemplatename" : "blalbla",
+      "resellerid" : 1,
+      "priority" : 1,
+      "locationzoneid" : 2,
+      "destinationzoneid" : 1,
+      "databyte" : 10737418240,
+      "perioddays" : 30,
+      "deleted" : false,
+      "cost" : 50.0,
+      "uiStartAvailablePeriod" : "2022-09-24T11:30:00",
+      "uiEndAvailibilityPeriod" : "2022-09-30T11:30:00",
+      "uiVisible" : false,
+      "userUiName" : "blalbla"
+    }, {
+      "rdbDestinationZones" : {
+        "destinationzoneid" : 1,
+        "destinationzonename" : "PDEL Test - 7"
+      },
+      "sponsors" : {
+        "sponsorid" : 1,
+        "sponsorname" : "PDEL-Spons-Display",
+        "displayname" : "PDEL-Spons-Display"
+      },
+      "reseller" : {
+        "resellerid" : 1,
+        "resellername" : "PDEL Reseller"
+      },
+      "rdbLocationZones" : {
+        "locationzoneid" : 2,
+        "locationzonename" : "PDEL - Belgium"
+      },
+      "prepaidpackagetemplateid" : 1224,
+      "prepaidpackagetemplatename" : "Denis Belgium 20 GB",
+      "resellerid" : 1,
+      "priority" : 1,
+      "locationzoneid" : 2,
+      "destinationzoneid" : 1,
+      "databyte" : 21474836480,
+      "mocsecond" : 3600,
+      "mtcsecond" : 3600,
+      "mosmsnumber" : 100,
+      "mtsmsnumber" : 200,
+      "perioddays" : 30,
+      "deleted" : false,
+      "esimSponsor" : 1,
+      "cost" : 24.0,
+      "uiStartAvailablePeriod" : "2022-03-01T17:18:00",
+      "uiEndAvailibilityPeriod" : "2022-06-15T17:18:00",
+      "uiVisible" : false,
+      "userUiName" : "Denis_Belgium_20GB"
+    }, {
+      "rdbDestinationZones" : {
+        "destinationzoneid" : 5,
+        "destinationzonename" : "Denis Destination list"
+      },
+      "sponsors" : {
+        "sponsorid" : 104,
+        "sponsorname" : "SP04",
+        "displayname" : "SP04"
+      },
+      "reseller" : {
+        "resellerid" : 1,
+        "resellername" : "PDEL Reseller"
+      },
+      "rdbLocationZones" : {
+        "locationzoneid" : 27,
+        "locationzonename" : "PDEL - Italy"
+      },
+      "prepaidpackagetemplateid" : 2214,
+      "prepaidpackagetemplatename" : "Denis Italy",
+      "resellerid" : 1,
+      "priority" : 1,
+      "locationzoneid" : 27,
+      "destinationzoneid" : 5,
+      "databyte" : 1073741824,
+      "perioddays" : 10,
+      "deleted" : false,
+      "esimSponsor" : 104,
+      "cost" : 9.99,
+      "uiStartAvailablePeriod" : "2022-06-20T16:47:41",
+      "uiVisible" : false
     } ]
   }
 }
@@ -1345,224 +1440,29 @@ You can also send the request without any search keys. In this case the request 
   },
   "listPrepaidPackageTemplate" : {
     "template" : [ {
+      "rdbDestinationZones" : {
+        "destinationzoneid" : 1,
+        "destinationzonename" : "PDEL Test - 7"
+      },
       "sponsors" : {
         "sponsorid" : 1,
-        "sponsorname" : "Test-Spons-Display",
-        "displayname" : "Test-Spons-Display"
+        "sponsorname" : "PDEL-Spons-Display",
+        "displayname" : "PDEL-Spons-Display"
       },
       "reseller" : {
         "resellerid" : 1,
-        "resellername" : "Test Reseller"
-      },
-      "rdbLocationZones" : {
-        "locationzoneid" : 5,
-        "locationzonename" : "Test - Benelux"
-      },
-      "prepaidpackagetemplateid" : 1153,
-      "prepaidpackagetemplatename" : "Test - Benelux 17Gb",
-      "resellerid" : 1,
-      "priority" : 1,
-      "locationzoneid" : 5,
-      "databyte" : 18253611008,
-      "perioddays" : 1,
-      "deleted" : false,
-      "esimSponsor" : 1,
-      "cost" : 11.0,
-      "uiStartAvailablePeriod" : "2022-03-01T17:18:00",
-      "uiEndAvailibilityPeriod" : "2022-06-15T17:18:00",
-      "uiVisible" : true,
-      "userUiName" : "Benelux_17Gb"
-    }, {
-      "sponsors" : {
-        "sponsorid" : 1,
-        "sponsorname" : "Test-Spons-Display",
-        "displayname" : "Test-Spons-Display"
-      },
-      "reseller" : {
-        "resellerid" : 1,
-        "resellername" : "Test Reseller"
-      },
-      "rdbLocationZones" : {
-        "locationzoneid" : 2,
-        "locationzonename" : "Test - Belgium"
-      },
-      "prepaidpackagetemplateid" : 1154,
-      "prepaidpackagetemplatename" : "Test - Belgium 15GB",
-      "resellerid" : 1,
-      "priority" : 1,
-      "locationzoneid" : 2,
-      "databyte" : 16106127360,
-      "perioddays" : 30,
-      "deleted" : false,
-      "esimSponsor" : 1,
-      "cost" : 13.0,
-      "uiStartAvailablePeriod" : "2022-03-01T17:18:00",
-      "uiEndAvailibilityPeriod" : "2022-06-15T17:18:00",
-      "uiVisible" : true,
-      "userUiName" : "Belgium_15Gb"
-    }, {
-      "sponsors" : {
-        "sponsorid" : 1,
-        "sponsorname" : "Test-Spons-Display",
-        "displayname" : "Test-Spons-Display"
-      },
-      "reseller" : {
-        "resellerid" : 1,
-        "resellername" : "Test Reseller"
-      },
-      "rdbLocationZones" : {
-        "locationzoneid" : 5,
-        "locationzonename" : "Test - Benelux"
-      },
-      "prepaidpackagetemplateid" : 1155,
-      "prepaidpackagetemplatename" : "Test - Benelux 15Gb",
-      "resellerid" : 1,
-      "priority" : 1,
-      "locationzoneid" : 5,
-      "databyte" : 16106127360,
-      "perioddays" : 10,
-      "deleted" : false,
-      "esimSponsor" : 1,
-      "cost" : 12.0,
-      "uiStartAvailablePeriod" : "2022-03-01T17:18:00",
-      "uiEndAvailibilityPeriod" : "2022-06-15T17:18:00",
-      "uiVisible" : true,
-      "userUiName" : "Benelux_15Gb"
-    }, {
-      "sponsors" : {
-        "sponsorid" : 1,
-        "sponsorname" : "Test-Spons-Display",
-        "displayname" : "Test-Spons-Display"
-      },
-      "reseller" : {
-        "resellerid" : 1,
-        "resellername" : "Test Reseller"
-      },
-      "rdbLocationZones" : {
-        "locationzoneid" : 2,
-        "locationzonename" : "Test - Belgium"
-      },
-      "prepaidpackagetemplateid" : 1156,
-      "prepaidpackagetemplatename" : "Test - Belgium 10GB",
-      "resellerid" : 1,
-      "priority" : 1,
-      "locationzoneid" : 2,
-      "databyte" : 16106127360,
-      "perioddays" : 30,
-      "deleted" : false,
-      "esimSponsor" : 1,
-      "cost" : 15.0,
-      "uiStartAvailablePeriod" : "2022-03-01T17:18:00",
-      "uiEndAvailibilityPeriod" : "2022-06-15T17:18:00",
-      "uiVisible" : true,
-      "userUiName" : "Belgium_15Gb"
-    }, {
-      "sponsors" : {
-        "sponsorid" : 1,
-        "sponsorname" : "Test-Spons-Display",
-        "displayname" : "Test-Spons-Display"
-      },
-      "reseller" : {
-        "resellerid" : 1,
-        "resellername" : "Test Reseller"
-      },
-      "rdbLocationZones" : {
-        "locationzoneid" : 2,
-        "locationzonename" : "Test - Belgium"
-      },
-      "prepaidpackagetemplateid" : 1165,
-      "prepaidpackagetemplatename" : "Test - Belgium 10GB NEW",
-      "resellerid" : 1,
-      "priority" : 1,
-      "locationzoneid" : 2,
-      "databyte" : 10737418240,
-      "perioddays" : 36,
-      "deleted" : false,
-      "esimSponsor" : 1,
-      "cost" : 11.0,
-      "uiStartAvailablePeriod" : "2022-03-01T17:18:00",
-      "uiEndAvailibilityPeriod" : "2022-06-15T17:18:00",
-      "uiVisible" : true,
-      "userUiName" : "Belgium_10Gb"
-    }, {
-      "sponsors" : {
-        "sponsorid" : 1,
-        "sponsorname" : "Test-Spons-Display",
-        "displayname" : "Test-Spons-Display"
-      },
-      "reseller" : {
-        "resellerid" : 1,
-        "resellername" : "Test Reseller"
-      },
-      "rdbLocationZones" : {
-        "locationzoneid" : 21,
-        "locationzonename" : "Test - Spain"
-      },
-      "prepaidpackagetemplateid" : 1204,
-      "prepaidpackagetemplatename" : "Test - Spain 10Gb",
-      "resellerid" : 1,
-      "priority" : 1,
-      "locationzoneid" : 21,
-      "databyte" : 10737418240,
-      "perioddays" : 30,
-      "deleted" : false,
-      "esimSponsor" : 1,
-      "cost" : 66.0,
-      "uiStartAvailablePeriod" : "2022-03-01T17:18:00",
-      "uiEndAvailibilityPeriod" : "2022-06-15T17:18:00",
-      "uiVisible" : true,
-      "userUiName" : "Spain_10Gb"
-    }, {
-      "sponsors" : {
-        "sponsorid" : 1,
-        "sponsorname" : "Test-Spons-Display",
-        "displayname" : "Test-Spons-Display"
-      },
-      "reseller" : {
-        "resellerid" : 1,
-        "resellername" : "Test Reseller"
-      },
-      "rdbLocationZones" : {
-        "locationzoneid" : 2,
-        "locationzonename" : "Test - Belgium"
-      },
-      "prepaidpackagetemplateid" : 1224,
-      "prepaidpackagetemplatename" : "Denis Belgium 20 GB",
-      "resellerid" : 1,
-      "priority" : 1,
-      "locationzoneid" : 2,
-      "databyte" : 21474836480,
-      "mocsecond" : 3600,
-      "mtcsecond" : 3600,
-      "mosmsnumber" : 100,
-      "mtsmsnumber" : 200,
-      "perioddays" : 30,
-      "deleted" : false,
-      "esimSponsor" : 1,
-      "cost" : 24.0,
-      "uiStartAvailablePeriod" : "2022-03-01T17:18:00",
-      "uiEndAvailibilityPeriod" : "2022-06-15T17:18:00",
-      "uiVisible" : false,
-      "userUiName" : "Denis_Belgium_20GB"
-    }, {
-      "sponsors" : {
-        "sponsorid" : 1,
-        "sponsorname" : "Test-Spons-Display",
-        "displayname" : "Test-Spons-Display"
-      },
-      "reseller" : {
-        "resellerid" : 1,
-        "resellername" : "Test Reseller"
+        "resellername" : "PDEL Reseller"
       },
       "rdbLocationZones" : {
         "locationzoneid" : 18,
-        "locationzonename" : "Test - France"
+        "locationzonename" : "PDEL - France"
       },
       "prepaidpackagetemplateid" : 1225,
-      "prepaidpackagetemplatename" : "France Test Denis New",
+      "prepaidpackagetemplatename" : "France PDEL Denis New",
       "resellerid" : 1,
       "priority" : 1,
       "locationzoneid" : 18,
+      "destinationzoneid" : 1,
       "databyte" : 21474836480,
       "mocsecond" : 3600,
       "mtcsecond" : 3600,
@@ -1572,8 +1472,9 @@ You can also send the request without any search keys. In this case the request 
       "deleted" : false,
       "esimSponsor" : 1,
       "cost" : 25.0,
+      "uiStartAvailablePeriod" : "2022-06-20T16:47:41",
       "uiVisible" : false,
-      "userUiName" : "France Test Denis New 20Gb"
+      "userUiName" : "France PDEL Denis New 20Gb"
     } ]
   }
 }
@@ -1758,8 +1659,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2023-08-01T11:24:46.303035",
-      "end" : "2023-08-31T11:24:46.30305"
+      "start" : "2023-08-01T15:33:31.332622",
+      "end" : "2023-08-31T15:33:31.332637"
     }
   }
 }
@@ -1966,39 +1867,111 @@ To identify the subscriber, you can use one of the following IDs:
   },
   "listSubscriberPrepaidPackages" : {
     "packages" : [ {
+      "rdbDestinationZones" : {
+        "destinationzoneid" : 1,
+        "destinationzonename" : "PDEL Test - 7"
+      },
       "rdbLocationZones" : {
-        "locationzoneid" : 1105,
-        "locationzonename" : "UNITED STATES_SP01_5G_20220617"
+        "locationzoneid" : 27,
+        "locationzonename" : "PDEL - Italy"
       },
       "packageTemplate" : {
-        "prepaidpackagetemplateid" : 1132,
-        "prepaidpackagetemplatename" : "UNITED STATES_SP01_5G_20220617"
+        "prepaidpackagetemplateid" : 30,
+        "prepaidpackagetemplatename" : "PDEL - Italy 20Gb"
       },
-      "subscriberprepaidpackageid" : 38,
-      "subscriberid" : 3238,
+      "subscriberprepaidpackageid" : 83,
+      "subscriberid" : 4,
       "priority" : 1,
-      "locationzoneid" : 1105,
-      "pckdatabyte" : 6442450944,
+      "locationzoneid" : 27,
+      "destinationzoneid" : 1,
+      "pckdatabyte" : 21474836480,
+      "pckmocsecond" : 100,
+      "pckmtcsecond" : 100,
+      "pckmosmsnumber" : 500,
+      "pckmtsmsnumber" : 500,
+      "tsassigned" : "2022-10-13T15:04:43",
+      "tsactivationutc" : "2023-02-22T09:52:53",
+      "tsexpirationutc" : "2023-09-30T12:09:04",
+      "useddatabyte" : 30971520,
+      "usedmocsecond" : 100,
+      "usedmocvoipsecond" : 75,
+      "usedmtcsecond" : 0,
+      "usedmosmsnumber" : 0,
+      "usedmtsmsnumber" : 0,
+      "perioddays" : 30,
+      "cost" : 23.0,
+      "templateId" : 30,
+      "esimId" : 64612,
+      "active" : true
+    }, {
+      "rdbLocationZones" : {
+        "locationzoneid" : 27,
+        "locationzonename" : "PDEL - Italy"
+      },
+      "packageTemplate" : {
+        "prepaidpackagetemplateid" : 30,
+        "prepaidpackagetemplatename" : "PDEL - Italy 20Gb"
+      },
+      "subscriberprepaidpackageid" : 989,
+      "subscriberid" : 4,
+      "priority" : 2,
+      "locationzoneid" : 27,
+      "pckdatabyte" : 21474836480,
       "pckmocsecond" : 0,
       "pckmtcsecond" : 0,
       "pckmosmsnumber" : 0,
       "pckmtsmsnumber" : 0,
-      "tsassigned" : "2022-08-16T07:45:31",
-      "tsactivationutc" : "2022-08-16T07:45:31",
-      "tsexpirationutc" : "2022-11-14T07:45:31",
-      "useddatabyte" : 1073741824,
+      "tsassigned" : "2022-10-13T15:04:43",
+      "tsactivationutc" : "2023-02-22T09:52:53",
+      "tsexpirationutc" : "2023-07-27T08:02:54",
+      "useddatabyte" : 10971520,
       "usedmocsecond" : 0,
       "usedmocvoipsecond" : 0,
       "usedmtcsecond" : 0,
       "usedmosmsnumber" : 0,
       "usedmtsmsnumber" : 0,
-      "perioddays" : 90,
-      "cost" : 14.0,
-      "templateId" : 1132,
-      "esimId" : 30919,
+      "perioddays" : 30,
+      "cost" : 23.0,
+      "templateId" : 30,
+      "esimId" : 64612,
+      "active" : false
+    }, {
+      "rdbDestinationZones" : {
+        "destinationzoneid" : 5,
+        "destinationzonename" : "Denis Destination list"
+      },
+      "rdbLocationZones" : {
+        "locationzoneid" : 27,
+        "locationzonename" : "PDEL - Italy"
+      },
+      "packageTemplate" : {
+        "prepaidpackagetemplateid" : 2214,
+        "prepaidpackagetemplatename" : "Denis Italy"
+      },
+      "subscriberprepaidpackageid" : 1007,
+      "subscriberid" : 4,
+      "priority" : 3,
+      "locationzoneid" : 27,
+      "destinationzoneid" : 5,
+      "pckdatabyte" : 1073741824,
+      "pckmocsecond" : 0,
+      "pckmtcsecond" : 0,
+      "pckmosmsnumber" : 0,
+      "pckmtsmsnumber" : 0,
+      "tsassigned" : "2023-08-01T13:25:08",
+      "useddatabyte" : 0,
+      "usedmocsecond" : 0,
+      "usedmocvoipsecond" : 0,
+      "usedmtcsecond" : 0,
+      "usedmosmsnumber" : 0,
+      "usedmtsmsnumber" : 0,
+      "perioddays" : 10,
+      "cost" : 9.99,
+      "templateId" : 2214,
+      "esimId" : 64612,
       "active" : true
     } ],
-    "callUseSingleCounter" : true
+    "callUseSingleCounter" : false
   }
 }
 ```
