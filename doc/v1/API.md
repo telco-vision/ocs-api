@@ -1212,7 +1212,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2023-07-30T10:11:08.757596"
+    "newDateUtc" : "2023-08-01T09:48:23.612163"
   }
 }
 ```
@@ -1299,22 +1299,13 @@ You can also send the request without any search keys. In this case the request 
         "displayname" : "Test-Spons-Display"
       },
       "reseller" : {
-        "accounts" : [ ],
-        "internationalPlans" : [ ],
-        "pckPrePaidPackageTemplates" : [ ],
-        "rdbDestinationZones" : [ ],
-        "rdbLocationZones" : [ ],
-        "resellerImsiRanges" : [ ],
-        "resellerMsisdnRanges" : [ ],
         "resellerid" : 1,
         "resellername" : "Test Reseller"
       },
       "rdbLocationZones" : {
-        "rdbLocationZoneRules" : [ ],
         "locationzoneid" : 5,
         "locationzonename" : "Test - Benelux"
       },
-      "pckSubPrePaidPackagesDataSlicesTmpl" : [ ],
       "prepaidpackagetemplateid" : 1153,
       "prepaidpackagetemplatename" : "Test - Benelux 17Gb",
       "resellerid" : 1,
@@ -1358,22 +1349,13 @@ You can also send the request without any search keys. In this case the request 
         "displayname" : "Test-Spons-Display"
       },
       "reseller" : {
-        "accounts" : [ ],
-        "internationalPlans" : [ ],
-        "pckPrePaidPackageTemplates" : [ ],
-        "rdbDestinationZones" : [ ],
-        "rdbLocationZones" : [ ],
-        "resellerImsiRanges" : [ ],
-        "resellerMsisdnRanges" : [ ],
         "resellerid" : 1,
         "resellername" : "Test Reseller"
       },
       "rdbLocationZones" : {
-        "rdbLocationZoneRules" : [ ],
         "locationzoneid" : 5,
         "locationzonename" : "Test - Benelux"
       },
-      "pckSubPrePaidPackagesDataSlicesTmpl" : [ ],
       "prepaidpackagetemplateid" : 1153,
       "prepaidpackagetemplatename" : "Test - Benelux 17Gb",
       "resellerid" : 1,
@@ -1395,22 +1377,13 @@ You can also send the request without any search keys. In this case the request 
         "displayname" : "Test-Spons-Display"
       },
       "reseller" : {
-        "accounts" : [ ],
-        "internationalPlans" : [ ],
-        "pckPrePaidPackageTemplates" : [ ],
-        "rdbDestinationZones" : [ ],
-        "rdbLocationZones" : [ ],
-        "resellerImsiRanges" : [ ],
-        "resellerMsisdnRanges" : [ ],
         "resellerid" : 1,
         "resellername" : "Test Reseller"
       },
       "rdbLocationZones" : {
-        "rdbLocationZoneRules" : [ ],
         "locationzoneid" : 2,
         "locationzonename" : "Test - Belgium"
       },
-      "pckSubPrePaidPackagesDataSlicesTmpl" : [ ],
       "prepaidpackagetemplateid" : 1154,
       "prepaidpackagetemplatename" : "Test - Belgium 15GB",
       "resellerid" : 1,
@@ -1432,22 +1405,13 @@ You can also send the request without any search keys. In this case the request 
         "displayname" : "Test-Spons-Display"
       },
       "reseller" : {
-        "accounts" : [ ],
-        "internationalPlans" : [ ],
-        "pckPrePaidPackageTemplates" : [ ],
-        "rdbDestinationZones" : [ ],
-        "rdbLocationZones" : [ ],
-        "resellerImsiRanges" : [ ],
-        "resellerMsisdnRanges" : [ ],
         "resellerid" : 1,
         "resellername" : "Test Reseller"
       },
       "rdbLocationZones" : {
-        "rdbLocationZoneRules" : [ ],
         "locationzoneid" : 5,
         "locationzonename" : "Test - Benelux"
       },
-      "pckSubPrePaidPackagesDataSlicesTmpl" : [ ],
       "prepaidpackagetemplateid" : 1155,
       "prepaidpackagetemplatename" : "Test - Benelux 15Gb",
       "resellerid" : 1,
@@ -1469,22 +1433,13 @@ You can also send the request without any search keys. In this case the request 
         "displayname" : "Test-Spons-Display"
       },
       "reseller" : {
-        "accounts" : [ ],
-        "internationalPlans" : [ ],
-        "pckPrePaidPackageTemplates" : [ ],
-        "rdbDestinationZones" : [ ],
-        "rdbLocationZones" : [ ],
-        "resellerImsiRanges" : [ ],
-        "resellerMsisdnRanges" : [ ],
         "resellerid" : 1,
         "resellername" : "Test Reseller"
       },
       "rdbLocationZones" : {
-        "rdbLocationZoneRules" : [ ],
         "locationzoneid" : 2,
         "locationzonename" : "Test - Belgium"
       },
-      "pckSubPrePaidPackagesDataSlicesTmpl" : [ ],
       "prepaidpackagetemplateid" : 1156,
       "prepaidpackagetemplatename" : "Test - Belgium 10GB",
       "resellerid" : 1,
@@ -1506,22 +1461,13 @@ You can also send the request without any search keys. In this case the request 
         "displayname" : "Test-Spons-Display"
       },
       "reseller" : {
-        "accounts" : [ ],
-        "internationalPlans" : [ ],
-        "pckPrePaidPackageTemplates" : [ ],
-        "rdbDestinationZones" : [ ],
-        "rdbLocationZones" : [ ],
-        "resellerImsiRanges" : [ ],
-        "resellerMsisdnRanges" : [ ],
         "resellerid" : 1,
         "resellername" : "Test Reseller"
       },
       "rdbLocationZones" : {
-        "rdbLocationZoneRules" : [ ],
         "locationzoneid" : 2,
         "locationzonename" : "Test - Belgium"
       },
-      "pckSubPrePaidPackagesDataSlicesTmpl" : [ ],
       "prepaidpackagetemplateid" : 1165,
       "prepaidpackagetemplatename" : "Test - Belgium 10GB NEW",
       "resellerid" : 1,
@@ -1543,22 +1489,13 @@ You can also send the request without any search keys. In this case the request 
         "displayname" : "Test-Spons-Display"
       },
       "reseller" : {
-        "accounts" : [ ],
-        "internationalPlans" : [ ],
-        "pckPrePaidPackageTemplates" : [ ],
-        "rdbDestinationZones" : [ ],
-        "rdbLocationZones" : [ ],
-        "resellerImsiRanges" : [ ],
-        "resellerMsisdnRanges" : [ ],
         "resellerid" : 1,
         "resellername" : "Test Reseller"
       },
       "rdbLocationZones" : {
-        "rdbLocationZoneRules" : [ ],
         "locationzoneid" : 21,
         "locationzonename" : "Test - Spain"
       },
-      "pckSubPrePaidPackagesDataSlicesTmpl" : [ ],
       "prepaidpackagetemplateid" : 1204,
       "prepaidpackagetemplatename" : "Test - Spain 10Gb",
       "resellerid" : 1,
@@ -1580,22 +1517,13 @@ You can also send the request without any search keys. In this case the request 
         "displayname" : "Test-Spons-Display"
       },
       "reseller" : {
-        "accounts" : [ ],
-        "internationalPlans" : [ ],
-        "pckPrePaidPackageTemplates" : [ ],
-        "rdbDestinationZones" : [ ],
-        "rdbLocationZones" : [ ],
-        "resellerImsiRanges" : [ ],
-        "resellerMsisdnRanges" : [ ],
         "resellerid" : 1,
         "resellername" : "Test Reseller"
       },
       "rdbLocationZones" : {
-        "rdbLocationZoneRules" : [ ],
         "locationzoneid" : 2,
         "locationzonename" : "Test - Belgium"
       },
-      "pckSubPrePaidPackagesDataSlicesTmpl" : [ ],
       "prepaidpackagetemplateid" : 1224,
       "prepaidpackagetemplatename" : "Denis Belgium 20 GB",
       "resellerid" : 1,
@@ -1621,22 +1549,13 @@ You can also send the request without any search keys. In this case the request 
         "displayname" : "Test-Spons-Display"
       },
       "reseller" : {
-        "accounts" : [ ],
-        "internationalPlans" : [ ],
-        "pckPrePaidPackageTemplates" : [ ],
-        "rdbDestinationZones" : [ ],
-        "rdbLocationZones" : [ ],
-        "resellerImsiRanges" : [ ],
-        "resellerMsisdnRanges" : [ ],
         "resellerid" : 1,
         "resellername" : "Test Reseller"
       },
       "rdbLocationZones" : {
-        "rdbLocationZoneRules" : [ ],
         "locationzoneid" : 18,
         "locationzonename" : "Test - France"
       },
-      "pckSubPrePaidPackagesDataSlicesTmpl" : [ ],
       "prepaidpackagetemplateid" : 1225,
       "prepaidpackagetemplatename" : "France Test Denis New",
       "resellerid" : 1,
@@ -1813,8 +1732,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2023-07-30T10:11:08.771223",
-      "end" : "2023-08-29T10:11:08.771237"
+      "start" : "2023-08-01T09:48:23.655296",
+      "end" : "2023-08-31T09:48:23.655316"
     }
   }
 }
@@ -2022,13 +1941,10 @@ To identify the subscriber, you can use one of the following IDs:
   "listSubscriberPrepaidPackages" : {
     "packages" : [ {
       "rdbLocationZones" : {
-        "rdbLocationZoneRules" : [ ],
         "locationzoneid" : 1105,
         "locationzonename" : "UNITED STATES_SP01_5G_20220617"
       },
-      "pckSubPrePaidPackagesDataSlices" : [ ],
       "packageTemplate" : {
-        "pckSubPrePaidPackagesDataSlicesTmpl" : [ ],
         "prepaidpackagetemplateid" : 1132,
         "prepaidpackagetemplatename" : "UNITED STATES_SP01_5G_20220617"
       },
@@ -2078,7 +1994,6 @@ To identify the subscriber, you can use one of the following IDs:
     "msg" : "OK"
   },
   "listSubscriberPrepaidPackages" : {
-    "packages" : [ ],
     "callUseSingleCounter" : false
   }
 }
@@ -2106,7 +2021,6 @@ To identify the subscriber, you can use one of the following IDs:
     "msg" : "OK"
   },
   "listSubscriberPrepaidPackages" : {
-    "packages" : [ ],
     "callUseSingleCounter" : false
   }
 }
@@ -2134,7 +2048,6 @@ To identify the subscriber, you can use one of the following IDs:
     "msg" : "OK"
   },
   "listSubscriberPrepaidPackages" : {
-    "packages" : [ ],
     "callUseSingleCounter" : false
   }
 }
@@ -2162,7 +2075,6 @@ To identify the subscriber, you can use one of the following IDs:
     "msg" : "OK"
   },
   "listSubscriberPrepaidPackages" : {
-    "packages" : [ ],
     "callUseSingleCounter" : false
   }
 }
@@ -2190,7 +2102,6 @@ To identify the subscriber, you can use one of the following IDs:
     "msg" : "OK"
   },
   "listSubscriberPrepaidPackages" : {
-    "packages" : [ ],
     "callUseSingleCounter" : false
   }
 }
@@ -2232,19 +2143,10 @@ ones of a specific reseller.
   },
   "listResellerTariff" : {
     "tariff" : [ {
-      "roamingPlanRules" : [ ],
       "resellers" : {
-        "accounts" : [ ],
-        "internationalPlans" : [ ],
-        "pckPrePaidPackageTemplates" : [ ],
-        "rdbDestinationZones" : [ ],
-        "rdbLocationZones" : [ ],
-        "resellerImsiRanges" : [ ],
-        "resellerMsisdnRanges" : [ ],
         "resellerid" : 1,
         "resellername" : "Test Reseller"
       },
-      "sponsors" : [ ],
       "roamingplanid" : 1,
       "roamingplanname" : "Test - ResellerAccount",
       "defaultoutgoingvoice" : 0.0,
@@ -2277,19 +2179,10 @@ ones of a specific reseller.
   },
   "listResellerTariff" : {
     "tariff" : [ {
-      "roamingPlanRules" : [ ],
       "resellers" : {
-        "accounts" : [ ],
-        "internationalPlans" : [ ],
-        "pckPrePaidPackageTemplates" : [ ],
-        "rdbDestinationZones" : [ ],
-        "rdbLocationZones" : [ ],
-        "resellerImsiRanges" : [ ],
-        "resellerMsisdnRanges" : [ ],
         "resellerid" : 1,
         "resellername" : "Test Reseller"
       },
-      "sponsors" : [ ],
       "roamingplanid" : 1,
       "roamingplanname" : "Test - ResellerAccount",
       "defaultoutgoingvoice" : 0.0,
@@ -2336,19 +2229,10 @@ its subscribers. You can list them all, or just the ones of a specific reseller.
   },
   "listSubscriberTariff" : {
     "tariff" : [ {
-      "roamingPlanRules" : [ ],
       "resellers" : {
-        "accounts" : [ ],
-        "internationalPlans" : [ ],
-        "pckPrePaidPackageTemplates" : [ ],
-        "rdbDestinationZones" : [ ],
-        "rdbLocationZones" : [ ],
-        "resellerImsiRanges" : [ ],
-        "resellerMsisdnRanges" : [ ],
         "resellerid" : 1,
         "resellername" : "Test Reseller"
       },
-      "sponsors" : [ ],
       "roamingplanid" : 4,
       "roamingplanname" : "Test - Account",
       "defaultoutgoingvoice" : 0.0,
@@ -2361,19 +2245,10 @@ its subscribers. You can list them all, or just the ones of a specific reseller.
       "isusedefaultprices" : false,
       "tariffType" : "SUBSCRIBER"
     }, {
-      "roamingPlanRules" : [ ],
       "resellers" : {
-        "accounts" : [ ],
-        "internationalPlans" : [ ],
-        "pckPrePaidPackageTemplates" : [ ],
-        "rdbDestinationZones" : [ ],
-        "rdbLocationZones" : [ ],
-        "resellerImsiRanges" : [ ],
-        "resellerMsisdnRanges" : [ ],
         "resellerid" : 1,
         "resellername" : "Test Reseller"
       },
-      "sponsors" : [ ],
       "roamingplanid" : 10,
       "roamingplanname" : "Test - For Subs",
       "defaultoutgoingvoice" : 0.0,
@@ -2406,19 +2281,10 @@ its subscribers. You can list them all, or just the ones of a specific reseller.
   },
   "listSubscriberTariff" : {
     "tariff" : [ {
-      "roamingPlanRules" : [ ],
       "resellers" : {
-        "accounts" : [ ],
-        "internationalPlans" : [ ],
-        "pckPrePaidPackageTemplates" : [ ],
-        "rdbDestinationZones" : [ ],
-        "rdbLocationZones" : [ ],
-        "resellerImsiRanges" : [ ],
-        "resellerMsisdnRanges" : [ ],
         "resellerid" : 1,
         "resellername" : "Test Reseller"
       },
-      "sponsors" : [ ],
       "roamingplanid" : 4,
       "roamingplanname" : "Test - Account",
       "defaultoutgoingvoice" : 0.0,
@@ -2431,19 +2297,10 @@ its subscribers. You can list them all, or just the ones of a specific reseller.
       "isusedefaultprices" : false,
       "tariffType" : "SUBSCRIBER"
     }, {
-      "roamingPlanRules" : [ ],
       "resellers" : {
-        "accounts" : [ ],
-        "internationalPlans" : [ ],
-        "pckPrePaidPackageTemplates" : [ ],
-        "rdbDestinationZones" : [ ],
-        "rdbLocationZones" : [ ],
-        "resellerImsiRanges" : [ ],
-        "resellerMsisdnRanges" : [ ],
         "resellerid" : 1,
         "resellername" : "Test Reseller"
       },
-      "sponsors" : [ ],
       "roamingplanid" : 10,
       "roamingplanname" : "Test - For Subs",
       "defaultoutgoingvoice" : 0.0,
@@ -2752,8 +2609,8 @@ Usage type:
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2023-07-30",
-      "end" : "2023-07-25"
+      "start" : "2023-08-01",
+      "end" : "2023-07-27"
     }
   }
 }
@@ -3046,8 +2903,8 @@ Usage type:
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-07-30",
-      "end" : "2023-07-25"
+      "start" : "2023-08-01",
+      "end" : "2023-07-27"
     }
   }
 }
@@ -3076,8 +2933,8 @@ Usage type:
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2023-07-30",
-      "end" : "2023-07-25"
+      "start" : "2023-08-01",
+      "end" : "2023-07-27"
     }
   }
 }
@@ -3106,8 +2963,8 @@ Usage type:
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2023-07-30",
-      "end" : "2023-07-25"
+      "start" : "2023-08-01",
+      "end" : "2023-07-27"
     }
   }
 }
@@ -3136,8 +2993,8 @@ Usage type:
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-07-30",
-      "end" : "2023-07-25"
+      "start" : "2023-08-01",
+      "end" : "2023-07-27"
     }
   }
 }
@@ -3166,8 +3023,8 @@ Usage type:
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2023-07-30",
-      "end" : "2023-07-25"
+      "start" : "2023-08-01",
+      "end" : "2023-07-27"
     }
   }
 }
@@ -3295,8 +3152,7 @@ is delimited with a start date (included) and an end date (included). The period
         "operator" : "Cellcom Israel Ltd ",
         "userLocationInfoSAC" : "49814"
       } ]
-    },
-    "camelAnswer" : { }
+    }
   }
 }
 ```
