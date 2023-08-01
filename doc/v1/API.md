@@ -32,6 +32,8 @@
 
 [3.4 listSubscriberPrepaidPackages](#34-listsubscriberprepaidpackages)
 
+[3.5 listDestinationListPrefix](#35-listdestinationlistprefix)
+
 ## [4 Tariff](#41-listresellertariff)
 
 [4.1 listResellerTariff](#41-listresellertariff)
@@ -1212,7 +1214,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2023-08-01T09:48:23.612163"
+    "newDateUtc" : "2023-08-01T11:24:46.267317"
   }
 }
 ```
@@ -1624,7 +1626,31 @@ You can also send the request without any search keys. In this case the request 
 - Check answer in previous request
 
 
-### 3.1.5 No search keys
+### 3.1.5 By destination list
+#### Request
+```json
+{
+  "listPrepaidPackageTemplate" : {
+    "destinationListId" : 1207
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Check answer in previous request
+
+
+### 3.1.6 No search keys
 #### Request
 ```json
 {
@@ -1732,8 +1758,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2023-08-01T09:48:23.655296",
-      "end" : "2023-08-31T09:48:23.655316"
+      "start" : "2023-08-01T11:24:46.303035",
+      "end" : "2023-08-31T11:24:46.30305"
     }
   }
 }
@@ -2114,6 +2140,39 @@ To identify the subscriber, you can use one of the following IDs:
 ### Remark(s)
 
 - This request is best used with the subscriber ID, if you already have it, use it.
+
+
+## 3.5 listDestinationListPrefix
+
+### Description
+This request can be used to list the prefix(es) of a specific destination list.
+
+
+### Request
+```json
+{
+  "listDestinationListPrefix" : 1
+}
+```
+### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "listDestinationListPrefix" : {
+    "prefixes" : [ "12", "32", "7" ],
+    "resellerId" : 1,
+    "listId" : 1,
+    "listName" : "Test - 7"
+  }
+}
+```
+### Remark(s)
+
+- The numeric value of `listDestinationListPrefix` is the id of the destination list
 
 
 # 4. Tariff
