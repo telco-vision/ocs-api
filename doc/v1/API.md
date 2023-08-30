@@ -176,10 +176,9 @@ or all accounts of all your reseller.
 ## 1.2 modifyAccountBalance
 
 ### Description
-This request can be used to adapt the balance of an account. The amount you need to provide in the
-request will be added to the current balance. You can provide a negative amount and the balance will
-be decreased. Please note that balance cannot become negative, in such a case the request will be
-rejected with an error.
+This request can be used to adapt the balance of an account. The balance can either:
+- Be adapted: You can add or remove a certain amount from the balance. The amount you need to provide in the request will be added to the current balance.  You can provide a negative amount and the balance will be decreased. Please note that balance  cannot become negative, in such a case the balance will be set to 0.
+- Set to a new value: In this case you provide the new amount you want to set the balance to.
 
 This request is logged in the system DB and you can see them in the UI, in the `Account` -> `Transaction` tab.
 
@@ -189,10 +188,12 @@ This request is logged in the system DB and you can see them in the UI, in the `
 |---------|--------|-----------|
 |accountId|Mandatory|The ID of the account to modify|
 |amount|Mandatory|The amount to add to the current balance|
+|setBalance|Optional|true => balance will be set to provided amount, false => balance will be adapted|
 |description|Optional|A description giving information about the reason of this balance adjustment|
 
 
-### Request
+### 1.2.1 Update balance
+#### Request
 ```json
 {
   "modifyAccountBalance" : {
@@ -202,7 +203,29 @@ This request is logged in the system DB and you can see them in the UI, in the `
   }
 }
 ```
-### Answer
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 1.2.2 Set balance
+#### Request
+```json
+{
+  "modifyAccountBalance" : {
+    "accountId" : 132,
+    "amount" : 123.25,
+    "description" : "Optional description",
+    "setBalance" : true
+  }
+}
+```
+#### Answer
 
 ```json
 {
@@ -1107,10 +1130,9 @@ Note that the statuses are sorted by `start` date in descending order (most rece
 ## 2.5 modifySubscriberBalance
 
 ### Description
-This request can be used to adapt the balance of a subscriber. The amount you need to provide in the
-request will be added to the current balance. You can provide a negative amount and the balance will
-be decreased. Please note that balance cannot become negative, in such a case the request will be
-rejected with an error.
+This request can be used to adapt the balance of a subscriber. The balance can either:
+- Be adapted: You can add or remove a certain amount from the balance. The amount you need to provide in the request will be added to the current balance.  You can provide a negative amount and the balance will be decreased. Please note that balance  cannot become negative, in such a case the balance will be set to 0.
+- Set to a new value: In this case you provide the new amount you want to set the balance to.
 
 This request is logged in the system DB and you can see them in the UI, in the `Subscriber` -> `Transaction` tab.
 
@@ -1120,10 +1142,12 @@ This request is logged in the system DB and you can see them in the UI, in the `
 |---------|--------|-----------|
 |subscriber|Mandatory|One of the subscriber identifier see `Subscriber identifiers` in [OcsObjects.md](OcsObjects.md)|
 |amount|Mandatory|The amount to add to the current balance|
+|setBalance|Optional|true => balance will be set to provided amount, false => balance will be adapted|
 |description|Optional|A description giving information about the reason of this balance adjustment|
 
 
-### Request
+### 2.5.1 Update balance
+#### Request
 ```json
 {
   "modifySubscriberBalance" : {
@@ -1135,7 +1159,31 @@ This request is logged in the system DB and you can see them in the UI, in the `
   }
 }
 ```
-### Answer
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 2.5.2 Set balance
+#### Request
+```json
+{
+  "modifySubscriberBalance" : {
+    "subscriber" : {
+      "subscriberId" : 123
+    },
+    "amount" : -123.25,
+    "description" : "Optional description",
+    "setBalance" : true
+  }
+}
+```
+#### Answer
 
 ```json
 {
@@ -1214,7 +1262,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2023-08-08T09:20:13.338751"
+    "newDateUtc" : "2023-08-30T16:30:39.798691"
   }
 }
 ```
@@ -1659,8 +1707,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2023-08-08T09:20:13.380675",
-      "end" : "2023-09-07T09:20:13.380697"
+      "start" : "2023-08-30T16:30:39.841466",
+      "end" : "2023-09-29T16:30:39.841486"
     }
   }
 }
@@ -2641,8 +2689,8 @@ Usage type:
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2023-08-08",
-      "end" : "2023-08-03"
+      "start" : "2023-08-30",
+      "end" : "2023-08-25"
     }
   }
 }
@@ -2935,8 +2983,8 @@ Usage type:
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-08-08",
-      "end" : "2023-08-03"
+      "start" : "2023-08-30",
+      "end" : "2023-08-25"
     }
   }
 }
@@ -2965,8 +3013,8 @@ Usage type:
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2023-08-08",
-      "end" : "2023-08-03"
+      "start" : "2023-08-30",
+      "end" : "2023-08-25"
     }
   }
 }
@@ -2995,8 +3043,8 @@ Usage type:
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2023-08-08",
-      "end" : "2023-08-03"
+      "start" : "2023-08-30",
+      "end" : "2023-08-25"
     }
   }
 }
@@ -3025,8 +3073,8 @@ Usage type:
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-08-08",
-      "end" : "2023-08-03"
+      "start" : "2023-08-30",
+      "end" : "2023-08-25"
     }
   }
 }
@@ -3055,8 +3103,8 @@ Usage type:
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2023-08-08",
-      "end" : "2023-08-03"
+      "start" : "2023-08-30",
+      "end" : "2023-08-25"
     }
   }
 }
