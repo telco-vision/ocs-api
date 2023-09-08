@@ -48,11 +48,12 @@ an "ES2+ Notification". In such a case, the new status of the eSIM is sent to th
 
 The HTTP request received by the customer will contain a JSON object with the following attributes:
 
-| Attribute | Presence | Description                                   |
-|-----------|----------|-----------------------------------------------|
-| iccid     | MAND.    | The ICCID of the subscriber.                  |
-| imsi      | MAND.    | The IMSI of the subscriber.                   |
-| status    | MAND.    | The new status of the eSIM if the subscriber. |
+| Attribute | Presence | Description                                                        |
+|-----------|----------|--------------------------------------------------------------------|
+| iccid     | MAND.    | The ICCID of the subscriber.                                       |
+| imsi      | MAND.    | The IMSI of the subscriber.                                        |
+| subsId    | MAND.    | The internal ID of the subscriber that can be used in the OCS API. |
+| status    | MAND.    | The new status of the eSIM if the subscriber.                      |
 
 Here is an example of notification:
 
@@ -60,6 +61,7 @@ Here is an example of notification:
 {
   "iccid" : "12334567891234546",
   "imsi" : "123456789123456",
+  "subsId":4,
   "status" : "Enable"
 }
 ```
