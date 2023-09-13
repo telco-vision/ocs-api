@@ -1264,7 +1264,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2023-09-13T15:54:56.498066"
+    "newDateUtc" : "2023-09-13T15:58:37.788731"
   }
 }
 ```
@@ -1709,8 +1709,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2023-09-13T15:54:56.533472",
-      "end" : "2023-10-13T15:54:56.533487"
+      "start" : "2023-09-13T15:58:37.821972",
+      "end" : "2023-10-13T15:58:37.821987"
     }
   }
 }
@@ -2689,7 +2689,7 @@ The request takes as input the reseller ID of the customer.
 ```
 ### Remark(s)
 
-- The numeric value of `listTariffRule` is the id of the tariff
+- The numeric value of `getCustomerTariff` is the id of the reseller of the customer
 
 
 # 5. Statistics
