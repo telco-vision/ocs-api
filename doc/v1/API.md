@@ -42,6 +42,8 @@
 
 [4.3 listTariffRule](#43-listtariffrule)
 
+[4.4 getCustomerTariff](#44-getcustomertariff)
+
 ## [5 Statistics](#51-getsubscriberactiveperiod)
 
 [5.1 getSubscriberActivePeriod](#51-getsubscriberactiveperiod)
@@ -1262,7 +1264,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2023-09-08T11:28:55.184244"
+    "newDateUtc" : "2023-09-13T15:54:56.498066"
   }
 }
 ```
@@ -1707,8 +1709,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2023-09-08T11:28:55.227288",
-      "end" : "2023-10-08T11:28:55.227302"
+      "start" : "2023-09-13T15:54:56.533472",
+      "end" : "2023-10-13T15:54:56.533487"
     }
   }
 }
@@ -2501,6 +2503,195 @@ This request can be used to list the rules (costs) of a specific tariff.
 - The numeric value of `listTariffRule` is the id of the tariff
 
 
+## 4.4 getCustomerTariff
+
+### Description
+This request can be used to list the rules (costs) of the customer tariff. The tariff that is used
+to charge the customer.
+
+The request takes as input the reseller ID of the customer.
+
+
+### Request
+```json
+{
+  "getCustomerTariff" : 1
+}
+```
+### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "listTariffRule" : {
+    "rule" : [ {
+      "operator" : {
+        "networkId" : 9,
+        "continent" : "Europe",
+        "countryCode" : 355,
+        "countryName" : "Albania",
+        "countryIso2" : "al",
+        "utcOffset" : "+01:00",
+        "operatorName" : "TELEKOM ALBANIA SH A",
+        "mccMncs" : [ {
+          "mcc" : "276",
+          "mnc" : "01"
+        } ],
+        "tadigs" : [ "ALBAM" ]
+      },
+      "currency" : {
+        "currencyid" : 1,
+        "currencycode" : "EUR",
+        "currencyname" : "Euro"
+      },
+      "sponsor" : {
+        "sponsorid" : 101,
+        "imsiprefix" : 24801,
+        "pricingplanid" : 101,
+        "sponsorname" : "Telia Estonia",
+        "deleted" : false,
+        "displayname" : "SP01"
+      },
+      "roamingplanruleid" : 9794,
+      "roamingplanid" : 1,
+      "networkid" : 9,
+      "sponsorid" : 101,
+      "sponsoridx" : 101,
+      "active" : true,
+      "mocallrate" : 0.429,
+      "mosmsrate" : 0.033,
+      "datarate" : 0.0165,
+      "currencyid" : 1,
+      "startdate" : "2021-12-20T00:00:00",
+      "isDiscounted" : true,
+      "hidden" : false,
+      "dailyCap" : false
+    }, {
+      "operator" : {
+        "networkId" : 79,
+        "continent" : "Europe",
+        "countryCode" : 32,
+        "countryName" : "Belgium",
+        "countryIso2" : "be",
+        "utcOffset" : "+01:00",
+        "operatorName" : "Proximus PLC",
+        "mccMncs" : [ {
+          "mcc" : "206",
+          "mnc" : "01"
+        } ],
+        "tadigs" : [ "BELTB" ]
+      },
+      "currency" : {
+        "currencyid" : 1,
+        "currencycode" : "EUR",
+        "currencyname" : "Euro"
+      },
+      "roamingplanruleid" : 7198,
+      "roamingplanid" : 1,
+      "networkid" : 79,
+      "sponsoridx" : -1,
+      "active" : true,
+      "mocallrate" : 2.0,
+      "mtcallrate" : 2.0,
+      "mosmsrate" : 2.0,
+      "mtsmsrate" : 2.0,
+      "datarate" : 2.0,
+      "currencyid" : 1,
+      "startdate" : "2021-11-16T08:16:49",
+      "isDiscounted" : true,
+      "hidden" : false,
+      "dailyCap" : false
+    }, {
+      "operator" : {
+        "networkId" : 477,
+        "continent" : "Europe",
+        "countryCode" : 39,
+        "countryName" : "Italy",
+        "countryIso2" : "it",
+        "utcOffset" : "+01:00",
+        "operatorName" : "H3G S p A ",
+        "mccMncs" : [ {
+          "mcc" : "222",
+          "mnc" : "99"
+        } ],
+        "tadigs" : [ "ITAH3" ]
+      },
+      "currency" : {
+        "currencyid" : 1,
+        "currencycode" : "EUR",
+        "currencyname" : "Euro"
+      },
+      "roamingplanruleid" : 4,
+      "roamingplanid" : 1,
+      "networkid" : 477,
+      "sponsoridx" : -1,
+      "active" : true,
+      "mocallrate" : 2.0,
+      "mtcallrate" : 2.0,
+      "mosmsrate" : 2.0,
+      "mtsmsrate" : 2.0,
+      "datarate" : 2.0,
+      "currencyid" : 1,
+      "startdate" : "2021-11-16T08:16:49",
+      "isDiscounted" : true,
+      "hidden" : false,
+      "dailyCap" : false
+    }, {
+      "operator" : {
+        "networkId" : 477,
+        "continent" : "Europe",
+        "countryCode" : 39,
+        "countryName" : "Italy",
+        "countryIso2" : "it",
+        "utcOffset" : "+01:00",
+        "operatorName" : "H3G S p A ",
+        "mccMncs" : [ {
+          "mcc" : "222",
+          "mnc" : "99"
+        } ],
+        "tadigs" : [ "ITAH3" ]
+      },
+      "currency" : {
+        "currencyid" : 1,
+        "currencycode" : "EUR",
+        "currencyname" : "Euro"
+      },
+      "sponsor" : {
+        "sponsorid" : 1,
+        "imsiprefix" : 99999,
+        "pricingplanid" : 7,
+        "sponsorname" : "PDEL-Spons",
+        "deleted" : false,
+        "displayname" : "PDEL-Spons-Display"
+      },
+      "roamingplanruleid" : 9790,
+      "roamingplanid" : 1,
+      "networkid" : 477,
+      "sponsorid" : 1,
+      "sponsoridx" : 1,
+      "active" : true,
+      "mocallrate" : 2.0,
+      "mtcallrate" : 2.0,
+      "mosmsrate" : 2.0,
+      "mtsmsrate" : 2.0,
+      "datarate" : 2.0,
+      "currencyid" : 1,
+      "startdate" : "2021-11-16T08:16:49",
+      "isDiscounted" : true,
+      "hidden" : false,
+      "dailyCap" : false
+    } ]
+  }
+}
+```
+### Remark(s)
+
+- The numeric value of `listTariffRule` is the id of the tariff
+
+
 # 5. Statistics
 ## 5.1 getSubscriberActivePeriod
 
@@ -2689,8 +2880,8 @@ Usage type:
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2023-09-08",
-      "end" : "2023-09-03"
+      "start" : "2023-09-13",
+      "end" : "2023-09-08"
     }
   }
 }
@@ -2983,8 +3174,8 @@ Usage type:
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-09-08",
-      "end" : "2023-09-03"
+      "start" : "2023-09-13",
+      "end" : "2023-09-08"
     }
   }
 }
@@ -3013,8 +3204,8 @@ Usage type:
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2023-09-08",
-      "end" : "2023-09-03"
+      "start" : "2023-09-13",
+      "end" : "2023-09-08"
     }
   }
 }
@@ -3043,8 +3234,8 @@ Usage type:
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2023-09-08",
-      "end" : "2023-09-03"
+      "start" : "2023-09-13",
+      "end" : "2023-09-08"
     }
   }
 }
@@ -3073,8 +3264,8 @@ Usage type:
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-09-08",
-      "end" : "2023-09-03"
+      "start" : "2023-09-13",
+      "end" : "2023-09-08"
     }
   }
 }
@@ -3103,8 +3294,8 @@ Usage type:
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2023-09-08",
-      "end" : "2023-09-03"
+      "start" : "2023-09-13",
+      "end" : "2023-09-08"
     }
   }
 }
