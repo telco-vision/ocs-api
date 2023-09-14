@@ -61,6 +61,7 @@ Here is an example of notification:
 {
   "iccid" : "12334567891234546",
   "imsi" : "123456789123456",
+  "eid":"89049032004008882600007171733779",
   "subsId":4,
   "status" : "Enable"
 }
