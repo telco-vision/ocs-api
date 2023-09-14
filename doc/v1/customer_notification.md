@@ -52,6 +52,7 @@ The HTTP request received by the customer will contain a JSON object with the fo
 |-----------|----------|--------------------------------------------------------------------|
 | iccid     | MAND.    | The ICCID of the subscriber.                                       |
 | imsi      | MAND.    | The IMSI of the subscriber.                                        |
+| eid       | MAND.    | The EID of the subscriber.                                           |
 | subsId    | MAND.    | The internal ID of the subscriber that can be used in the OCS API. |
 | status    | MAND.    | The new status of the eSIM if the subscriber.                      |
 
