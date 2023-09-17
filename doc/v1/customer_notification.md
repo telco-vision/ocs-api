@@ -46,6 +46,10 @@ This notification is configured in the `Reseller` object with an URL where we wi
 Each time we receive a status update of an eSIM configured in our system, we are checking if the customer has configured
 an "ES2+ Notification". In such a case, the new status of the eSIM is sent to the customer.
 
+Here is an example of configuration:  
+![reseller_ES2_notif.png](pics%2Freseller_ES2_notif.png)
+
+
 The HTTP request received by the customer will contain a JSON object with the following attributes:
 
 | Attribute | Presence | Description                                                        |
