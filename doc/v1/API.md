@@ -22,6 +22,10 @@
 
 [2.8 modifySubscriberPrepaidPackageStatus](#28-modifysubscriberprepaidpackagestatus)
 
+[2.9 hlrSetBitrate](#29-hlrsetbitrate)
+
+[2.10 hlrGetBitrate](#210-hlrgetbitrate)
+
 ## [3 Prepaid package](#31-listprepaidpackagetemplate)
 
 [3.1 listPrepaidPackageTemplate](#31-listprepaidpackagetemplate)
@@ -1264,7 +1268,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2023-09-18T10:59:58.784712"
+    "newDateUtc" : "2023-09-18T12:28:05.707179"
   }
 }
 ```
@@ -1300,6 +1304,69 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageStatus" : {
     "subsPrepaidPackageId" : 123,
     "active" : false
+  }
+}
+```
+### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+## 2.9 hlrSetBitrate
+
+### Description
+This request is part of the throttling API.
+
+It will set a new bandwidth limitation for the subscriber identified by the IMSI.
+
+Possible values for the `limit` field:
+- KB_128: User will be limited 128 KB/sec
+- KB_256: User will be limited 128 KB/sec
+- KB_384: User will be limited 128 KB/sec
+- KB_512: User will be limited 128 KB/sec
+- KB_1024: User will be limited 128 KB/sec
+- KB_3072: User will be limited 128 KB/sec
+- KB_5120: User will be limited 128 KB/sec
+- UNLIMITED: User will not be limited.
+
+
+### Request
+```json
+{
+  "hlrSetBitrate" : {
+    "imsi" : "123456789",
+    "limit" : "KB_512"
+  }
+}
+```
+### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+## 2.10 hlrGetBitrate
+
+### Description
+This request is part of the throttling API.
+
+It retrieves the current limitation of the subscriber in terms of data bandwidth.
+
+
+### Request
+```json
+{
+  "hlrGetBitrate" : {
+    "imsi" : "123456789"
   }
 }
 ```
@@ -1709,8 +1776,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2023-09-18T10:59:58.821866",
-      "end" : "2023-10-18T10:59:58.821883"
+      "start" : "2023-09-18T12:28:05.745989",
+      "end" : "2023-10-18T12:28:05.746004"
     }
   }
 }
@@ -3613,5 +3680,7 @@ Message in JSON: `Test 123 /u0422/u0435/u0441/u0442`
 | 10 | INVALID_RESELLER |
 | 11 | RESOURCE_NOT_VISIBLE |
 | 12 | RESOURCE_READ_ONLY |
-| 13 | OPERATION_IMPOSSIBLE |
+| 13 | SMS_API_ERROR |
+| 14 | OPERATION_IMPOSSIBLE |
+| 15 | HLR_API_ERROR |
 
