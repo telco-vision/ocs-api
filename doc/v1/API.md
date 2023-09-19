@@ -1268,7 +1268,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2023-09-18T12:28:05.707179"
+    "newDateUtc" : "2023-09-19T13:22:07.571422"
   }
 }
 ```
@@ -1326,12 +1326,12 @@ It will set a new bandwidth limitation for the subscriber identified by the IMSI
 
 Possible values for the `limit` field:
 - KB_128: User will be limited 128 KB/sec
-- KB_256: User will be limited 128 KB/sec
-- KB_384: User will be limited 128 KB/sec
-- KB_512: User will be limited 128 KB/sec
-- KB_1024: User will be limited 128 KB/sec
-- KB_3072: User will be limited 128 KB/sec
-- KB_5120: User will be limited 128 KB/sec
+- KB_256: User will be limited 256 KB/sec
+- KB_384: User will be limited 384 KB/sec
+- KB_512: User will be limited 512 KB/sec
+- KB_1024: User will be limited 1024 KB/sec
+- KB_3072: User will be limited 3072 KB/sec
+- KB_5120: User will be limited 5120 KB/sec
 - UNLIMITED: User will not be limited.
 
 
@@ -1377,7 +1377,8 @@ It retrieves the current limitation of the subscriber in terms of data bandwidth
   "status" : {
     "code" : 0,
     "msg" : "OK"
-  }
+  },
+  "hlrGetBitrate" : "UNLIMITED"
 }
 ```
 # 3. Prepaid package
@@ -1776,8 +1777,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2023-09-18T12:28:05.745989",
-      "end" : "2023-10-18T12:28:05.746004"
+      "start" : "2023-09-19T13:22:07.608696",
+      "end" : "2023-10-19T13:22:07.60871"
     }
   }
 }
@@ -2947,8 +2948,8 @@ Usage type:
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2023-09-18",
-      "end" : "2023-09-13"
+      "start" : "2023-09-19",
+      "end" : "2023-09-14"
     }
   }
 }
@@ -3241,8 +3242,8 @@ Usage type:
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-09-18",
-      "end" : "2023-09-13"
+      "start" : "2023-09-19",
+      "end" : "2023-09-14"
     }
   }
 }
@@ -3271,8 +3272,8 @@ Usage type:
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2023-09-18",
-      "end" : "2023-09-13"
+      "start" : "2023-09-19",
+      "end" : "2023-09-14"
     }
   }
 }
@@ -3301,8 +3302,8 @@ Usage type:
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2023-09-18",
-      "end" : "2023-09-13"
+      "start" : "2023-09-19",
+      "end" : "2023-09-14"
     }
   }
 }
@@ -3331,8 +3332,8 @@ Usage type:
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-09-18",
-      "end" : "2023-09-13"
+      "start" : "2023-09-19",
+      "end" : "2023-09-14"
     }
   }
 }
@@ -3361,8 +3362,8 @@ Usage type:
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2023-09-18",
-      "end" : "2023-09-13"
+      "start" : "2023-09-19",
+      "end" : "2023-09-14"
     }
   }
 }
