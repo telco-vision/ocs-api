@@ -1325,13 +1325,13 @@ This request is part of the throttling API.
 It will set a new bandwidth limitation for the subscriber identified by the IMSI.
 
 Possible values for the `limit` field:
-- KB_128: User will be limited 128 KB/sec
-- KB_256: User will be limited 256 KB/sec
-- KB_384: User will be limited 384 KB/sec
-- KB_512: User will be limited 512 KB/sec
-- KB_1024: User will be limited 1024 KB/sec
-- KB_3072: User will be limited 3072 KB/sec
-- KB_5120: User will be limited 5120 KB/sec
+- KB_128: User will be limited 128 Kbps
+- KB_256: User will be limited 256 Kbps
+- KB_384: User will be limited 384 Kbps
+- KB_512: User will be limited 512 Kbps
+- KB_1024: User will be limited 1024 Kbps
+- KB_3072: User will be limited 3072 Kbps
+- KB_5120: User will be limited 5120 Kbps
 - UNLIMITED: User will not be limited.
 
 
