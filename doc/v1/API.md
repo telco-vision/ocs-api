@@ -3399,8 +3399,14 @@ is delimited with a start date (included) and an end date (included). The period
 #### Request
 ```json
 {
-  "getSubscriberActivePeriod" : {
-    "subscriberId" : 1000
+  "subscriberNetworkEventsOverPeriod" : {
+    "subscriber" : {
+      "subscriberId" : 1000
+    },
+    "period" : {
+      "start" : "2023-09-20",
+      "end" : "2023-09-24"
+    }
   }
 }
 ```
@@ -3499,8 +3505,14 @@ is delimited with a start date (included) and an end date (included). The period
 #### Request
 ```json
 {
-  "getSubscriberActivePeriod" : {
-    "imsi" : "12345678901234"
+  "subscriberNetworkEventsOverPeriod" : {
+    "subscriber" : {
+      "imsi" : "12345678901234"
+    },
+    "period" : {
+      "start" : "2023-09-20",
+      "end" : "2023-09-24"
+    }
   }
 }
 ```
