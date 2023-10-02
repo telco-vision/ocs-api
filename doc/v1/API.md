@@ -34,9 +34,11 @@
 
 [3.3 affectPackageToSubscriber](#33-affectpackagetosubscriber)
 
-[3.4 listSubscriberPrepaidPackages](#34-listsubscriberprepaidpackages)
+[3.4 affectRecurringPackageToSubscriber](#34-affectrecurringpackagetosubscriber)
 
-[3.5 listDestinationListPrefix](#35-listdestinationlistprefix)
+[3.5 listSubscriberPrepaidPackages](#35-listsubscriberprepaidpackages)
+
+[3.6 listDestinationListPrefix](#36-listdestinationlistprefix)
 
 ## [4 Tariff](#41-listresellertariff)
 
@@ -1268,7 +1270,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2023-10-01T15:39:08.325373"
+    "newDateUtc" : "2023-10-02T12:56:16.258826"
   }
 }
 ```
@@ -1777,8 +1779,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2023-10-01T15:39:08.374714",
-      "end" : "2023-10-31T15:39:08.37473"
+      "start" : "2023-10-02T12:56:16.301168",
+      "end" : "2023-11-01T12:56:16.301183"
     }
   }
 }
@@ -1945,7 +1947,256 @@ The active period of the prepaid package is calculated as following:
 - This request is best used with the subscriber ID, if you already have it, use it.
 
 
-## 3.4 listSubscriberPrepaidPackages
+## 3.4 affectRecurringPackageToSubscriber
+
+### Description
+This request can be used to affect a new recurring prepaid package to a subscriber. The prepaid package
+affected to the subscriber will be created based on the package template provided in the request
+(you can get the list of template via request `listPrepaidPackageTemplate`).
+
+Please note that this request will activate the subscriber, if it is not active yet. Meaning after
+this request (successfully executed), the user can start using its prepaid package, as soon as the
+package is available.
+
+To identify the subscriber, you can use one of the following IDs:
+- Subscriber ID
+- IMSI
+- ICCID
+- MSISDN
+- Multi IMSI
+- Activation code
+
+For monthly recurring packages, the packages will be created the same day in the month as the first
+package of the recurring packages. Meaning if the first package is created the 3rd of a month, all
+the other packages will be given to the user every 3rd of the month.
+
+For monthly recurring packages, packages are granted the same day in the month. This mean that in
+some case we might need to create packages with invalid start date. For example, if the Start time
+is august 31, we cannot have a package starting the 31 of september. In the case, the package will
+be create with the closest previous valid date, in our example, the 30 of september.
+
+Please note that the packages will not be created all at once, when using this request. The packages will
+created 12 hours in advance. If the start time given in the request (see below), is within the next 12 hours,
+the first package will be created immediately, and will be returned in the answer. If the start time is after
+the next 12 hours, no package will be created.
+
+
+### 3.4.1 By subscriber ID
+#### Request
+```json
+{
+  "affectRecurringPackageToSubscriber" : {
+    "packageTemplateId" : 553,
+    "subscriber" : {
+      "subscriberId" : 1000
+    },
+    "startTimeUTC" : "2023-10-02T10:56:16.304391"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "affectRecurringPackageToSubscriber" : {
+    "packageInfo" : {
+      "rdbLocationZones" : {
+        "locationzoneid" : 27,
+        "locationzonename" : "PDEL - Italy"
+      },
+      "packageTemplate" : {
+        "prepaidpackagetemplateid" : 9280,
+        "prepaidpackagetemplatename" : "PDEL Recurring"
+      },
+      "subscriberprepaidpackageid" : 1042,
+      "subscriberid" : 4,
+      "priority" : 7,
+      "locationzoneid" : 27,
+      "pckdatabyte" : 1073741824,
+      "pckmocsecond" : 1,
+      "pckmtcsecond" : 2,
+      "pckmosmsnumber" : 3,
+      "pckmtsmsnumber" : 4,
+      "tsassigned" : "2023-10-02T09:31:21",
+      "tsactivationutc" : "2023-10-02T09:31:21",
+      "tsexpirationutc" : "2023-11-02T09:31:21",
+      "useddatabyte" : 0,
+      "usedmocsecond" : 0,
+      "usedmocvoipsecond" : 0,
+      "usedmtcsecond" : 0,
+      "usedmosmsnumber" : 0,
+      "usedmtsmsnumber" : 0,
+      "perioddays" : 45,
+      "cost" : 123.0,
+      "templateId" : 9280,
+      "esimId" : 64612,
+      "active" : true
+    },
+    "simInfo" : {
+      "iccid" : "123",
+      "smdpServer" : "serv",
+      "activationCode" : "blah blah",
+      "urlQrCode" : "LPA:1$serv$blah blah",
+      "subscriberId" : 4,
+      "esimId" : 64612,
+      "subsPackageId" : 1042,
+      "userSimName" : "PDEL"
+    }
+  }
+}
+```
+#### Remark(s)
+
+- `startTimeUTC` is optional. The date and time when the first package of the series will be available to the user. If not provided, the system will take the current date and time as start date.
+
+
+### 3.4.2 By IMSI
+#### Request
+```json
+{
+  "affectRecurringPackageToSubscriber" : {
+    "packageTemplateId" : 553,
+    "subscriber" : {
+      "imsi" : "12345678901234"
+    },
+    "startTimeUTC" : "2023-10-02T10:56:16.304366"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Same content as previous request
+
+
+### 3.4.3 By ICCID
+#### Request
+```json
+{
+  "affectRecurringPackageToSubscriber" : {
+    "packageTemplateId" : 553,
+    "subscriber" : {
+      "iccid" : "123456789012345678"
+    }
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Same content as previous request
+
+
+### 3.4.4 By MSISDN
+#### Request
+```json
+{
+  "affectRecurringPackageToSubscriber" : {
+    "packageTemplateId" : 553,
+    "subscriber" : {
+      "msisdn" : "123456789123"
+    }
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Same content as previous request
+
+
+### 3.4.5 By multi imsi
+#### Request
+```json
+{
+  "affectRecurringPackageToSubscriber" : {
+    "packageTemplateId" : 553,
+    "subscriber" : {
+      "multiImsi" : "12345678901234"
+    },
+    "startTimeUTC" : "2023-10-02T10:56:16.304387"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Same content as previous request
+
+
+### 3.4.6 By Activation code
+#### Request
+```json
+{
+  "affectRecurringPackageToSubscriber" : {
+    "packageTemplateId" : 553,
+    "subscriber" : {
+      "activationCode" : "Activation code"
+    }
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Same content as previous request
+
+
+### Remark(s)
+
+- This request is best used with the subscriber ID, if you already have it, use it.
+
+
+## 3.5 listSubscriberPrepaidPackages
 
 ### Description
 This request can be used to list all the pre paid packages of a subscriber (if any).
@@ -1966,7 +2217,7 @@ To identify the subscriber, you can use one of the following IDs:
 |listSubscriberPrepaidPackages.packages|Mandatory|Array of subscriber prepaid packages, see `Subscriber prepaid package` in [OcsObjects.md](OcsObjects.md). If the subscriber doesn't have any prepaid package, this array will be empty.|
 
 
-### 3.4.1 By subscriber ID
+### 3.5.1 By subscriber ID
 #### Request
 ```json
 {
@@ -2093,7 +2344,7 @@ To identify the subscriber, you can use one of the following IDs:
   }
 }
 ```
-### 3.4.2 By IMSI
+### 3.5.2 By IMSI
 #### Request
 ```json
 {
@@ -2120,7 +2371,7 @@ To identify the subscriber, you can use one of the following IDs:
 - Same content as previous request
 
 
-### 3.4.3 By ICCID
+### 3.5.3 By ICCID
 #### Request
 ```json
 {
@@ -2147,7 +2398,7 @@ To identify the subscriber, you can use one of the following IDs:
 - Same content as previous request
 
 
-### 3.4.4 By MSISDN
+### 3.5.4 By MSISDN
 #### Request
 ```json
 {
@@ -2174,7 +2425,7 @@ To identify the subscriber, you can use one of the following IDs:
 - Same content as previous request
 
 
-### 3.4.5 By multi imsi
+### 3.5.5 By multi imsi
 #### Request
 ```json
 {
@@ -2201,7 +2452,7 @@ To identify the subscriber, you can use one of the following IDs:
 - Same content as previous request
 
 
-### 3.4.6 By Activation code
+### 3.5.6 By Activation code
 #### Request
 ```json
 {
@@ -2233,7 +2484,7 @@ To identify the subscriber, you can use one of the following IDs:
 - This request is best used with the subscriber ID, if you already have it, use it.
 
 
-## 3.5 listDestinationListPrefix
+## 3.6 listDestinationListPrefix
 
 ### Description
 This request can be used to list the prefix(es) of a specific destination list.
@@ -2948,8 +3199,8 @@ Usage type:
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2023-10-01",
-      "end" : "2023-09-26"
+      "start" : "2023-10-02",
+      "end" : "2023-09-27"
     }
   }
 }
@@ -3242,8 +3493,8 @@ Usage type:
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-10-01",
-      "end" : "2023-09-26"
+      "start" : "2023-10-02",
+      "end" : "2023-09-27"
     }
   }
 }
@@ -3272,8 +3523,8 @@ Usage type:
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2023-10-01",
-      "end" : "2023-09-26"
+      "start" : "2023-10-02",
+      "end" : "2023-09-27"
     }
   }
 }
@@ -3302,8 +3553,8 @@ Usage type:
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2023-10-01",
-      "end" : "2023-09-26"
+      "start" : "2023-10-02",
+      "end" : "2023-09-27"
     }
   }
 }
@@ -3332,8 +3583,8 @@ Usage type:
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-10-01",
-      "end" : "2023-09-26"
+      "start" : "2023-10-02",
+      "end" : "2023-09-27"
     }
   }
 }
@@ -3362,8 +3613,8 @@ Usage type:
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2023-10-01",
-      "end" : "2023-09-26"
+      "start" : "2023-10-02",
+      "end" : "2023-09-27"
     }
   }
 }
