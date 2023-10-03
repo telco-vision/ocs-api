@@ -43,4 +43,6 @@ one identifier can be provided.
 | rdbDestinationZones        | Optional  | Object where you will find the destination zone name.                                                                                                                                                                       |
 | rdbLocationZones           | Optional  | Object where you will find the location zone name.                                                                                                                                                                          |
 | packageTemplate            | Optional  | Object where you will find the prepaid package                                                                                                                                                                              |
+| active                     | Mandatory | Flag indicating if the package is active or not. Inactive package are not used to charge the subscriber, even if it remains units on the package                                                                            |
+| recurringPackage           | Optional  | If not present, the package is regular, not recurring. If provided, it contains the reference to the recurring packages.                                                                                                    |
 
