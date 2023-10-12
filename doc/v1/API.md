@@ -4,6 +4,8 @@
 
 [1.2 modifyAccountBalance](#12-modifyaccountbalance)
 
+[1.3 getResellerInfo](#13-getresellerinfo)
+
 ## [2 Subscriber](#21-listsubscriber)
 
 [2.1 listSubscriber](#21-listsubscriber)
@@ -240,6 +242,63 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "status" : {
     "code" : 0,
     "msg" : "OK"
+  }
+}
+```
+## 1.3 getResellerInfo
+
+### Description
+This request can be used to retrieve the reseller info.
+
+The reseller ID in the request if optional. If no ID is provided in the request, the system will return
+the reseller owning the token provided in the URL. If the reseller ID is provided in the request, the system
+will return the reseller identified by the request ID.
+
+
+### Request
+```json
+{
+  "getResellerInfo" : {
+    "id" : 111
+  }
+}
+```
+### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "getResellerInfo" : {
+    "id" : 1,
+    "name" : "PDEL Reseller",
+    "parentId" : -1,
+    "balance" : "8870,59",
+    "cdrFolder" : "pdel_tap",
+    "trafficInfo" : {
+      "relayMobile" : false,
+      "relayLU" : false,
+      "relayVoIP" : false
+    },
+    "chargingInfo" : {
+      "mobilePlan" : {
+        "id" : 1,
+        "name" : "PDEL - ResellerAccount"
+      },
+      "voipPlan" : {
+        "id" : 1,
+        "name" : "PDEL - VOiP Plan 1"
+      },
+      "CallPackageUseSingleCounter" : true
+    },
+    "contactInfo" : {
+      "contactName" : "Denis",
+      "city" : "Bat Yam",
+      "state" : "Israel",
+      "country" : "Israel"
+    }
   }
 }
 ```
@@ -1270,7 +1329,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2023-10-06T12:18:15.154671"
+    "newDateUtc" : "2023-10-12T17:34:38.207039"
   }
 }
 ```
@@ -1779,8 +1838,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2023-10-06T12:18:15.188602",
-      "end" : "2023-11-05T12:18:15.188637"
+      "start" : "2023-10-12T17:34:38.241863",
+      "end" : "2023-11-11T17:34:38.24188"
     }
   }
 }
@@ -1990,7 +2049,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2023-10-06T10:18:15"
+    "startTimeUTC" : "2023-10-12T15:34:38"
   }
 }
 ```
@@ -2063,7 +2122,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2023-10-06T10:18:15"
+    "startTimeUTC" : "2023-10-12T15:34:38"
   }
 }
 ```
@@ -2145,7 +2204,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2023-10-06T10:18:15"
+    "startTimeUTC" : "2023-10-12T15:34:38"
   }
 }
 ```
@@ -3199,8 +3258,8 @@ Usage type:
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2023-10-06",
-      "end" : "2023-10-01"
+      "start" : "2023-10-12",
+      "end" : "2023-10-07"
     }
   }
 }
@@ -3493,8 +3552,8 @@ Usage type:
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-10-06",
-      "end" : "2023-10-01"
+      "start" : "2023-10-12",
+      "end" : "2023-10-07"
     }
   }
 }
@@ -3523,8 +3582,8 @@ Usage type:
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2023-10-06",
-      "end" : "2023-10-01"
+      "start" : "2023-10-12",
+      "end" : "2023-10-07"
     }
   }
 }
@@ -3553,8 +3612,8 @@ Usage type:
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2023-10-06",
-      "end" : "2023-10-01"
+      "start" : "2023-10-12",
+      "end" : "2023-10-07"
     }
   }
 }
@@ -3583,8 +3642,8 @@ Usage type:
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-10-06",
-      "end" : "2023-10-01"
+      "start" : "2023-10-12",
+      "end" : "2023-10-07"
     }
   }
 }
@@ -3613,8 +3672,8 @@ Usage type:
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2023-10-06",
-      "end" : "2023-10-01"
+      "start" : "2023-10-12",
+      "end" : "2023-10-07"
     }
   }
 }
