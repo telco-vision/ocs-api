@@ -28,6 +28,8 @@
 
 [2.10 hlrGetBitrate](#210-hlrgetbitrate)
 
+[2.11 moveSubscriberRangeToAccount](#211-movesubscriberrangetoaccount)
+
 ## [3 Prepaid package](#31-listprepaidpackagetemplate)
 
 [3.1 listPrepaidPackageTemplate](#31-listprepaidpackagetemplate)
@@ -1329,7 +1331,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2023-10-13T13:56:49.908757"
+    "newDateUtc" : "2023-10-13T16:13:26.440573"
   }
 }
 ```
@@ -1440,6 +1442,82 @@ It retrieves the current limitation of the subscriber in terms of data bandwidth
     "msg" : "OK"
   },
   "hlrGetBitrate" : "UNLIMITED"
+}
+```
+## 2.11 moveSubscriberRangeToAccount
+
+### Description
+This method can be used to move a range a subscriber from one account to another account. The range of
+subscriber can be either a range of IMSI, or a range of ICCID.
+
+If you move the subscriber to a different reseller, all the moved subscribers will lose their prepaid
+packages. Indeed, location zone (that is attached to each and every packages) from reseller A, is not
+visible in reseller B. Meaning packages from reseller A are not visible in reseller B, so no need to
+keep them.
+
+
+### Inputs
+|Parameter|Presence|Description|
+|---------|--------|-----------|
+|rangeType|Mandatory|Indicate the type of range. Possible values: `IMSI`, `ICCID`.|
+|rangeStart|Mandatory|IMSI or ICCID of the first subscriber of the range to move|
+|rangeEnd|Mandatory|IMSI or ICCID of the last subscriber of the range to move|
+|accountId|Mandatory|Current account of the subscriber to move|
+|destAccount|Mandatory|New account for the subscriber to move|
+
+
+### Outputs
+|Parameter|Presence|Description|
+|---------|--------|-----------|
+|moveSubscriberRangeToAccount|Mandatory|The number of subscriber that has been moved.|
+
+
+### 2.11.1 IMSI range
+#### Request
+```json
+{
+  "moveSubscriberRangeToAccount" : {
+    "rangeType" : "IMSI",
+    "rangeStart" : "200010416000001",
+    "rangeEnd" : "2000104160000010",
+    "srcAccountId" : 10,
+    "destAccount" : 15
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "moveSubscriberRangeToAccount" : 4
+}
+```
+### 2.11.2 ICCID range
+#### Request
+```json
+{
+  "moveSubscriberRangeToAccount" : {
+    "rangeType" : "ICCID",
+    "rangeStart" : "893720000000000001",
+    "rangeEnd" : "893720000000000010",
+    "srcAccountId" : 10,
+    "destAccount" : 15
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "moveSubscriberRangeToAccount" : 4
 }
 ```
 # 3. Prepaid package
@@ -1838,8 +1916,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2023-10-13T13:56:49.939223",
-      "end" : "2023-11-12T13:56:49.939238"
+      "start" : "2023-10-13T16:13:26.470199",
+      "end" : "2023-11-12T16:13:26.470217"
     }
   }
 }
@@ -2049,7 +2127,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2023-10-13T11:56:49"
+    "startTimeUTC" : "2023-10-13T14:13:26"
   }
 }
 ```
@@ -2122,7 +2200,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2023-10-13T11:56:49"
+    "startTimeUTC" : "2023-10-13T14:13:26"
   }
 }
 ```
@@ -2204,7 +2282,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2023-10-13T11:56:49"
+    "startTimeUTC" : "2023-10-13T14:13:26"
   }
 }
 ```
