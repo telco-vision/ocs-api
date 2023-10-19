@@ -1331,7 +1331,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2023-10-16T17:57:45.10639"
+    "newDateUtc" : "2023-10-19T14:06:36.989154"
   }
 }
 ```
@@ -1916,8 +1916,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2023-10-16T17:57:45.141628",
-      "end" : "2023-11-15T17:57:45.141648"
+      "start" : "2023-10-19T14:06:37.018331",
+      "end" : "2023-11-18T14:06:37.018348"
     }
   }
 }
@@ -2127,7 +2127,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2023-10-16T15:57:45"
+    "startTimeUTC" : "2023-10-19T12:06:37"
   }
 }
 ```
@@ -2200,7 +2200,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2023-10-16T15:57:45"
+    "startTimeUTC" : "2023-10-19T12:06:37"
   }
 }
 ```
@@ -2282,7 +2282,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2023-10-16T15:57:45"
+    "startTimeUTC" : "2023-10-19T12:06:37"
   }
 }
 ```
@@ -2337,6 +2337,8 @@ the next 12 hours, no package will be created.
 
 ### Description
 This request can be used to list all the pre paid packages of a subscriber (if any).
+
+_If you are using recurring packages, please use [version 2](..%2Fv2%2FAPI.md)_
 
 To identify the subscriber, you can use one of the following IDs:
 - Subscriber ID
@@ -3336,8 +3338,8 @@ Usage type:
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2023-10-16",
-      "end" : "2023-10-11"
+      "start" : "2023-10-19",
+      "end" : "2023-10-14"
     }
   }
 }
@@ -3630,8 +3632,8 @@ Usage type:
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-10-16",
-      "end" : "2023-10-11"
+      "start" : "2023-10-19",
+      "end" : "2023-10-14"
     }
   }
 }
@@ -3660,8 +3662,8 @@ Usage type:
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2023-10-16",
-      "end" : "2023-10-11"
+      "start" : "2023-10-19",
+      "end" : "2023-10-14"
     }
   }
 }
@@ -3690,8 +3692,8 @@ Usage type:
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2023-10-16",
-      "end" : "2023-10-11"
+      "start" : "2023-10-19",
+      "end" : "2023-10-14"
     }
   }
 }
@@ -3720,8 +3722,8 @@ Usage type:
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-10-16",
-      "end" : "2023-10-11"
+      "start" : "2023-10-19",
+      "end" : "2023-10-14"
     }
   }
 }
@@ -3750,8 +3752,8 @@ Usage type:
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2023-10-16",
-      "end" : "2023-10-11"
+      "start" : "2023-10-19",
+      "end" : "2023-10-14"
     }
   }
 }
