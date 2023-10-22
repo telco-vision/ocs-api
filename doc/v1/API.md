@@ -30,6 +30,8 @@
 
 [2.11 moveSubscriberRangeToAccount](#211-movesubscriberrangetoaccount)
 
+[2.12 modifySubscriberContactInfo](#212-modifysubscribercontactinfo)
+
 ## [3 Prepaid package](#31-listprepaidpackagetemplate)
 
 [3.1 listPrepaidPackageTemplate](#31-listprepaidpackagetemplate)
@@ -1331,7 +1333,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2023-10-19T14:06:36.989154"
+    "newDateUtc" : "2023-10-22T11:30:48.931183"
   }
 }
 ```
@@ -1520,6 +1522,93 @@ keep them.
   "moveSubscriberRangeToAccount" : 4
 }
 ```
+## 2.12 modifySubscriberContactInfo
+
+### Description
+This request can be used to adapt the subscriber contact info.
+
+To identify the subscriber, you can use one of the following IDs:
+- Subscriber ID
+- IMSI
+- ICCID
+
+
+### 2.12.1 By subscriber ID
+#### Request
+```json
+{
+  "modifySubscriberContactInfo" : {
+    "subscriber" : {
+      "subscriberId" : 1000
+    },
+    "name" : "optional name",
+    "phone" : "optional phone number",
+    "mail" : "optional mail",
+    "company" : "optional company"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 2.12.2 By IMSI
+#### Request
+```json
+{
+  "modifySubscriberContactInfo" : {
+    "subscriber" : {
+      "imsi" : "12345678901234"
+    },
+    "name" : "optional name",
+    "mail" : "optional mail"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 2.12.3 By ICCID
+#### Request
+```json
+{
+  "modifySubscriberContactInfo" : {
+    "subscriber" : {
+      "iccid" : "123456789012345678"
+    },
+    "phone" : "optional phone number",
+    "company" : "optional company"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### Remark(s)
+
+- This request is best used with the subscriber ID, if you already have it, use it.
+
+
 # 3. Prepaid package
 ## 3.1 listPrepaidPackageTemplate
 
@@ -1916,8 +2005,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2023-10-19T14:06:37.018331",
-      "end" : "2023-11-18T14:06:37.018348"
+      "start" : "2023-10-22T11:30:48.959554",
+      "end" : "2023-11-21T11:30:48.959585"
     }
   }
 }
@@ -2127,7 +2216,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2023-10-19T12:06:37"
+    "startTimeUTC" : "2023-10-22T09:30:48"
   }
 }
 ```
@@ -2200,7 +2289,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2023-10-19T12:06:37"
+    "startTimeUTC" : "2023-10-22T09:30:48"
   }
 }
 ```
@@ -2282,7 +2371,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2023-10-19T12:06:37"
+    "startTimeUTC" : "2023-10-22T09:30:48"
   }
 }
 ```
@@ -3338,8 +3427,8 @@ Usage type:
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2023-10-19",
-      "end" : "2023-10-14"
+      "start" : "2023-10-22",
+      "end" : "2023-10-17"
     }
   }
 }
@@ -3632,8 +3721,8 @@ Usage type:
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-10-19",
-      "end" : "2023-10-14"
+      "start" : "2023-10-22",
+      "end" : "2023-10-17"
     }
   }
 }
@@ -3662,8 +3751,8 @@ Usage type:
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2023-10-19",
-      "end" : "2023-10-14"
+      "start" : "2023-10-22",
+      "end" : "2023-10-17"
     }
   }
 }
@@ -3692,8 +3781,8 @@ Usage type:
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2023-10-19",
-      "end" : "2023-10-14"
+      "start" : "2023-10-22",
+      "end" : "2023-10-17"
     }
   }
 }
@@ -3722,8 +3811,8 @@ Usage type:
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-10-19",
-      "end" : "2023-10-14"
+      "start" : "2023-10-22",
+      "end" : "2023-10-17"
     }
   }
 }
@@ -3752,8 +3841,8 @@ Usage type:
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2023-10-19",
-      "end" : "2023-10-14"
+      "start" : "2023-10-22",
+      "end" : "2023-10-17"
     }
   }
 }
