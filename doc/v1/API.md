@@ -32,6 +32,8 @@
 
 [2.12 modifySubscriberContactInfo](#212-modifysubscribercontactinfo)
 
+[2.13 modifySubscriberStatus](#213-modifysubscriberstatus)
+
 ## [3 Prepaid package](#31-listprepaidpackagetemplate)
 
 [3.1 listPrepaidPackageTemplate](#31-listprepaidpackagetemplate)
@@ -1333,7 +1335,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2023-10-22T11:30:48.931183"
+    "newDateUtc" : "2023-10-22T14:26:07.101402"
   }
 }
 ```
@@ -1604,6 +1606,191 @@ To identify the subscriber, you can use one of the following IDs:
   }
 }
 ```
+### Remark(s)
+
+- This request is best used with the subscriber ID, if you already have it, use it.
+
+
+## 2.13 modifySubscriberStatus
+
+### Description
+This request can be used to change the status of a subscriber.
+
+Only subscribers with the `ACTIVE` status can consume data, send/receive calls and SMS.
+
+To identify the subscriber, you can use one of the following IDs:
+- Subscriber ID
+- IMSI
+- ICCID
+- MSISDN
+- Multi IMSI
+- Activation code
+
+The possible values for the new status are:
+- `PENDING`
+- `ACTIVE`
+- `INACTIVE`
+- `DISCONNECTED`
+- `SUSPENDED`
+
+
+### 2.13.1 By subscriber ID
+#### Request
+```json
+{
+  "modifySubscriberStatus" : {
+    "subscriber" : {
+      "subscriberId" : 1000
+    },
+    "newStatus" : "ACTIVE"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 2.13.2 By IMSI
+#### Request
+```json
+{
+  "modifySubscriberStatus" : {
+    "subscriber" : {
+      "imsi" : "12345678901234"
+    },
+    "newStatus" : "INACTIVE"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Same content as previous request
+
+
+### 2.13.3 By ICCID
+#### Request
+```json
+{
+  "modifySubscriberStatus" : {
+    "subscriber" : {
+      "iccid" : "123456789012345678"
+    },
+    "newStatus" : "SUSPENDED"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Same content as previous request
+
+
+### 2.13.4 By MSISDN
+#### Request
+```json
+{
+  "modifySubscriberStatus" : {
+    "subscriber" : {
+      "msisdn" : "123456789123"
+    },
+    "newStatus" : "INACTIVE"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Same content as previous request
+
+
+### 2.13.5 By multi imsi
+#### Request
+```json
+{
+  "modifySubscriberStatus" : {
+    "subscriber" : {
+      "multiImsi" : "12345678901234"
+    },
+    "newStatus" : "PENDING"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Same content as previous request
+
+
+### 2.13.6 By Activation code
+#### Request
+```json
+{
+  "modifySubscriberStatus" : {
+    "subscriber" : {
+      "activationCode" : "Activation code"
+    },
+    "newStatus" : "DISCONNECTED"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Same content as previous request
+
+
 ### Remark(s)
 
 - This request is best used with the subscriber ID, if you already have it, use it.
@@ -2005,8 +2192,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2023-10-22T11:30:48.959554",
-      "end" : "2023-11-21T11:30:48.959585"
+      "start" : "2023-10-22T14:26:07.129514",
+      "end" : "2023-11-21T14:26:07.129529"
     }
   }
 }
@@ -2216,7 +2403,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2023-10-22T09:30:48"
+    "startTimeUTC" : "2023-10-22T12:26:07"
   }
 }
 ```
@@ -2289,7 +2476,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2023-10-22T09:30:48"
+    "startTimeUTC" : "2023-10-22T12:26:07"
   }
 }
 ```
@@ -2371,7 +2558,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2023-10-22T09:30:48"
+    "startTimeUTC" : "2023-10-22T12:26:07"
   }
 }
 ```
