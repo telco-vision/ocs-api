@@ -284,7 +284,8 @@ will return the reseller identified by the request ID.
     "balance" : "8870,59",
     "cdrFolder" : "pdel_tap",
     "trafficInfo" : {
-      "relayMobile" : false,
+      "relayGy" : true,
+      "relayCallSms" : false,
       "relayLU" : false,
       "relayVoIP" : false
     },
@@ -297,7 +298,8 @@ will return the reseller identified by the request ID.
         "id" : 1,
         "name" : "PDEL - VOiP Plan 1"
       },
-      "CallPackageUseSingleCounter" : true
+      "CallPackageUseSingleCounter" : true,
+      "voipFree" : false
     },
     "contactInfo" : {
       "contactName" : "Denis",
@@ -1335,7 +1337,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2023-10-22T14:26:07.101402"
+    "newDateUtc" : "2023-10-28T17:45:19.865145"
   }
 }
 ```
@@ -2192,8 +2194,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2023-10-22T14:26:07.129514",
-      "end" : "2023-11-21T14:26:07.129529"
+      "start" : "2023-10-28T17:45:19.893599",
+      "end" : "2023-11-27T17:45:19.893616"
     }
   }
 }
@@ -2403,7 +2405,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2023-10-22T12:26:07"
+    "startTimeUTC" : "2023-10-28T15:45:19"
   }
 }
 ```
@@ -2476,7 +2478,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2023-10-22T12:26:07"
+    "startTimeUTC" : "2023-10-28T15:45:19"
   }
 }
 ```
@@ -2558,7 +2560,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2023-10-22T12:26:07"
+    "startTimeUTC" : "2023-10-28T15:45:19"
   }
 }
 ```
@@ -3614,8 +3616,8 @@ Usage type:
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2023-10-22",
-      "end" : "2023-10-17"
+      "start" : "2023-10-28",
+      "end" : "2023-10-23"
     }
   }
 }
@@ -3908,8 +3910,8 @@ Usage type:
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-10-22",
-      "end" : "2023-10-17"
+      "start" : "2023-10-28",
+      "end" : "2023-10-23"
     }
   }
 }
@@ -3938,8 +3940,8 @@ Usage type:
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2023-10-22",
-      "end" : "2023-10-17"
+      "start" : "2023-10-28",
+      "end" : "2023-10-23"
     }
   }
 }
@@ -3968,8 +3970,8 @@ Usage type:
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2023-10-22",
-      "end" : "2023-10-17"
+      "start" : "2023-10-28",
+      "end" : "2023-10-23"
     }
   }
 }
@@ -3998,8 +4000,8 @@ Usage type:
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-10-22",
-      "end" : "2023-10-17"
+      "start" : "2023-10-28",
+      "end" : "2023-10-23"
     }
   }
 }
@@ -4028,8 +4030,8 @@ Usage type:
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2023-10-22",
-      "end" : "2023-10-17"
+      "start" : "2023-10-28",
+      "end" : "2023-10-23"
     }
   }
 }
