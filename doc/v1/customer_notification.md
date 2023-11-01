@@ -1,3 +1,19 @@
+# Notification answer
+When receiving any type of notification, the following answer is expected from the customer that received the notification:
+```json
+{
+  "result":{
+    "code":0,
+    "msg":"OK"
+  }
+}
+```
+
+In case the notification has processed correctly, the `result.code` must be `0`, with `result.msg` = `OK`.
+In case of error, the customer can return any `result.code` > 0, with appropriate `result.msg`. The error
+will store in our logs and will help debug in case of issue.
+
+
 # Prepaid package usage
 ## Description
 This notification is configured in the `Reseller` object with two thresholds, expressed in percentage. When
