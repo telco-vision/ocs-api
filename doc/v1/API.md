@@ -34,6 +34,8 @@
 
 [2.13 modifySubscriberStatus](#213-modifysubscriberstatus)
 
+[2.14 setSubscriberTrafficRestrictions](#214-setsubscribertrafficrestrictions)
+
 ## [3 Prepaid package](#31-listprepaidpackagetemplate)
 
 [3.1 listPrepaidPackageTemplate](#31-listprepaidpackagetemplate)
@@ -1337,7 +1339,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2023-11-04T15:00:33.909928"
+    "newDateUtc" : "2023-11-05T10:16:51.558695"
   }
 }
 ```
@@ -1798,6 +1800,211 @@ The possible values for the new status are:
 - This request is best used with the subscriber ID, if you already have it, use it.
 
 
+## 2.14 setSubscriberTrafficRestrictions
+
+### Description
+This request can be used to configure the traffic types thar are allowed for a subscriber: Data,
+MOC, MTC and SMS-MO. Please note that SMS-MT is always allowed.
+
+To identify the subscriber, you can use one of the following IDs:
+- Subscriber ID
+- IMSI
+- ICCID
+- MSISDN
+- Multi IMSI
+- Activation code
+
+
+### Inputs
+|Parameter|Presence|Description|
+|---------|--------|-----------|
+|subscriber|Mandatory|Identifier of the subscriber.|
+|dataAllowed|Mandatory|Indicates if data is allowed for the subscriber.|
+|mocAllowed|Mandatory|Indicates if MOC are allowed for the subscriber.|
+|mtcAllowed|Mandatory|Indicates if MTC are allowed for the subscriber.|
+|smsMoAllowed|Mandatory|Indicates if SMS-MO are allowed for the subscriber.|
+
+
+### 2.14.1 By subscriber ID
+#### Request
+```json
+{
+  "setSubscriberTrafficRestrictions" : {
+    "subscriber" : {
+      "subscriberId" : 1000
+    },
+    "dataAllowed" : true,
+    "mocAllowed" : false,
+    "mtcAllowed" : false,
+    "smsMoAllowed" : true
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 2.14.2 By IMSI
+#### Request
+```json
+{
+  "setSubscriberTrafficRestrictions" : {
+    "subscriber" : {
+      "imsi" : "12345678901234"
+    },
+    "dataAllowed" : true,
+    "mocAllowed" : true,
+    "mtcAllowed" : true,
+    "smsMoAllowed" : true
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Same content as previous request
+
+
+### 2.14.3 By ICCID
+#### Request
+```json
+{
+  "setSubscriberTrafficRestrictions" : {
+    "subscriber" : {
+      "iccid" : "123456789012345678"
+    },
+    "dataAllowed" : true,
+    "mocAllowed" : false,
+    "mtcAllowed" : true,
+    "smsMoAllowed" : true
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Same content as previous request
+
+
+### 2.14.4 By MSISDN
+#### Request
+```json
+{
+  "setSubscriberTrafficRestrictions" : {
+    "subscriber" : {
+      "msisdn" : "123456789123"
+    },
+    "dataAllowed" : true,
+    "mocAllowed" : true,
+    "mtcAllowed" : false,
+    "smsMoAllowed" : true
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Same content as previous request
+
+
+### 2.14.5 By multi imsi
+#### Request
+```json
+{
+  "setSubscriberTrafficRestrictions" : {
+    "subscriber" : {
+      "multiImsi" : "12345678901234"
+    },
+    "dataAllowed" : true,
+    "mocAllowed" : false,
+    "mtcAllowed" : true,
+    "smsMoAllowed" : false
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Same content as previous request
+
+
+### 2.14.6 By Activation code
+#### Request
+```json
+{
+  "setSubscriberTrafficRestrictions" : {
+    "subscriber" : {
+      "activationCode" : "Activation code"
+    },
+    "dataAllowed" : false,
+    "mocAllowed" : true,
+    "mtcAllowed" : true,
+    "smsMoAllowed" : true
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- Same content as previous request
+
+
+### Remark(s)
+
+- This request is best used with the subscriber ID, if you already have it, use it.
+
+
 # 3. Prepaid package
 ## 3.1 listPrepaidPackageTemplate
 
@@ -2194,8 +2401,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2023-11-04T15:00:33.949548",
-      "end" : "2023-12-04T15:00:33.949568"
+      "start" : "2023-11-05T10:16:51.590904",
+      "end" : "2023-12-05T10:16:51.59092"
     }
   }
 }
@@ -2405,7 +2612,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2023-11-04T14:00:33"
+    "startTimeUTC" : "2023-11-05T09:16:51"
   }
 }
 ```
@@ -2478,7 +2685,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2023-11-04T14:00:33"
+    "startTimeUTC" : "2023-11-05T09:16:51"
   }
 }
 ```
@@ -2560,7 +2767,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2023-11-04T14:00:33"
+    "startTimeUTC" : "2023-11-05T09:16:51"
   }
 }
 ```
@@ -3616,8 +3823,8 @@ Usage type:
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2023-11-04",
-      "end" : "2023-10-30"
+      "start" : "2023-11-05",
+      "end" : "2023-10-31"
     }
   }
 }
@@ -3910,8 +4117,8 @@ Usage type:
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-11-04",
-      "end" : "2023-10-30"
+      "start" : "2023-11-05",
+      "end" : "2023-10-31"
     }
   }
 }
@@ -3940,8 +4147,8 @@ Usage type:
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2023-11-04",
-      "end" : "2023-10-30"
+      "start" : "2023-11-05",
+      "end" : "2023-10-31"
     }
   }
 }
@@ -3970,8 +4177,8 @@ Usage type:
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2023-11-04",
-      "end" : "2023-10-30"
+      "start" : "2023-11-05",
+      "end" : "2023-10-31"
     }
   }
 }
@@ -4000,8 +4207,8 @@ Usage type:
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-11-04",
-      "end" : "2023-10-30"
+      "start" : "2023-11-05",
+      "end" : "2023-10-31"
     }
   }
 }
@@ -4030,8 +4237,8 @@ Usage type:
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2023-11-04",
-      "end" : "2023-10-30"
+      "start" : "2023-11-05",
+      "end" : "2023-10-31"
     }
   }
 }
