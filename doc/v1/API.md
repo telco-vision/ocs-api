@@ -36,6 +36,8 @@
 
 [2.14 setSubscriberTrafficRestrictions](#214-setsubscribertrafficrestrictions)
 
+[2.15 modifySubscriberSteeringList](#215-modifysubscribersteeringlist)
+
 ## [3 Prepaid package](#31-listprepaidpackagetemplate)
 
 [3.1 listPrepaidPackageTemplate](#31-listprepaidpackagetemplate)
@@ -1339,7 +1341,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2023-11-20T09:53:15.36108"
+    "newDateUtc" : "2023-11-20T16:21:16.160099"
   }
 }
 ```
@@ -2005,6 +2007,164 @@ To identify the subscriber, you can use one of the following IDs:
 - This request is best used with the subscriber ID, if you already have it, use it.
 
 
+## 2.15 modifySubscriberSteeringList
+
+### Description
+This request can be used to change or remove the steering list of the subscriber.
+
+To identify the subscriber, you can use one of the following IDs:
+- Subscriber ID
+- IMSI
+- ICCID
+- MSISDN
+- Multi IMSI
+- Activation code
+
+
+### Inputs
+|Parameter|Presence|Description|
+|---------|--------|-----------|
+|subscriber|Mandatory|Identifier of the subscriber.|
+|steeringListId|Optional|The new steering list for the subscriber. If none provided (null), the current list will be removed.|
+
+
+### 2.15.1 By subscriber ID
+#### Request
+```json
+{
+  "modifySubscriberSteeringList" : {
+    "subscriber" : {
+      "subscriberId" : 1000
+    },
+    "steeringListId" : 123
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 2.15.2 By IMSI
+#### Request
+```json
+{
+  "modifySubscriberSteeringList" : {
+    "subscriber" : {
+      "imsi" : "12345678901234"
+    },
+    "steeringListId" : 123
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 2.15.3 By ICCID
+#### Request
+```json
+{
+  "modifySubscriberSteeringList" : {
+    "subscriber" : {
+      "iccid" : "123456789012345678"
+    },
+    "steeringListId" : 123
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 2.15.4 By MSISDN
+#### Request
+```json
+{
+  "modifySubscriberSteeringList" : {
+    "subscriber" : {
+      "msisdn" : "123456789123"
+    },
+    "steeringListId" : 123
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 2.15.5 By multi imsi
+#### Request
+```json
+{
+  "modifySubscriberSteeringList" : {
+    "subscriber" : {
+      "multiImsi" : "12345678901234"
+    },
+    "steeringListId" : 123
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 2.15.6 By Activation code
+#### Request
+```json
+{
+  "modifySubscriberSteeringList" : {
+    "subscriber" : {
+      "activationCode" : "Activation code"
+    },
+    "steeringListId" : 123
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### Remark(s)
+
+- This request is best used with the subscriber ID, if you already have it, use it.
+
+
 # 3. Prepaid package
 ## 3.1 listPrepaidPackageTemplate
 
@@ -2401,8 +2561,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2023-11-20T09:53:15.390237",
-      "end" : "2023-12-20T09:53:15.390251"
+      "start" : "2023-11-20T16:21:16.192536",
+      "end" : "2023-12-20T16:21:16.192553"
     }
   }
 }
@@ -2612,7 +2772,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2023-11-20T08:53:15"
+    "startTimeUTC" : "2023-11-20T15:21:16"
   }
 }
 ```
@@ -2685,7 +2845,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2023-11-20T08:53:15"
+    "startTimeUTC" : "2023-11-20T15:21:16"
   }
 }
 ```
@@ -2767,7 +2927,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2023-11-20T08:53:15"
+    "startTimeUTC" : "2023-11-20T15:21:16"
   }
 }
 ```
