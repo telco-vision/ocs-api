@@ -108,16 +108,22 @@ or all accounts of all your reseller.
   "listResellerAccount" : {
     "reseller" : [ {
       "id" : 1,
-      "name" : "Test Reseller",
+      "name" : "PDEL Reseller",
       "account" : [ {
         "id" : 4,
-        "name" : "Test - Second account",
-        "balance" : 660.5500000000001,
-        "packageOnly" : false
+        "name" : "PDEL - Second account",
+        "balance" : 10925.289088984377,
+        "packageOnly" : false,
+        "steeringListId" : 1
       }, {
         "id" : 7,
-        "name" : "Test - Subs X",
+        "name" : "PDEL - Subs X",
         "balance" : 1000.0,
+        "packageOnly" : false
+      }, {
+        "id" : 37,
+        "name" : "TestSubscribers",
+        "balance" : 197.80718309495325,
         "packageOnly" : false
       }, {
         "id" : 55,
@@ -125,23 +131,38 @@ or all accounts of all your reseller.
         "balance" : 70.06,
         "packageOnly" : false
       }, {
-        "id" : 104,
-        "name" : "test from UI",
-        "balance" : 100.0,
+        "id" : 150,
+        "name" : "PDEL Pack and Balance account",
+        "balance" : 9940.0,
         "packageOnly" : false
       }, {
-        "id" : 125,
-        "name" : "Denis new account",
+        "id" : 151,
+        "name" : "PDEL - Package only",
         "balance" : 0.0,
-        "packageOnly" : false
+        "packageOnly" : true
       } ]
     }, {
       "id" : 10,
-      "name" : "Test Reseller 3",
+      "name" : "PDEL Reseller 3",
       "account" : [ {
-        "id" : 37,
-        "name" : "TestSubscribers",
-        "balance" : 97.80718309495325,
+        "id" : 140,
+        "name" : "Test dev account name 2",
+        "balance" : 0.0,
+        "packageOnly" : true
+      }, {
+        "id" : 141,
+        "name" : "Test dev account name 3",
+        "balance" : 100.0,
+        "packageOnly" : true
+      }, {
+        "id" : 147,
+        "name" : "PDEL 3 Pack_only_ACC",
+        "balance" : 0.0,
+        "packageOnly" : true
+      }, {
+        "id" : 148,
+        "name" : "PDEL 3 Pack_And_Balance",
+        "balance" : 100.0,
         "packageOnly" : false
       } ]
     }, {
@@ -156,6 +177,15 @@ or all accounts of all your reseller.
         "id" : 119,
         "name" : "Test dev account name 2",
         "balance" : 100.0,
+        "packageOnly" : false
+      } ]
+    }, {
+      "id" : 65,
+      "name" : "Denis Test Reseller",
+      "account" : [ {
+        "id" : 142,
+        "name" : "Denis Res Subs account",
+        "balance" : 0.0,
         "packageOnly" : false
       } ]
     } ]
@@ -187,7 +217,8 @@ or all accounts of all your reseller.
         "id" : 37,
         "name" : "TestSubscribers",
         "balance" : 97.80718309495325,
-        "packageOnly" : false
+        "packageOnly" : false,
+        "steeringListId" : 1
       } ]
     } ]
   }
@@ -815,7 +846,8 @@ This request can be used to search for subscriber. You can search for subscriber
       "account" : "TestSubscribers",
       "reseller" : "Test Reseller 3",
       "lastMcc" : 334,
-      "lastMnc" : 50
+      "lastMnc" : 50,
+      "steeringListId" : 1
     } ],
     "hasMore" : false,
     "nbFound" : 1
@@ -1341,7 +1373,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2023-11-20T16:21:16.160099"
+    "newDateUtc" : "2023-11-21T14:13:37.516249"
   }
 }
 ```
@@ -2561,8 +2593,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2023-11-20T16:21:16.192536",
-      "end" : "2023-12-20T16:21:16.192553"
+      "start" : "2023-11-21T14:13:37.543943",
+      "end" : "2023-12-21T14:13:37.54396"
     }
   }
 }
@@ -2772,7 +2804,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2023-11-20T15:21:16"
+    "startTimeUTC" : "2023-11-21T13:13:37"
   }
 }
 ```
@@ -2845,7 +2877,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2023-11-20T15:21:16"
+    "startTimeUTC" : "2023-11-21T13:13:37"
   }
 }
 ```
@@ -2927,7 +2959,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2023-11-20T15:21:16"
+    "startTimeUTC" : "2023-11-21T13:13:37"
   }
 }
 ```
@@ -3983,8 +4015,8 @@ Usage type:
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2023-11-20",
-      "end" : "2023-11-15"
+      "start" : "2023-11-21",
+      "end" : "2023-11-16"
     }
   }
 }
@@ -4277,8 +4309,8 @@ Usage type:
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-11-20",
-      "end" : "2023-11-15"
+      "start" : "2023-11-21",
+      "end" : "2023-11-16"
     }
   }
 }
@@ -4307,8 +4339,8 @@ Usage type:
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2023-11-20",
-      "end" : "2023-11-15"
+      "start" : "2023-11-21",
+      "end" : "2023-11-16"
     }
   }
 }
@@ -4337,8 +4369,8 @@ Usage type:
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2023-11-20",
-      "end" : "2023-11-15"
+      "start" : "2023-11-21",
+      "end" : "2023-11-16"
     }
   }
 }
@@ -4367,8 +4399,8 @@ Usage type:
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-11-20",
-      "end" : "2023-11-15"
+      "start" : "2023-11-21",
+      "end" : "2023-11-16"
     }
   }
 }
@@ -4397,8 +4429,8 @@ Usage type:
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2023-11-20",
-      "end" : "2023-11-15"
+      "start" : "2023-11-21",
+      "end" : "2023-11-16"
     }
   }
 }
