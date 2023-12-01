@@ -38,6 +38,8 @@
 
 [2.15 modifySubscriberSteeringList](#215-modifysubscribersteeringlist)
 
+[2.16 pushSteeringToSubs](#216-pushsteeringtosubs)
+
 ## [3 Prepaid package](#31-listprepaidpackagetemplate)
 
 [3.1 listPrepaidPackageTemplate](#31-listprepaidpackagetemplate)
@@ -1373,7 +1375,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2023-12-01T08:56:19.058755"
+    "newDateUtc" : "2023-12-01T11:24:38.391179"
   }
 }
 ```
@@ -2197,6 +2199,144 @@ To identify the subscriber, you can use one of the following IDs:
 - This request is best used with the subscriber ID, if you already have it, use it.
 
 
+## 2.16 pushSteeringToSubs
+
+### Description
+This request can be used to push the OPLMN list to the phone of the subscriber via OTA. You just need
+to provide the ID of the subscriber, the system will find the current country of the subscriber,
+build the OPLMN list for this country, and send it to the phone of the subscriber via OTA SMS.
+
+This request can be used after a modification has been brought to a steering list, of if you changed
+the steering list of subscriber, and you need to push it right away.
+
+To identify the subscriber, you can use one of the following IDs:
+- Subscriber ID
+- IMSI
+- ICCID
+- MSISDN
+- Multi IMSI
+- Activation code
+
+
+### 2.16.1 By subscriber ID
+#### Request
+```json
+{
+  "pushSteeringToSubs" : {
+    "subscriberId" : 1000
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 2.16.2 By IMSI
+#### Request
+```json
+{
+  "pushSteeringToSubs" : {
+    "imsi" : "12345678901234"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 2.16.3 By ICCID
+#### Request
+```json
+{
+  "pushSteeringToSubs" : {
+    "iccid" : "123456789012345678"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 2.16.4 By MSISDN
+#### Request
+```json
+{
+  "pushSteeringToSubs" : {
+    "msisdn" : "123456789123"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 2.16.5 By multi imsi
+#### Request
+```json
+{
+  "pushSteeringToSubs" : {
+    "multiImsi" : "12345678901234"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 2.16.6 By Activation code
+#### Request
+```json
+{
+  "pushSteeringToSubs" : {
+    "activationCode" : "Activation code"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### Remark(s)
+
+- This request is best used with the subscriber ID, if you already have it, use it.
+
+
 # 3. Prepaid package
 ## 3.1 listPrepaidPackageTemplate
 
@@ -2593,8 +2733,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2023-12-01T08:56:19.087784",
-      "end" : "2023-12-31T08:56:19.087798"
+      "start" : "2023-12-01T11:24:38.419262",
+      "end" : "2023-12-31T11:24:38.419277"
     }
   }
 }
@@ -2804,7 +2944,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2023-12-01T07:56:19"
+    "startTimeUTC" : "2023-12-01T10:24:38"
   }
 }
 ```
@@ -2877,7 +3017,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2023-12-01T07:56:19"
+    "startTimeUTC" : "2023-12-01T10:24:38"
   }
 }
 ```
@@ -2959,7 +3099,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2023-12-01T07:56:19"
+    "startTimeUTC" : "2023-12-01T10:24:38"
   }
 }
 ```
@@ -4751,4 +4891,5 @@ Message in JSON: `Test 123 /u0422/u0435/u0441/u0442`
 | 13 | SMS_API_ERROR |
 | 14 | OPERATION_IMPOSSIBLE |
 | 15 | HLR_API_ERROR |
+| 16 | STEERING_API_ERROR |
 

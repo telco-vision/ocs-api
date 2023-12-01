@@ -442,4 +442,5 @@ To identify the subscriber, you can use one of the following IDs:
 | 13 | SMS_API_ERROR |
 | 14 | OPERATION_IMPOSSIBLE |
 | 15 | HLR_API_ERROR |
+| 16 | STEERING_API_ERROR |
 
