@@ -1365,8 +1365,8 @@ This request is logged in the system DB and you can see them in the UI, in the `
 |Parameter|Presence|Description|
 |---------|--------|-----------|
 |packageId|Mandatory|The ID of the subscriber prepaid package to adapt.|
-|newPeriod|Mandatory|The number of days between the start validity date and the new expiration date. You don't really need to update this value, but if you want to keep data consistent, provide the correct value.|
-|newDateUtc|Optional|The new expiration date for the subscriber prepaid package.|
+|newPeriod|Optional|The number of days between the start validity date and the new expiration date. You don't really need to update this value, but if you want to keep data consistent, provide the correct value.|
+|newDateUtc|Mandatory|The new expiration date for the subscriber prepaid package.|
 
 
 ### Request
@@ -1375,7 +1375,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2023-12-05T12:07:48.310957"
+    "newDateUtc" : "2023-12-05T15:33:03.236106"
   }
 }
 ```
@@ -2733,8 +2733,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2023-12-05T12:07:48.344057",
-      "end" : "2024-01-04T12:07:48.34408"
+      "start" : "2023-12-05T15:33:03.264059",
+      "end" : "2024-01-04T15:33:03.264075"
     }
   }
 }
@@ -2944,7 +2944,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2023-12-05T11:07:48"
+    "startTimeUTC" : "2023-12-05T14:33:03"
   }
 }
 ```
@@ -3017,7 +3017,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2023-12-05T11:07:48"
+    "startTimeUTC" : "2023-12-05T14:33:03"
   }
 }
 ```
@@ -3099,7 +3099,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2023-12-05T11:07:48"
+    "startTimeUTC" : "2023-12-05T14:33:03"
   }
 }
 ```
