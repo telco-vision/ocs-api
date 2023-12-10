@@ -6,6 +6,8 @@
 
 [1.3 getResellerInfo](#13-getresellerinfo)
 
+[1.4 esimStatusPerAccount](#14-esimstatusperaccount)
+
 ## [2 Subscriber](#21-listsubscriber)
 
 [2.1 listSubscriber](#21-listsubscriber)
@@ -344,6 +346,99 @@ will return the reseller identified by the request ID.
       "state" : "Israel",
       "country" : "Israel"
     }
+  }
+}
+```
+## 1.4 esimStatusPerAccount
+
+### Description
+This request can be used to retrieve the status of your eSIMs per account. You can retrieve the status
+of your eSIMs for a specific account, or for all the accounts of a specific reseller.
+
+The answer contains a list of account. For each account, you have a list of sponsor (for which you have eSIMs).
+For each sponsor, you have a list of status (`Free` or `Affected`) with the count of eSIM for the status.
+
+Status `Free` means that the eSIM is still available for a user. Status `Affected` means that the eSIM
+has already been affected to a user.
+
+
+### 1.4.1 For a specific account
+#### Request
+```json
+{
+  "esimStatusPerAccount" : {
+    "accountId" : 222
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "esimStatusPerAccount" : {
+    "account" : [ {
+      "sponsor" : [ {
+        "id" : 101,
+        "name" : "Sponsor ABC",
+        "esim" : {
+          "status" : [ {
+            "statusNum" : 0,
+            "statusStr" : "Free",
+            "count" : 100
+          }, {
+            "statusNum" : 2,
+            "statusStr" : "Affected",
+            "count" : 10
+          } ]
+        }
+      } ],
+      "id" : 222,
+      "name" : "My account XYZ"
+    } ]
+  }
+}
+```
+### 1.4.2 All accounts of a specific reseller
+#### Request
+```json
+{
+  "esimStatusPerAccount" : {
+    "resellerId" : 111
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "esimStatusPerAccount" : {
+    "account" : [ {
+      "sponsor" : [ {
+        "id" : 101,
+        "name" : "Sponsor ABC",
+        "esim" : {
+          "status" : [ {
+            "statusNum" : 0,
+            "statusStr" : "Free",
+            "count" : 100
+          }, {
+            "statusNum" : 2,
+            "statusStr" : "Affected",
+            "count" : 10
+          } ]
+        }
+      } ],
+      "id" : 222,
+      "name" : "My account XYZ"
+    } ]
   }
 }
 ```
@@ -1375,7 +1470,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2023-12-09T14:19:35"
+    "newDateUtc" : "2023-12-10T10:27:42"
   }
 }
 ```
@@ -2733,8 +2828,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2023-12-09T14:19:35.630222",
-      "end" : "2024-01-08T14:19:35.630236"
+      "start" : "2023-12-10T10:27:42.664558",
+      "end" : "2024-01-09T10:27:42.664573"
     }
   }
 }
@@ -2944,7 +3039,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2023-12-09T13:19:35"
+    "startTimeUTC" : "2023-12-10T09:27:42"
   }
 }
 ```
@@ -3017,7 +3112,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2023-12-09T13:19:35"
+    "startTimeUTC" : "2023-12-10T09:27:42"
   }
 }
 ```
@@ -3099,7 +3194,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2023-12-09T13:19:35"
+    "startTimeUTC" : "2023-12-10T09:27:42"
   }
 }
 ```
@@ -4155,8 +4250,8 @@ Usage type:
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2023-12-09",
-      "end" : "2023-12-04"
+      "start" : "2023-12-10",
+      "end" : "2023-12-05"
     }
   }
 }
@@ -4449,8 +4544,8 @@ Usage type:
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-12-09",
-      "end" : "2023-12-04"
+      "start" : "2023-12-10",
+      "end" : "2023-12-05"
     }
   }
 }
@@ -4479,8 +4574,8 @@ Usage type:
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2023-12-09",
-      "end" : "2023-12-04"
+      "start" : "2023-12-10",
+      "end" : "2023-12-05"
     }
   }
 }
@@ -4509,8 +4604,8 @@ Usage type:
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2023-12-09",
-      "end" : "2023-12-04"
+      "start" : "2023-12-10",
+      "end" : "2023-12-05"
     }
   }
 }
@@ -4539,8 +4634,8 @@ Usage type:
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-12-09",
-      "end" : "2023-12-04"
+      "start" : "2023-12-10",
+      "end" : "2023-12-05"
     }
   }
 }
@@ -4569,8 +4664,8 @@ Usage type:
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2023-12-09",
-      "end" : "2023-12-04"
+      "start" : "2023-12-10",
+      "end" : "2023-12-05"
     }
   }
 }
