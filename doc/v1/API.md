@@ -1470,7 +1470,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2023-12-10T10:27:42"
+    "newDateUtc" : "2023-12-11T10:27:23"
   }
 }
 ```
@@ -2828,8 +2828,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2023-12-10T10:27:42.664558",
-      "end" : "2024-01-09T10:27:42.664573"
+      "start" : "2023-12-11T10:27:23.541875",
+      "end" : "2024-01-10T10:27:23.541891"
     }
   }
 }
@@ -3039,7 +3039,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2023-12-10T09:27:42"
+    "startTimeUTC" : "2023-12-11T09:27:23"
   }
 }
 ```
@@ -3112,7 +3112,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2023-12-10T09:27:42"
+    "startTimeUTC" : "2023-12-11T09:27:23"
   }
 }
 ```
@@ -3194,7 +3194,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2023-12-10T09:27:42"
+    "startTimeUTC" : "2023-12-11T09:27:23"
   }
 }
 ```
@@ -4250,8 +4250,8 @@ Usage type:
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2023-12-10",
-      "end" : "2023-12-05"
+      "start" : "2023-12-11",
+      "end" : "2023-12-06"
     }
   }
 }
@@ -4544,8 +4544,8 @@ Usage type:
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-12-10",
-      "end" : "2023-12-05"
+      "start" : "2023-12-11",
+      "end" : "2023-12-06"
     }
   }
 }
@@ -4574,8 +4574,8 @@ Usage type:
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2023-12-10",
-      "end" : "2023-12-05"
+      "start" : "2023-12-11",
+      "end" : "2023-12-06"
     }
   }
 }
@@ -4604,8 +4604,8 @@ Usage type:
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2023-12-10",
-      "end" : "2023-12-05"
+      "start" : "2023-12-11",
+      "end" : "2023-12-06"
     }
   }
 }
@@ -4634,8 +4634,8 @@ Usage type:
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-12-10",
-      "end" : "2023-12-05"
+      "start" : "2023-12-11",
+      "end" : "2023-12-06"
     }
   }
 }
@@ -4664,8 +4664,8 @@ Usage type:
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2023-12-10",
-      "end" : "2023-12-05"
+      "start" : "2023-12-11",
+      "end" : "2023-12-06"
     }
   }
 }
