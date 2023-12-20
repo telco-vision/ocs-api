@@ -4088,7 +4088,7 @@ Please refer to OCS User guide ( available from OCS UI) for a full description o
 ## 3.11 modifyPPTRecurring
 
 ### Description
-This request can be used to create a prepaid package template.
+This request can be used to modify a prepaid package template.
 
 Please refer to OCS User guide ( available from OCS UI) for a full description of the recurring and throttling features.
 
@@ -4110,7 +4110,7 @@ Please note:
 ### Request
 ```json
 {
-  "createPrepaidPackageTemplate" : {
+  "modifyPPTRecurring" : {
     "prepaidpackagetemplateid" : 123,
     "recurring" : true,
     "nbOccurrence" : 12,
@@ -4128,7 +4128,7 @@ Please note:
     "code" : 0,
     "msg" : "OK"
   },
-  "createPrepaidPackageTemplate" : {
+  "modifyPrepaidPackageTemplate" : {
     "rdbDestinationZones" : {
       "destinationzoneid" : 5,
       "destinationzonename" : "Denis Destination list"
