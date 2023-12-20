@@ -3727,7 +3727,7 @@ the list of prefixes configured in each list.
 ### Request
 ```json
 {
-  "listDetailedLocationZone" : 1
+  "listDetailedDestinationList" : 1
 }
 ```
 ### Answer
