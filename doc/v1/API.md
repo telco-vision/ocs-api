@@ -8,6 +8,8 @@
 
 [1.4 esimStatusPerAccount](#14-esimstatusperaccount)
 
+[1.5 listSponsor](#15-listsponsor)
+
 ## [2 Subscriber](#21-listsubscriber)
 
 [2.1 listSubscriber](#21-listsubscriber)
@@ -55,6 +57,18 @@
 [3.5 listSubscriberPrepaidPackages](#35-listsubscriberprepaidpackages)
 
 [3.6 listDestinationListPrefix](#36-listdestinationlistprefix)
+
+[3.7 listDetailedLocationZone](#37-listdetailedlocationzone)
+
+[3.8 listDetailedDestinationList](#38-listdetaileddestinationlist)
+
+[3.9 createPrepaidPackageTemplate](#39-createprepaidpackagetemplate)
+
+[3.10 modifyPPTCore](#310-modifypptcore)
+
+[3.11 modifyPPTRecurring](#311-modifypptrecurring)
+
+[3.12 modifyPPTThrottling](#312-modifypptthrottling)
 
 ## [4 Tariff](#41-listresellertariff)
 
@@ -438,6 +452,45 @@ has already been affected to a user.
       } ],
       "id" : 222,
       "name" : "My account XYZ"
+    } ]
+  }
+}
+```
+## 1.5 listSponsor
+
+### Description
+This request can be used to list the different sponsors configured for a reseller.
+
+
+### Inputs
+|Parameter|Presence|Description|
+|---------|--------|-----------|
+|listSponsor|Mandatory|The ID of the reseller for which to list the sponsor(s).|
+
+
+### Request
+```json
+{
+  "listSponsor" : 12
+}
+```
+### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "listSponsor" : {
+    "sponsor" : [ {
+      "id" : 1,
+      "prefix" : 11122,
+      "name" : "SP01"
+    }, {
+      "id" : 2,
+      "prefix" : 33322,
+      "name" : "SP02"
     } ]
   }
 }
@@ -1470,7 +1523,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2023-12-15T13:47:03"
+    "newDateUtc" : "2023-12-20T09:27:02"
   }
 }
 ```
@@ -2828,8 +2881,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2023-12-15T13:47:03.869047",
-      "end" : "2024-01-14T13:47:03.869056"
+      "start" : "2023-12-20T09:27:02.605048",
+      "end" : "2024-01-19T09:27:02.60506"
     }
   }
 }
@@ -3039,7 +3092,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2023-12-15T12:47:03"
+    "startTimeUTC" : "2023-12-20T08:27:02"
   }
 }
 ```
@@ -3112,7 +3165,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2023-12-15T12:47:03"
+    "startTimeUTC" : "2023-12-20T08:27:02"
   }
 }
 ```
@@ -3194,7 +3247,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2023-12-15T12:47:03"
+    "startTimeUTC" : "2023-12-20T08:27:02"
   }
 }
 ```
@@ -3566,6 +3619,714 @@ This request can be used to list the prefix(es) of a specific destination list.
 ### Remark(s)
 
 - The numeric value of `listDestinationListPrefix` is the id of the destination list
+
+
+## 3.7 listDetailedLocationZone
+
+### Description
+This request can be used to list all the 'Location zone' of a reseller (customer). This request is returning the complete
+list operator (including MCC-MNC and TADIGs) for each  zone.
+
+
+### Inputs
+|Parameter|Presence|Description|
+|---------|--------|-----------|
+|listDetailedLocationZone|Mandatory|ID of the reseller for which to list the location zones|
+
+
+### Request
+```json
+{
+  "listDetailedLocationZone" : 1
+}
+```
+### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "listDetailedLocationZone" : [ {
+    "zoneId" : 27,
+    "zoneName" : "PDEL - Test eSIM",
+    "reseller" : {
+      "id" : 1,
+      "name" : "PDEL Reseller"
+    },
+    "operators" : [ {
+      "networkId" : 477,
+      "continent" : "Europe",
+      "countryCode" : 39,
+      "countryName" : "Italy",
+      "countryIso2" : "it",
+      "utcOffset" : "+01:00",
+      "operatorName" : "H3G S p A ",
+      "mccMncs" : [ {
+        "mcc" : "222",
+        "mnc" : "99"
+      } ],
+      "tadigs" : [ "ITAH3" ]
+    }, {
+      "networkId" : 79,
+      "continent" : "Europe",
+      "countryCode" : 32,
+      "countryName" : "Belgium",
+      "countryIso2" : "be",
+      "utcOffset" : "+01:00",
+      "operatorName" : "Proximus PLC",
+      "mccMncs" : [ {
+        "mcc" : "206",
+        "mnc" : "01"
+      } ],
+      "tadigs" : [ "BELTB" ]
+    } ]
+  }, {
+    "zoneId" : 1121,
+    "zoneName" : "TEST_LZ",
+    "reseller" : {
+      "id" : 1,
+      "name" : "PDEL Reseller"
+    },
+    "operators" : [ {
+      "networkId" : 769,
+      "continent" : "Asia",
+      "countryCode" : 7,
+      "countryName" : "Russian Federation",
+      "countryIso2" : "ru",
+      "utcOffset" : "+03:00",
+      "operatorName" : "OJSC MegaFon",
+      "mccMncs" : [ {
+        "mcc" : "250",
+        "mnc" : "02"
+      } ],
+      "tadigs" : [ "RUSNW" ]
+    } ]
+  } ]
+}
+```
+### Remark(s)
+
+- Note that if there no zone configured for an operator the `listDetailedLocationZone` is going to be null, not empty array
+
+
+## 3.8 listDetailedDestinationList
+
+### Description
+This request can be used to list all the 'Destination list' of a reseller (customer). The request returns
+the list of prefixes configured in each list.
+
+
+### Inputs
+|Parameter|Presence|Description|
+|---------|--------|-----------|
+|listDetailedDestinationList|Mandatory|ID of the reseller for which to list the destination list|
+
+
+### Request
+```json
+{
+  "listDetailedLocationZone" : 1
+}
+```
+### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "listDetailedDestinationList" : [ {
+    "listId" : 5,
+    "listName" : "Denis Destination list",
+    "reseller" : {
+      "id" : 1,
+      "name" : "PDEL Reseller"
+    },
+    "prefixes" : [ "665", "7" ]
+  }, {
+    "listId" : 6,
+    "listName" : "Denis new List",
+    "reseller" : {
+      "id" : 1,
+      "name" : "PDEL Reseller"
+    },
+    "prefixes" : [ "343" ]
+  }, {
+    "listId" : 7,
+    "listName" : "dddd",
+    "reseller" : {
+      "id" : 1,
+      "name" : "PDEL Reseller"
+    }
+  }, {
+    "listId" : 11,
+    "listName" : "Denis Super Destination",
+    "reseller" : {
+      "id" : 1,
+      "name" : "PDEL Reseller"
+    },
+    "prefixes" : [ "346", "666" ]
+  }, {
+    "listId" : 12,
+    "listName" : "Dest list 1",
+    "reseller" : {
+      "id" : 1,
+      "name" : "PDEL Reseller"
+    },
+    "prefixes" : [ "12", "641" ]
+  }, {
+    "listId" : 14,
+    "listName" : "PDEL Destination list",
+    "reseller" : {
+      "id" : 1,
+      "name" : "PDEL Reseller"
+    },
+    "prefixes" : [ "113", "99" ]
+  } ]
+}
+```
+### Remark(s)
+
+- Note that if there no list configured for an operator the `listDetailedDestinationList` is going to be null, not empty array
+
+
+## 3.9 createPrepaidPackageTemplate
+
+### Description
+This request can be used to create a prepaid package template.
+
+REMARK:
+If reseller is configured to use a single counter for MOC and MTC for its packages, MOC counter `mocsecond` needs to contain
+the value for MOC and MTC.
+
+Please refer to OCS User guide ( available from OCS UI) for a full description of the recurring and throttling features.
+
+
+### Inputs
+|Parameter|Presence|Description|
+|---------|--------|-----------|
+|prepaidpackagetemplatename|Mandatory|The name of the template to create.|
+|resellerid|Mandatory|ID of the reseller to which the template will belong.|
+|locationzoneid|Mandatory|ID of the 'Location zone' for this template. See [listDetailedLocationZone](#37-listdetailedlocationzone).|
+|destinationzoneid|Optional|ID of the 'Destination list' for this template. See [listDetailedDestinationList](#38-listdetaileddestinationlist).|
+|databyte|Optional|Maximum volume for packages instantiated from this template.|
+|mocsecond|Optional|Maximum MOC seconds for packages instantiated from this template.|
+|mtcsecond|Optional|Maximum MTC seconds for packages instantiated from this template.|
+|mosmsnumber|Optional|Maximum number of MO-SMS for packages instantiated from this template.|
+|mtsmsnumber|Optional|Maximum number of MT-SMS for packages instantiated from this template.|
+|perioddays|Mandatory|Duration (in days) of the validity period for packages instantiated from this template.|
+|esimSponsor|Mandatory|ID of IMSI sponsor. When affecting a package to a subscriber, the IMSI of the subscriber (eSIM) must belong to the sponsor configured in the template. See [listSponsor](#15-listsponsor)|
+|cost|Optional|Informative field you can use to store the price you're selling packages issued from this template.|
+|throttlingActive|Mandatory|Indicates if the throttling feature is active for this template.|
+|throttlingThreshold1Perc|Optional|First threshold for throttling, in percentage of the total volume of the package. See possible values in below remarks.|
+|throttlingThreshold1Limit|Optional|Limit to apply when the subscriber is crossing the first threshold.|
+|throttlingThreshold2Perc|Optional|Second threshold for throttling, in percentage of the total volume of the package. See possible values in below remarks.|
+|throttlingThreshold2Limit|Optional|Limit to apply when the subscriber is crossing the second threshold.|
+|throttlingErrorAction|Optional|What is happening to the package if the throttling request failed to reach the subscriber. Possible values are: 0=User can continue to use the template (no speed limitation), 1=Package is blocked and user cannot use it anymore.|
+|recurring|Mandatory|Indicates if the recurring feature is active for this template.|
+|nbOccurrence|Optional|Indicates the max number of package to give to the subscriber.|
+|recurringPeriodicityType|Optional|Recurring periodicity type. Possible values: 0=Daily, 1=Weekly, 2=Monthly.|
+|recurringPeriodicityFrequency|Optional|Along with `recurringPeriodicityType` will determine the frequency at which the subscriber will receive its packages. For example `recurringPeriodicityType`=`0` and `recurringPeriodicityFrequency`=`2`, the subscriber is going to receive a package every 2 days.|
+|reportUnitsPreviousPackage|Optional|When creating a new package for a subscriber, indicated if the remaining units of the previous packages needs to be reported (added to the new packages).|
+
+
+### Request
+```json
+{
+  "createPrepaidPackageTemplate" : {
+    "prepaidpackagetemplatename" : "Name",
+    "resellerid" : 123,
+    "locationzoneid" : 123,
+    "destinationzoneid" : 123,
+    "databyte" : 10000000,
+    "mocsecond" : 60,
+    "mtcsecond" : 90,
+    "mosmsnumber" : 100,
+    "mtsmsnumber" : 120,
+    "perioddays" : 45,
+    "esimSponsor" : 155,
+    "cost" : 15.5,
+    "throttlingActive" : true,
+    "throttlingThreshold1Perc" : 70,
+    "throttlingThreshold2Perc" : 90,
+    "throttlingThreshold1Limit" : 256,
+    "throttlingThreshold2Limit" : 128,
+    "throttlingErrorAction" : 1,
+    "recurring" : true,
+    "nbOccurrence" : 12,
+    "recurringPeriodicityType" : 2,
+    "recurringPeriodicityFrequency" : 12,
+    "reportUnitsPreviousPackage" : true
+  }
+}
+```
+### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "createPrepaidPackageTemplate" : {
+    "rdbDestinationZones" : {
+      "destinationzoneid" : 5,
+      "destinationzonename" : "Denis Destination list"
+    },
+    "prepaidpackagetemplateid" : 9359,
+    "prepaidpackagetemplatename" : "Name",
+    "resellerid" : 1,
+    "priority" : 1,
+    "locationzoneid" : 27,
+    "destinationzoneid" : 5,
+    "databyte" : 10000000,
+    "mocsecond" : 60,
+    "mtcsecond" : 90,
+    "mosmsnumber" : 100,
+    "mtsmsnumber" : 120,
+    "perioddays" : 45,
+    "deleted" : false,
+    "esimSponsor" : 102,
+    "cost" : 15.5,
+    "uiVisible" : false,
+    "throttlingActive" : true,
+    "throttlingThreshold1Perc" : 70,
+    "throttlingThreshold2Perc" : 90,
+    "throttlingThreshold1Limit" : 256,
+    "throttlingThreshold2Limit" : 128,
+    "throttlingErrorAction" : 1,
+    "recurring" : true,
+    "nbOccurrence" : 12,
+    "recurringPeriodicityType" : 2,
+    "recurringPeriodicityFrequency" : 12,
+    "reportUnitsPreviousPackage" : true,
+    "resellerName" : "PDEL Reseller",
+    "sponsorName" : "SP02",
+    "zone" : {
+      "locationZoneId" : 27,
+      "locationZoneName" : "PDEL - Test eSIM",
+      "countryList" : [ {
+        "continent" : "Europe",
+        "countryId" : 21,
+        "countryName" : "Belgium",
+        "countryIso2" : "be",
+        "countryCode" : 32
+      }, {
+        "continent" : "Europe",
+        "countryId" : 100,
+        "countryName" : "Italy",
+        "countryIso2" : "it",
+        "countryCode" : 39
+      } ],
+      "operatorList" : [ {
+        "operId" : 477,
+        "operatorName" : "H3G S p A ",
+        "tadigList" : [ "ITAH3" ],
+        "mccMncList" : [ "222-99" ],
+        "countryId" : 100
+      }, {
+        "operId" : 79,
+        "operatorName" : "Proximus PLC",
+        "tadigList" : [ "BELTB" ],
+        "mccMncList" : [ "206-01" ],
+        "countryId" : 21
+      } ]
+    },
+    "useSingleCounterForCall" : true
+  }
+}
+```
+### Remark(s)
+
+- `throttlingThreshold1Perc` and `throttlingThreshold1Limit` are optional, but if one is set in the request, the other must be provided
+- `throttlingThreshold2Perc` and `throttlingThreshold2Limit` are optional, but if one is set in the request, the other must be provided
+- `throttlingErrorAction` is mandatory if `throttlingActive` is `true`
+- Possible values for `throttlingThreshold1Limit` and `throttlingThreshold2Limit` in request, those are speed limitation in Kbit:
+   - 1
+   - 32
+   - 64
+   - 128
+   - 256
+   - 384
+   - 512
+   - 1024
+   - 3072
+   - 5120
+
+- If `recurring` is `true`, then `nbOccurrence`, `recurringPeriodicityType`, `recurringPeriodicityFrequency`, `reportUnitsPreviousPackage` are mandatory
+- If `recurring` is `true`, `nbOccurrence` remains optional, but only for monthly recurring package template. If not provided, it means there won't be any stop the recurring package (infinite number of package will be given).
+
+
+## 3.10 modifyPPTCore
+
+### Description
+This request can be used to create a prepaid package template.
+
+REMARK:
+If reseller is configured to use a single counter for MOC and MTC for its packages, MOC counter `mocsecond` needs to contain
+the value for MOC and MTC.
+
+Please refer to OCS User guide ( available from OCS UI) for a full description of the recurring and throttling features.
+
+
+### Inputs
+|Parameter|Presence|Description|
+|---------|--------|-----------|
+|prepaidpackagetemplatename|Mandatory|The name of the template to create.|
+|resellerid|Mandatory|ID of the reseller to which the template will belong.|
+|locationzoneid|Mandatory|ID of the 'Location zone' for this template. See [listDetailedLocationZone](#37-listdetailedlocationzone).|
+|destinationzoneid|Optional|ID of the 'Destination list' for this template. See [listDetailedDestinationList](#38-listdetaileddestinationlist).|
+|databyte|Optional|Maximum volume for packages instantiated from this template.|
+|mocsecond|Optional|Maximum MOC seconds for packages instantiated from this template.|
+|mtcsecond|Optional|Maximum MTC seconds for packages instantiated from this template.|
+|mosmsnumber|Optional|Maximum number of MO-SMS for packages instantiated from this template.|
+|mtsmsnumber|Optional|Maximum number of MT-SMS for packages instantiated from this template.|
+|perioddays|Mandatory|Duration (in days) of the validity period for packages instantiated from this template.|
+|esimSponsor|Mandatory|ID of IMSI sponsor. When affecting a package to a subscriber, the IMSI of the subscriber (eSIM) must belong to the sponsor configured in the template. See [listSponsor](#15-listsponsor)|
+|cost|Optional|Informative field you can use to store the price you're selling packages issued from this template.|
+
+
+### Request
+```json
+{
+  "createPrepaidPackageTemplate" : {
+    "prepaidpackagetemplateid" : 123,
+    "prepaidpackagetemplatename" : "Name",
+    "resellerid" : 123,
+    "locationzoneid" : 123,
+    "destinationzoneid" : 123,
+    "databyte" : 10000000,
+    "mocsecond" : 60,
+    "mtcsecond" : 90,
+    "mosmsnumber" : 100,
+    "mtsmsnumber" : 120,
+    "perioddays" : 45,
+    "esimSponsor" : 155,
+    "cost" : 15.5
+  }
+}
+```
+### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "createPrepaidPackageTemplate" : {
+    "rdbDestinationZones" : {
+      "destinationzoneid" : 5,
+      "destinationzonename" : "Denis Destination list"
+    },
+    "prepaidpackagetemplateid" : 9359,
+    "prepaidpackagetemplatename" : "Name",
+    "resellerid" : 1,
+    "priority" : 1,
+    "locationzoneid" : 27,
+    "destinationzoneid" : 5,
+    "databyte" : 10000000,
+    "mocsecond" : 60,
+    "mtcsecond" : 90,
+    "mosmsnumber" : 100,
+    "mtsmsnumber" : 120,
+    "perioddays" : 45,
+    "deleted" : false,
+    "esimSponsor" : 102,
+    "cost" : 15.5,
+    "uiVisible" : false,
+    "throttlingActive" : true,
+    "throttlingThreshold1Perc" : 70,
+    "throttlingThreshold2Perc" : 90,
+    "throttlingThreshold1Limit" : 256,
+    "throttlingThreshold2Limit" : 128,
+    "throttlingErrorAction" : 1,
+    "recurring" : true,
+    "nbOccurrence" : 12,
+    "recurringPeriodicityType" : 2,
+    "recurringPeriodicityFrequency" : 12,
+    "reportUnitsPreviousPackage" : true,
+    "resellerName" : "PDEL Reseller",
+    "sponsorName" : "SP02",
+    "zone" : {
+      "locationZoneId" : 27,
+      "locationZoneName" : "PDEL - Test eSIM",
+      "countryList" : [ {
+        "continent" : "Europe",
+        "countryId" : 21,
+        "countryName" : "Belgium",
+        "countryIso2" : "be",
+        "countryCode" : 32
+      }, {
+        "continent" : "Europe",
+        "countryId" : 100,
+        "countryName" : "Italy",
+        "countryIso2" : "it",
+        "countryCode" : 39
+      } ],
+      "operatorList" : [ {
+        "operId" : 477,
+        "operatorName" : "H3G S p A ",
+        "tadigList" : [ "ITAH3" ],
+        "mccMncList" : [ "222-99" ],
+        "countryId" : 100
+      }, {
+        "operId" : 79,
+        "operatorName" : "Proximus PLC",
+        "tadigList" : [ "BELTB" ],
+        "mccMncList" : [ "206-01" ],
+        "countryId" : 21
+      } ]
+    },
+    "useSingleCounterForCall" : true
+  }
+}
+```
+## 3.11 modifyPPTRecurring
+
+### Description
+This request can be used to create a prepaid package template.
+
+Please refer to OCS User guide ( available from OCS UI) for a full description of the recurring and throttling features.
+
+Please note:
+- If You de-activate "Recurring", the subscribers having instance of this template will stop receiving new packages.
+- Modification of `recurringPeriodicityFrequency`, `recurringPeriodicityType` and `nbOccurrence` WILL NOT AFFECT subscribers having instance of this template.
+
+
+### Inputs
+|Parameter|Presence|Description|
+|---------|--------|-----------|
+|recurring|Mandatory|Indicates if the recurring feature is active for this template.|
+|nbOccurrence|Optional|Indicates the max number of package to give to the subscriber.|
+|recurringPeriodicityType|Optional|Recurring periodicity type. Possible values: 0=Daily, 1=Weekly, 2=Monthly.|
+|recurringPeriodicityFrequency|Optional|Along with `recurringPeriodicityType` will determine the frequency at which the subscriber will receive its packages. For example `recurringPeriodicityType`=`0` and `recurringPeriodicityFrequency`=`2`, the subscriber is going to receive a package every 2 days.|
+|reportUnitsPreviousPackage|Optional|When creating a new package for a subscriber, indicated if the remaining units of the previous packages needs to be reported (added to the new packages).|
+
+
+### Request
+```json
+{
+  "createPrepaidPackageTemplate" : {
+    "prepaidpackagetemplateid" : 123,
+    "recurring" : true,
+    "nbOccurrence" : 12,
+    "recurringPeriodicityType" : 2,
+    "recurringPeriodicityFrequency" : 12,
+    "reportUnitsPreviousPackage" : true
+  }
+}
+```
+### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "createPrepaidPackageTemplate" : {
+    "rdbDestinationZones" : {
+      "destinationzoneid" : 5,
+      "destinationzonename" : "Denis Destination list"
+    },
+    "prepaidpackagetemplateid" : 9359,
+    "prepaidpackagetemplatename" : "Name",
+    "resellerid" : 1,
+    "priority" : 1,
+    "locationzoneid" : 27,
+    "destinationzoneid" : 5,
+    "databyte" : 10000000,
+    "mocsecond" : 60,
+    "mtcsecond" : 90,
+    "mosmsnumber" : 100,
+    "mtsmsnumber" : 120,
+    "perioddays" : 45,
+    "deleted" : false,
+    "esimSponsor" : 102,
+    "cost" : 15.5,
+    "uiVisible" : false,
+    "throttlingActive" : true,
+    "throttlingThreshold1Perc" : 70,
+    "throttlingThreshold2Perc" : 90,
+    "throttlingThreshold1Limit" : 256,
+    "throttlingThreshold2Limit" : 128,
+    "throttlingErrorAction" : 1,
+    "recurring" : true,
+    "nbOccurrence" : 12,
+    "recurringPeriodicityType" : 2,
+    "recurringPeriodicityFrequency" : 12,
+    "reportUnitsPreviousPackage" : true,
+    "resellerName" : "PDEL Reseller",
+    "sponsorName" : "SP02",
+    "zone" : {
+      "locationZoneId" : 27,
+      "locationZoneName" : "PDEL - Test eSIM",
+      "countryList" : [ {
+        "continent" : "Europe",
+        "countryId" : 21,
+        "countryName" : "Belgium",
+        "countryIso2" : "be",
+        "countryCode" : 32
+      }, {
+        "continent" : "Europe",
+        "countryId" : 100,
+        "countryName" : "Italy",
+        "countryIso2" : "it",
+        "countryCode" : 39
+      } ],
+      "operatorList" : [ {
+        "operId" : 477,
+        "operatorName" : "H3G S p A ",
+        "tadigList" : [ "ITAH3" ],
+        "mccMncList" : [ "222-99" ],
+        "countryId" : 100
+      }, {
+        "operId" : 79,
+        "operatorName" : "Proximus PLC",
+        "tadigList" : [ "BELTB" ],
+        "mccMncList" : [ "206-01" ],
+        "countryId" : 21
+      } ]
+    },
+    "useSingleCounterForCall" : true
+  }
+}
+```
+### Remark(s)
+
+- If `recurring` is `true`, then `nbOccurrence`, `recurringPeriodicityType`, `recurringPeriodicityFrequency`, `reportUnitsPreviousPackage` are mandatory
+- If `recurring` is `true`, `nbOccurrence` remains optional, but only for monthly recurring package template. If not provided, it means there won't be any stop the recurring package (infinite number of package will be given).
+
+
+## 3.12 modifyPPTThrottling
+
+### Description
+This request can be used to create a prepaid package template.
+Please refer to OCS User guide ( available from OCS UI) for a full description of the recurring and throttling features.
+
+
+### Inputs
+|Parameter|Presence|Description|
+|---------|--------|-----------|
+|throttlingActive|Mandatory|Indicates if the throttling feature is active for this template.|
+|throttlingThreshold1Perc|Optional|First threshold for throttling, in percentage of the total volume of the package. See possible values in below remarks.|
+|throttlingThreshold1Limit|Optional|Limit to apply when the subscriber is crossing the first threshold.|
+|throttlingThreshold2Perc|Optional|Second threshold for throttling, in percentage of the total volume of the package. See possible values in below remarks.|
+|throttlingThreshold2Limit|Optional|Limit to apply when the subscriber is crossing the second threshold.|
+|throttlingErrorAction|Optional|What is happening to the package if the throttling request failed to reach the subscriber. Possible values are: 0=User can continue to use the template (no speed limitation), 1=Package is blocked and user cannot use it anymore.|
+
+
+### Request
+```json
+{
+  "createPrepaidPackageTemplate" : {
+    "prepaidpackagetemplateid" : 123,
+    "throttlingActive" : true,
+    "throttlingThreshold1Perc" : 70,
+    "throttlingThreshold2Perc" : 90,
+    "throttlingThreshold1Limit" : 256,
+    "throttlingThreshold2Limit" : 128,
+    "throttlingErrorAction" : 1
+  }
+}
+```
+### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "createPrepaidPackageTemplate" : {
+    "rdbDestinationZones" : {
+      "destinationzoneid" : 5,
+      "destinationzonename" : "Denis Destination list"
+    },
+    "prepaidpackagetemplateid" : 9359,
+    "prepaidpackagetemplatename" : "Name",
+    "resellerid" : 1,
+    "priority" : 1,
+    "locationzoneid" : 27,
+    "destinationzoneid" : 5,
+    "databyte" : 10000000,
+    "mocsecond" : 60,
+    "mtcsecond" : 90,
+    "mosmsnumber" : 100,
+    "mtsmsnumber" : 120,
+    "perioddays" : 45,
+    "deleted" : false,
+    "esimSponsor" : 102,
+    "cost" : 15.5,
+    "uiVisible" : false,
+    "throttlingActive" : true,
+    "throttlingThreshold1Perc" : 70,
+    "throttlingThreshold2Perc" : 90,
+    "throttlingThreshold1Limit" : 256,
+    "throttlingThreshold2Limit" : 128,
+    "throttlingErrorAction" : 1,
+    "recurring" : true,
+    "nbOccurrence" : 12,
+    "recurringPeriodicityType" : 2,
+    "recurringPeriodicityFrequency" : 12,
+    "reportUnitsPreviousPackage" : true,
+    "resellerName" : "PDEL Reseller",
+    "sponsorName" : "SP02",
+    "zone" : {
+      "locationZoneId" : 27,
+      "locationZoneName" : "PDEL - Test eSIM",
+      "countryList" : [ {
+        "continent" : "Europe",
+        "countryId" : 21,
+        "countryName" : "Belgium",
+        "countryIso2" : "be",
+        "countryCode" : 32
+      }, {
+        "continent" : "Europe",
+        "countryId" : 100,
+        "countryName" : "Italy",
+        "countryIso2" : "it",
+        "countryCode" : 39
+      } ],
+      "operatorList" : [ {
+        "operId" : 477,
+        "operatorName" : "H3G S p A ",
+        "tadigList" : [ "ITAH3" ],
+        "mccMncList" : [ "222-99" ],
+        "countryId" : 100
+      }, {
+        "operId" : 79,
+        "operatorName" : "Proximus PLC",
+        "tadigList" : [ "BELTB" ],
+        "mccMncList" : [ "206-01" ],
+        "countryId" : 21
+      } ]
+    },
+    "useSingleCounterForCall" : true
+  }
+}
+```
+### Remark(s)
+
+- `throttlingThreshold1Perc` and `throttlingThreshold1Limit` are optional, but if one is set in the request, the other must be provided
+- `throttlingThreshold2Perc` and `throttlingThreshold2Limit` are optional, but if one is set in the request, the other must be provided
+- `throttlingErrorAction` is mandatory if `throttlingActive` is `true`
+- Possible values for `throttlingThreshold1Limit` and `throttlingThreshold2Limit` in request, those are speed limitation in Kbit:
+   - 1
+   - 32
+   - 64
+   - 128
+   - 256
+   - 384
+   - 512
+   - 1024
+   - 3072
+   - 5120
+
 
 
 # 4. Tariff
@@ -4250,8 +5011,8 @@ Usage type:
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2023-12-15",
-      "end" : "2023-12-10"
+      "start" : "2023-12-20",
+      "end" : "2023-12-15"
     }
   }
 }
@@ -4544,8 +5305,8 @@ Usage type:
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-12-15",
-      "end" : "2023-12-10"
+      "start" : "2023-12-20",
+      "end" : "2023-12-15"
     }
   }
 }
@@ -4574,8 +5335,8 @@ Usage type:
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2023-12-15",
-      "end" : "2023-12-10"
+      "start" : "2023-12-20",
+      "end" : "2023-12-15"
     }
   }
 }
@@ -4604,8 +5365,8 @@ Usage type:
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2023-12-15",
-      "end" : "2023-12-10"
+      "start" : "2023-12-20",
+      "end" : "2023-12-15"
     }
   }
 }
@@ -4634,8 +5395,8 @@ Usage type:
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-12-15",
-      "end" : "2023-12-10"
+      "start" : "2023-12-20",
+      "end" : "2023-12-15"
     }
   }
 }
@@ -4664,8 +5425,8 @@ Usage type:
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2023-12-15",
-      "end" : "2023-12-10"
+      "start" : "2023-12-20",
+      "end" : "2023-12-15"
     }
   }
 }
