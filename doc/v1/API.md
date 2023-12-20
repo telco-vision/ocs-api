@@ -4205,7 +4205,7 @@ Please note:
 ## 3.12 modifyPPTThrottling
 
 ### Description
-This request can be used to create a prepaid package template.
+This request can be used to modify a prepaid package template.
 Please refer to OCS User guide ( available from OCS UI) for a full description of the recurring and throttling features.
 
 
@@ -4223,7 +4223,7 @@ Please refer to OCS User guide ( available from OCS UI) for a full description o
 ### Request
 ```json
 {
-  "createPrepaidPackageTemplate" : {
+  "modifyPPTThrottling" : {
     "prepaidpackagetemplateid" : 123,
     "throttlingActive" : true,
     "throttlingThreshold1Perc" : 70,
@@ -4242,7 +4242,7 @@ Please refer to OCS User guide ( available from OCS UI) for a full description o
     "code" : 0,
     "msg" : "OK"
   },
-  "createPrepaidPackageTemplate" : {
+  "modifyPrepaidPackageTemplate" : {
     "rdbDestinationZones" : {
       "destinationzoneid" : 5,
       "destinationzonename" : "Denis Destination list"
