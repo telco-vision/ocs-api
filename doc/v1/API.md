@@ -3992,7 +3992,7 @@ Please refer to OCS User guide ( available from OCS UI) for a full description o
 ### Request
 ```json
 {
-  "createPrepaidPackageTemplate" : {
+  "modifyPPTCore" : {
     "prepaidpackagetemplateid" : 123,
     "prepaidpackagetemplatename" : "Name",
     "resellerid" : 123,
@@ -4017,7 +4017,7 @@ Please refer to OCS User guide ( available from OCS UI) for a full description o
     "code" : 0,
     "msg" : "OK"
   },
-  "createPrepaidPackageTemplate" : {
+  "modifyPrepaidPackageTemplate" : {
     "rdbDestinationZones" : {
       "destinationzoneid" : 5,
       "destinationzonename" : "Denis Destination list"
