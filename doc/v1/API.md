@@ -3963,7 +3963,7 @@ Please refer to OCS User guide ( available from OCS UI) for a full description o
 ## 3.10 modifyPPTCore
 
 ### Description
-This request can be used to create a prepaid package template.
+This request can be used to modify a prepaid package template.
 
 REMARK:
 If reseller is configured to use a single counter for MOC and MTC for its packages, MOC counter `mocsecond` needs to contain
