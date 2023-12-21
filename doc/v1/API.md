@@ -1523,7 +1523,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2023-12-20T16:00:58"
+    "newDateUtc" : "2023-12-21T08:30:44"
   }
 }
 ```
@@ -2881,8 +2881,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2023-12-20T16:00:58.276552",
-      "end" : "2024-01-19T16:00:58.276562"
+      "start" : "2023-12-21T08:30:44.091509",
+      "end" : "2024-01-20T08:30:44.09152"
     }
   }
 }
@@ -3092,7 +3092,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2023-12-20T15:00:58"
+    "startTimeUTC" : "2023-12-21T07:30:44"
   }
 }
 ```
@@ -3165,7 +3165,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2023-12-20T15:00:58"
+    "startTimeUTC" : "2023-12-21T07:30:44"
   }
 }
 ```
@@ -3247,7 +3247,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2023-12-20T15:00:58"
+    "startTimeUTC" : "2023-12-21T07:30:44"
   }
 }
 ```
@@ -4023,72 +4023,60 @@ Please refer to OCS User guide ( available from OCS UI) for a full description o
       "destinationzonename" : "Denis Destination list"
     },
     "prepaidpackagetemplateid" : 9359,
-    "prepaidpackagetemplatename" : "Name",
+    "prepaidpackagetemplatename" : "Name 2",
     "resellerid" : 1,
     "priority" : 1,
-    "locationzoneid" : 27,
+    "locationzoneid" : 1121,
     "destinationzoneid" : 5,
-    "databyte" : 10000000,
-    "mocsecond" : 60,
-    "mtcsecond" : 90,
-    "mosmsnumber" : 100,
-    "mtsmsnumber" : 120,
-    "perioddays" : 45,
+    "databyte" : 100000000,
+    "mocsecond" : 61,
+    "mtcsecond" : 91,
+    "mosmsnumber" : 101,
+    "mtsmsnumber" : 1201,
+    "perioddays" : 30,
     "deleted" : false,
-    "esimSponsor" : 102,
-    "cost" : 15.5,
+    "esimSponsor" : 101,
+    "cost" : 25.5,
     "uiVisible" : false,
     "throttlingActive" : true,
-    "throttlingThreshold1Perc" : 70,
-    "throttlingThreshold2Perc" : 90,
-    "throttlingThreshold1Limit" : 256,
-    "throttlingThreshold2Limit" : 128,
+    "throttlingThreshold1Perc" : 75,
+    "throttlingThreshold2Perc" : 95,
+    "throttlingThreshold1Limit" : 128,
+    "throttlingThreshold2Limit" : 256,
     "throttlingErrorAction" : 1,
     "recurring" : true,
-    "nbOccurrence" : 12,
-    "recurringPeriodicityType" : 2,
-    "recurringPeriodicityFrequency" : 12,
+    "nbOccurrence" : 15,
+    "recurringPeriodicityType" : 1,
+    "recurringPeriodicityFrequency" : 10,
     "reportUnitsPreviousPackage" : true,
     "resellerName" : "PDEL Reseller",
-    "sponsorName" : "SP02",
+    "sponsorName" : "SP01",
     "zone" : {
-      "locationZoneId" : 27,
-      "locationZoneName" : "PDEL - Test eSIM",
+      "locationZoneId" : 1121,
+      "locationZoneName" : "TEST_LZ",
       "countryList" : [ {
-        "continent" : "Europe",
-        "countryId" : 21,
-        "countryName" : "Belgium",
-        "countryIso2" : "be",
-        "countryCode" : 32
-      }, {
-        "continent" : "Europe",
-        "countryId" : 100,
-        "countryName" : "Italy",
-        "countryIso2" : "it",
-        "countryCode" : 39
+        "continent" : "Asia",
+        "countryId" : 168,
+        "countryName" : "Russian Federation",
+        "countryIso2" : "ru",
+        "countryCode" : 7
       } ],
       "operatorList" : [ {
-        "operId" : 477,
-        "operatorName" : "H3G S p A ",
-        "tadigList" : [ "ITAH3" ],
-        "mccMncList" : [ "222-99" ],
-        "countryId" : 100
-      }, {
-        "operId" : 79,
-        "operatorName" : "Proximus PLC",
-        "tadigList" : [ "BELTB" ],
-        "mccMncList" : [ "206-01" ],
-        "countryId" : 21
+        "operId" : 769,
+        "operatorName" : "OJSC MegaFon",
+        "tadigList" : [ "RUSNW" ],
+        "mccMncList" : [ "250-02" ],
+        "countryId" : 168
       } ]
     },
-    "useSingleCounterForCall" : true
+    "useSingleCounterForCall" : false
   }
 }
 ```
 ## 3.11 modifyPPTRecurring
 
 ### Description
-This request can be used to modify a prepaid package template.
+This request can be used to modify the recurring configuration of a prepaid package template.
 
 Please refer to OCS User guide ( available from OCS UI) for a full description of the recurring and throttling features.
 
@@ -4205,7 +4193,7 @@ Please note:
 ## 3.12 modifyPPTThrottling
 
 ### Description
-This request can be used to modify a prepaid package template.
+This request can be used to modify the throttling configuration a prepaid package template.
 Please refer to OCS User guide ( available from OCS UI) for a full description of the recurring and throttling features.
 
 
@@ -5011,8 +4999,8 @@ Usage type:
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2023-12-20",
-      "end" : "2023-12-15"
+      "start" : "2023-12-21",
+      "end" : "2023-12-16"
     }
   }
 }
@@ -5305,8 +5293,8 @@ Usage type:
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-12-20",
-      "end" : "2023-12-15"
+      "start" : "2023-12-21",
+      "end" : "2023-12-16"
     }
   }
 }
@@ -5335,8 +5323,8 @@ Usage type:
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2023-12-20",
-      "end" : "2023-12-15"
+      "start" : "2023-12-21",
+      "end" : "2023-12-16"
     }
   }
 }
@@ -5365,8 +5353,8 @@ Usage type:
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2023-12-20",
-      "end" : "2023-12-15"
+      "start" : "2023-12-21",
+      "end" : "2023-12-16"
     }
   }
 }
@@ -5395,8 +5383,8 @@ Usage type:
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-12-20",
-      "end" : "2023-12-15"
+      "start" : "2023-12-21",
+      "end" : "2023-12-16"
     }
   }
 }
@@ -5425,8 +5413,8 @@ Usage type:
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2023-12-20",
-      "end" : "2023-12-15"
+      "start" : "2023-12-21",
+      "end" : "2023-12-16"
     }
   }
 }
