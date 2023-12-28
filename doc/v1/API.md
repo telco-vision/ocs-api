@@ -1523,7 +1523,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2023-12-27T15:45:18"
+    "newDateUtc" : "2023-12-28T15:03:29"
   }
 }
 ```
@@ -2850,6 +2850,13 @@ Please note that this request will activate the subscriber, if it is not active 
 this request (successfully executed), the user can start using its prepaid package, no matter if it
 was active or not before the request.
 
+The subscriber (and its eSIM) can be provided in the request (see `subscriber`), then the system
+will affect a new plan to the specified subscriber.
+
+But instead of a subscriber, an account can be provided (see `accountForSubs`). In this case the system will search for
+a free eSIM (and its subscriber) in the specified account. If a free eSIM is found, a new package
+will be affected to its subscriber.
+
 To identify the subscriber, you can use one of the following IDs:
 - Subscriber ID
 - IMSI
@@ -2881,8 +2888,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2023-12-27T15:45:18.479958",
-      "end" : "2024-01-26T15:45:18.47997"
+      "start" : "2023-12-28T15:03:29.762122",
+      "end" : "2024-01-27T15:03:29.762139"
     }
   }
 }
@@ -3092,7 +3099,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2023-12-27T14:45:18"
+    "startTimeUTC" : "2023-12-28T14:03:29"
   }
 }
 ```
@@ -3165,7 +3172,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2023-12-27T14:45:18"
+    "startTimeUTC" : "2023-12-28T14:03:29"
   }
 }
 ```
@@ -3247,7 +3254,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2023-12-27T14:45:18"
+    "startTimeUTC" : "2023-12-28T14:03:29"
   }
 }
 ```
@@ -4999,8 +5006,8 @@ Usage type:
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2023-12-27",
-      "end" : "2023-12-22"
+      "start" : "2023-12-28",
+      "end" : "2023-12-23"
     }
   }
 }
@@ -5293,8 +5300,8 @@ Usage type:
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-12-27",
-      "end" : "2023-12-22"
+      "start" : "2023-12-28",
+      "end" : "2023-12-23"
     }
   }
 }
@@ -5323,8 +5330,8 @@ Usage type:
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2023-12-27",
-      "end" : "2023-12-22"
+      "start" : "2023-12-28",
+      "end" : "2023-12-23"
     }
   }
 }
@@ -5353,8 +5360,8 @@ Usage type:
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2023-12-27",
-      "end" : "2023-12-22"
+      "start" : "2023-12-28",
+      "end" : "2023-12-23"
     }
   }
 }
@@ -5383,8 +5390,8 @@ Usage type:
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2023-12-27",
-      "end" : "2023-12-22"
+      "start" : "2023-12-28",
+      "end" : "2023-12-23"
     }
   }
 }
@@ -5413,8 +5420,8 @@ Usage type:
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2023-12-27",
-      "end" : "2023-12-22"
+      "start" : "2023-12-28",
+      "end" : "2023-12-23"
     }
   }
 }
