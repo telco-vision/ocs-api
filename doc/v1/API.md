@@ -22,75 +22,79 @@
 
 [2.5 modifySubscriberBalance](#25-modifysubscriberbalance)
 
-[2.6 modifySubscriberPrepaidPackageLimits](#26-modifysubscriberprepaidpackagelimits)
+[2.6 hlrSetBitrate](#26-hlrsetbitrate)
 
-[2.7 modifySubscriberPrepaidPackageExpDate](#27-modifysubscriberprepaidpackageexpdate)
+[2.7 hlrGetBitrate](#27-hlrgetbitrate)
 
-[2.8 modifySubscriberPrepaidPackageStatus](#28-modifysubscriberprepaidpackagestatus)
+[2.8 moveSubscriberRangeToAccount](#28-movesubscriberrangetoaccount)
 
-[2.9 hlrSetBitrate](#29-hlrsetbitrate)
+[2.9 modifySubscriberContactInfo](#29-modifysubscribercontactinfo)
 
-[2.10 hlrGetBitrate](#210-hlrgetbitrate)
+[2.10 modifySubscriberStatus](#210-modifysubscriberstatus)
 
-[2.11 moveSubscriberRangeToAccount](#211-movesubscriberrangetoaccount)
+[2.11 setSubscriberTrafficRestrictions](#211-setsubscribertrafficrestrictions)
 
-[2.12 modifySubscriberContactInfo](#212-modifysubscribercontactinfo)
+[2.12 modifySubscriberSteeringList](#212-modifysubscribersteeringlist)
 
-[2.13 modifySubscriberStatus](#213-modifysubscriberstatus)
+[2.13 pushSteeringToSubs](#213-pushsteeringtosubs)
 
-[2.14 setSubscriberTrafficRestrictions](#214-setsubscribertrafficrestrictions)
+## [3 Subscriber prepaid packages](#31-affectpackagetosubscriber)
 
-[2.15 modifySubscriberSteeringList](#215-modifysubscribersteeringlist)
+[3.1 affectPackageToSubscriber](#31-affectpackagetosubscriber)
 
-[2.16 pushSteeringToSubs](#216-pushsteeringtosubs)
+[3.2 affectRecurringPackageToSubscriber](#32-affectrecurringpackagetosubscriber)
 
-## [3 Prepaid package](#31-listprepaidpackagetemplate)
+[3.3 listSubscriberPrepaidPackages](#33-listsubscriberprepaidpackages)
 
-[3.1 listPrepaidPackageTemplate](#31-listprepaidpackagetemplate)
+[3.4 modifySubscriberPrepaidPackageLimits](#34-modifysubscriberprepaidpackagelimits)
 
-[3.2 listLocationZoneElement](#32-listlocationzoneelement)
+[3.5 modifySubscriberPrepaidPackageExpDate](#35-modifysubscriberprepaidpackageexpdate)
 
-[3.3 affectPackageToSubscriber](#33-affectpackagetosubscriber)
+[3.6 modifySubscriberPrepaidPackageStatus](#36-modifysubscriberprepaidpackagestatus)
 
-[3.4 affectRecurringPackageToSubscriber](#34-affectrecurringpackagetosubscriber)
+[3.7 stopResumeSubsRecurringPackage](#37-stopresumesubsrecurringpackage)
 
-[3.5 listSubscriberPrepaidPackages](#35-listsubscriberprepaidpackages)
+## [4 Prepaid package template](#41-listprepaidpackagetemplate)
 
-[3.6 listDestinationListPrefix](#36-listdestinationlistprefix)
+[4.1 listPrepaidPackageTemplate](#41-listprepaidpackagetemplate)
 
-[3.7 listDetailedLocationZone](#37-listdetailedlocationzone)
+[4.2 listLocationZoneElement](#42-listlocationzoneelement)
 
-[3.8 listDetailedDestinationList](#38-listdetaileddestinationlist)
+[4.3 listDestinationListPrefix](#43-listdestinationlistprefix)
 
-[3.9 createPrepaidPackageTemplate](#39-createprepaidpackagetemplate)
+[4.4 listDetailedLocationZone](#44-listdetailedlocationzone)
 
-[3.10 modifyPPTCore](#310-modifypptcore)
+[4.5 listDetailedDestinationList](#45-listdetaileddestinationlist)
 
-[3.11 modifyPPTRecurring](#311-modifypptrecurring)
+[4.6 createPrepaidPackageTemplate](#46-createprepaidpackagetemplate)
 
-[3.12 modifyPPTThrottling](#312-modifypptthrottling)
+[4.7 modifyPPTCore](#47-modifypptcore)
 
-## [4 Tariff](#41-listresellertariff)
+[4.8 modifyPPTRecurring](#48-modifypptrecurring)
 
-[4.1 listResellerTariff](#41-listresellertariff)
+[4.9 modifyPPTThrottling](#49-modifypptthrottling)
 
-[4.2 listSubscriberTariff](#42-listsubscribertariff)
+## [5 Tariff](#51-listresellertariff)
 
-[4.3 listTariffRule](#43-listtariffrule)
+[5.1 listResellerTariff](#51-listresellertariff)
 
-[4.4 getCustomerTariff](#44-getcustomertariff)
+[5.2 listSubscriberTariff](#52-listsubscribertariff)
 
-## [5 Statistics](#51-getsubscriberactiveperiod)
+[5.3 listTariffRule](#53-listtariffrule)
 
-[5.1 getSubscriberActivePeriod](#51-getsubscriberactiveperiod)
+[5.4 getCustomerTariff](#54-getcustomertariff)
 
-[5.2 subscriberUsageOverPeriod](#52-subscriberusageoverperiod)
+## [6 Statistics](#61-getsubscriberactiveperiod)
 
-[5.3 subscriberNetworkEventsOverPeriod](#53-subscribernetworkeventsoverperiod)
+[6.1 getSubscriberActivePeriod](#61-getsubscriberactiveperiod)
 
-## [6 SMS](#61-sendmtsms)
+[6.2 subscriberUsageOverPeriod](#62-subscriberusageoverperiod)
 
-[6.1 sendMtSms](#61-sendmtsms)
+[6.3 subscriberNetworkEventsOverPeriod](#63-subscribernetworkeventsoverperiod)
+
+## [7 SMS](#71-sendmtsms)
+
+[7.1 sendMtSms](#71-sendmtsms)
 
 ## [Error codes](#error-codes)
 
@@ -1070,7 +1074,7 @@ To identify the subscriber, you can use one of the following IDs:
 ```
 #### Remark(s)
 
-- Same content as previous request
+- To get complete answer description, please refer to first example.
 
 
 ### 2.2.3 By ICCID
@@ -1097,7 +1101,7 @@ To identify the subscriber, you can use one of the following IDs:
 ```
 #### Remark(s)
 
-- Same content as previous request
+- To get complete answer description, please refer to first example.
 
 
 ### 2.2.4 By MSISDN
@@ -1124,7 +1128,7 @@ To identify the subscriber, you can use one of the following IDs:
 ```
 #### Remark(s)
 
-- Same content as previous request
+- To get complete answer description, please refer to first example.
 
 
 ### 2.2.5 By multi imsi
@@ -1151,7 +1155,7 @@ To identify the subscriber, you can use one of the following IDs:
 ```
 #### Remark(s)
 
-- Same content as previous request
+- To get complete answer description, please refer to first example.
 
 
 ### 2.2.6 By Activation code
@@ -1178,7 +1182,7 @@ To identify the subscriber, you can use one of the following IDs:
 ```
 #### Remark(s)
 
-- Same content as previous request
+- To get complete answer description, please refer to first example.
 
 
 ### Remark(s)
@@ -1240,7 +1244,7 @@ To identify the subscriber, you can use one of the following IDs:
 ```
 #### Remark(s)
 
-- Same content as previous request
+- To get complete answer description, please refer to first example.
 
 
 ### 2.3.3 By ICCID
@@ -1264,7 +1268,7 @@ To identify the subscriber, you can use one of the following IDs:
 ```
 #### Remark(s)
 
-- Same content as previous request
+- To get complete answer description, please refer to first example.
 
 
 ### 2.3.4 By MSISDN
@@ -1288,7 +1292,7 @@ To identify the subscriber, you can use one of the following IDs:
 ```
 #### Remark(s)
 
-- Same content as previous request
+- To get complete answer description, please refer to first example.
 
 
 ### 2.3.5 By multi imsi
@@ -1312,7 +1316,7 @@ To identify the subscriber, you can use one of the following IDs:
 ```
 #### Remark(s)
 
-- Same content as previous request
+- To get complete answer description, please refer to first example.
 
 
 ### 2.3.6 By Activation code
@@ -1336,7 +1340,7 @@ To identify the subscriber, you can use one of the following IDs:
 ```
 #### Remark(s)
 
-- Same content as previous request
+- To get complete answer description, please refer to first example.
 
 
 ### Remark(s)
@@ -1454,7 +1458,1703 @@ This request is logged in the system DB and you can see them in the UI, in the `
   }
 }
 ```
-## 2.6 modifySubscriberPrepaidPackageLimits
+## 2.6 hlrSetBitrate
+
+### Description
+This request is part of the throttling API.
+
+It will set a new bandwidth limitation for the subscriber identified by the IMSI.
+
+Possible values for the `limit` field:
+- KB_128: User will be limited 128 Kbit/sec
+- KB_256: User will be limited 256 Kbit/sec
+- KB_384: User will be limited 384 Kbit/sec
+- KB_512: User will be limited 512 Kbit/sec
+- KB_1024: User will be limited 1024 Kbit/sec
+- KB_3072: User will be limited 3072 Kbit/sec
+- KB_5120: User will be limited 5120 Kbit/sec
+- UNLIMITED: User will not be limited.
+
+
+### Request
+```json
+{
+  "hlrSetBitrate" : {
+    "imsi" : "123456789",
+    "limit" : "KB_512"
+  }
+}
+```
+### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+## 2.7 hlrGetBitrate
+
+### Description
+This request is part of the throttling API.
+
+It retrieves the current limitation of the subscriber in terms of data bandwidth.
+
+
+### Request
+```json
+{
+  "hlrGetBitrate" : {
+    "imsi" : "123456789"
+  }
+}
+```
+### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "hlrGetBitrate" : "UNLIMITED"
+}
+```
+## 2.8 moveSubscriberRangeToAccount
+
+### Description
+This method can be used to move a range a subscriber from one account to another account. The range of
+subscriber can be either a range of IMSI, or a range of ICCID.
+
+If you move the subscriber to a different reseller, all the moved subscribers will lose their prepaid
+packages. Indeed, location zone (that is attached to each and every packages) from reseller A, is not
+visible in reseller B. Meaning packages from reseller A are not visible in reseller B, so no need to
+keep them.
+
+
+### Inputs
+|Parameter|Presence|Description|
+|---------|--------|-----------|
+|rangeType|Mandatory|Indicate the type of range. Possible values: `IMSI`, `ICCID`.|
+|rangeStart|Mandatory|IMSI or ICCID of the first subscriber of the range to move|
+|rangeEnd|Mandatory|IMSI or ICCID of the last subscriber of the range to move|
+|accountId|Mandatory|Current account of the subscriber to move|
+|destAccount|Mandatory|New account for the subscriber to move|
+
+
+### Outputs
+|Parameter|Presence|Description|
+|---------|--------|-----------|
+|moveSubscriberRangeToAccount|Mandatory|The number of subscriber that has been moved.|
+
+
+### 2.8.1 IMSI range
+#### Request
+```json
+{
+  "moveSubscriberRangeToAccount" : {
+    "rangeType" : "IMSI",
+    "rangeStart" : "200010416000001",
+    "rangeEnd" : "2000104160000010",
+    "srcAccountId" : 10,
+    "destAccount" : 15
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "moveSubscriberRangeToAccount" : 4
+}
+```
+### 2.8.2 ICCID range
+#### Request
+```json
+{
+  "moveSubscriberRangeToAccount" : {
+    "rangeType" : "ICCID",
+    "rangeStart" : "893720000000000001",
+    "rangeEnd" : "893720000000000010",
+    "srcAccountId" : 10,
+    "destAccount" : 15
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "moveSubscriberRangeToAccount" : 4
+}
+```
+## 2.9 modifySubscriberContactInfo
+
+### Description
+This request can be used to adapt the subscriber contact info.
+
+To identify the subscriber, you can use one of the following IDs:
+- Subscriber ID
+- IMSI
+- ICCID
+
+
+### 2.9.1 By subscriber ID
+#### Request
+```json
+{
+  "modifySubscriberContactInfo" : {
+    "subscriber" : {
+      "subscriberId" : 1000
+    },
+    "name" : "optional name",
+    "phone" : "optional phone number",
+    "mail" : "optional mail",
+    "company" : "optional company"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 2.9.2 By IMSI
+#### Request
+```json
+{
+  "modifySubscriberContactInfo" : {
+    "subscriber" : {
+      "imsi" : "12345678901234"
+    },
+    "name" : "optional name",
+    "mail" : "optional mail"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 2.9.3 By ICCID
+#### Request
+```json
+{
+  "modifySubscriberContactInfo" : {
+    "subscriber" : {
+      "iccid" : "123456789012345678"
+    },
+    "phone" : "optional phone number",
+    "company" : "optional company"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### Remark(s)
+
+- This request is best used with the subscriber ID, if you already have it, use it.
+
+
+## 2.10 modifySubscriberStatus
+
+### Description
+This request can be used to change the status of a subscriber.
+
+Only subscribers with the `ACTIVE` status can consume data, send/receive calls and SMS.
+
+To identify the subscriber, you can use one of the following IDs:
+- Subscriber ID
+- IMSI
+- ICCID
+- MSISDN
+- Multi IMSI
+- Activation code
+
+The possible values for the new status are:
+- `PENDING`
+- `ACTIVE`
+- `INACTIVE`
+- `DISCONNECTED`
+- `SUSPENDED`
+
+
+### 2.10.1 By subscriber ID
+#### Request
+```json
+{
+  "modifySubscriberStatus" : {
+    "subscriber" : {
+      "subscriberId" : 1000
+    },
+    "newStatus" : "ACTIVE"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 2.10.2 By IMSI
+#### Request
+```json
+{
+  "modifySubscriberStatus" : {
+    "subscriber" : {
+      "imsi" : "12345678901234"
+    },
+    "newStatus" : "INACTIVE"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- To get complete answer description, please refer to first example.
+
+
+### 2.10.3 By ICCID
+#### Request
+```json
+{
+  "modifySubscriberStatus" : {
+    "subscriber" : {
+      "iccid" : "123456789012345678"
+    },
+    "newStatus" : "SUSPENDED"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- To get complete answer description, please refer to first example.
+
+
+### 2.10.4 By MSISDN
+#### Request
+```json
+{
+  "modifySubscriberStatus" : {
+    "subscriber" : {
+      "msisdn" : "123456789123"
+    },
+    "newStatus" : "INACTIVE"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- To get complete answer description, please refer to first example.
+
+
+### 2.10.5 By multi imsi
+#### Request
+```json
+{
+  "modifySubscriberStatus" : {
+    "subscriber" : {
+      "multiImsi" : "12345678901234"
+    },
+    "newStatus" : "PENDING"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- To get complete answer description, please refer to first example.
+
+
+### 2.10.6 By Activation code
+#### Request
+```json
+{
+  "modifySubscriberStatus" : {
+    "subscriber" : {
+      "activationCode" : "Activation code"
+    },
+    "newStatus" : "DISCONNECTED"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- To get complete answer description, please refer to first example.
+
+
+### Remark(s)
+
+- This request is best used with the subscriber ID, if you already have it, use it.
+
+
+## 2.11 setSubscriberTrafficRestrictions
+
+### Description
+This request can be used to configure the traffic types thar are allowed for a subscriber: Data,
+MOC, MTC and SMS-MO. Please note that SMS-MT is always allowed.
+
+To identify the subscriber, you can use one of the following IDs:
+- Subscriber ID
+- IMSI
+- ICCID
+- MSISDN
+- Multi IMSI
+- Activation code
+
+
+### Inputs
+|Parameter|Presence|Description|
+|---------|--------|-----------|
+|subscriber|Mandatory|Identifier of the subscriber.|
+|dataAllowed|Mandatory|Indicates if data is allowed for the subscriber.|
+|mocAllowed|Mandatory|Indicates if MOC are allowed for the subscriber.|
+|mtcAllowed|Mandatory|Indicates if MTC are allowed for the subscriber.|
+|smsMoAllowed|Mandatory|Indicates if SMS-MO are allowed for the subscriber.|
+
+
+### 2.11.1 By subscriber ID
+#### Request
+```json
+{
+  "setSubscriberTrafficRestrictions" : {
+    "subscriber" : {
+      "subscriberId" : 1000
+    },
+    "dataAllowed" : true,
+    "mocAllowed" : false,
+    "mtcAllowed" : false,
+    "smsMoAllowed" : true
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 2.11.2 By IMSI
+#### Request
+```json
+{
+  "setSubscriberTrafficRestrictions" : {
+    "subscriber" : {
+      "imsi" : "12345678901234"
+    },
+    "dataAllowed" : true,
+    "mocAllowed" : true,
+    "mtcAllowed" : true,
+    "smsMoAllowed" : true
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- To get complete answer description, please refer to first example.
+
+
+### 2.11.3 By ICCID
+#### Request
+```json
+{
+  "setSubscriberTrafficRestrictions" : {
+    "subscriber" : {
+      "iccid" : "123456789012345678"
+    },
+    "dataAllowed" : true,
+    "mocAllowed" : false,
+    "mtcAllowed" : true,
+    "smsMoAllowed" : true
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- To get complete answer description, please refer to first example.
+
+
+### 2.11.4 By MSISDN
+#### Request
+```json
+{
+  "setSubscriberTrafficRestrictions" : {
+    "subscriber" : {
+      "msisdn" : "123456789123"
+    },
+    "dataAllowed" : true,
+    "mocAllowed" : true,
+    "mtcAllowed" : false,
+    "smsMoAllowed" : true
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- To get complete answer description, please refer to first example.
+
+
+### 2.11.5 By multi imsi
+#### Request
+```json
+{
+  "setSubscriberTrafficRestrictions" : {
+    "subscriber" : {
+      "multiImsi" : "12345678901234"
+    },
+    "dataAllowed" : true,
+    "mocAllowed" : false,
+    "mtcAllowed" : true,
+    "smsMoAllowed" : false
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- To get complete answer description, please refer to first example.
+
+
+### 2.11.6 By Activation code
+#### Request
+```json
+{
+  "setSubscriberTrafficRestrictions" : {
+    "subscriber" : {
+      "activationCode" : "Activation code"
+    },
+    "dataAllowed" : false,
+    "mocAllowed" : true,
+    "mtcAllowed" : true,
+    "smsMoAllowed" : true
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- To get complete answer description, please refer to first example.
+
+
+### Remark(s)
+
+- This request is best used with the subscriber ID, if you already have it, use it.
+
+
+## 2.12 modifySubscriberSteeringList
+
+### Description
+This request can be used to change or remove the steering list of the subscriber.
+
+To identify the subscriber, you can use one of the following IDs:
+- Subscriber ID
+- IMSI
+- ICCID
+- MSISDN
+- Multi IMSI
+- Activation code
+
+
+### Inputs
+|Parameter|Presence|Description|
+|---------|--------|-----------|
+|subscriber|Mandatory|Identifier of the subscriber.|
+|steeringListId|Optional|The new steering list for the subscriber. If none provided (null), the current list will be removed.|
+
+
+### 2.12.1 By subscriber ID
+#### Request
+```json
+{
+  "modifySubscriberSteeringList" : {
+    "subscriber" : {
+      "subscriberId" : 1000
+    },
+    "steeringListId" : 123
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 2.12.2 By IMSI
+#### Request
+```json
+{
+  "modifySubscriberSteeringList" : {
+    "subscriber" : {
+      "imsi" : "12345678901234"
+    },
+    "steeringListId" : 123
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 2.12.3 By ICCID
+#### Request
+```json
+{
+  "modifySubscriberSteeringList" : {
+    "subscriber" : {
+      "iccid" : "123456789012345678"
+    },
+    "steeringListId" : 123
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 2.12.4 By MSISDN
+#### Request
+```json
+{
+  "modifySubscriberSteeringList" : {
+    "subscriber" : {
+      "msisdn" : "123456789123"
+    },
+    "steeringListId" : 123
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 2.12.5 By multi imsi
+#### Request
+```json
+{
+  "modifySubscriberSteeringList" : {
+    "subscriber" : {
+      "multiImsi" : "12345678901234"
+    },
+    "steeringListId" : 123
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 2.12.6 By Activation code
+#### Request
+```json
+{
+  "modifySubscriberSteeringList" : {
+    "subscriber" : {
+      "activationCode" : "Activation code"
+    },
+    "steeringListId" : 123
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### Remark(s)
+
+- This request is best used with the subscriber ID, if you already have it, use it.
+
+
+## 2.13 pushSteeringToSubs
+
+### Description
+This request can be used to push the OPLMN list to the phone of the subscriber via OTA. You just need
+to provide the ID of the subscriber, the system will find the current country of the subscriber,
+build the OPLMN list for this country, and send it to the phone of the subscriber via OTA SMS.
+
+This request can be used after a modification has been brought to a steering list, of if you changed
+the steering list of subscriber, and you need to push it right away.
+
+To identify the subscriber, you can use one of the following IDs:
+- Subscriber ID
+- IMSI
+- ICCID
+- MSISDN
+- Multi IMSI
+- Activation code
+
+
+### 2.13.1 By subscriber ID
+#### Request
+```json
+{
+  "pushSteeringToSubs" : {
+    "subscriberId" : 1000
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 2.13.2 By IMSI
+#### Request
+```json
+{
+  "pushSteeringToSubs" : {
+    "imsi" : "12345678901234"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 2.13.3 By ICCID
+#### Request
+```json
+{
+  "pushSteeringToSubs" : {
+    "iccid" : "123456789012345678"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 2.13.4 By MSISDN
+#### Request
+```json
+{
+  "pushSteeringToSubs" : {
+    "msisdn" : "123456789123"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 2.13.5 By multi imsi
+#### Request
+```json
+{
+  "pushSteeringToSubs" : {
+    "multiImsi" : "12345678901234"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 2.13.6 By Activation code
+#### Request
+```json
+{
+  "pushSteeringToSubs" : {
+    "activationCode" : "Activation code"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### Remark(s)
+
+- This request is best used with the subscriber ID, if you already have it, use it.
+
+
+# 3. Subscriber prepaid packages
+## 3.1 affectPackageToSubscriber
+
+### Description
+This request can be used to affect a new prepaid package to a subscriber. The prepaid package
+affected to the subscriber will be created based on the package template provided in the request
+(you can get the list of template via request `listPrepaidPackageTemplate`).
+
+Please note that this request will activate the subscriber, if it is not active yet. Meaning after
+this request (successfully executed), the user can start using its prepaid package, no matter if it
+was active or not before the request.
+
+The subscriber (and its eSIM) can be provided in the request (see `subscriber`), then the system
+will affect a new plan to the specified subscriber.
+
+But instead of a subscriber, an account can be provided (see `accountForSubs`). In this case the system will search for
+a free eSIM (and its subscriber) in the specified account. If a free eSIM is found, a new package
+will be affected to its subscriber.
+
+To identify the subscriber, you can use one of the following IDs:
+- Subscriber ID
+- IMSI
+- ICCID
+- MSISDN
+- Multi IMSI
+- Activation code
+
+The active period of the prepaid package is calculated as following:
+- An `activePeriod` with a `start` and `end` date and time is provided in the request: The `start`
+  and `end` will be used as start and end date and time for the active period of the package.
+  This overrides the validity period configured in the package template.
+- A `validityPeriod` expressed as a number of days is provided in the request: The start date
+  and time of package is the current date and time. The end date and time of the package is the
+  current date and time, plus the number of days mentioned in `validityPeriod`.
+- No `activePeriod` nor `validityPeriod`: The start date and time will be the date and time of
+  the first successful of the prepaid package template. The end date and time of the package will be
+  the first successful usage date and time, plus the number of days for validity configured in the
+  package template.
+
+
+### 3.1.1 By subscriber ID
+#### Request
+```json
+{
+  "affectPackageToSubscriber" : {
+    "packageTemplateId" : 553,
+    "subscriber" : {
+      "subscriberId" : 1000
+    },
+    "activePeriod" : {
+      "start" : "2024-01-10T12:36:47.89885",
+      "end" : "2024-02-09T12:36:47.899156"
+    }
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "affectPackageToSubscriber" : {
+    "iccid" : "893720401615000106",
+    "smdpServer" : "smdp.io",
+    "activationCode" : "K2-1JL898-DKUTDC",
+    "urlQrCode" : "LPA:1$smdp.io$K2-1JL898-DKUTDC",
+    "subscriberId" : 18331,
+    "esimId" : 37147,
+    "subsPackageId" : 414,
+    "userSimName" : "Sparks_18331"
+  }
+}
+```
+### 3.1.2 By IMSI
+#### Request
+```json
+{
+  "affectPackageToSubscriber" : {
+    "packageTemplateId" : 553,
+    "subscriber" : {
+      "imsi" : "12345678901234"
+    },
+    "validityPeriod" : 30
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- To get complete answer description, please refer to first example.
+
+
+### 3.1.3 By ICCID
+#### Request
+```json
+{
+  "affectPackageToSubscriber" : {
+    "packageTemplateId" : 553,
+    "subscriber" : {
+      "iccid" : "123456789012345678"
+    }
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- To get complete answer description, please refer to first example.
+
+
+### 3.1.4 By MSISDN
+#### Request
+```json
+{
+  "affectPackageToSubscriber" : {
+    "packageTemplateId" : 553,
+    "subscriber" : {
+      "msisdn" : "123456789123"
+    }
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- To get complete answer description, please refer to first example.
+
+
+### 3.1.5 By multi imsi
+#### Request
+```json
+{
+  "affectPackageToSubscriber" : {
+    "packageTemplateId" : 553,
+    "subscriber" : {
+      "multiImsi" : "12345678901234"
+    }
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- To get complete answer description, please refer to first example.
+
+
+### 3.1.6 By Activation code
+#### Request
+```json
+{
+  "affectPackageToSubscriber" : {
+    "packageTemplateId" : 553,
+    "subscriber" : {
+      "activationCode" : "Activation code"
+    },
+    "validityPeriod" : 10
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- To get complete answer description, please refer to first example.
+
+
+### 3.1.7 With account
+#### Request
+```json
+{
+  "affectPackageToSubscriber" : {
+    "packageTemplateId" : 553,
+    "accountForSubs" : 40,
+    "validityPeriod" : 30
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- To get complete answer description, please refer to first example.
+
+
+### Remark(s)
+
+- This request is best used with the subscriber ID, if you already have it, use it.
+
+
+## 3.2 affectRecurringPackageToSubscriber
+
+### Description
+This request can be used to affect a new recurring prepaid package to a subscriber. The prepaid package
+affected to the subscriber will be created based on the package template provided in the request
+(you can get the list of template via request `listPrepaidPackageTemplate`).
+
+Please note that this request will activate the subscriber, if it is not active yet. Meaning after
+this request (successfully executed), the user can start using its prepaid package, as soon as the
+package is available.
+
+To identify the subscriber, you can use one of the following IDs:
+- Subscriber ID
+- IMSI
+- ICCID
+- MSISDN
+- Multi IMSI
+- Activation code
+
+For monthly recurring packages, the packages will be created the same day in the month as the first
+package of the recurring packages. Meaning if the first package is created the 3rd of a month, all
+the other packages will be given to the user every 3rd of the month.
+
+For monthly recurring packages, packages are granted the same day in the month. This mean that in
+some case we might need to create packages with invalid start date. For example, if the Start time
+is august 31, we cannot have a package starting the 31 of september. In the case, the package will
+be create with the closest previous valid date, in our example, the 30 of september.
+
+Please note that the packages will not be created all at once, when using this request. The packages will
+created 12 hours in advance. If the start time given in the request (see below), is within the next 12 hours,
+the first package will be created immediately, and will be returned in the answer. If the start time is after
+the next 12 hours, no package will be created.
+
+
+### 3.2.1 By subscriber ID
+#### Request
+```json
+{
+  "affectRecurringPackageToSubscriber" : {
+    "packageTemplateId" : 553,
+    "subscriber" : {
+      "subscriberId" : 1000
+    },
+    "startTimeUTC" : "2024-01-10T11:36:47"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "affectRecurringPackageToSubscriber" : {
+    "packageInfo" : {
+      "rdbLocationZones" : {
+        "locationzoneid" : 27,
+        "locationzonename" : "PDEL - Italy"
+      },
+      "packageTemplate" : {
+        "prepaidpackagetemplateid" : 9280,
+        "prepaidpackagetemplatename" : "PDEL Recurring"
+      },
+      "subscriberprepaidpackageid" : 1042,
+      "subscriberid" : 4,
+      "priority" : 7,
+      "locationzoneid" : 27,
+      "pckdatabyte" : 1073741824,
+      "pckmocsecond" : 1,
+      "pckmtcsecond" : 2,
+      "pckmosmsnumber" : 3,
+      "pckmtsmsnumber" : 4,
+      "tsassigned" : "2023-10-02T09:31:21",
+      "tsactivationutc" : "2023-10-02T09:31:21",
+      "tsexpirationutc" : "2023-11-02T09:31:21",
+      "useddatabyte" : 0,
+      "usedmocsecond" : 0,
+      "usedmocvoipsecond" : 0,
+      "usedmtcsecond" : 0,
+      "usedmosmsnumber" : 0,
+      "usedmtsmsnumber" : 0,
+      "perioddays" : 45,
+      "cost" : 123.0,
+      "templateId" : 9280,
+      "esimId" : 64612,
+      "active" : true
+    },
+    "simInfo" : {
+      "iccid" : "123",
+      "smdpServer" : "serv",
+      "activationCode" : "blah blah",
+      "urlQrCode" : "LPA:1$serv$blah blah",
+      "subscriberId" : 4,
+      "esimId" : 64612,
+      "subsPackageId" : 1042,
+      "userSimName" : "PDEL"
+    }
+  }
+}
+```
+#### Remark(s)
+
+- `startTimeUTC` is optional. The date and time when the first package of the series will be available to the user. If not provided, the system will take the current date and time as start date.
+
+
+### 3.2.2 By IMSI
+#### Request
+```json
+{
+  "affectRecurringPackageToSubscriber" : {
+    "packageTemplateId" : 553,
+    "subscriber" : {
+      "imsi" : "12345678901234"
+    },
+    "startTimeUTC" : "2024-01-10T11:36:47"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- To get complete answer description, please refer to first example.
+
+
+### 3.2.3 By ICCID
+#### Request
+```json
+{
+  "affectRecurringPackageToSubscriber" : {
+    "packageTemplateId" : 553,
+    "subscriber" : {
+      "iccid" : "123456789012345678"
+    }
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- To get complete answer description, please refer to first example.
+
+
+### 3.2.4 By MSISDN
+#### Request
+```json
+{
+  "affectRecurringPackageToSubscriber" : {
+    "packageTemplateId" : 553,
+    "subscriber" : {
+      "msisdn" : "123456789123"
+    }
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- To get complete answer description, please refer to first example.
+
+
+### 3.2.5 By multi imsi
+#### Request
+```json
+{
+  "affectRecurringPackageToSubscriber" : {
+    "packageTemplateId" : 553,
+    "subscriber" : {
+      "multiImsi" : "12345678901234"
+    },
+    "startTimeUTC" : "2024-01-10T11:36:47"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- To get complete answer description, please refer to first example.
+
+
+### 3.2.6 By Activation code
+#### Request
+```json
+{
+  "affectRecurringPackageToSubscriber" : {
+    "packageTemplateId" : 553,
+    "subscriber" : {
+      "activationCode" : "Activation code"
+    }
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+#### Remark(s)
+
+- To get complete answer description, please refer to first example.
+
+
+### Remark(s)
+
+- This request is best used with the subscriber ID, if you already have it, use it.
+
+
+## 3.3 listSubscriberPrepaidPackages
+
+### Description
+This request can be used to list all the pre paid packages of a subscriber (if any).
+
+_If you are using recurring packages, please use [version 2](..%2Fv2%2FAPI.md)_
+
+To identify the subscriber, you can use one of the following IDs:
+- Subscriber ID
+- IMSI
+- ICCID
+- MSISDN
+- Multi IMSI
+- Activation code
+
+
+### Outputs
+|Parameter|Presence|Description|
+|---------|--------|-----------|
+|listSubscriberPrepaidPackages.callUseSingleCounter|Mandatory|Indicates if MOC and MTC are charged on the same counter.</br>If the flag is false MOC seconds are charged on `usedmocsecond` and the limit is `pckmocsecond`. While the MTC seconds are charged on `usedmtcsecond` and the limit is `pckmtcsecond`.</br>If the flag is true, no difference is made between MOC and MTC, they both are considered as calls charged on the same counter with the same limit. Both MOC and MTC seconds are charged on `usedmocsecond` counter. The limit for both MOC and MTC is `pckmocsecond`.|
+|listSubscriberPrepaidPackages.packages|Mandatory|Array of subscriber prepaid packages, see `Subscriber prepaid package` in [OcsObjects.md](OcsObjects.md). If the subscriber doesn't have any prepaid package, this array will be empty.|
+
+
+### 3.3.1 By subscriber ID
+#### Request
+```json
+{
+  "listSubscriberPrepaidPackages" : {
+    "subscriberId" : 1000
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "listSubscriberPrepaidPackages" : {
+    "packages" : [ {
+      "rdbDestinationZones" : {
+        "destinationzoneid" : 1,
+        "destinationzonename" : "PDEL Test - 7"
+      },
+      "rdbLocationZones" : {
+        "locationzoneid" : 27,
+        "locationzonename" : "PDEL - Italy"
+      },
+      "packageTemplate" : {
+        "prepaidpackagetemplateid" : 30,
+        "prepaidpackagetemplatename" : "PDEL - Italy 20Gb"
+      },
+      "subscriberprepaidpackageid" : 83,
+      "subscriberid" : 4,
+      "priority" : 1,
+      "locationzoneid" : 27,
+      "destinationzoneid" : 1,
+      "pckdatabyte" : 21474836480,
+      "pckmocsecond" : 100,
+      "pckmtcsecond" : 100,
+      "pckmosmsnumber" : 500,
+      "pckmtsmsnumber" : 500,
+      "tsassigned" : "2022-10-13T15:04:43",
+      "tsactivationutc" : "2023-02-22T09:52:53",
+      "tsexpirationutc" : "2023-09-30T12:09:04",
+      "useddatabyte" : 30971520,
+      "usedmocsecond" : 100,
+      "usedmocvoipsecond" : 75,
+      "usedmtcsecond" : 0,
+      "usedmosmsnumber" : 0,
+      "usedmtsmsnumber" : 0,
+      "perioddays" : 30,
+      "cost" : 23.0,
+      "templateId" : 30,
+      "esimId" : 64612,
+      "active" : true
+    }, {
+      "rdbLocationZones" : {
+        "locationzoneid" : 27,
+        "locationzonename" : "PDEL - Italy"
+      },
+      "packageTemplate" : {
+        "prepaidpackagetemplateid" : 30,
+        "prepaidpackagetemplatename" : "PDEL - Italy 20Gb"
+      },
+      "subscriberprepaidpackageid" : 989,
+      "subscriberid" : 4,
+      "priority" : 2,
+      "locationzoneid" : 27,
+      "pckdatabyte" : 21474836480,
+      "pckmocsecond" : 0,
+      "pckmtcsecond" : 0,
+      "pckmosmsnumber" : 0,
+      "pckmtsmsnumber" : 0,
+      "tsassigned" : "2022-10-13T15:04:43",
+      "tsactivationutc" : "2023-02-22T09:52:53",
+      "tsexpirationutc" : "2023-07-27T08:02:54",
+      "useddatabyte" : 10971520,
+      "usedmocsecond" : 0,
+      "usedmocvoipsecond" : 0,
+      "usedmtcsecond" : 0,
+      "usedmosmsnumber" : 0,
+      "usedmtsmsnumber" : 0,
+      "perioddays" : 30,
+      "cost" : 23.0,
+      "templateId" : 30,
+      "esimId" : 64612,
+      "active" : false
+    }, {
+      "rdbDestinationZones" : {
+        "destinationzoneid" : 5,
+        "destinationzonename" : "Denis Destination list"
+      },
+      "rdbLocationZones" : {
+        "locationzoneid" : 27,
+        "locationzonename" : "PDEL - Italy"
+      },
+      "packageTemplate" : {
+        "prepaidpackagetemplateid" : 2214,
+        "prepaidpackagetemplatename" : "Denis Italy"
+      },
+      "subscriberprepaidpackageid" : 1007,
+      "subscriberid" : 4,
+      "priority" : 3,
+      "locationzoneid" : 27,
+      "destinationzoneid" : 5,
+      "pckdatabyte" : 1073741824,
+      "pckmocsecond" : 0,
+      "pckmtcsecond" : 0,
+      "pckmosmsnumber" : 0,
+      "pckmtsmsnumber" : 0,
+      "tsassigned" : "2023-08-01T13:25:08",
+      "useddatabyte" : 0,
+      "usedmocsecond" : 0,
+      "usedmocvoipsecond" : 0,
+      "usedmtcsecond" : 0,
+      "usedmosmsnumber" : 0,
+      "usedmtsmsnumber" : 0,
+      "perioddays" : 10,
+      "cost" : 9.99,
+      "templateId" : 2214,
+      "esimId" : 64612,
+      "active" : true
+    } ],
+    "callUseSingleCounter" : false
+  }
+}
+```
+### 3.3.2 By IMSI
+#### Request
+```json
+{
+  "listSubscriberPrepaidPackages" : {
+    "imsi" : "12345678901234"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "listSubscriberPrepaidPackages" : {
+    "callUseSingleCounter" : false
+  }
+}
+```
+#### Remark(s)
+
+- To get complete answer description, please refer to first example.
+
+
+### 3.3.3 By ICCID
+#### Request
+```json
+{
+  "listSubscriberPrepaidPackages" : {
+    "iccid" : "123456789012345678"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "listSubscriberPrepaidPackages" : {
+    "callUseSingleCounter" : false
+  }
+}
+```
+#### Remark(s)
+
+- To get complete answer description, please refer to first example.
+
+
+### 3.3.4 By MSISDN
+#### Request
+```json
+{
+  "listSubscriberPrepaidPackages" : {
+    "msisdn" : "123456789123"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "listSubscriberPrepaidPackages" : {
+    "callUseSingleCounter" : false
+  }
+}
+```
+#### Remark(s)
+
+- To get complete answer description, please refer to first example.
+
+
+### 3.3.5 By multi imsi
+#### Request
+```json
+{
+  "listSubscriberPrepaidPackages" : {
+    "multiImsi" : "12345678901234"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "listSubscriberPrepaidPackages" : {
+    "callUseSingleCounter" : false
+  }
+}
+```
+#### Remark(s)
+
+- To get complete answer description, please refer to first example.
+
+
+### 3.3.6 By Activation code
+#### Request
+```json
+{
+  "listSubscriberPrepaidPackages" : {
+    "activationCode" : "Activation code"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "listSubscriberPrepaidPackages" : {
+    "callUseSingleCounter" : false
+  }
+}
+```
+#### Remark(s)
+
+- To get complete answer description, please refer to first example.
+
+
+### Remark(s)
+
+- This request is best used with the subscriber ID, if you already have it, use it.
+
+
+## 3.4 modifySubscriberPrepaidPackageLimits
 
 ### Description
 This request can be used to adapt one or more limits (max volume, max SMS, minutes of call) of a
@@ -1501,7 +3201,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   }
 }
 ```
-## 2.7 modifySubscriberPrepaidPackageExpDate
+## 3.5 modifySubscriberPrepaidPackageExpDate
 
 ### Description
 This request can be used to adapt the expiration date of a subscriber prepaid package.
@@ -1523,7 +3223,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2024-01-07T11:04:46"
+    "newDateUtc" : "2024-01-10T12:36:47"
   }
 }
 ```
@@ -1537,7 +3237,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   }
 }
 ```
-## 2.8 modifySubscriberPrepaidPackageStatus
+## 3.6 modifySubscriberPrepaidPackageStatus
 
 ### Description
 This request can be used to adapt the status of a subscriber prepaid package. You can activate or deactivate the package.
@@ -1572,108 +3272,37 @@ This request is logged in the system DB and you can see them in the UI, in the `
   }
 }
 ```
-## 2.9 hlrSetBitrate
+## 3.7 stopResumeSubsRecurringPackage
 
 ### Description
-This request is part of the throttling API.
+This request can be used to stop or resume a recurring package. If you stop a recurring package, the subscriber
+will stop receiving packages for this recurring package. If you resume a stopped recurring package, the
+subscriber will receive again its packages.
 
-It will set a new bandwidth limitation for the subscriber identified by the IMSI.
+You can use this request to stop/resume:
+1. A specific recurring package of a subscriber. In this case you need to provide the field `recurringId`.
+2. All the recurring packages of a specific subscriber. In this case you need to provide the field `subscriberId`.
+3. All the recurring packages, of all the subscriber, of a specific template. In this case you need to provide the field `templateId`.
 
-Possible values for the `limit` field:
-- KB_128: User will be limited 128 Kbit/sec
-- KB_256: User will be limited 256 Kbit/sec
-- KB_384: User will be limited 384 Kbit/sec
-- KB_512: User will be limited 512 Kbit/sec
-- KB_1024: User will be limited 1024 Kbit/sec
-- KB_3072: User will be limited 3072 Kbit/sec
-- KB_5120: User will be limited 5120 Kbit/sec
-- UNLIMITED: User will not be limited.
-
-
-### Request
-```json
-{
-  "hlrSetBitrate" : {
-    "imsi" : "123456789",
-    "limit" : "KB_512"
-  }
-}
-```
-### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  }
-}
-```
-## 2.10 hlrGetBitrate
-
-### Description
-This request is part of the throttling API.
-
-It retrieves the current limitation of the subscriber in terms of data bandwidth.
-
-
-### Request
-```json
-{
-  "hlrGetBitrate" : {
-    "imsi" : "123456789"
-  }
-}
-```
-### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  },
-  "hlrGetBitrate" : "UNLIMITED"
-}
-```
-## 2.11 moveSubscriberRangeToAccount
-
-### Description
-This method can be used to move a range a subscriber from one account to another account. The range of
-subscriber can be either a range of IMSI, or a range of ICCID.
-
-If you move the subscriber to a different reseller, all the moved subscribers will lose their prepaid
-packages. Indeed, location zone (that is attached to each and every packages) from reseller A, is not
-visible in reseller B. Meaning packages from reseller A are not visible in reseller B, so no need to
-keep them.
+Please note that to get the recurring packages of a subscriber, you need to use the [version 2](..%2Fv2%2FAPI.md) of the list subscriber prepaid packages request= `listSubscriberPrepaidPackages`.
 
 
 ### Inputs
 |Parameter|Presence|Description|
 |---------|--------|-----------|
-|rangeType|Mandatory|Indicate the type of range. Possible values: `IMSI`, `ICCID`.|
-|rangeStart|Mandatory|IMSI or ICCID of the first subscriber of the range to move|
-|rangeEnd|Mandatory|IMSI or ICCID of the last subscriber of the range to move|
-|accountId|Mandatory|Current account of the subscriber to move|
-|destAccount|Mandatory|New account for the subscriber to move|
+|recurringId|Optional|The ID of the recurring package you want to stop/resume. You can find it in the answer of the `listSubscriberPrepaidPackages` ([version 2](..%2Fv2%2FAPI.md)): recurring[i].id|
+|subscriberId|Optional|The ID of the subscriber for which you want to stop ALL recurring packages.|
+|templateId|Optional|The ID of the template for which you want to to stop ALL the instances of ALL the subscribers.|
+|active|Mandatory|Flag indicating if you to stop (active=false) or resume (active=true) the recurring package(s).|
 
 
-### Outputs
-|Parameter|Presence|Description|
-|---------|--------|-----------|
-|moveSubscriberRangeToAccount|Mandatory|The number of subscriber that has been moved.|
-
-
-### 2.11.1 IMSI range
+### 3.7.1 With recurring package ID
 #### Request
 ```json
 {
-  "moveSubscriberRangeToAccount" : {
-    "rangeType" : "IMSI",
-    "rangeStart" : "200010416000001",
-    "rangeEnd" : "2000104160000010",
-    "srcAccountId" : 10,
-    "destAccount" : 15
+  "stopResumeSubsRecurringPackage" : {
+    "recurringId" : 4,
+    "active" : false
   }
 }
 ```
@@ -1688,16 +3317,13 @@ keep them.
   "moveSubscriberRangeToAccount" : 4
 }
 ```
-### 2.11.2 ICCID range
+### 3.7.2 With subscriber ID
 #### Request
 ```json
 {
-  "moveSubscriberRangeToAccount" : {
-    "rangeType" : "ICCID",
-    "rangeStart" : "893720000000000001",
-    "rangeEnd" : "893720000000000010",
-    "srcAccountId" : 10,
-    "destAccount" : 15
+  "stopResumeSubsRecurringPackage" : {
+    "subscriberId" : 123456789,
+    "active" : false
   }
 }
 ```
@@ -1712,29 +3338,13 @@ keep them.
   "moveSubscriberRangeToAccount" : 4
 }
 ```
-## 2.12 modifySubscriberContactInfo
-
-### Description
-This request can be used to adapt the subscriber contact info.
-
-To identify the subscriber, you can use one of the following IDs:
-- Subscriber ID
-- IMSI
-- ICCID
-
-
-### 2.12.1 By subscriber ID
+### 3.7.3 With package template ID
 #### Request
 ```json
 {
-  "modifySubscriberContactInfo" : {
-    "subscriber" : {
-      "subscriberId" : 1000
-    },
-    "name" : "optional name",
-    "phone" : "optional phone number",
-    "mail" : "optional mail",
-    "company" : "optional company"
+  "stopResumeSubsRecurringPackage" : {
+    "templateId" : 123,
+    "active" : true
   }
 }
 ```
@@ -1745,748 +3355,12 @@ To identify the subscriber, you can use one of the following IDs:
   "status" : {
     "code" : 0,
     "msg" : "OK"
-  }
+  },
+  "moveSubscriberRangeToAccount" : 4
 }
 ```
-### 2.12.2 By IMSI
-#### Request
-```json
-{
-  "modifySubscriberContactInfo" : {
-    "subscriber" : {
-      "imsi" : "12345678901234"
-    },
-    "name" : "optional name",
-    "mail" : "optional mail"
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  }
-}
-```
-### 2.12.3 By ICCID
-#### Request
-```json
-{
-  "modifySubscriberContactInfo" : {
-    "subscriber" : {
-      "iccid" : "123456789012345678"
-    },
-    "phone" : "optional phone number",
-    "company" : "optional company"
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  }
-}
-```
-### Remark(s)
-
-- This request is best used with the subscriber ID, if you already have it, use it.
-
-
-## 2.13 modifySubscriberStatus
-
-### Description
-This request can be used to change the status of a subscriber.
-
-Only subscribers with the `ACTIVE` status can consume data, send/receive calls and SMS.
-
-To identify the subscriber, you can use one of the following IDs:
-- Subscriber ID
-- IMSI
-- ICCID
-- MSISDN
-- Multi IMSI
-- Activation code
-
-The possible values for the new status are:
-- `PENDING`
-- `ACTIVE`
-- `INACTIVE`
-- `DISCONNECTED`
-- `SUSPENDED`
-
-
-### 2.13.1 By subscriber ID
-#### Request
-```json
-{
-  "modifySubscriberStatus" : {
-    "subscriber" : {
-      "subscriberId" : 1000
-    },
-    "newStatus" : "ACTIVE"
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  }
-}
-```
-### 2.13.2 By IMSI
-#### Request
-```json
-{
-  "modifySubscriberStatus" : {
-    "subscriber" : {
-      "imsi" : "12345678901234"
-    },
-    "newStatus" : "INACTIVE"
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  }
-}
-```
-#### Remark(s)
-
-- Same content as previous request
-
-
-### 2.13.3 By ICCID
-#### Request
-```json
-{
-  "modifySubscriberStatus" : {
-    "subscriber" : {
-      "iccid" : "123456789012345678"
-    },
-    "newStatus" : "SUSPENDED"
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  }
-}
-```
-#### Remark(s)
-
-- Same content as previous request
-
-
-### 2.13.4 By MSISDN
-#### Request
-```json
-{
-  "modifySubscriberStatus" : {
-    "subscriber" : {
-      "msisdn" : "123456789123"
-    },
-    "newStatus" : "INACTIVE"
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  }
-}
-```
-#### Remark(s)
-
-- Same content as previous request
-
-
-### 2.13.5 By multi imsi
-#### Request
-```json
-{
-  "modifySubscriberStatus" : {
-    "subscriber" : {
-      "multiImsi" : "12345678901234"
-    },
-    "newStatus" : "PENDING"
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  }
-}
-```
-#### Remark(s)
-
-- Same content as previous request
-
-
-### 2.13.6 By Activation code
-#### Request
-```json
-{
-  "modifySubscriberStatus" : {
-    "subscriber" : {
-      "activationCode" : "Activation code"
-    },
-    "newStatus" : "DISCONNECTED"
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  }
-}
-```
-#### Remark(s)
-
-- Same content as previous request
-
-
-### Remark(s)
-
-- This request is best used with the subscriber ID, if you already have it, use it.
-
-
-## 2.14 setSubscriberTrafficRestrictions
-
-### Description
-This request can be used to configure the traffic types thar are allowed for a subscriber: Data,
-MOC, MTC and SMS-MO. Please note that SMS-MT is always allowed.
-
-To identify the subscriber, you can use one of the following IDs:
-- Subscriber ID
-- IMSI
-- ICCID
-- MSISDN
-- Multi IMSI
-- Activation code
-
-
-### Inputs
-|Parameter|Presence|Description|
-|---------|--------|-----------|
-|subscriber|Mandatory|Identifier of the subscriber.|
-|dataAllowed|Mandatory|Indicates if data is allowed for the subscriber.|
-|mocAllowed|Mandatory|Indicates if MOC are allowed for the subscriber.|
-|mtcAllowed|Mandatory|Indicates if MTC are allowed for the subscriber.|
-|smsMoAllowed|Mandatory|Indicates if SMS-MO are allowed for the subscriber.|
-
-
-### 2.14.1 By subscriber ID
-#### Request
-```json
-{
-  "setSubscriberTrafficRestrictions" : {
-    "subscriber" : {
-      "subscriberId" : 1000
-    },
-    "dataAllowed" : true,
-    "mocAllowed" : false,
-    "mtcAllowed" : false,
-    "smsMoAllowed" : true
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  }
-}
-```
-### 2.14.2 By IMSI
-#### Request
-```json
-{
-  "setSubscriberTrafficRestrictions" : {
-    "subscriber" : {
-      "imsi" : "12345678901234"
-    },
-    "dataAllowed" : true,
-    "mocAllowed" : true,
-    "mtcAllowed" : true,
-    "smsMoAllowed" : true
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  }
-}
-```
-#### Remark(s)
-
-- Same content as previous request
-
-
-### 2.14.3 By ICCID
-#### Request
-```json
-{
-  "setSubscriberTrafficRestrictions" : {
-    "subscriber" : {
-      "iccid" : "123456789012345678"
-    },
-    "dataAllowed" : true,
-    "mocAllowed" : false,
-    "mtcAllowed" : true,
-    "smsMoAllowed" : true
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  }
-}
-```
-#### Remark(s)
-
-- Same content as previous request
-
-
-### 2.14.4 By MSISDN
-#### Request
-```json
-{
-  "setSubscriberTrafficRestrictions" : {
-    "subscriber" : {
-      "msisdn" : "123456789123"
-    },
-    "dataAllowed" : true,
-    "mocAllowed" : true,
-    "mtcAllowed" : false,
-    "smsMoAllowed" : true
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  }
-}
-```
-#### Remark(s)
-
-- Same content as previous request
-
-
-### 2.14.5 By multi imsi
-#### Request
-```json
-{
-  "setSubscriberTrafficRestrictions" : {
-    "subscriber" : {
-      "multiImsi" : "12345678901234"
-    },
-    "dataAllowed" : true,
-    "mocAllowed" : false,
-    "mtcAllowed" : true,
-    "smsMoAllowed" : false
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  }
-}
-```
-#### Remark(s)
-
-- Same content as previous request
-
-
-### 2.14.6 By Activation code
-#### Request
-```json
-{
-  "setSubscriberTrafficRestrictions" : {
-    "subscriber" : {
-      "activationCode" : "Activation code"
-    },
-    "dataAllowed" : false,
-    "mocAllowed" : true,
-    "mtcAllowed" : true,
-    "smsMoAllowed" : true
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  }
-}
-```
-#### Remark(s)
-
-- Same content as previous request
-
-
-### Remark(s)
-
-- This request is best used with the subscriber ID, if you already have it, use it.
-
-
-## 2.15 modifySubscriberSteeringList
-
-### Description
-This request can be used to change or remove the steering list of the subscriber.
-
-To identify the subscriber, you can use one of the following IDs:
-- Subscriber ID
-- IMSI
-- ICCID
-- MSISDN
-- Multi IMSI
-- Activation code
-
-
-### Inputs
-|Parameter|Presence|Description|
-|---------|--------|-----------|
-|subscriber|Mandatory|Identifier of the subscriber.|
-|steeringListId|Optional|The new steering list for the subscriber. If none provided (null), the current list will be removed.|
-
-
-### 2.15.1 By subscriber ID
-#### Request
-```json
-{
-  "modifySubscriberSteeringList" : {
-    "subscriber" : {
-      "subscriberId" : 1000
-    },
-    "steeringListId" : 123
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  }
-}
-```
-### 2.15.2 By IMSI
-#### Request
-```json
-{
-  "modifySubscriberSteeringList" : {
-    "subscriber" : {
-      "imsi" : "12345678901234"
-    },
-    "steeringListId" : 123
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  }
-}
-```
-### 2.15.3 By ICCID
-#### Request
-```json
-{
-  "modifySubscriberSteeringList" : {
-    "subscriber" : {
-      "iccid" : "123456789012345678"
-    },
-    "steeringListId" : 123
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  }
-}
-```
-### 2.15.4 By MSISDN
-#### Request
-```json
-{
-  "modifySubscriberSteeringList" : {
-    "subscriber" : {
-      "msisdn" : "123456789123"
-    },
-    "steeringListId" : 123
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  }
-}
-```
-### 2.15.5 By multi imsi
-#### Request
-```json
-{
-  "modifySubscriberSteeringList" : {
-    "subscriber" : {
-      "multiImsi" : "12345678901234"
-    },
-    "steeringListId" : 123
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  }
-}
-```
-### 2.15.6 By Activation code
-#### Request
-```json
-{
-  "modifySubscriberSteeringList" : {
-    "subscriber" : {
-      "activationCode" : "Activation code"
-    },
-    "steeringListId" : 123
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  }
-}
-```
-### Remark(s)
-
-- This request is best used with the subscriber ID, if you already have it, use it.
-
-
-## 2.16 pushSteeringToSubs
-
-### Description
-This request can be used to push the OPLMN list to the phone of the subscriber via OTA. You just need
-to provide the ID of the subscriber, the system will find the current country of the subscriber,
-build the OPLMN list for this country, and send it to the phone of the subscriber via OTA SMS.
-
-This request can be used after a modification has been brought to a steering list, of if you changed
-the steering list of subscriber, and you need to push it right away.
-
-To identify the subscriber, you can use one of the following IDs:
-- Subscriber ID
-- IMSI
-- ICCID
-- MSISDN
-- Multi IMSI
-- Activation code
-
-
-### 2.16.1 By subscriber ID
-#### Request
-```json
-{
-  "pushSteeringToSubs" : {
-    "subscriberId" : 1000
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  }
-}
-```
-### 2.16.2 By IMSI
-#### Request
-```json
-{
-  "pushSteeringToSubs" : {
-    "imsi" : "12345678901234"
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  }
-}
-```
-### 2.16.3 By ICCID
-#### Request
-```json
-{
-  "pushSteeringToSubs" : {
-    "iccid" : "123456789012345678"
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  }
-}
-```
-### 2.16.4 By MSISDN
-#### Request
-```json
-{
-  "pushSteeringToSubs" : {
-    "msisdn" : "123456789123"
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  }
-}
-```
-### 2.16.5 By multi imsi
-#### Request
-```json
-{
-  "pushSteeringToSubs" : {
-    "multiImsi" : "12345678901234"
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  }
-}
-```
-### 2.16.6 By Activation code
-#### Request
-```json
-{
-  "pushSteeringToSubs" : {
-    "activationCode" : "Activation code"
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  }
-}
-```
-### Remark(s)
-
-- This request is best used with the subscriber ID, if you already have it, use it.
-
-
-# 3. Prepaid package
-## 3.1 listPrepaidPackageTemplate
+# 4. Prepaid package template
+## 4.1 listPrepaidPackageTemplate
 
 ### Description
 This request can be used to list your prepaid package templates. You have several keys to search the templates:
@@ -2498,7 +3372,7 @@ This request can be used to list your prepaid package templates. You have severa
 You can also send the request without any search keys. In this case the request will return all your templates.
 
 
-### 3.1.1 By template Id
+### 4.1.1 By template Id
 #### Request
 ```json
 {
@@ -2643,7 +3517,7 @@ You can also send the request without any search keys. In this case the request 
   }
 }
 ```
-### 3.1.2 By reseller
+### 4.1.2 By reseller
 #### Request
 ```json
 {
@@ -2701,7 +3575,7 @@ You can also send the request without any search keys. In this case the request 
   }
 }
 ```
-### 3.1.3 By sponsor
+### 4.1.3 By sponsor
 #### Request
 ```json
 {
@@ -2725,7 +3599,7 @@ You can also send the request without any search keys. In this case the request 
 - Check answer in previous request
 
 
-### 3.1.4 By location zone
+### 4.1.4 By location zone
 #### Request
 ```json
 {
@@ -2749,7 +3623,7 @@ You can also send the request without any search keys. In this case the request 
 - Check answer in previous request
 
 
-### 3.1.5 By destination list
+### 4.1.5 By destination list
 #### Request
 ```json
 {
@@ -2773,7 +3647,7 @@ You can also send the request without any search keys. In this case the request 
 - Check answer in previous request
 
 
-### 3.1.6 No search keys
+### 4.1.6 No search keys
 #### Request
 ```json
 {
@@ -2796,7 +3670,7 @@ You can also send the request without any search keys. In this case the request 
 - Check answer in previous request
 
 
-## 3.2 listLocationZoneElement
+## 4.2 listLocationZoneElement
 
 ### Description
 This request can be used to list the operators composing a specific location zone.
@@ -2839,789 +3713,7 @@ This request can be used to list the operators composing a specific location zon
 - The numeric value of `listLocationZoneElement` is the id of the location zone
 
 
-## 3.3 affectPackageToSubscriber
-
-### Description
-This request can be used to affect a new prepaid package to a subscriber. The prepaid package
-affected to the subscriber will be created based on the package template provided in the request
-(you can get the list of template via request `listPrepaidPackageTemplate`).
-
-Please note that this request will activate the subscriber, if it is not active yet. Meaning after
-this request (successfully executed), the user can start using its prepaid package, no matter if it
-was active or not before the request.
-
-The subscriber (and its eSIM) can be provided in the request (see `subscriber`), then the system
-will affect a new plan to the specified subscriber.
-
-But instead of a subscriber, an account can be provided (see `accountForSubs`). In this case the system will search for
-a free eSIM (and its subscriber) in the specified account. If a free eSIM is found, a new package
-will be affected to its subscriber.
-
-To identify the subscriber, you can use one of the following IDs:
-- Subscriber ID
-- IMSI
-- ICCID
-- MSISDN
-- Multi IMSI
-- Activation code
-
-The active period of the prepaid package is calculated as following:
-- An `activePeriod` with a `start` and `end` date and time is provided in the request: The `start`
-  and `end` will be used as start and end date and time for the active period of the package.
-  This overrides the validity period configured in the package template.
-- A `validityPeriod` expressed as a number of days is provided in the request: The start date
-  and time of package is the current date and time. The end date and time of the package is the
-  current date and time, plus the number of days mentioned in `validityPeriod`.
-- No `activePeriod` nor `validityPeriod`: The start date and time will be the date and time of
-  the first successful of the prepaid package template. The end date and time of the package will be
-  the first successful usage date and time, plus the number of days for validity configured in the
-  package template.
-
-
-### 3.3.1 By subscriber ID
-#### Request
-```json
-{
-  "affectPackageToSubscriber" : {
-    "packageTemplateId" : 553,
-    "subscriber" : {
-      "subscriberId" : 1000
-    },
-    "activePeriod" : {
-      "start" : "2024-01-07T11:04:46.937981",
-      "end" : "2024-02-06T11:04:46.937995"
-    }
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  },
-  "affectPackageToSubscriber" : {
-    "iccid" : "893720401615000106",
-    "smdpServer" : "smdp.io",
-    "activationCode" : "K2-1JL898-DKUTDC",
-    "urlQrCode" : "LPA:1$smdp.io$K2-1JL898-DKUTDC",
-    "subscriberId" : 18331,
-    "esimId" : 37147,
-    "subsPackageId" : 414,
-    "userSimName" : "Sparks_18331"
-  }
-}
-```
-### 3.3.2 By IMSI
-#### Request
-```json
-{
-  "affectPackageToSubscriber" : {
-    "packageTemplateId" : 553,
-    "subscriber" : {
-      "imsi" : "12345678901234"
-    },
-    "validityPeriod" : 30
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  }
-}
-```
-#### Remark(s)
-
-- Same content as previous request
-
-
-### 3.3.3 By ICCID
-#### Request
-```json
-{
-  "affectPackageToSubscriber" : {
-    "packageTemplateId" : 553,
-    "subscriber" : {
-      "iccid" : "123456789012345678"
-    }
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  }
-}
-```
-#### Remark(s)
-
-- Same content as previous request
-
-
-### 3.3.4 By MSISDN
-#### Request
-```json
-{
-  "affectPackageToSubscriber" : {
-    "packageTemplateId" : 553,
-    "subscriber" : {
-      "msisdn" : "123456789123"
-    }
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  }
-}
-```
-#### Remark(s)
-
-- Same content as previous request
-
-
-### 3.3.5 By multi imsi
-#### Request
-```json
-{
-  "affectPackageToSubscriber" : {
-    "packageTemplateId" : 553,
-    "subscriber" : {
-      "multiImsi" : "12345678901234"
-    }
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  }
-}
-```
-#### Remark(s)
-
-- Same content as previous request
-
-
-### 3.3.6 By Activation code
-#### Request
-```json
-{
-  "affectPackageToSubscriber" : {
-    "packageTemplateId" : 553,
-    "subscriber" : {
-      "activationCode" : "Activation code"
-    },
-    "validityPeriod" : 10
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  }
-}
-```
-#### Remark(s)
-
-- Same content as previous request
-
-
-### 3.3.7 With account
-#### Request
-```json
-{
-  "affectPackageToSubscriber" : {
-    "packageTemplateId" : 553,
-    "accountForSubs" : 40,
-    "validityPeriod" : 30
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  }
-}
-```
-#### Remark(s)
-
-- Same content as previous request
-
-
-### Remark(s)
-
-- This request is best used with the subscriber ID, if you already have it, use it.
-
-
-## 3.4 affectRecurringPackageToSubscriber
-
-### Description
-This request can be used to affect a new recurring prepaid package to a subscriber. The prepaid package
-affected to the subscriber will be created based on the package template provided in the request
-(you can get the list of template via request `listPrepaidPackageTemplate`).
-
-Please note that this request will activate the subscriber, if it is not active yet. Meaning after
-this request (successfully executed), the user can start using its prepaid package, as soon as the
-package is available.
-
-To identify the subscriber, you can use one of the following IDs:
-- Subscriber ID
-- IMSI
-- ICCID
-- MSISDN
-- Multi IMSI
-- Activation code
-
-For monthly recurring packages, the packages will be created the same day in the month as the first
-package of the recurring packages. Meaning if the first package is created the 3rd of a month, all
-the other packages will be given to the user every 3rd of the month.
-
-For monthly recurring packages, packages are granted the same day in the month. This mean that in
-some case we might need to create packages with invalid start date. For example, if the Start time
-is august 31, we cannot have a package starting the 31 of september. In the case, the package will
-be create with the closest previous valid date, in our example, the 30 of september.
-
-Please note that the packages will not be created all at once, when using this request. The packages will
-created 12 hours in advance. If the start time given in the request (see below), is within the next 12 hours,
-the first package will be created immediately, and will be returned in the answer. If the start time is after
-the next 12 hours, no package will be created.
-
-
-### 3.4.1 By subscriber ID
-#### Request
-```json
-{
-  "affectRecurringPackageToSubscriber" : {
-    "packageTemplateId" : 553,
-    "subscriber" : {
-      "subscriberId" : 1000
-    },
-    "startTimeUTC" : "2024-01-07T10:04:46"
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  },
-  "affectRecurringPackageToSubscriber" : {
-    "packageInfo" : {
-      "rdbLocationZones" : {
-        "locationzoneid" : 27,
-        "locationzonename" : "PDEL - Italy"
-      },
-      "packageTemplate" : {
-        "prepaidpackagetemplateid" : 9280,
-        "prepaidpackagetemplatename" : "PDEL Recurring"
-      },
-      "subscriberprepaidpackageid" : 1042,
-      "subscriberid" : 4,
-      "priority" : 7,
-      "locationzoneid" : 27,
-      "pckdatabyte" : 1073741824,
-      "pckmocsecond" : 1,
-      "pckmtcsecond" : 2,
-      "pckmosmsnumber" : 3,
-      "pckmtsmsnumber" : 4,
-      "tsassigned" : "2023-10-02T09:31:21",
-      "tsactivationutc" : "2023-10-02T09:31:21",
-      "tsexpirationutc" : "2023-11-02T09:31:21",
-      "useddatabyte" : 0,
-      "usedmocsecond" : 0,
-      "usedmocvoipsecond" : 0,
-      "usedmtcsecond" : 0,
-      "usedmosmsnumber" : 0,
-      "usedmtsmsnumber" : 0,
-      "perioddays" : 45,
-      "cost" : 123.0,
-      "templateId" : 9280,
-      "esimId" : 64612,
-      "active" : true
-    },
-    "simInfo" : {
-      "iccid" : "123",
-      "smdpServer" : "serv",
-      "activationCode" : "blah blah",
-      "urlQrCode" : "LPA:1$serv$blah blah",
-      "subscriberId" : 4,
-      "esimId" : 64612,
-      "subsPackageId" : 1042,
-      "userSimName" : "PDEL"
-    }
-  }
-}
-```
-#### Remark(s)
-
-- `startTimeUTC` is optional. The date and time when the first package of the series will be available to the user. If not provided, the system will take the current date and time as start date.
-
-
-### 3.4.2 By IMSI
-#### Request
-```json
-{
-  "affectRecurringPackageToSubscriber" : {
-    "packageTemplateId" : 553,
-    "subscriber" : {
-      "imsi" : "12345678901234"
-    },
-    "startTimeUTC" : "2024-01-07T10:04:46"
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  }
-}
-```
-#### Remark(s)
-
-- Same content as previous request
-
-
-### 3.4.3 By ICCID
-#### Request
-```json
-{
-  "affectRecurringPackageToSubscriber" : {
-    "packageTemplateId" : 553,
-    "subscriber" : {
-      "iccid" : "123456789012345678"
-    }
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  }
-}
-```
-#### Remark(s)
-
-- Same content as previous request
-
-
-### 3.4.4 By MSISDN
-#### Request
-```json
-{
-  "affectRecurringPackageToSubscriber" : {
-    "packageTemplateId" : 553,
-    "subscriber" : {
-      "msisdn" : "123456789123"
-    }
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  }
-}
-```
-#### Remark(s)
-
-- Same content as previous request
-
-
-### 3.4.5 By multi imsi
-#### Request
-```json
-{
-  "affectRecurringPackageToSubscriber" : {
-    "packageTemplateId" : 553,
-    "subscriber" : {
-      "multiImsi" : "12345678901234"
-    },
-    "startTimeUTC" : "2024-01-07T10:04:46"
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  }
-}
-```
-#### Remark(s)
-
-- Same content as previous request
-
-
-### 3.4.6 By Activation code
-#### Request
-```json
-{
-  "affectRecurringPackageToSubscriber" : {
-    "packageTemplateId" : 553,
-    "subscriber" : {
-      "activationCode" : "Activation code"
-    }
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  }
-}
-```
-#### Remark(s)
-
-- Same content as previous request
-
-
-### Remark(s)
-
-- This request is best used with the subscriber ID, if you already have it, use it.
-
-
-## 3.5 listSubscriberPrepaidPackages
-
-### Description
-This request can be used to list all the pre paid packages of a subscriber (if any).
-
-_If you are using recurring packages, please use [version 2](..%2Fv2%2FAPI.md)_
-
-To identify the subscriber, you can use one of the following IDs:
-- Subscriber ID
-- IMSI
-- ICCID
-- MSISDN
-- Multi IMSI
-- Activation code
-
-
-### Outputs
-|Parameter|Presence|Description|
-|---------|--------|-----------|
-|listSubscriberPrepaidPackages.callUseSingleCounter|Mandatory|Indicates if MOC and MTC are charged on the same counter.</br>If the flag is false MOC seconds are charged on `usedmocsecond` and the limit is `pckmocsecond`. While the MTC seconds are charged on `usedmtcsecond` and the limit is `pckmtcsecond`.</br>If the flag is true, no difference is made between MOC and MTC, they both are considered as calls charged on the same counter with the same limit. Both MOC and MTC seconds are charged on `usedmocsecond` counter. The limit for both MOC and MTC is `pckmocsecond`.|
-|listSubscriberPrepaidPackages.packages|Mandatory|Array of subscriber prepaid packages, see `Subscriber prepaid package` in [OcsObjects.md](OcsObjects.md). If the subscriber doesn't have any prepaid package, this array will be empty.|
-
-
-### 3.5.1 By subscriber ID
-#### Request
-```json
-{
-  "listSubscriberPrepaidPackages" : {
-    "subscriberId" : 1000
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  },
-  "listSubscriberPrepaidPackages" : {
-    "packages" : [ {
-      "rdbDestinationZones" : {
-        "destinationzoneid" : 1,
-        "destinationzonename" : "PDEL Test - 7"
-      },
-      "rdbLocationZones" : {
-        "locationzoneid" : 27,
-        "locationzonename" : "PDEL - Italy"
-      },
-      "packageTemplate" : {
-        "prepaidpackagetemplateid" : 30,
-        "prepaidpackagetemplatename" : "PDEL - Italy 20Gb"
-      },
-      "subscriberprepaidpackageid" : 83,
-      "subscriberid" : 4,
-      "priority" : 1,
-      "locationzoneid" : 27,
-      "destinationzoneid" : 1,
-      "pckdatabyte" : 21474836480,
-      "pckmocsecond" : 100,
-      "pckmtcsecond" : 100,
-      "pckmosmsnumber" : 500,
-      "pckmtsmsnumber" : 500,
-      "tsassigned" : "2022-10-13T15:04:43",
-      "tsactivationutc" : "2023-02-22T09:52:53",
-      "tsexpirationutc" : "2023-09-30T12:09:04",
-      "useddatabyte" : 30971520,
-      "usedmocsecond" : 100,
-      "usedmocvoipsecond" : 75,
-      "usedmtcsecond" : 0,
-      "usedmosmsnumber" : 0,
-      "usedmtsmsnumber" : 0,
-      "perioddays" : 30,
-      "cost" : 23.0,
-      "templateId" : 30,
-      "esimId" : 64612,
-      "active" : true
-    }, {
-      "rdbLocationZones" : {
-        "locationzoneid" : 27,
-        "locationzonename" : "PDEL - Italy"
-      },
-      "packageTemplate" : {
-        "prepaidpackagetemplateid" : 30,
-        "prepaidpackagetemplatename" : "PDEL - Italy 20Gb"
-      },
-      "subscriberprepaidpackageid" : 989,
-      "subscriberid" : 4,
-      "priority" : 2,
-      "locationzoneid" : 27,
-      "pckdatabyte" : 21474836480,
-      "pckmocsecond" : 0,
-      "pckmtcsecond" : 0,
-      "pckmosmsnumber" : 0,
-      "pckmtsmsnumber" : 0,
-      "tsassigned" : "2022-10-13T15:04:43",
-      "tsactivationutc" : "2023-02-22T09:52:53",
-      "tsexpirationutc" : "2023-07-27T08:02:54",
-      "useddatabyte" : 10971520,
-      "usedmocsecond" : 0,
-      "usedmocvoipsecond" : 0,
-      "usedmtcsecond" : 0,
-      "usedmosmsnumber" : 0,
-      "usedmtsmsnumber" : 0,
-      "perioddays" : 30,
-      "cost" : 23.0,
-      "templateId" : 30,
-      "esimId" : 64612,
-      "active" : false
-    }, {
-      "rdbDestinationZones" : {
-        "destinationzoneid" : 5,
-        "destinationzonename" : "Denis Destination list"
-      },
-      "rdbLocationZones" : {
-        "locationzoneid" : 27,
-        "locationzonename" : "PDEL - Italy"
-      },
-      "packageTemplate" : {
-        "prepaidpackagetemplateid" : 2214,
-        "prepaidpackagetemplatename" : "Denis Italy"
-      },
-      "subscriberprepaidpackageid" : 1007,
-      "subscriberid" : 4,
-      "priority" : 3,
-      "locationzoneid" : 27,
-      "destinationzoneid" : 5,
-      "pckdatabyte" : 1073741824,
-      "pckmocsecond" : 0,
-      "pckmtcsecond" : 0,
-      "pckmosmsnumber" : 0,
-      "pckmtsmsnumber" : 0,
-      "tsassigned" : "2023-08-01T13:25:08",
-      "useddatabyte" : 0,
-      "usedmocsecond" : 0,
-      "usedmocvoipsecond" : 0,
-      "usedmtcsecond" : 0,
-      "usedmosmsnumber" : 0,
-      "usedmtsmsnumber" : 0,
-      "perioddays" : 10,
-      "cost" : 9.99,
-      "templateId" : 2214,
-      "esimId" : 64612,
-      "active" : true
-    } ],
-    "callUseSingleCounter" : false
-  }
-}
-```
-### 3.5.2 By IMSI
-#### Request
-```json
-{
-  "listSubscriberPrepaidPackages" : {
-    "imsi" : "12345678901234"
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  },
-  "listSubscriberPrepaidPackages" : {
-    "callUseSingleCounter" : false
-  }
-}
-```
-#### Remark(s)
-
-- Same content as previous request
-
-
-### 3.5.3 By ICCID
-#### Request
-```json
-{
-  "listSubscriberPrepaidPackages" : {
-    "iccid" : "123456789012345678"
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  },
-  "listSubscriberPrepaidPackages" : {
-    "callUseSingleCounter" : false
-  }
-}
-```
-#### Remark(s)
-
-- Same content as previous request
-
-
-### 3.5.4 By MSISDN
-#### Request
-```json
-{
-  "listSubscriberPrepaidPackages" : {
-    "msisdn" : "123456789123"
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  },
-  "listSubscriberPrepaidPackages" : {
-    "callUseSingleCounter" : false
-  }
-}
-```
-#### Remark(s)
-
-- Same content as previous request
-
-
-### 3.5.5 By multi imsi
-#### Request
-```json
-{
-  "listSubscriberPrepaidPackages" : {
-    "multiImsi" : "12345678901234"
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  },
-  "listSubscriberPrepaidPackages" : {
-    "callUseSingleCounter" : false
-  }
-}
-```
-#### Remark(s)
-
-- Same content as previous request
-
-
-### 3.5.6 By Activation code
-#### Request
-```json
-{
-  "listSubscriberPrepaidPackages" : {
-    "activationCode" : "Activation code"
-  }
-}
-```
-#### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  },
-  "listSubscriberPrepaidPackages" : {
-    "callUseSingleCounter" : false
-  }
-}
-```
-#### Remark(s)
-
-- Same content as previous request
-
-
-### Remark(s)
-
-- This request is best used with the subscriber ID, if you already have it, use it.
-
-
-## 3.6 listDestinationListPrefix
+## 4.3 listDestinationListPrefix
 
 ### Description
 This request can be used to list the prefix(es) of a specific destination list.
@@ -3654,7 +3746,7 @@ This request can be used to list the prefix(es) of a specific destination list.
 - The numeric value of `listDestinationListPrefix` is the id of the destination list
 
 
-## 3.7 listDetailedLocationZone
+## 4.4 listDetailedLocationZone
 
 ### Description
 This request can be used to list all the 'Location zone' of a reseller (customer). This request is returning the complete
@@ -3744,7 +3836,7 @@ list operator (including MCC-MNC and TADIGs) for each  zone.
 - Note that if there no zone configured for an operator the `listDetailedLocationZone` is going to be null, not empty array
 
 
-## 3.8 listDetailedDestinationList
+## 4.5 listDetailedDestinationList
 
 ### Description
 This request can be used to list all the 'Destination list' of a reseller (customer). The request returns
@@ -3826,7 +3918,7 @@ the list of prefixes configured in each list.
 - Note that if there no list configured for an operator the `listDetailedDestinationList` is going to be null, not empty array
 
 
-## 3.9 createPrepaidPackageTemplate
+## 4.6 createPrepaidPackageTemplate
 
 ### Description
 This request can be used to create a prepaid package template.
@@ -3993,7 +4085,7 @@ Please refer to OCS User guide ( available from OCS UI) for a full description o
 - If `recurring` is `true`, `nbOccurrence` remains optional, but only for monthly recurring package template. If not provided, it means there won't be any stop the recurring package (infinite number of package will be given).
 
 
-## 3.10 modifyPPTCore
+## 4.7 modifyPPTCore
 
 ### Description
 This request can be used to modify a prepaid package template.
@@ -4106,7 +4198,7 @@ Please refer to OCS User guide ( available from OCS UI) for a full description o
   }
 }
 ```
-## 3.11 modifyPPTRecurring
+## 4.8 modifyPPTRecurring
 
 ### Description
 This request can be used to modify the recurring configuration of a prepaid package template.
@@ -4223,7 +4315,7 @@ Please note:
 - If `recurring` is `true`, `nbOccurrence` remains optional, but only for monthly recurring package template. If not provided, it means there won't be any stop the recurring package (infinite number of package will be given).
 
 
-## 3.12 modifyPPTThrottling
+## 4.9 modifyPPTThrottling
 
 ### Description
 This request can be used to modify the throttling configuration a prepaid package template.
@@ -4350,15 +4442,15 @@ Please refer to OCS User guide ( available from OCS UI) for a full description o
 
 
 
-# 4. Tariff
-## 4.1 listResellerTariff
+# 5. Tariff
+## 5.1 listResellerTariff
 
 ### Description
 This request can be used to list the reseller (customer) tariffs (the cost for the customer). You can list them all, or just the
 ones of a specific reseller.
 
 
-### 4.1.1 By reseller
+### 5.1.1 By reseller
 #### Request
 ```json
 {
@@ -4396,7 +4488,7 @@ ones of a specific reseller.
   }
 }
 ```
-### 4.1.2 No search keys
+### 5.1.2 No search keys
 #### Request
 ```json
 {
@@ -4437,14 +4529,14 @@ ones of a specific reseller.
 - If you don't provide any search key, the request will return all the reseller tariff(s) of all your reseller(s)
 
 
-## 4.2 listSubscriberTariff
+## 5.2 listSubscriberTariff
 
 ### Description
 This request can be used to list the subscriber tariffs. The ones used by a customer to charge
 its subscribers. You can list them all, or just the ones of a specific reseller.
 
 
-### 4.2.1 By reseller
+### 5.2.1 By reseller
 #### Request
 ```json
 {
@@ -4498,7 +4590,7 @@ its subscribers. You can list them all, or just the ones of a specific reseller.
   }
 }
 ```
-### 4.2.2 No search keys
+### 5.2.2 No search keys
 #### Request
 ```json
 {
@@ -4555,7 +4647,7 @@ its subscribers. You can list them all, or just the ones of a specific reseller.
 - If you don't provide any search key, the request will return all the subscriber tariff(s) of all your reseller(s)
 
 
-## 4.3 listTariffRule
+## 5.3 listTariffRule
 
 ### Description
 This request can be used to list the rules (costs) of a specific tariff.
@@ -4655,7 +4747,7 @@ This request can be used to list the rules (costs) of a specific tariff.
 - The numeric value of `listTariffRule` is the id of the tariff
 
 
-## 4.4 getCustomerTariff
+## 5.4 getCustomerTariff
 
 ### Description
 This request can be used to list the rules (costs) of the customer tariff. The tariff that is used
@@ -4844,15 +4936,15 @@ The request takes as input the reseller ID of the customer.
 - The numeric value of `getCustomerTariff` is the id of the reseller of the customer
 
 
-# 5. Statistics
-## 5.1 getSubscriberActivePeriod
+# 6. Statistics
+## 6.1 getSubscriberActivePeriod
 
 ### Description
 This request can be used the active period of a subscriber by checking the subscriber usages in DB. The request
 will return the date of the first usage and the date of the last usage of the subscriber.
 
 
-### 5.1.1 By subscriber ID
+### 6.1.1 By subscriber ID
 #### Request
 ```json
 {
@@ -4878,7 +4970,7 @@ will return the date of the first usage and the date of the last usage of the su
   }
 }
 ```
-### 5.1.2 By IMSI
+### 6.1.2 By IMSI
 #### Request
 ```json
 {
@@ -4900,7 +4992,7 @@ will return the date of the first usage and the date of the last usage of the su
   }
 }
 ```
-### 5.1.3 By ICCID
+### 6.1.3 By ICCID
 #### Request
 ```json
 {
@@ -4926,7 +5018,7 @@ will return the date of the first usage and the date of the last usage of the su
   }
 }
 ```
-### 5.1.4 By MSISDN
+### 6.1.4 By MSISDN
 #### Request
 ```json
 {
@@ -4948,7 +5040,7 @@ will return the date of the first usage and the date of the last usage of the su
   }
 }
 ```
-### 5.1.5 By multi imsi
+### 6.1.5 By multi imsi
 #### Request
 ```json
 {
@@ -4970,7 +5062,7 @@ will return the date of the first usage and the date of the last usage of the su
   }
 }
 ```
-### 5.1.6 By Activation code
+### 6.1.6 By Activation code
 #### Request
 ```json
 {
@@ -5003,7 +5095,7 @@ will return the date of the first usage and the date of the last usage of the su
 - If the subscriber is found, but there is no usage in DB, in the answer, getSubscriberActivePeriod.period is null
 
 
-## 5.2 subscriberUsageOverPeriod
+## 6.2 subscriberUsageOverPeriod
 
 ### Description
 This request can be used to retrieve the daily usage of a subscriber over a certain period. The period
@@ -5023,7 +5115,7 @@ Usage type:
 | 41 | MTC VoIP |
 
 
-### 5.2.1 By subscriber ID
+### 6.2.1 By subscriber ID
 #### Request
 ```json
 {
@@ -5032,8 +5124,8 @@ Usage type:
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2024-01-07",
-      "end" : "2024-01-02"
+      "start" : "2024-01-10",
+      "end" : "2024-01-05"
     }
   }
 }
@@ -5317,7 +5409,7 @@ Usage type:
   }
 }
 ```
-### 5.2.2 By IMSI
+### 6.2.2 By IMSI
 #### Request
 ```json
 {
@@ -5326,8 +5418,8 @@ Usage type:
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2024-01-07",
-      "end" : "2024-01-02"
+      "start" : "2024-01-10",
+      "end" : "2024-01-05"
     }
   }
 }
@@ -5344,10 +5436,10 @@ Usage type:
 ```
 #### Remark(s)
 
-- Same content as previous request
+- To get complete answer description, please refer to first example.
 
 
-### 5.2.3 By ICCID
+### 6.2.3 By ICCID
 #### Request
 ```json
 {
@@ -5356,8 +5448,8 @@ Usage type:
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2024-01-07",
-      "end" : "2024-01-02"
+      "start" : "2024-01-10",
+      "end" : "2024-01-05"
     }
   }
 }
@@ -5374,10 +5466,10 @@ Usage type:
 ```
 #### Remark(s)
 
-- Same content as previous request
+- To get complete answer description, please refer to first example.
 
 
-### 5.2.4 By MSISDN
+### 6.2.4 By MSISDN
 #### Request
 ```json
 {
@@ -5386,8 +5478,8 @@ Usage type:
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2024-01-07",
-      "end" : "2024-01-02"
+      "start" : "2024-01-10",
+      "end" : "2024-01-05"
     }
   }
 }
@@ -5404,10 +5496,10 @@ Usage type:
 ```
 #### Remark(s)
 
-- Same content as previous request
+- To get complete answer description, please refer to first example.
 
 
-### 5.2.5 By multi imsi
+### 6.2.5 By multi imsi
 #### Request
 ```json
 {
@@ -5416,8 +5508,8 @@ Usage type:
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2024-01-07",
-      "end" : "2024-01-02"
+      "start" : "2024-01-10",
+      "end" : "2024-01-05"
     }
   }
 }
@@ -5434,10 +5526,10 @@ Usage type:
 ```
 #### Remark(s)
 
-- Same content as previous request
+- To get complete answer description, please refer to first example.
 
 
-### 5.2.6 By Activation code
+### 6.2.6 By Activation code
 #### Request
 ```json
 {
@@ -5446,8 +5538,8 @@ Usage type:
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2024-01-07",
-      "end" : "2024-01-02"
+      "start" : "2024-01-10",
+      "end" : "2024-01-05"
     }
   }
 }
@@ -5464,7 +5556,7 @@ Usage type:
 ```
 #### Remark(s)
 
-- Same content as previous request
+- To get complete answer description, please refer to first example.
 
 
 ### Remark(s)
@@ -5472,14 +5564,14 @@ Usage type:
 - This request is best used with the subscriber ID, if you already have it, use it.
 
 
-## 5.3 subscriberNetworkEventsOverPeriod
+## 6.3 subscriberNetworkEventsOverPeriod
 
 ### Description
 This request can be used to retrieve the network events of a subscriber over a certain period. The period
 is delimited with a start date (included) and an end date (included). The period cannot exceed 1 week.
 
 
-### 5.3.1 By subscriber ID
+### 6.3.1 By subscriber ID
 #### Request
 ```json
 {
@@ -5579,7 +5671,7 @@ is delimited with a start date (included) and an end date (included). The period
   }
 }
 ```
-### 5.3.2 By IMSI
+### 6.3.2 By IMSI
 #### Request
 ```json
 {
@@ -5600,10 +5692,10 @@ is delimited with a start date (included) and an end date (included). The period
 ```
 #### Remark(s)
 
-- Same content as previous request
+- To get complete answer description, please refer to first example.
 
 
-### 5.3.3 By ICCID
+### 6.3.3 By ICCID
 #### Request
 ```json
 {
@@ -5624,10 +5716,10 @@ is delimited with a start date (included) and an end date (included). The period
 ```
 #### Remark(s)
 
-- Same content as previous request
+- To get complete answer description, please refer to first example.
 
 
-### 5.3.4 By MSISDN
+### 6.3.4 By MSISDN
 #### Request
 ```json
 {
@@ -5648,10 +5740,10 @@ is delimited with a start date (included) and an end date (included). The period
 ```
 #### Remark(s)
 
-- Same content as previous request
+- To get complete answer description, please refer to first example.
 
 
-### 5.3.5 By multi imsi
+### 6.3.5 By multi imsi
 #### Request
 ```json
 {
@@ -5672,10 +5764,10 @@ is delimited with a start date (included) and an end date (included). The period
 ```
 #### Remark(s)
 
-- Same content as previous request
+- To get complete answer description, please refer to first example.
 
 
-### 5.3.6 By Activation code
+### 6.3.6 By Activation code
 #### Request
 ```json
 {
@@ -5696,7 +5788,7 @@ is delimited with a start date (included) and an end date (included). The period
 ```
 #### Remark(s)
 
-- Same content as previous request
+- To get complete answer description, please refer to first example.
 
 
 ### Remark(s)
@@ -5704,8 +5796,8 @@ is delimited with a start date (included) and an end date (included). The period
 - This request is best used with the subscriber ID, if you already have it, use it.
 
 
-# 6. SMS
-## 6.1 sendMtSms
+# 7. SMS
+## 7.1 sendMtSms
 
 ### Description
 This request can be used to send a SMS to a subscriber belonging to a visible reseller. The SMS
