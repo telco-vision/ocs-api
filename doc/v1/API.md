@@ -513,8 +513,9 @@ This request can be used to search for subscriber. You can search for subscriber
 ### Inputs
 |Parameter|Presence|Description|
 |---------|--------|-----------|
-|imsiPrefix|Optional|IMSI Prefix for the subscribers to list. Minimum 10 digits long|
-|iccidPrefix|Optional|ICCID prefix for the subscribers to list. Minimum 13 digits long|
+|imsi|Optional|IMSI prefix for the subscribers to list. Minimum 10 digits long|
+|iccid|Optional|ICCID prefix for the subscribers to list. Minimum 13 digits long|
+|msisdn|Optional|MSISDN prefix for the subscribers to list. Minimum 7 digits long|
 |accountId|Optional|The ID of the account. The request will return the list of all the subscriber attached to this account|
 |activationCode|Optional|The eSIM activation code. The request will return the subscriber with the eSIM having this activation code|
 
@@ -791,7 +792,144 @@ This request can be used to search for subscriber. You can search for subscriber
   }
 }
 ```
-### 2.1.3 Account Id
+### 2.1.3 MSISDN prefix
+#### Request
+```json
+{
+  "listSubscriber" : {
+    "msisdnPrefix" : "1234567",
+    "accountId" : 4
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "listSubscriber" : {
+    "subscriberList" : [ {
+      "imsiList" : [ {
+        "id" : 44974,
+        "subscriberId" : 45046,
+        "imsi" : "999990000002001",
+        "startDate" : "2022-05-23T16:47:41",
+        "iccid" : "9999900017170020010"
+      } ],
+      "phoneNumberList" : [ {
+        "id" : 44932,
+        "subscriberId" : 45046,
+        "phoneNumber" : "32477002001",
+        "startDate" : "2022-05-23T16:47:41"
+      } ],
+      "multiImsi" : [ {
+        "id" : 44896,
+        "subscriberId" : 45046,
+        "imsi" : "999990000002001",
+        "startDate" : "2022-05-23T16:47:41"
+      } ],
+      "status" : [ {
+        "id" : 44893,
+        "subscriberId" : 45046,
+        "startDate" : "2022-05-23T16:47:41",
+        "status" : "Active"
+      } ],
+      "sim" : {
+        "id" : 36904,
+        "subscriberId" : 45046,
+        "esim" : true,
+        "status" : "AFFECTED",
+        "affectationDateUtc" : "2022-05-27T11:56:07",
+        "pin1" : "6310",
+        "puk1" : "89116899",
+        "pin2" : "0569",
+        "puk2" : "25380546",
+        "smdpServer" : "some.server",
+        "activationCode" : "some code",
+        "confirmationCode" : "confirm code"
+      },
+      "subscriberId" : 45046,
+      "batchId" : "Some_test_batch",
+      "accountId" : 4,
+      "resellerId" : 1,
+      "prepaid" : true,
+      "balance" : 150.0,
+      "activationDate" : "2022-05-30T06:35:38",
+      "email" : "andreas@telco-vision.com",
+      "useAccountForCharging" : true,
+      "allowedMoc" : false,
+      "allowedMtc" : false,
+      "allowedData" : true,
+      "allowedMosms" : false,
+      "allowedMtsms" : false,
+      "account" : "Test - Second account",
+      "reseller" : "Test Reseller"
+    }, {
+      "imsiList" : [ {
+        "id" : 44977,
+        "subscriberId" : 45049,
+        "imsi" : "999990000002002",
+        "startDate" : "2022-05-23T16:47:41",
+        "iccid" : "9999900017170020028"
+      } ],
+      "phoneNumberList" : [ {
+        "id" : 44935,
+        "subscriberId" : 45049,
+        "phoneNumber" : "32477002002",
+        "startDate" : "2022-05-23T16:47:41"
+      } ],
+      "multiImsi" : [ {
+        "id" : 44899,
+        "subscriberId" : 45049,
+        "imsi" : "999990000002002",
+        "startDate" : "2022-05-23T16:47:41"
+      } ],
+      "status" : [ {
+        "id" : 44896,
+        "subscriberId" : 45049,
+        "startDate" : "2022-05-23T16:47:41",
+        "status" : "Active"
+      } ],
+      "sim" : {
+        "id" : 36905,
+        "subscriberId" : 45049,
+        "esim" : true,
+        "status" : "AFFECTED",
+        "affectationDateUtc" : "2022-05-30T07:04:31",
+        "pin1" : "4366",
+        "puk1" : "51885819",
+        "pin2" : "5919",
+        "puk2" : "03208995",
+        "smdpServer" : "some.server",
+        "activationCode" : "some code1",
+        "confirmationCode" : "confirm code"
+      },
+      "subscriberId" : 45049,
+      "batchId" : "Some_test_batch",
+      "accountId" : 4,
+      "resellerId" : 1,
+      "prepaid" : true,
+      "balance" : 150.0,
+      "activationDate" : "2022-05-30T07:04:31",
+      "email" : "andreas@telco-vision.com",
+      "useAccountForCharging" : true,
+      "allowedMoc" : false,
+      "allowedMtc" : false,
+      "allowedData" : true,
+      "allowedMosms" : false,
+      "allowedMtsms" : false,
+      "account" : "Test - Second account",
+      "reseller" : "Test Reseller"
+    } ],
+    "hasMore" : false,
+    "nbFound" : 11
+  }
+}
+```
+### 2.1.4 Account Id
 #### Request
 ```json
 {
@@ -927,7 +1065,7 @@ This request can be used to search for subscriber. You can search for subscriber
   }
 }
 ```
-### 2.1.4 eSIM activation code
+### 2.1.5 eSIM activation code
 #### Request
 ```json
 {
@@ -2421,8 +2559,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2024-02-01T16:08:53.752954",
-      "end" : "2024-03-02T16:08:53.753638"
+      "start" : "2024-02-03T18:02:52.666668",
+      "end" : "2024-03-04T18:02:52.66692"
     }
   }
 }
@@ -2658,7 +2796,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2024-02-01T15:08:53"
+    "startTimeUTC" : "2024-02-03T17:02:52"
   }
 }
 ```
@@ -2731,7 +2869,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2024-02-01T15:08:53"
+    "startTimeUTC" : "2024-02-03T17:02:52"
   }
 }
 ```
@@ -2813,7 +2951,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2024-02-01T15:08:53"
+    "startTimeUTC" : "2024-02-03T17:02:52"
   }
 }
 ```
@@ -3223,7 +3361,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2024-02-01T16:08:53"
+    "newDateUtc" : "2024-02-03T18:02:52"
   }
 }
 ```
@@ -5124,8 +5262,8 @@ Usage type:
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2024-02-01",
-      "end" : "2024-01-27"
+      "start" : "2024-02-03",
+      "end" : "2024-01-29"
     }
   }
 }
@@ -5238,7 +5376,7 @@ Usage type:
           "downBitrate" : 0,
           "qci" : 0,
           "apn" : "internet.emt.ee",
-          "imsiPrefix" : 24801,
+          "imsi" : 24801,
           "sponsorImsi" : 248010416000008,
           "accountChargeEntity" : false
         }, {
@@ -5269,7 +5407,7 @@ Usage type:
           "subscriberConvertRate" : 1.0,
           "subscriberPrepaidPackageQty" : 0,
           "otherPartyNumber" : "79811564198",
-          "imsiPrefix" : 24801,
+          "imsi" : 24801,
           "sponsorImsi" : 248010416000008,
           "accountChargeEntity" : false
         }, {
@@ -5300,7 +5438,7 @@ Usage type:
           "subscriberConvertRate" : 1.0,
           "subscriberPrepaidPackageQty" : 0,
           "otherPartyNumber" : "3726503919",
-          "imsiPrefix" : 24801,
+          "imsi" : 24801,
           "sponsorImsi" : 248010416000008,
           "accountChargeEntity" : false
         }, {
@@ -5338,7 +5476,7 @@ Usage type:
           "downBitrate" : 0,
           "qci" : 0,
           "apn" : "internet.emt.ee",
-          "imsiPrefix" : 24801,
+          "imsi" : 24801,
           "sponsorImsi" : 248010416000008,
           "accountChargeEntity" : false
         }, {
@@ -5369,7 +5507,7 @@ Usage type:
           "subscriberConvertRate" : 1.0,
           "subscriberPrepaidPackageQty" : 0,
           "otherPartyNumber" : "79811564198",
-          "imsiPrefix" : 24801,
+          "imsi" : 24801,
           "sponsorImsi" : 248010416000008,
           "accountChargeEntity" : false
         }, {
@@ -5400,7 +5538,7 @@ Usage type:
           "subscriberConvertRate" : 1.0,
           "subscriberPrepaidPackageQty" : 0,
           "otherPartyNumber" : "3726503944",
-          "imsiPrefix" : 24801,
+          "imsi" : 24801,
           "sponsorImsi" : 248010416000008,
           "accountChargeEntity" : false
         } ]
@@ -5418,8 +5556,8 @@ Usage type:
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2024-02-01",
-      "end" : "2024-01-27"
+      "start" : "2024-02-03",
+      "end" : "2024-01-29"
     }
   }
 }
@@ -5448,8 +5586,8 @@ Usage type:
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2024-02-01",
-      "end" : "2024-01-27"
+      "start" : "2024-02-03",
+      "end" : "2024-01-29"
     }
   }
 }
@@ -5478,8 +5616,8 @@ Usage type:
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2024-02-01",
-      "end" : "2024-01-27"
+      "start" : "2024-02-03",
+      "end" : "2024-01-29"
     }
   }
 }
@@ -5508,8 +5646,8 @@ Usage type:
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2024-02-01",
-      "end" : "2024-01-27"
+      "start" : "2024-02-03",
+      "end" : "2024-01-29"
     }
   }
 }
@@ -5538,8 +5676,8 @@ Usage type:
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2024-02-01",
-      "end" : "2024-01-27"
+      "start" : "2024-02-03",
+      "end" : "2024-01-29"
     }
   }
 }
