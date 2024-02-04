@@ -10,33 +10,35 @@
 
 [1.5 listSponsor](#15-listsponsor)
 
-## [2 Subscriber](#21-listsubscriber)
+## [2 Subscriber](#21-getsinglesubscriber)
 
-[2.1 listSubscriber](#21-listsubscriber)
+[2.1 getSingleSubscriber](#21-getsinglesubscriber)
 
-[2.2 affectSubscriberRealPhoneNumber](#22-affectsubscriberrealphonenumber)
+[2.2 listSubscriber](#22-listsubscriber)
 
-[2.3 affectSubscriberFakePhoneNumber](#23-affectsubscriberfakephonenumber)
+[2.3 affectSubscriberRealPhoneNumber](#23-affectsubscriberrealphonenumber)
 
-[2.4 getSimProviderStatus](#24-getsimproviderstatus)
+[2.4 affectSubscriberFakePhoneNumber](#24-affectsubscriberfakephonenumber)
 
-[2.5 modifySubscriberBalance](#25-modifysubscriberbalance)
+[2.5 getSimProviderStatus](#25-getsimproviderstatus)
 
-[2.6 hlrSetBitrate](#26-hlrsetbitrate)
+[2.6 modifySubscriberBalance](#26-modifysubscriberbalance)
 
-[2.7 hlrGetBitrate](#27-hlrgetbitrate)
+[2.7 hlrSetBitrate](#27-hlrsetbitrate)
 
-[2.8 moveSubscriberRangeToAccount](#28-movesubscriberrangetoaccount)
+[2.8 hlrGetBitrate](#28-hlrgetbitrate)
 
-[2.9 modifySubscriberContactInfo](#29-modifysubscribercontactinfo)
+[2.9 moveSubscriberRangeToAccount](#29-movesubscriberrangetoaccount)
 
-[2.10 modifySubscriberStatus](#210-modifysubscriberstatus)
+[2.10 modifySubscriberContactInfo](#210-modifysubscribercontactinfo)
 
-[2.11 setSubscriberTrafficRestrictions](#211-setsubscribertrafficrestrictions)
+[2.11 modifySubscriberStatus](#211-modifysubscriberstatus)
 
-[2.12 modifySubscriberSteeringList](#212-modifysubscribersteeringlist)
+[2.12 setSubscriberTrafficRestrictions](#212-setsubscribertrafficrestrictions)
 
-[2.13 pushSteeringToSubs](#213-pushsteeringtosubs)
+[2.13 modifySubscriberSteeringList](#213-modifysubscribersteeringlist)
+
+[2.14 pushSteeringToSubs](#214-pushsteeringtosubs)
 
 ## [3 Subscriber prepaid packages](#31-affectpackagetosubscriber)
 
@@ -500,7 +502,452 @@ This request can be used to list the different sponsors configured for a reselle
 }
 ```
 # 2. Subscriber
-## 2.1 listSubscriber
+## 2.1 getSingleSubscriber
+
+### Description
+This request can be used to search for a specific subscriber. The subscriber can be found via its:
+- IMSI
+- ICCID
+- MSISDN
+- eSIM activation code
+- OCS internal ID
+
+Remarks when searching with IMSI, ICCID or MSISDN:
+- Unlike the `listSubscriber` you must provide the exact value, not a prefix.
+- Unlike the `listSubscriber` the system will search only the currently active object (IMSI, ICCID or MSISDN). If you search by MSISDN, the provided MSISDN must be the currently active MSISDN for the subscriber. If you provide the MSISDN that was active in the past, but not anymore, the system will not find your subscriber.
+
+
+### Inputs
+|Parameter|Presence|Description|
+|---------|--------|-----------|
+|imsi|Optional|IMSI of the subscribers to find.|
+|iccid|Optional|ICCID of the subscribers to find.|
+|msisdn|Optional|MSISDN of the subscribers to find.|
+|subscriberId|Optional|The ID of the subscriber.|
+|activationCode|Optional|The eSIM activation code. The request will return the subscriber having the eSIM having with this activation code|
+
+
+### 2.1.1 IMSI
+#### Request
+```json
+{
+  "getSingleSubscriber" : {
+    "imsi" : "9999900000",
+    "withSimInfo" : true,
+    "onlySubsInfo" : false
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "listSubscriber" : {
+    "subscriberList" : [ {
+      "imsiList" : [ {
+        "id" : 21046,
+        "subscriberId" : 21046,
+        "imsi" : "248029018000011",
+        "startDate" : "2022-03-10T20:29:41",
+        "iccid" : "893720401717000011"
+      } ],
+      "phoneNumberList" : [ {
+        "id" : 21040,
+        "subscriberId" : 21046,
+        "phoneNumber" : "3728803101011",
+        "startDate" : "2022-03-10T20:29:41"
+      } ],
+      "multiImsi" : [ {
+        "id" : 21043,
+        "subscriberId" : 21046,
+        "imsi" : "248029018000011",
+        "startDate" : "2022-03-10T20:29:41"
+      } ],
+      "status" : [ {
+        "id" : 21040,
+        "subscriberId" : 21046,
+        "startDate" : "2022-03-10T20:29:41",
+        "status" : "Active"
+      } ],
+      "sim" : {
+        "id" : 36904,
+        "subscriberId" : 21046,
+        "esim" : true,
+        "status" : "FREE",
+        "pin1" : "0561",
+        "pin2" : "1736",
+        "puk2" : "50913387",
+        "smdpServer" : "smdp.io",
+        "activationCode" : "K2-1JL8YT-14S7I6K"
+      },
+      "subscriberId" : 21046,
+      "batchId" : "SPRK_220206_3K_eSIM__20220310192941_435",
+      "subscriberName" : "SPRK_eSIM_Eitan_220601_1",
+      "accountId" : 37,
+      "resellerId" : 10,
+      "prepaid" : true,
+      "balance" : 0.0,
+      "activationDate" : "2022-03-10T20:29:41",
+      "lastUsageDate" : "2022-06-01T15:35:34",
+      "useAccountForCharging" : true,
+      "allowedMoc" : true,
+      "allowedMtc" : true,
+      "allowedData" : true,
+      "allowedMosms" : true,
+      "allowedMtsms" : true,
+      "account" : "TestSubscribers",
+      "reseller" : "Test Reseller 3",
+      "lastMcc" : 334,
+      "lastMnc" : 50,
+      "steeringListId" : 1
+    } ],
+    "hasMore" : false,
+    "nbFound" : 1
+  }
+}
+```
+### 2.1.2 ICCID
+#### Request
+```json
+{
+  "getSingleSubscriber" : {
+    "iccid" : "9999900017170",
+    "withSimInfo" : true,
+    "onlySubsInfo" : true
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "listSubscriber" : {
+    "subscriberList" : [ {
+      "imsiList" : [ {
+        "id" : 21046,
+        "subscriberId" : 21046,
+        "imsi" : "248029018000011",
+        "startDate" : "2022-03-10T20:29:41",
+        "iccid" : "893720401717000011"
+      } ],
+      "phoneNumberList" : [ {
+        "id" : 21040,
+        "subscriberId" : 21046,
+        "phoneNumber" : "3728803101011",
+        "startDate" : "2022-03-10T20:29:41"
+      } ],
+      "multiImsi" : [ {
+        "id" : 21043,
+        "subscriberId" : 21046,
+        "imsi" : "248029018000011",
+        "startDate" : "2022-03-10T20:29:41"
+      } ],
+      "status" : [ {
+        "id" : 21040,
+        "subscriberId" : 21046,
+        "startDate" : "2022-03-10T20:29:41",
+        "status" : "Active"
+      } ],
+      "sim" : {
+        "id" : 36904,
+        "subscriberId" : 21046,
+        "esim" : true,
+        "status" : "FREE",
+        "pin1" : "0561",
+        "pin2" : "1736",
+        "puk2" : "50913387",
+        "smdpServer" : "smdp.io",
+        "activationCode" : "K2-1JL8YT-14S7I6K"
+      },
+      "subscriberId" : 21046,
+      "batchId" : "SPRK_220206_3K_eSIM__20220310192941_435",
+      "subscriberName" : "SPRK_eSIM_Eitan_220601_1",
+      "accountId" : 37,
+      "resellerId" : 10,
+      "prepaid" : true,
+      "balance" : 0.0,
+      "activationDate" : "2022-03-10T20:29:41",
+      "lastUsageDate" : "2022-06-01T15:35:34",
+      "useAccountForCharging" : true,
+      "allowedMoc" : true,
+      "allowedMtc" : true,
+      "allowedData" : true,
+      "allowedMosms" : true,
+      "allowedMtsms" : true,
+      "account" : "TestSubscribers",
+      "reseller" : "Test Reseller 3",
+      "lastMcc" : 334,
+      "lastMnc" : 50,
+      "steeringListId" : 1
+    } ],
+    "hasMore" : false,
+    "nbFound" : 1
+  }
+}
+```
+### 2.1.3 MSISDN
+#### Request
+```json
+{
+  "getSingleSubscriber" : {
+    "msisdn" : "1234567",
+    "withSimInfo" : false,
+    "onlySubsInfo" : false
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "listSubscriber" : {
+    "subscriberList" : [ {
+      "imsiList" : [ {
+        "id" : 21046,
+        "subscriberId" : 21046,
+        "imsi" : "248029018000011",
+        "startDate" : "2022-03-10T20:29:41",
+        "iccid" : "893720401717000011"
+      } ],
+      "phoneNumberList" : [ {
+        "id" : 21040,
+        "subscriberId" : 21046,
+        "phoneNumber" : "3728803101011",
+        "startDate" : "2022-03-10T20:29:41"
+      } ],
+      "multiImsi" : [ {
+        "id" : 21043,
+        "subscriberId" : 21046,
+        "imsi" : "248029018000011",
+        "startDate" : "2022-03-10T20:29:41"
+      } ],
+      "status" : [ {
+        "id" : 21040,
+        "subscriberId" : 21046,
+        "startDate" : "2022-03-10T20:29:41",
+        "status" : "Active"
+      } ],
+      "sim" : {
+        "id" : 36904,
+        "subscriberId" : 21046,
+        "esim" : true,
+        "status" : "FREE",
+        "pin1" : "0561",
+        "pin2" : "1736",
+        "puk2" : "50913387",
+        "smdpServer" : "smdp.io",
+        "activationCode" : "K2-1JL8YT-14S7I6K"
+      },
+      "subscriberId" : 21046,
+      "batchId" : "SPRK_220206_3K_eSIM__20220310192941_435",
+      "subscriberName" : "SPRK_eSIM_Eitan_220601_1",
+      "accountId" : 37,
+      "resellerId" : 10,
+      "prepaid" : true,
+      "balance" : 0.0,
+      "activationDate" : "2022-03-10T20:29:41",
+      "lastUsageDate" : "2022-06-01T15:35:34",
+      "useAccountForCharging" : true,
+      "allowedMoc" : true,
+      "allowedMtc" : true,
+      "allowedData" : true,
+      "allowedMosms" : true,
+      "allowedMtsms" : true,
+      "account" : "TestSubscribers",
+      "reseller" : "Test Reseller 3",
+      "lastMcc" : 334,
+      "lastMnc" : 50,
+      "steeringListId" : 1
+    } ],
+    "hasMore" : false,
+    "nbFound" : 1
+  }
+}
+```
+### 2.1.4 eSIM activation code
+#### Request
+```json
+{
+  "getSingleSubscriber" : {
+    "activationCode" : "activation code",
+    "withSimInfo" : true,
+    "onlySubsInfo" : false
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "listSubscriber" : {
+    "subscriberList" : [ {
+      "imsiList" : [ {
+        "id" : 21046,
+        "subscriberId" : 21046,
+        "imsi" : "248029018000011",
+        "startDate" : "2022-03-10T20:29:41",
+        "iccid" : "893720401717000011"
+      } ],
+      "phoneNumberList" : [ {
+        "id" : 21040,
+        "subscriberId" : 21046,
+        "phoneNumber" : "3728803101011",
+        "startDate" : "2022-03-10T20:29:41"
+      } ],
+      "multiImsi" : [ {
+        "id" : 21043,
+        "subscriberId" : 21046,
+        "imsi" : "248029018000011",
+        "startDate" : "2022-03-10T20:29:41"
+      } ],
+      "status" : [ {
+        "id" : 21040,
+        "subscriberId" : 21046,
+        "startDate" : "2022-03-10T20:29:41",
+        "status" : "Active"
+      } ],
+      "sim" : {
+        "id" : 36904,
+        "subscriberId" : 21046,
+        "esim" : true,
+        "status" : "FREE",
+        "pin1" : "0561",
+        "pin2" : "1736",
+        "puk2" : "50913387",
+        "smdpServer" : "smdp.io",
+        "activationCode" : "K2-1JL8YT-14S7I6K"
+      },
+      "subscriberId" : 21046,
+      "batchId" : "SPRK_220206_3K_eSIM__20220310192941_435",
+      "subscriberName" : "SPRK_eSIM_Eitan_220601_1",
+      "accountId" : 37,
+      "resellerId" : 10,
+      "prepaid" : true,
+      "balance" : 0.0,
+      "activationDate" : "2022-03-10T20:29:41",
+      "lastUsageDate" : "2022-06-01T15:35:34",
+      "useAccountForCharging" : true,
+      "allowedMoc" : true,
+      "allowedMtc" : true,
+      "allowedData" : true,
+      "allowedMosms" : true,
+      "allowedMtsms" : true,
+      "account" : "TestSubscribers",
+      "reseller" : "Test Reseller 3",
+      "lastMcc" : 334,
+      "lastMnc" : 50,
+      "steeringListId" : 1
+    } ],
+    "hasMore" : false,
+    "nbFound" : 1
+  }
+}
+```
+#### Remark(s)
+
+- The request here is searching for the exact activation, hence the request will always return 0 or 1 subscriber/sim
+
+
+### 2.1.5 Subscriber Id
+#### Request
+```json
+{
+  "getSingleSubscriber" : {
+    "subscriberId" : 4,
+    "withSimInfo" : false,
+    "onlySubsInfo" : true
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "listSubscriber" : {
+    "subscriberList" : [ {
+      "imsiList" : [ {
+        "id" : 21046,
+        "subscriberId" : 21046,
+        "imsi" : "248029018000011",
+        "startDate" : "2022-03-10T20:29:41",
+        "iccid" : "893720401717000011"
+      } ],
+      "phoneNumberList" : [ {
+        "id" : 21040,
+        "subscriberId" : 21046,
+        "phoneNumber" : "3728803101011",
+        "startDate" : "2022-03-10T20:29:41"
+      } ],
+      "multiImsi" : [ {
+        "id" : 21043,
+        "subscriberId" : 21046,
+        "imsi" : "248029018000011",
+        "startDate" : "2022-03-10T20:29:41"
+      } ],
+      "status" : [ {
+        "id" : 21040,
+        "subscriberId" : 21046,
+        "startDate" : "2022-03-10T20:29:41",
+        "status" : "Active"
+      } ],
+      "sim" : {
+        "id" : 36904,
+        "subscriberId" : 21046,
+        "esim" : true,
+        "status" : "FREE",
+        "pin1" : "0561",
+        "pin2" : "1736",
+        "puk2" : "50913387",
+        "smdpServer" : "smdp.io",
+        "activationCode" : "K2-1JL8YT-14S7I6K"
+      },
+      "subscriberId" : 21046,
+      "batchId" : "SPRK_220206_3K_eSIM__20220310192941_435",
+      "subscriberName" : "SPRK_eSIM_Eitan_220601_1",
+      "accountId" : 37,
+      "resellerId" : 10,
+      "prepaid" : true,
+      "balance" : 0.0,
+      "activationDate" : "2022-03-10T20:29:41",
+      "lastUsageDate" : "2022-06-01T15:35:34",
+      "useAccountForCharging" : true,
+      "allowedMoc" : true,
+      "allowedMtc" : true,
+      "allowedData" : true,
+      "allowedMosms" : true,
+      "allowedMtsms" : true,
+      "account" : "TestSubscribers",
+      "reseller" : "Test Reseller 3",
+      "lastMcc" : 334,
+      "lastMnc" : 50,
+      "steeringListId" : 1
+    } ],
+    "hasMore" : false,
+    "nbFound" : 1
+  }
+}
+```
+## 2.2 listSubscriber
 
 ### Description
 This request can be used to search for subscriber. You can search for subscribers by:
@@ -520,7 +967,7 @@ This request can be used to search for subscriber. You can search for subscriber
 |activationCode|Optional|The eSIM activation code. The request will return the subscriber with the eSIM having this activation code|
 
 
-### 2.1.1 IMSI prefix
+### 2.2.1 IMSI prefix
 #### Request
 ```json
 {
@@ -656,7 +1103,7 @@ This request can be used to search for subscriber. You can search for subscriber
   }
 }
 ```
-### 2.1.2 ICCID prefix
+### 2.2.2 ICCID prefix
 #### Request
 ```json
 {
@@ -792,7 +1239,7 @@ This request can be used to search for subscriber. You can search for subscriber
   }
 }
 ```
-### 2.1.3 MSISDN prefix
+### 2.2.3 MSISDN prefix
 #### Request
 ```json
 {
@@ -929,7 +1376,7 @@ This request can be used to search for subscriber. You can search for subscriber
   }
 }
 ```
-### 2.1.4 Account Id
+### 2.2.4 Account Id
 #### Request
 ```json
 {
@@ -1065,7 +1512,7 @@ This request can be used to search for subscriber. You can search for subscriber
   }
 }
 ```
-### 2.1.5 eSIM activation code
+### 2.2.5 eSIM activation code
 #### Request
 ```json
 {
@@ -1151,7 +1598,7 @@ This request can be used to search for subscriber. You can search for subscriber
 - The request here is searching for the exact activation, hence the request will always return 0 or 1 subscriber/sim
 
 
-## 2.2 affectSubscriberRealPhoneNumber
+## 2.3 affectSubscriberRealPhoneNumber
 
 ### Description
 This request can be used to affect a real phone number to a subscriber. A real phone number can
@@ -1166,7 +1613,7 @@ To identify the subscriber, you can use one of the following IDs:
 - Activation code
 
 
-### 2.2.1 By subscriber ID
+### 2.3.1 By subscriber ID
 #### Request
 ```json
 {
@@ -1188,7 +1635,7 @@ To identify the subscriber, you can use one of the following IDs:
   }
 }
 ```
-### 2.2.2 By IMSI
+### 2.3.2 By IMSI
 #### Request
 ```json
 {
@@ -1215,7 +1662,7 @@ To identify the subscriber, you can use one of the following IDs:
 - To get complete answer description, please refer to first example.
 
 
-### 2.2.3 By ICCID
+### 2.3.3 By ICCID
 #### Request
 ```json
 {
@@ -1242,7 +1689,7 @@ To identify the subscriber, you can use one of the following IDs:
 - To get complete answer description, please refer to first example.
 
 
-### 2.2.4 By MSISDN
+### 2.3.4 By MSISDN
 #### Request
 ```json
 {
@@ -1269,7 +1716,7 @@ To identify the subscriber, you can use one of the following IDs:
 - To get complete answer description, please refer to first example.
 
 
-### 2.2.5 By multi imsi
+### 2.3.5 By multi imsi
 #### Request
 ```json
 {
@@ -1296,7 +1743,7 @@ To identify the subscriber, you can use one of the following IDs:
 - To get complete answer description, please refer to first example.
 
 
-### 2.2.6 By Activation code
+### 2.3.6 By Activation code
 #### Request
 ```json
 {
@@ -1328,7 +1775,7 @@ To identify the subscriber, you can use one of the following IDs:
 - This request is best used with the subscriber ID, if you already have it, use it.
 
 
-## 2.3 affectSubscriberFakePhoneNumber
+## 2.4 affectSubscriberFakePhoneNumber
 
 ### Description
 This request can be used to re-affect a subscriber its fake phone number.
@@ -1342,7 +1789,7 @@ To identify the subscriber, you can use one of the following IDs:
 - Activation code
 
 
-### 2.3.1 By subscriber ID
+### 2.4.1 By subscriber ID
 #### Request
 ```json
 {
@@ -1361,7 +1808,7 @@ To identify the subscriber, you can use one of the following IDs:
   }
 }
 ```
-### 2.3.2 By IMSI
+### 2.4.2 By IMSI
 #### Request
 ```json
 {
@@ -1385,7 +1832,7 @@ To identify the subscriber, you can use one of the following IDs:
 - To get complete answer description, please refer to first example.
 
 
-### 2.3.3 By ICCID
+### 2.4.3 By ICCID
 #### Request
 ```json
 {
@@ -1409,7 +1856,7 @@ To identify the subscriber, you can use one of the following IDs:
 - To get complete answer description, please refer to first example.
 
 
-### 2.3.4 By MSISDN
+### 2.4.4 By MSISDN
 #### Request
 ```json
 {
@@ -1433,7 +1880,7 @@ To identify the subscriber, you can use one of the following IDs:
 - To get complete answer description, please refer to first example.
 
 
-### 2.3.5 By multi imsi
+### 2.4.5 By multi imsi
 #### Request
 ```json
 {
@@ -1457,7 +1904,7 @@ To identify the subscriber, you can use one of the following IDs:
 - To get complete answer description, please refer to first example.
 
 
-### 2.3.6 By Activation code
+### 2.4.6 By Activation code
 #### Request
 ```json
 {
@@ -1486,7 +1933,7 @@ To identify the subscriber, you can use one of the following IDs:
 - This request is best used with the subscriber ID, if you already have it, use it.
 
 
-## 2.4 getSimProviderStatus
+## 2.5 getSimProviderStatus
 
 ### Description
 This request can be used to retrieve the status of the eSIM from the eSIM provider system. It returns in fact the
@@ -1530,7 +1977,7 @@ Note that the statuses are sorted by `start` date in descending order (most rece
 - The numeric value of `getSimProviderStatus` is the id of the eSIM. You can find it in the answer of `listSubscriber`: subscriberList -> sim -> id
 
 
-## 2.5 modifySubscriberBalance
+## 2.6 modifySubscriberBalance
 
 ### Description
 This request can be used to adapt the balance of a subscriber. The balance can either:
@@ -1549,7 +1996,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
 |description|Optional|A description giving information about the reason of this balance adjustment|
 
 
-### 2.5.1 Update balance
+### 2.6.1 Update balance
 #### Request
 ```json
 {
@@ -1572,7 +2019,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   }
 }
 ```
-### 2.5.2 Set balance
+### 2.6.2 Set balance
 #### Request
 ```json
 {
@@ -1596,7 +2043,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   }
 }
 ```
-## 2.6 hlrSetBitrate
+## 2.7 hlrSetBitrate
 
 ### Description
 This request is part of the throttling API.
@@ -1633,7 +2080,7 @@ Possible values for the `limit` field:
   }
 }
 ```
-## 2.7 hlrGetBitrate
+## 2.8 hlrGetBitrate
 
 ### Description
 This request is part of the throttling API.
@@ -1660,7 +2107,7 @@ It retrieves the current limitation of the subscriber in terms of data bandwidth
   "hlrGetBitrate" : "UNLIMITED"
 }
 ```
-## 2.8 moveSubscriberRangeToAccount
+## 2.9 moveSubscriberRangeToAccount
 
 ### Description
 This method can be used to move a range a subscriber from one account to another account. The range of
@@ -1688,7 +2135,7 @@ keep them.
 |moveSubscriberRangeToAccount|Mandatory|The number of subscriber that has been moved.|
 
 
-### 2.8.1 IMSI range
+### 2.9.1 IMSI range
 #### Request
 ```json
 {
@@ -1712,7 +2159,7 @@ keep them.
   "moveSubscriberRangeToAccount" : 4
 }
 ```
-### 2.8.2 ICCID range
+### 2.9.2 ICCID range
 #### Request
 ```json
 {
@@ -1736,7 +2183,7 @@ keep them.
   "moveSubscriberRangeToAccount" : 4
 }
 ```
-## 2.9 modifySubscriberContactInfo
+## 2.10 modifySubscriberContactInfo
 
 ### Description
 This request can be used to adapt the subscriber contact info.
@@ -1747,7 +2194,7 @@ To identify the subscriber, you can use one of the following IDs:
 - ICCID
 
 
-### 2.9.1 By subscriber ID
+### 2.10.1 By subscriber ID
 #### Request
 ```json
 {
@@ -1772,7 +2219,7 @@ To identify the subscriber, you can use one of the following IDs:
   }
 }
 ```
-### 2.9.2 By IMSI
+### 2.10.2 By IMSI
 #### Request
 ```json
 {
@@ -1795,7 +2242,7 @@ To identify the subscriber, you can use one of the following IDs:
   }
 }
 ```
-### 2.9.3 By ICCID
+### 2.10.3 By ICCID
 #### Request
 ```json
 {
@@ -1823,7 +2270,7 @@ To identify the subscriber, you can use one of the following IDs:
 - This request is best used with the subscriber ID, if you already have it, use it.
 
 
-## 2.10 modifySubscriberStatus
+## 2.11 modifySubscriberStatus
 
 ### Description
 This request can be used to change the status of a subscriber.
@@ -1846,7 +2293,7 @@ The possible values for the new status are:
 - `SUSPENDED`
 
 
-### 2.10.1 By subscriber ID
+### 2.11.1 By subscriber ID
 #### Request
 ```json
 {
@@ -1868,7 +2315,7 @@ The possible values for the new status are:
   }
 }
 ```
-### 2.10.2 By IMSI
+### 2.11.2 By IMSI
 #### Request
 ```json
 {
@@ -1895,7 +2342,7 @@ The possible values for the new status are:
 - To get complete answer description, please refer to first example.
 
 
-### 2.10.3 By ICCID
+### 2.11.3 By ICCID
 #### Request
 ```json
 {
@@ -1922,7 +2369,7 @@ The possible values for the new status are:
 - To get complete answer description, please refer to first example.
 
 
-### 2.10.4 By MSISDN
+### 2.11.4 By MSISDN
 #### Request
 ```json
 {
@@ -1949,7 +2396,7 @@ The possible values for the new status are:
 - To get complete answer description, please refer to first example.
 
 
-### 2.10.5 By multi imsi
+### 2.11.5 By multi imsi
 #### Request
 ```json
 {
@@ -1976,7 +2423,7 @@ The possible values for the new status are:
 - To get complete answer description, please refer to first example.
 
 
-### 2.10.6 By Activation code
+### 2.11.6 By Activation code
 #### Request
 ```json
 {
@@ -2008,7 +2455,7 @@ The possible values for the new status are:
 - This request is best used with the subscriber ID, if you already have it, use it.
 
 
-## 2.11 setSubscriberTrafficRestrictions
+## 2.12 setSubscriberTrafficRestrictions
 
 ### Description
 This request can be used to configure the traffic types thar are allowed for a subscriber: Data,
@@ -2033,7 +2480,7 @@ To identify the subscriber, you can use one of the following IDs:
 |smsMoAllowed|Mandatory|Indicates if SMS-MO are allowed for the subscriber.|
 
 
-### 2.11.1 By subscriber ID
+### 2.12.1 By subscriber ID
 #### Request
 ```json
 {
@@ -2058,7 +2505,7 @@ To identify the subscriber, you can use one of the following IDs:
   }
 }
 ```
-### 2.11.2 By IMSI
+### 2.12.2 By IMSI
 #### Request
 ```json
 {
@@ -2088,7 +2535,7 @@ To identify the subscriber, you can use one of the following IDs:
 - To get complete answer description, please refer to first example.
 
 
-### 2.11.3 By ICCID
+### 2.12.3 By ICCID
 #### Request
 ```json
 {
@@ -2118,7 +2565,7 @@ To identify the subscriber, you can use one of the following IDs:
 - To get complete answer description, please refer to first example.
 
 
-### 2.11.4 By MSISDN
+### 2.12.4 By MSISDN
 #### Request
 ```json
 {
@@ -2148,7 +2595,7 @@ To identify the subscriber, you can use one of the following IDs:
 - To get complete answer description, please refer to first example.
 
 
-### 2.11.5 By multi imsi
+### 2.12.5 By multi imsi
 #### Request
 ```json
 {
@@ -2178,7 +2625,7 @@ To identify the subscriber, you can use one of the following IDs:
 - To get complete answer description, please refer to first example.
 
 
-### 2.11.6 By Activation code
+### 2.12.6 By Activation code
 #### Request
 ```json
 {
@@ -2213,7 +2660,7 @@ To identify the subscriber, you can use one of the following IDs:
 - This request is best used with the subscriber ID, if you already have it, use it.
 
 
-## 2.12 modifySubscriberSteeringList
+## 2.13 modifySubscriberSteeringList
 
 ### Description
 This request can be used to change or remove the steering list of the subscriber.
@@ -2234,7 +2681,7 @@ To identify the subscriber, you can use one of the following IDs:
 |steeringListId|Optional|The new steering list for the subscriber. If none provided (null), the current list will be removed.|
 
 
-### 2.12.1 By subscriber ID
+### 2.13.1 By subscriber ID
 #### Request
 ```json
 {
@@ -2256,7 +2703,7 @@ To identify the subscriber, you can use one of the following IDs:
   }
 }
 ```
-### 2.12.2 By IMSI
+### 2.13.2 By IMSI
 #### Request
 ```json
 {
@@ -2278,7 +2725,7 @@ To identify the subscriber, you can use one of the following IDs:
   }
 }
 ```
-### 2.12.3 By ICCID
+### 2.13.3 By ICCID
 #### Request
 ```json
 {
@@ -2300,7 +2747,7 @@ To identify the subscriber, you can use one of the following IDs:
   }
 }
 ```
-### 2.12.4 By MSISDN
+### 2.13.4 By MSISDN
 #### Request
 ```json
 {
@@ -2322,7 +2769,7 @@ To identify the subscriber, you can use one of the following IDs:
   }
 }
 ```
-### 2.12.5 By multi imsi
+### 2.13.5 By multi imsi
 #### Request
 ```json
 {
@@ -2344,7 +2791,7 @@ To identify the subscriber, you can use one of the following IDs:
   }
 }
 ```
-### 2.12.6 By Activation code
+### 2.13.6 By Activation code
 #### Request
 ```json
 {
@@ -2371,7 +2818,7 @@ To identify the subscriber, you can use one of the following IDs:
 - This request is best used with the subscriber ID, if you already have it, use it.
 
 
-## 2.13 pushSteeringToSubs
+## 2.14 pushSteeringToSubs
 
 ### Description
 This request can be used to push the OPLMN list to the phone of the subscriber via OTA. You just need
@@ -2390,7 +2837,7 @@ To identify the subscriber, you can use one of the following IDs:
 - Activation code
 
 
-### 2.13.1 By subscriber ID
+### 2.14.1 By subscriber ID
 #### Request
 ```json
 {
@@ -2409,7 +2856,7 @@ To identify the subscriber, you can use one of the following IDs:
   }
 }
 ```
-### 2.13.2 By IMSI
+### 2.14.2 By IMSI
 #### Request
 ```json
 {
@@ -2428,7 +2875,7 @@ To identify the subscriber, you can use one of the following IDs:
   }
 }
 ```
-### 2.13.3 By ICCID
+### 2.14.3 By ICCID
 #### Request
 ```json
 {
@@ -2447,7 +2894,7 @@ To identify the subscriber, you can use one of the following IDs:
   }
 }
 ```
-### 2.13.4 By MSISDN
+### 2.14.4 By MSISDN
 #### Request
 ```json
 {
@@ -2466,7 +2913,7 @@ To identify the subscriber, you can use one of the following IDs:
   }
 }
 ```
-### 2.13.5 By multi imsi
+### 2.14.5 By multi imsi
 #### Request
 ```json
 {
@@ -2485,7 +2932,7 @@ To identify the subscriber, you can use one of the following IDs:
   }
 }
 ```
-### 2.13.6 By Activation code
+### 2.14.6 By Activation code
 #### Request
 ```json
 {
@@ -2559,8 +3006,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2024-02-03T18:02:52.666668",
-      "end" : "2024-03-04T18:02:52.66692"
+      "start" : "2024-02-04T08:47:53.705721",
+      "end" : "2024-03-05T08:47:53.705968"
     }
   }
 }
@@ -2796,7 +3243,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2024-02-03T17:02:52"
+    "startTimeUTC" : "2024-02-04T07:47:53"
   }
 }
 ```
@@ -2869,7 +3316,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2024-02-03T17:02:52"
+    "startTimeUTC" : "2024-02-04T07:47:53"
   }
 }
 ```
@@ -2951,7 +3398,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2024-02-03T17:02:52"
+    "startTimeUTC" : "2024-02-04T07:47:53"
   }
 }
 ```
@@ -3361,7 +3808,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2024-02-03T18:02:52"
+    "newDateUtc" : "2024-02-04T08:47:53"
   }
 }
 ```
@@ -5262,8 +5709,8 @@ Usage type:
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2024-02-03",
-      "end" : "2024-01-29"
+      "start" : "2024-02-04",
+      "end" : "2024-01-30"
     }
   }
 }
@@ -5556,8 +6003,8 @@ Usage type:
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2024-02-03",
-      "end" : "2024-01-29"
+      "start" : "2024-02-04",
+      "end" : "2024-01-30"
     }
   }
 }
@@ -5586,8 +6033,8 @@ Usage type:
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2024-02-03",
-      "end" : "2024-01-29"
+      "start" : "2024-02-04",
+      "end" : "2024-01-30"
     }
   }
 }
@@ -5616,8 +6063,8 @@ Usage type:
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2024-02-03",
-      "end" : "2024-01-29"
+      "start" : "2024-02-04",
+      "end" : "2024-01-30"
     }
   }
 }
@@ -5646,8 +6093,8 @@ Usage type:
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2024-02-03",
-      "end" : "2024-01-29"
+      "start" : "2024-02-04",
+      "end" : "2024-01-30"
     }
   }
 }
@@ -5676,8 +6123,8 @@ Usage type:
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2024-02-03",
-      "end" : "2024-01-29"
+      "start" : "2024-02-04",
+      "end" : "2024-01-30"
     }
   }
 }
