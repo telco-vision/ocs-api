@@ -3006,8 +3006,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2024-02-04T10:25:18.106948",
-      "end" : "2024-03-05T10:25:18.107459"
+      "start" : "2024-02-04T18:12:59.710182",
+      "end" : "2024-03-05T18:12:59.710506"
     }
   }
 }
@@ -3243,7 +3243,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2024-02-04T09:25:18"
+    "startTimeUTC" : "2024-02-04T17:12:59"
   }
 }
 ```
@@ -3316,7 +3316,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2024-02-04T09:25:18"
+    "startTimeUTC" : "2024-02-04T17:12:59"
   }
 }
 ```
@@ -3398,7 +3398,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2024-02-04T09:25:18"
+    "startTimeUTC" : "2024-02-04T17:12:59"
   }
 }
 ```
@@ -3808,7 +3808,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2024-02-04T10:25:18"
+    "newDateUtc" : "2024-02-04T18:12:59"
   }
 }
 ```
