@@ -3006,8 +3006,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2024-02-04T08:47:53.705721",
-      "end" : "2024-03-05T08:47:53.705968"
+      "start" : "2024-02-04T10:25:18.106948",
+      "end" : "2024-03-05T10:25:18.107459"
     }
   }
 }
@@ -3243,7 +3243,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2024-02-04T07:47:53"
+    "startTimeUTC" : "2024-02-04T09:25:18"
   }
 }
 ```
@@ -3316,7 +3316,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2024-02-04T07:47:53"
+    "startTimeUTC" : "2024-02-04T09:25:18"
   }
 }
 ```
@@ -3398,7 +3398,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2024-02-04T07:47:53"
+    "startTimeUTC" : "2024-02-04T09:25:18"
   }
 }
 ```
@@ -3808,7 +3808,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2024-02-04T08:47:53"
+    "newDateUtc" : "2024-02-04T10:25:18"
   }
 }
 ```
@@ -6385,13 +6385,17 @@ is delimited with a start date (included) and an end date (included). The period
 ## 7.1 sendMtSms
 
 ### Description
-This request can be used to send a SMS to a subscriber belonging to a visible reseller. The SMS
+This request can be used to send a SMS to one of your subscribers. The SMS
 will be sent via MAP MT-Forward-Sm request.
 
-This SMS to send can contain unicode characters. Unicode characters must be provided as /uXXXX,where XXXX is a hex value.
+The destination of the SMS can either be the subscriber IMSI, or its MSISDN. When using the MSISDN, the MSISDN
+must be the currently active MSISDN in the OCS.
+
+The SMS to send can contain unicode characters. Unicode characters must be provided as /uXXXX, where XXXX is a hex value.
 In order to send just a `/u`, simply send it as `//u`.
 
 If there is at least one Unicode character in the text, then whole text will be converted into Unicode.
+
 
 Example:<br>
 Original message: `Test 123 Тест`<br>
@@ -6401,12 +6405,14 @@ Message in JSON: `Test 123 /u0422/u0435/u0441/u0442`
 ### Inputs
 |Parameter|Presence|Description|
 |---------|--------|-----------|
-|imsi|Mandatory|IMSI of the destination that will receive the SMS|
+|imsi|Optional|IMSI of the destination that will receive the SMS|
+|msisdn|Optional|MSISDN of the destination that will receive the SMS|
 |text|Mandatory|The text to send, with support of Unicode.|
 |senderId|Mandatory|MSISDN or any text identification of the sender|
 
 
-### Request
+### 7.1.1 IMSI
+#### Request
 ```json
 {
   "sendMtSms" : {
@@ -6416,7 +6422,28 @@ Message in JSON: `Test 123 /u0422/u0435/u0441/u0442`
   }
 }
 ```
-### Answer
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 7.1.2 MSISDN
+#### Request
+```json
+{
+  "sendMtSms" : {
+    "msisdn" : 123456789,
+    "text" : "Msg to send",
+    "senderId" : "Sender"
+  }
+}
+```
+#### Answer
 
 ```json
 {
