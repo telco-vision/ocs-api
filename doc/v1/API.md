@@ -3006,8 +3006,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2024-02-05T14:39:15.56398",
-      "end" : "2024-03-06T14:39:15.56441"
+      "start" : "2024-02-12T09:31:16.721325",
+      "end" : "2024-03-13T09:31:16.721596"
     }
   }
 }
@@ -3243,7 +3243,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2024-02-05T13:39:15"
+    "startTimeUTC" : "2024-02-12T08:31:16"
   }
 }
 ```
@@ -3316,7 +3316,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2024-02-05T13:39:15"
+    "startTimeUTC" : "2024-02-12T08:31:16"
   }
 }
 ```
@@ -3398,7 +3398,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2024-02-05T13:39:15"
+    "startTimeUTC" : "2024-02-12T08:31:16"
   }
 }
 ```
@@ -3808,7 +3808,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2024-02-05T14:39:15"
+    "newDateUtc" : "2024-02-12T09:31:16"
   }
 }
 ```
@@ -5709,8 +5709,8 @@ Usage type:
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2024-02-05",
-      "end" : "2024-01-31"
+      "start" : "2024-02-12",
+      "end" : "2024-02-07"
     }
   }
 }
@@ -6003,8 +6003,8 @@ Usage type:
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2024-02-05",
-      "end" : "2024-01-31"
+      "start" : "2024-02-12",
+      "end" : "2024-02-07"
     }
   }
 }
@@ -6033,8 +6033,8 @@ Usage type:
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2024-02-05",
-      "end" : "2024-01-31"
+      "start" : "2024-02-12",
+      "end" : "2024-02-07"
     }
   }
 }
@@ -6063,8 +6063,8 @@ Usage type:
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2024-02-05",
-      "end" : "2024-01-31"
+      "start" : "2024-02-12",
+      "end" : "2024-02-07"
     }
   }
 }
@@ -6093,8 +6093,8 @@ Usage type:
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2024-02-05",
-      "end" : "2024-01-31"
+      "start" : "2024-02-12",
+      "end" : "2024-02-07"
     }
   }
 }
@@ -6123,8 +6123,8 @@ Usage type:
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2024-02-05",
-      "end" : "2024-01-31"
+      "start" : "2024-02-12",
+      "end" : "2024-02-07"
     }
   }
 }
@@ -6473,4 +6473,5 @@ Message in JSON: `Test 123 /u0422/u0435/u0441/u0442`
 | 14 | OPERATION_IMPOSSIBLE |
 | 15 | HLR_API_ERROR |
 | 16 | STEERING_API_ERROR |
+| 100 | TRAFFIC_CONTROL_LIMIT_EXCEEDED |
 

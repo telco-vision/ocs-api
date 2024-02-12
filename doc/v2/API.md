@@ -448,4 +448,5 @@ To identify the subscriber, you can use one of the following IDs:
 | 14 | OPERATION_IMPOSSIBLE |
 | 15 | HLR_API_ERROR |
 | 16 | STEERING_API_ERROR |
+| 100 | TRAFFIC_CONTROL_LIMIT_EXCEEDED |
 
