@@ -43,15 +43,17 @@ Here is an example of notification:
 
 ```json
 {
-  "unitsBefore" : 1000000,
-  "unitsAfter" : 2000000,
-  "thresholdPercentage" : "80",
-  "thresholdUnits" : "1500000",
-  "subscriberPackageId" : 123,
-  "totalUnits" : 2300000,
-  "subscriberId" : 123,
-  "subscriberIMSI" : "123456789",
-  "usageType": "DATA"
+  "subscriberPrepaidPackage": {
+    "unitsBefore": 1000000,
+    "unitsAfter": 2000000,
+    "thresholdPercentage": "80",
+    "thresholdUnits": "1500000",
+    "subscriberPackageId": 123,
+    "totalUnits": 2300000,
+    "subscriberId": 123,
+    "subscriberIMSI": "123456789",
+    "usageType": "DATA"
+  }
 }
 ```
 
