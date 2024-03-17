@@ -3005,8 +3005,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2024-03-14T12:09:34.786641",
-      "end" : "2024-04-13T12:09:34.786955"
+      "start" : "2024-03-17T12:12:36.256995",
+      "end" : "2024-04-16T12:12:36.257309"
     }
   }
 }
@@ -3242,7 +3242,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2024-03-14T11:09:34"
+    "startTimeUTC" : "2024-03-17T11:12:36"
   }
 }
 ```
@@ -3315,7 +3315,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2024-03-14T11:09:34"
+    "startTimeUTC" : "2024-03-17T11:12:36"
   }
 }
 ```
@@ -3397,7 +3397,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2024-03-14T11:09:34"
+    "startTimeUTC" : "2024-03-17T11:12:36"
   }
 }
 ```
@@ -3807,7 +3807,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2024-03-14T12:09:34"
+    "newDateUtc" : "2024-03-17T12:12:36"
   }
 }
 ```
@@ -4696,6 +4696,7 @@ Please refer to OCS User guide ( available from OCS UI) for a full description o
 |perioddays|Mandatory|Duration (in days) of the validity period for packages instantiated from this template.|
 |esimSponsor|Mandatory|ID of IMSI sponsor. When affecting a package to a subscriber, the IMSI of the subscriber (eSIM) must belong to the sponsor configured in the template. See [listSponsor](#15-listsponsor)|
 |cost|Optional|Informative field you can use to store the price you're selling packages issued from this template.|
+|changeSponsor|Optional|Must be present and `true` if you want to configure a location from another sponsor.|
 
 
 ### Request
@@ -4714,7 +4715,8 @@ Please refer to OCS User guide ( available from OCS UI) for a full description o
     "mtsmsnumber" : 120,
     "perioddays" : 45,
     "esimSponsor" : 155,
-    "cost" : 15.5
+    "cost" : 15.5,
+    "changeSponsor" : true
   }
 }
 ```
@@ -5708,8 +5710,8 @@ Usage type:
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2024-03-14",
-      "end" : "2024-03-09"
+      "start" : "2024-03-17",
+      "end" : "2024-03-12"
     }
   }
 }
@@ -6002,8 +6004,8 @@ Usage type:
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2024-03-14",
-      "end" : "2024-03-09"
+      "start" : "2024-03-17",
+      "end" : "2024-03-12"
     }
   }
 }
@@ -6032,8 +6034,8 @@ Usage type:
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2024-03-14",
-      "end" : "2024-03-09"
+      "start" : "2024-03-17",
+      "end" : "2024-03-12"
     }
   }
 }
@@ -6062,8 +6064,8 @@ Usage type:
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2024-03-14",
-      "end" : "2024-03-09"
+      "start" : "2024-03-17",
+      "end" : "2024-03-12"
     }
   }
 }
@@ -6092,8 +6094,8 @@ Usage type:
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2024-03-14",
-      "end" : "2024-03-09"
+      "start" : "2024-03-17",
+      "end" : "2024-03-12"
     }
   }
 }
@@ -6122,8 +6124,8 @@ Usage type:
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2024-03-14",
-      "end" : "2024-03-09"
+      "start" : "2024-03-17",
+      "end" : "2024-03-12"
     }
   }
 }
@@ -6164,8 +6166,8 @@ is delimited with a start date (included) and an end date (included). The period
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2024-03-14",
-      "end" : "2024-03-09"
+      "start" : "2024-03-17",
+      "end" : "2024-03-12"
     }
   }
 }
@@ -6270,8 +6272,8 @@ is delimited with a start date (included) and an end date (included). The period
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2024-03-14",
-      "end" : "2024-03-09"
+      "start" : "2024-03-17",
+      "end" : "2024-03-12"
     }
   }
 }
@@ -6300,8 +6302,8 @@ is delimited with a start date (included) and an end date (included). The period
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2024-03-14",
-      "end" : "2024-03-09"
+      "start" : "2024-03-17",
+      "end" : "2024-03-12"
     }
   }
 }
@@ -6330,8 +6332,8 @@ is delimited with a start date (included) and an end date (included). The period
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2024-03-14",
-      "end" : "2024-03-09"
+      "start" : "2024-03-17",
+      "end" : "2024-03-12"
     }
   }
 }
@@ -6360,8 +6362,8 @@ is delimited with a start date (included) and an end date (included). The period
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2024-03-14",
-      "end" : "2024-03-09"
+      "start" : "2024-03-17",
+      "end" : "2024-03-12"
     }
   }
 }
@@ -6390,8 +6392,8 @@ is delimited with a start date (included) and an end date (included). The period
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2024-03-14",
-      "end" : "2024-03-09"
+      "start" : "2024-03-17",
+      "end" : "2024-03-12"
     }
   }
 }
