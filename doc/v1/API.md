@@ -3005,8 +3005,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2024-03-25T11:42:01.075321",
-      "end" : "2024-04-24T11:42:01.075663"
+      "start" : "2024-03-25T18:09:02.971993",
+      "end" : "2024-04-24T18:09:02.972412"
     }
   }
 }
@@ -3242,7 +3242,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2024-03-25T10:42:01"
+    "startTimeUTC" : "2024-03-25T17:09:02"
   }
 }
 ```
@@ -3315,7 +3315,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2024-03-25T10:42:01"
+    "startTimeUTC" : "2024-03-25T17:09:02"
   }
 }
 ```
@@ -3397,7 +3397,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2024-03-25T10:42:01"
+    "startTimeUTC" : "2024-03-25T17:09:02"
   }
 }
 ```
@@ -3807,7 +3807,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2024-03-25T11:42:01"
+    "newDateUtc" : "2024-03-25T18:09:02"
   }
 }
 ```
@@ -4527,7 +4527,6 @@ Please refer to OCS User guide ( available from OCS UI) for a full description o
 |mosmsnumber|Optional|Maximum number of MO-SMS for packages instantiated from this template.|
 |mtsmsnumber|Optional|Maximum number of MT-SMS for packages instantiated from this template.|
 |perioddays|Mandatory|Duration (in days) of the validity period for packages instantiated from this template.|
-|esimSponsor|Mandatory|ID of IMSI sponsor. When affecting a package to a subscriber, the IMSI of the subscriber (eSIM) must belong to the sponsor configured in the template. See [listSponsor](#15-listsponsor)|
 |cost|Optional|Informative field you can use to store the price you're selling packages issued from this template.|
 |throttlingActive|Mandatory|Indicates if the throttling feature is active for this template.|
 |throttlingThreshold1Perc|Optional|First threshold for throttling, in percentage of the total volume of the package. See possible values in below remarks.|
@@ -4556,7 +4555,6 @@ Please refer to OCS User guide ( available from OCS UI) for a full description o
     "mosmsnumber" : 100,
     "mtsmsnumber" : 120,
     "perioddays" : 45,
-    "esimSponsor" : 155,
     "cost" : 15.5,
     "throttlingActive" : true,
     "throttlingThreshold1Perc" : 70,
@@ -4694,7 +4692,6 @@ Please refer to OCS User guide ( available from OCS UI) for a full description o
 |mosmsnumber|Optional|Maximum number of MO-SMS for packages instantiated from this template.|
 |mtsmsnumber|Optional|Maximum number of MT-SMS for packages instantiated from this template.|
 |perioddays|Mandatory|Duration (in days) of the validity period for packages instantiated from this template.|
-|esimSponsor|Mandatory|ID of IMSI sponsor. When affecting a package to a subscriber, the IMSI of the subscriber (eSIM) must belong to the sponsor configured in the template. See [listSponsor](#15-listsponsor)|
 |cost|Optional|Informative field you can use to store the price you're selling packages issued from this template.|
 |changeSponsor|Optional|Must be present and `true` if you want to configure a location from another sponsor.|
 
@@ -4746,7 +4743,6 @@ Please refer to OCS User guide ( available from OCS UI) for a full description o
     "mtsmsnumber" : 1201,
     "perioddays" : 30,
     "deleted" : false,
-    "esimSponsor" : 101,
     "cost" : 25.5,
     "uiVisible" : false,
     "throttlingActive" : true,
