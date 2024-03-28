@@ -2057,6 +2057,8 @@ Possible values for the `limit` field:
 - KB_1024: User will be limited 1024 Kbit/sec
 - KB_3072: User will be limited 3072 Kbit/sec
 - KB_5120: User will be limited 5120 Kbit/sec
+- KB_10240: User will be limited 10240 Kbit/sec
+- KB_20480: User will be limited 20480 Kbit/sec
 - UNLIMITED: User will not be limited.
 
 
@@ -3005,8 +3007,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2024-03-28T11:09:51.351532",
-      "end" : "2024-04-27T11:09:51.351772"
+      "start" : "2024-03-28T11:25:17.124244",
+      "end" : "2024-04-27T11:25:17.124533"
     }
   }
 }
@@ -3242,7 +3244,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2024-03-28T10:09:51"
+    "startTimeUTC" : "2024-03-28T10:25:17"
   }
 }
 ```
@@ -3315,7 +3317,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2024-03-28T10:09:51"
+    "startTimeUTC" : "2024-03-28T10:25:17"
   }
 }
 ```
@@ -3397,7 +3399,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2024-03-28T10:09:51"
+    "startTimeUTC" : "2024-03-28T10:25:17"
   }
 }
 ```
@@ -3807,7 +3809,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2024-03-28T11:09:51"
+    "newDateUtc" : "2024-03-28T11:25:17"
   }
 }
 ```
@@ -5012,17 +5014,19 @@ Please refer to OCS User guide ( available from OCS UI) for a full description o
 - `throttlingThreshold1Perc` and `throttlingThreshold1Limit` are optional, but if one is set in the request, the other must be provided
 - `throttlingThreshold2Perc` and `throttlingThreshold2Limit` are optional, but if one is set in the request, the other must be provided
 - `throttlingErrorAction` is mandatory if `throttlingActive` is `true`
-- Possible values for `throttlingThreshold1Limit` and `throttlingThreshold2Limit` in request, those are speed limitation in Kbit:
-   - 1
-   - 32
-   - 64
-   - 128
-   - 256
-   - 384
-   - 512
-   - 1024
-   - 3072
-   - 5120
+-             Possible values for `throttlingThreshold1Limit` and `throttlingThreshold2Limit` in request, those are speed limitation in Kbit:
+               - 1
+               - 32
+               - 64
+               - 128
+               - 256
+               - 384
+               - 512
+               - 1024
+               - 3072
+               - 5120
+               - 10240
+               - 20480
 
 
 
