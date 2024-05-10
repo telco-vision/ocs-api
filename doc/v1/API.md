@@ -546,82 +546,71 @@ Remarks when searching with IMSI, ICCID or MSISDN:
     "code" : 0,
     "msg" : "OK"
   },
-  "getSingleSubscriber" : {
-    "imsiList" : [ {
-      "id" : 21046,
+  "listSubscriber" : {
+    "subscriberList" : [ {
+      "imsiList" : [ {
+        "id" : 21046,
+        "subscriberId" : 21046,
+        "imsi" : "248029018000011",
+        "startDate" : "2022-03-10T20:29:41",
+        "iccid" : "893720401717000011"
+      } ],
+      "phoneNumberList" : [ {
+        "id" : 21040,
+        "subscriberId" : 21046,
+        "phoneNumber" : "3728803101011",
+        "startDate" : "2022-03-10T20:29:41"
+      } ],
+      "multiImsi" : [ {
+        "id" : 21043,
+        "subscriberId" : 21046,
+        "imsi" : "248029018000011",
+        "startDate" : "2022-03-10T20:29:41"
+      } ],
+      "status" : [ {
+        "id" : 21040,
+        "subscriberId" : 21046,
+        "startDate" : "2022-03-10T20:29:41",
+        "status" : "Active"
+      } ],
+      "sim" : {
+        "id" : 36904,
+        "subscriberId" : 21046,
+        "esim" : true,
+        "status" : "FREE",
+        "pin1" : "0561",
+        "pin2" : "1736",
+        "puk2" : "50913387",
+        "smdpServer" : "smdp.io",
+        "activationCode" : "K2-1JL8YT-14S7I6K"
+      },
       "subscriberId" : 21046,
-      "imsi" : "248029018000011",
-      "startDate" : "2022-03-10T20:29:41",
-      "iccid" : "893720401717000011"
+      "batchId" : "SPRK_220206_3K_eSIM__20220310192941_435",
+      "subscriberName" : "SPRK_eSIM_Eitan_220601_1",
+      "accountId" : 37,
+      "resellerId" : 10,
+      "prepaid" : true,
+      "balance" : 0.0,
+      "activationDate" : "2022-03-10T20:29:41",
+      "lastUsageDate" : "2022-06-01T15:35:34",
+      "useAccountForCharging" : true,
+      "allowedMoc" : true,
+      "allowedMtc" : true,
+      "allowedData" : true,
+      "allowedMosms" : true,
+      "allowedMtsms" : true,
+      "account" : "TestSubscribers",
+      "reseller" : "Test Reseller 3",
+      "lastMcc" : 334,
+      "lastMnc" : 50,
+      "steeringListId" : 1,
+      "throttlingLimit" : 128
     } ],
-    "phoneNumberList" : [ {
-      "id" : 21040,
-      "subscriberId" : 21046,
-      "phoneNumber" : "3728803101011",
-      "startDate" : "2022-03-10T20:29:41"
-    } ],
-    "multiImsi" : [ {
-      "id" : 21043,
-      "subscriberId" : 21046,
-      "imsi" : "248029018000011",
-      "startDate" : "2022-03-10T20:29:41"
-    } ],
-    "status" : [ {
-      "id" : 21040,
-      "subscriberId" : 21046,
-      "startDate" : "2022-03-10T20:29:41",
-      "status" : "Active"
-    } ],
-    "sim" : {
-      "id" : 36904,
-      "subscriberId" : 21046,
-      "esim" : true,
-      "status" : "FREE",
-      "pin1" : "0561",
-      "pin2" : "1736",
-      "puk2" : "50913387",
-      "smdpServer" : "smdp.io",
-      "activationCode" : "K2-1JL8YT-14S7I6K"
-    },
-    "networkInfo" : {
-      "subscriberid" : 21046,
-      "time" : "2024-05-06T17:17:01.832168",
-      "lastMcc" : 222,
-      "lastMnc" : 99,
-      "lastCellId" : 123456,
-      "lastLac" : 456,
-      "lastImei" : "789456123",
-      "lastRat" : "3G - UTRAN"
-    },
-    "subscriberId" : 21046,
-    "batchId" : "SPRK_220206_3K_eSIM__20220310192941_435",
-    "subscriberName" : "SPRK_eSIM_Eitan_220601_1",
-    "accountId" : 37,
-    "resellerId" : 10,
-    "prepaid" : true,
-    "balance" : 0.0,
-    "activationDate" : "2022-03-10T20:29:41",
-    "lastUsageDate" : "2022-06-01T15:35:34",
-    "useAccountForCharging" : true,
-    "allowedMoc" : true,
-    "allowedMtc" : true,
-    "allowedData" : true,
-    "allowedMosms" : true,
-    "allowedMtsms" : true,
-    "account" : "TestSubscribers",
-    "reseller" : "Test Reseller 3",
-    "lastMcc" : 334,
-    "lastMnc" : 50,
-    "steeringListId" : 1,
-    "throttlingLimit" : 128
+    "hasMore" : false,
+    "nbFound" : 1
   }
 }
 ```
-#### Remark(s)
-
-- `networkInfo` is optional. If the subscriber has not been active yet, this object will be null
-
-
 ### 2.1.2 ICCID
 #### Request
 ```json
@@ -640,14 +629,72 @@ Remarks when searching with IMSI, ICCID or MSISDN:
   "status" : {
     "code" : 0,
     "msg" : "OK"
+  },
+  "listSubscriber" : {
+    "subscriberList" : [ {
+      "imsiList" : [ {
+        "id" : 21046,
+        "subscriberId" : 21046,
+        "imsi" : "248029018000011",
+        "startDate" : "2022-03-10T20:29:41",
+        "iccid" : "893720401717000011"
+      } ],
+      "phoneNumberList" : [ {
+        "id" : 21040,
+        "subscriberId" : 21046,
+        "phoneNumber" : "3728803101011",
+        "startDate" : "2022-03-10T20:29:41"
+      } ],
+      "multiImsi" : [ {
+        "id" : 21043,
+        "subscriberId" : 21046,
+        "imsi" : "248029018000011",
+        "startDate" : "2022-03-10T20:29:41"
+      } ],
+      "status" : [ {
+        "id" : 21040,
+        "subscriberId" : 21046,
+        "startDate" : "2022-03-10T20:29:41",
+        "status" : "Active"
+      } ],
+      "sim" : {
+        "id" : 36904,
+        "subscriberId" : 21046,
+        "esim" : true,
+        "status" : "FREE",
+        "pin1" : "0561",
+        "pin2" : "1736",
+        "puk2" : "50913387",
+        "smdpServer" : "smdp.io",
+        "activationCode" : "K2-1JL8YT-14S7I6K"
+      },
+      "subscriberId" : 21046,
+      "batchId" : "SPRK_220206_3K_eSIM__20220310192941_435",
+      "subscriberName" : "SPRK_eSIM_Eitan_220601_1",
+      "accountId" : 37,
+      "resellerId" : 10,
+      "prepaid" : true,
+      "balance" : 0.0,
+      "activationDate" : "2022-03-10T20:29:41",
+      "lastUsageDate" : "2022-06-01T15:35:34",
+      "useAccountForCharging" : true,
+      "allowedMoc" : true,
+      "allowedMtc" : true,
+      "allowedData" : true,
+      "allowedMosms" : true,
+      "allowedMtsms" : true,
+      "account" : "TestSubscribers",
+      "reseller" : "Test Reseller 3",
+      "lastMcc" : 334,
+      "lastMnc" : 50,
+      "steeringListId" : 1,
+      "throttlingLimit" : 128
+    } ],
+    "hasMore" : false,
+    "nbFound" : 1
   }
 }
 ```
-#### Remark(s)
-
-- See answer from previous case
-
-
 ### 2.1.3 MSISDN
 #### Request
 ```json
@@ -666,14 +713,72 @@ Remarks when searching with IMSI, ICCID or MSISDN:
   "status" : {
     "code" : 0,
     "msg" : "OK"
+  },
+  "listSubscriber" : {
+    "subscriberList" : [ {
+      "imsiList" : [ {
+        "id" : 21046,
+        "subscriberId" : 21046,
+        "imsi" : "248029018000011",
+        "startDate" : "2022-03-10T20:29:41",
+        "iccid" : "893720401717000011"
+      } ],
+      "phoneNumberList" : [ {
+        "id" : 21040,
+        "subscriberId" : 21046,
+        "phoneNumber" : "3728803101011",
+        "startDate" : "2022-03-10T20:29:41"
+      } ],
+      "multiImsi" : [ {
+        "id" : 21043,
+        "subscriberId" : 21046,
+        "imsi" : "248029018000011",
+        "startDate" : "2022-03-10T20:29:41"
+      } ],
+      "status" : [ {
+        "id" : 21040,
+        "subscriberId" : 21046,
+        "startDate" : "2022-03-10T20:29:41",
+        "status" : "Active"
+      } ],
+      "sim" : {
+        "id" : 36904,
+        "subscriberId" : 21046,
+        "esim" : true,
+        "status" : "FREE",
+        "pin1" : "0561",
+        "pin2" : "1736",
+        "puk2" : "50913387",
+        "smdpServer" : "smdp.io",
+        "activationCode" : "K2-1JL8YT-14S7I6K"
+      },
+      "subscriberId" : 21046,
+      "batchId" : "SPRK_220206_3K_eSIM__20220310192941_435",
+      "subscriberName" : "SPRK_eSIM_Eitan_220601_1",
+      "accountId" : 37,
+      "resellerId" : 10,
+      "prepaid" : true,
+      "balance" : 0.0,
+      "activationDate" : "2022-03-10T20:29:41",
+      "lastUsageDate" : "2022-06-01T15:35:34",
+      "useAccountForCharging" : true,
+      "allowedMoc" : true,
+      "allowedMtc" : true,
+      "allowedData" : true,
+      "allowedMosms" : true,
+      "allowedMtsms" : true,
+      "account" : "TestSubscribers",
+      "reseller" : "Test Reseller 3",
+      "lastMcc" : 334,
+      "lastMnc" : 50,
+      "steeringListId" : 1,
+      "throttlingLimit" : 128
+    } ],
+    "hasMore" : false,
+    "nbFound" : 1
   }
 }
 ```
-#### Remark(s)
-
-- See answer from previous case
-
-
 ### 2.1.4 eSIM activation code
 #### Request
 ```json
@@ -692,13 +797,75 @@ Remarks when searching with IMSI, ICCID or MSISDN:
   "status" : {
     "code" : 0,
     "msg" : "OK"
+  },
+  "listSubscriber" : {
+    "subscriberList" : [ {
+      "imsiList" : [ {
+        "id" : 21046,
+        "subscriberId" : 21046,
+        "imsi" : "248029018000011",
+        "startDate" : "2022-03-10T20:29:41",
+        "iccid" : "893720401717000011"
+      } ],
+      "phoneNumberList" : [ {
+        "id" : 21040,
+        "subscriberId" : 21046,
+        "phoneNumber" : "3728803101011",
+        "startDate" : "2022-03-10T20:29:41"
+      } ],
+      "multiImsi" : [ {
+        "id" : 21043,
+        "subscriberId" : 21046,
+        "imsi" : "248029018000011",
+        "startDate" : "2022-03-10T20:29:41"
+      } ],
+      "status" : [ {
+        "id" : 21040,
+        "subscriberId" : 21046,
+        "startDate" : "2022-03-10T20:29:41",
+        "status" : "Active"
+      } ],
+      "sim" : {
+        "id" : 36904,
+        "subscriberId" : 21046,
+        "esim" : true,
+        "status" : "FREE",
+        "pin1" : "0561",
+        "pin2" : "1736",
+        "puk2" : "50913387",
+        "smdpServer" : "smdp.io",
+        "activationCode" : "K2-1JL8YT-14S7I6K"
+      },
+      "subscriberId" : 21046,
+      "batchId" : "SPRK_220206_3K_eSIM__20220310192941_435",
+      "subscriberName" : "SPRK_eSIM_Eitan_220601_1",
+      "accountId" : 37,
+      "resellerId" : 10,
+      "prepaid" : true,
+      "balance" : 0.0,
+      "activationDate" : "2022-03-10T20:29:41",
+      "lastUsageDate" : "2022-06-01T15:35:34",
+      "useAccountForCharging" : true,
+      "allowedMoc" : true,
+      "allowedMtc" : true,
+      "allowedData" : true,
+      "allowedMosms" : true,
+      "allowedMtsms" : true,
+      "account" : "TestSubscribers",
+      "reseller" : "Test Reseller 3",
+      "lastMcc" : 334,
+      "lastMnc" : 50,
+      "steeringListId" : 1,
+      "throttlingLimit" : 128
+    } ],
+    "hasMore" : false,
+    "nbFound" : 1
   }
 }
 ```
 #### Remark(s)
 
 - The request here is searching for the exact activation, hence the request will always return 0 or 1 subscriber/sim
-- See answer from previous case
 
 
 ### 2.1.5 Subscriber Id
@@ -719,14 +886,72 @@ Remarks when searching with IMSI, ICCID or MSISDN:
   "status" : {
     "code" : 0,
     "msg" : "OK"
+  },
+  "listSubscriber" : {
+    "subscriberList" : [ {
+      "imsiList" : [ {
+        "id" : 21046,
+        "subscriberId" : 21046,
+        "imsi" : "248029018000011",
+        "startDate" : "2022-03-10T20:29:41",
+        "iccid" : "893720401717000011"
+      } ],
+      "phoneNumberList" : [ {
+        "id" : 21040,
+        "subscriberId" : 21046,
+        "phoneNumber" : "3728803101011",
+        "startDate" : "2022-03-10T20:29:41"
+      } ],
+      "multiImsi" : [ {
+        "id" : 21043,
+        "subscriberId" : 21046,
+        "imsi" : "248029018000011",
+        "startDate" : "2022-03-10T20:29:41"
+      } ],
+      "status" : [ {
+        "id" : 21040,
+        "subscriberId" : 21046,
+        "startDate" : "2022-03-10T20:29:41",
+        "status" : "Active"
+      } ],
+      "sim" : {
+        "id" : 36904,
+        "subscriberId" : 21046,
+        "esim" : true,
+        "status" : "FREE",
+        "pin1" : "0561",
+        "pin2" : "1736",
+        "puk2" : "50913387",
+        "smdpServer" : "smdp.io",
+        "activationCode" : "K2-1JL8YT-14S7I6K"
+      },
+      "subscriberId" : 21046,
+      "batchId" : "SPRK_220206_3K_eSIM__20220310192941_435",
+      "subscriberName" : "SPRK_eSIM_Eitan_220601_1",
+      "accountId" : 37,
+      "resellerId" : 10,
+      "prepaid" : true,
+      "balance" : 0.0,
+      "activationDate" : "2022-03-10T20:29:41",
+      "lastUsageDate" : "2022-06-01T15:35:34",
+      "useAccountForCharging" : true,
+      "allowedMoc" : true,
+      "allowedMtc" : true,
+      "allowedData" : true,
+      "allowedMosms" : true,
+      "allowedMtsms" : true,
+      "account" : "TestSubscribers",
+      "reseller" : "Test Reseller 3",
+      "lastMcc" : 334,
+      "lastMnc" : 50,
+      "steeringListId" : 1,
+      "throttlingLimit" : 128
+    } ],
+    "hasMore" : false,
+    "nbFound" : 1
   }
 }
 ```
-#### Remark(s)
-
-- See answer from previous case
-
-
 ## 2.2 listSubscriber
 
 ### Description
@@ -2788,8 +3013,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2024-05-06T17:17:01.835734",
-      "end" : "2024-06-05T17:17:01.835742"
+      "start" : "2024-05-10T10:43:19.381558",
+      "end" : "2024-06-09T10:43:19.38181"
     }
   }
 }
@@ -3025,7 +3250,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2024-05-06T15:17:01"
+    "startTimeUTC" : "2024-05-10T08:43:19"
   }
 }
 ```
@@ -3098,7 +3323,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2024-05-06T15:17:01"
+    "startTimeUTC" : "2024-05-10T08:43:19"
   }
 }
 ```
@@ -3180,7 +3405,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2024-05-06T15:17:01"
+    "startTimeUTC" : "2024-05-10T08:43:19"
   }
 }
 ```
@@ -3590,7 +3815,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2024-05-06T17:17:01"
+    "newDateUtc" : "2024-05-10T10:43:19"
   }
 }
 ```
@@ -5493,8 +5718,8 @@ Usage type:
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2024-05-06",
-      "end" : "2024-05-01"
+      "start" : "2024-05-10",
+      "end" : "2024-05-05"
     }
   }
 }
@@ -5787,8 +6012,8 @@ Usage type:
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2024-05-06",
-      "end" : "2024-05-01"
+      "start" : "2024-05-10",
+      "end" : "2024-05-05"
     }
   }
 }
@@ -5817,8 +6042,8 @@ Usage type:
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2024-05-06",
-      "end" : "2024-05-01"
+      "start" : "2024-05-10",
+      "end" : "2024-05-05"
     }
   }
 }
@@ -5847,8 +6072,8 @@ Usage type:
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2024-05-06",
-      "end" : "2024-05-01"
+      "start" : "2024-05-10",
+      "end" : "2024-05-05"
     }
   }
 }
@@ -5877,8 +6102,8 @@ Usage type:
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2024-05-06",
-      "end" : "2024-05-01"
+      "start" : "2024-05-10",
+      "end" : "2024-05-05"
     }
   }
 }
@@ -5907,8 +6132,8 @@ Usage type:
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2024-05-06",
-      "end" : "2024-05-01"
+      "start" : "2024-05-10",
+      "end" : "2024-05-05"
     }
   }
 }
@@ -5949,8 +6174,8 @@ is delimited with a start date (included) and an end date (included). The period
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2024-05-06",
-      "end" : "2024-05-01"
+      "start" : "2024-05-10",
+      "end" : "2024-05-05"
     }
   }
 }
@@ -6055,8 +6280,8 @@ is delimited with a start date (included) and an end date (included). The period
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2024-05-06",
-      "end" : "2024-05-01"
+      "start" : "2024-05-10",
+      "end" : "2024-05-05"
     }
   }
 }
@@ -6085,8 +6310,8 @@ is delimited with a start date (included) and an end date (included). The period
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2024-05-06",
-      "end" : "2024-05-01"
+      "start" : "2024-05-10",
+      "end" : "2024-05-05"
     }
   }
 }
@@ -6115,8 +6340,8 @@ is delimited with a start date (included) and an end date (included). The period
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2024-05-06",
-      "end" : "2024-05-01"
+      "start" : "2024-05-10",
+      "end" : "2024-05-05"
     }
   }
 }
@@ -6145,8 +6370,8 @@ is delimited with a start date (included) and an end date (included). The period
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2024-05-06",
-      "end" : "2024-05-01"
+      "start" : "2024-05-10",
+      "end" : "2024-05-05"
     }
   }
 }
@@ -6175,8 +6400,8 @@ is delimited with a start date (included) and an end date (included). The period
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2024-05-06",
-      "end" : "2024-05-01"
+      "start" : "2024-05-10",
+      "end" : "2024-05-05"
     }
   }
 }
