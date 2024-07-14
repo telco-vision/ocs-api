@@ -585,7 +585,7 @@ Remarks when searching with IMSI, ICCID or MSISDN:
     },
     "networkInfo" : {
       "subscriberid" : 21046,
-      "time" : "2024-07-09T10:00:08.95232",
+      "time" : "2024-07-14T17:40:43.95822",
       "lastMcc" : 222,
       "lastMnc" : 99,
       "lastCellId" : 123456,
@@ -2788,8 +2788,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2024-07-09T10:00:08.956351",
-      "end" : "2024-08-08T10:00:08.956361"
+      "start" : "2024-07-14T17:40:43.961883",
+      "end" : "2024-08-13T17:40:43.961892"
     }
   }
 }
@@ -3025,7 +3025,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2024-07-09T08:00:08"
+    "startTimeUTC" : "2024-07-14T15:40:43"
   }
 }
 ```
@@ -3098,7 +3098,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2024-07-09T08:00:08"
+    "startTimeUTC" : "2024-07-14T15:40:43"
   }
 }
 ```
@@ -3180,7 +3180,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2024-07-09T08:00:08"
+    "startTimeUTC" : "2024-07-14T15:40:43"
   }
 }
 ```
@@ -3590,7 +3590,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2024-07-09T10:00:08"
+    "newDateUtc" : "2024-07-14T17:40:43"
   }
 }
 ```
@@ -4435,9 +4435,6 @@ Please refer to OCS User guide ( available from OCS UI) for a full description o
 - `throttlingThreshold2Perc` and `throttlingThreshold2Limit` are optional, but if one is set in the request, the other must be provided
 - `throttlingErrorAction` is mandatory if `throttlingActive` is `true`
 - Possible values for `throttlingThreshold1Limit` and `throttlingThreshold2Limit` in request, those are speed limitation in Kbit:
-   - 1
-   - 32
-   - 64
    - 128
    - 256
    - 384
@@ -4796,9 +4793,6 @@ Please refer to OCS User guide ( available from OCS UI) for a full description o
 - `throttlingThreshold2Perc` and `throttlingThreshold2Limit` are optional, but if one is set in the request, the other must be provided
 - `throttlingErrorAction` is mandatory if `throttlingActive` is `true`
 -             Possible values for `throttlingThreshold1Limit` and `throttlingThreshold2Limit` in request, those are speed limitation in Kbit:
-               - 1
-               - 32
-               - 64
                - 128
                - 256
                - 384
@@ -5493,8 +5487,8 @@ Usage type:
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2024-07-09",
-      "end" : "2024-07-04"
+      "start" : "2024-07-14",
+      "end" : "2024-07-09"
     }
   }
 }
@@ -5787,8 +5781,8 @@ Usage type:
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2024-07-09",
-      "end" : "2024-07-04"
+      "start" : "2024-07-14",
+      "end" : "2024-07-09"
     }
   }
 }
@@ -5817,8 +5811,8 @@ Usage type:
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2024-07-09",
-      "end" : "2024-07-04"
+      "start" : "2024-07-14",
+      "end" : "2024-07-09"
     }
   }
 }
@@ -5847,8 +5841,8 @@ Usage type:
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2024-07-09",
-      "end" : "2024-07-04"
+      "start" : "2024-07-14",
+      "end" : "2024-07-09"
     }
   }
 }
@@ -5877,8 +5871,8 @@ Usage type:
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2024-07-09",
-      "end" : "2024-07-04"
+      "start" : "2024-07-14",
+      "end" : "2024-07-09"
     }
   }
 }
@@ -5907,8 +5901,8 @@ Usage type:
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2024-07-09",
-      "end" : "2024-07-04"
+      "start" : "2024-07-14",
+      "end" : "2024-07-09"
     }
   }
 }
@@ -5949,8 +5943,8 @@ is delimited with a start date (included) and an end date (included). The period
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2024-07-09",
-      "end" : "2024-07-04"
+      "start" : "2024-07-14",
+      "end" : "2024-07-09"
     }
   }
 }
@@ -6055,8 +6049,8 @@ is delimited with a start date (included) and an end date (included). The period
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2024-07-09",
-      "end" : "2024-07-04"
+      "start" : "2024-07-14",
+      "end" : "2024-07-09"
     }
   }
 }
@@ -6085,8 +6079,8 @@ is delimited with a start date (included) and an end date (included). The period
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2024-07-09",
-      "end" : "2024-07-04"
+      "start" : "2024-07-14",
+      "end" : "2024-07-09"
     }
   }
 }
@@ -6115,8 +6109,8 @@ is delimited with a start date (included) and an end date (included). The period
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2024-07-09",
-      "end" : "2024-07-04"
+      "start" : "2024-07-14",
+      "end" : "2024-07-09"
     }
   }
 }
@@ -6145,8 +6139,8 @@ is delimited with a start date (included) and an end date (included). The period
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2024-07-09",
-      "end" : "2024-07-04"
+      "start" : "2024-07-14",
+      "end" : "2024-07-09"
     }
   }
 }
@@ -6175,8 +6169,8 @@ is delimited with a start date (included) and an end date (included). The period
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2024-07-09",
-      "end" : "2024-07-04"
+      "start" : "2024-07-14",
+      "end" : "2024-07-09"
     }
   }
 }
