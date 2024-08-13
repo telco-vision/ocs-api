@@ -1830,6 +1830,13 @@ This request is part of the throttling API.
 
 It will set a new bandwidth limitation for the subscriber identified by the IMSI.
 
+**REMARK:**  
+This request is intended for our customers that have their Gy traffic relayed to their own OCS for charging. When the
+traffic is relayed, a customer can decide its entire throttling logic and set subscriber limitation with this request. If
+the traffic is not relayed, our OCS throttling logic will take priority on the customer logic. If you use this request
+to limit a subscriber, at the next slice, our OCS will see that current limit is not in line with our logic and reset the
+subscriber throttling according to our logic.
+
 Possible values for the `limit` field:
 - KB_128: User will be limited 128 Kbit/sec
 - KB_256: User will be limited 256 Kbit/sec
