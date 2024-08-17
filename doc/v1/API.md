@@ -40,6 +40,8 @@
 
 [2.14 pushSteeringToSubs](#214-pushsteeringtosubs)
 
+[2.15 cleanSubscriberAllPackages](#215-cleansubscriberallpackages)
+
 ## [3 Subscriber prepaid packages](#31-affectpackagetosubscriber)
 
 [3.1 affectPackageToSubscriber](#31-affectpackagetosubscriber)
@@ -55,6 +57,8 @@
 [3.6 modifySubscriberPrepaidPackageStatus](#36-modifysubscriberprepaidpackagestatus)
 
 [3.7 stopResumeSubsRecurringPackage](#37-stopresumesubsrecurringpackage)
+
+[3.8 deleteSubscriberPackage](#38-deletesubscriberpackage)
 
 ## [4 Prepaid package template](#41-listprepaidpackagetemplate)
 
@@ -585,7 +589,7 @@ Remarks when searching with IMSI, ICCID or MSISDN:
     },
     "networkInfo" : {
       "subscriberid" : 21046,
-      "time" : "2024-07-24T09:20:09.586143",
+      "time" : "2024-08-17T17:23:06.445199",
       "lastMcc" : 222,
       "lastMnc" : 99,
       "lastCellId" : 123456,
@@ -1830,13 +1834,6 @@ This request is part of the throttling API.
 
 It will set a new bandwidth limitation for the subscriber identified by the IMSI.
 
-**REMARK:**  
-This request is intended for our customers that have their Gy traffic relayed to their own OCS for charging. When the
-traffic is relayed, a customer can decide its entire throttling logic and set subscriber limitation with this request. If
-the traffic is not relayed, our OCS throttling logic will take priority on the customer logic. If you use this request
-to limit a subscriber, at the next slice, our OCS will see that current limit is not in line with our logic and reset the
-subscriber throttling according to our logic.
-
 Possible values for the `limit` field:
 - KB_128: User will be limited 128 Kbit/sec
 - KB_256: User will be limited 256 Kbit/sec
@@ -2752,6 +2749,139 @@ To identify the subscriber, you can use one of the following IDs:
 - This request is best used with the subscriber ID, if you already have it, use it.
 
 
+## 2.15 cleanSubscriberAllPackages
+
+### Description
+This request can be used to clean ALL the prepaid package AND ALL the recurring packages.
+
+To identify the subscriber, you can use one of the following IDs:
+- Subscriber ID
+- IMSI
+- ICCID
+- MSISDN
+- Multi IMSI
+- Activation code
+
+
+### 2.15.1 By subscriber ID
+#### Request
+```json
+{
+  "pushSteeringToSubs" : {
+    "subscriberId" : 1000
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 2.15.2 By IMSI
+#### Request
+```json
+{
+  "pushSteeringToSubs" : {
+    "imsi" : "12345678901234"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 2.15.3 By ICCID
+#### Request
+```json
+{
+  "pushSteeringToSubs" : {
+    "iccid" : "123456789012345678"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 2.15.4 By MSISDN
+#### Request
+```json
+{
+  "pushSteeringToSubs" : {
+    "msisdn" : "123456789123"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 2.15.5 By multi imsi
+#### Request
+```json
+{
+  "pushSteeringToSubs" : {
+    "multiImsi" : "12345678901234"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 2.15.6 By Activation code
+#### Request
+```json
+{
+  "pushSteeringToSubs" : {
+    "activationCode" : "Activation code"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### Remark(s)
+
+- This request is best used with the subscriber ID, if you already have it, use it.
+
+
 # 3. Subscriber prepaid packages
 ## 3.1 affectPackageToSubscriber
 
@@ -2802,8 +2932,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2024-07-24T09:20:09.590301",
-      "end" : "2024-08-23T09:20:09.590316"
+      "start" : "2024-08-17T17:23:06.448819",
+      "end" : "2024-09-16T17:23:06.448827"
     }
   }
 }
@@ -3039,7 +3169,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2024-07-24T07:20:09"
+    "startTimeUTC" : "2024-08-17T15:23:06"
   }
 }
 ```
@@ -3112,7 +3242,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2024-07-24T07:20:09"
+    "startTimeUTC" : "2024-08-17T15:23:06"
   }
 }
 ```
@@ -3194,7 +3324,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2024-07-24T07:20:09"
+    "startTimeUTC" : "2024-08-17T15:23:06"
   }
 }
 ```
@@ -3604,7 +3734,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2024-07-24T09:20:09"
+    "newDateUtc" : "2024-08-17T17:23:06"
   }
 }
 ```
@@ -3740,6 +3870,33 @@ Please note that to get the recurring packages of a subscriber, you need to use 
   "moveSubscriberRangeToAccount" : 4
 }
 ```
+## 3.8 deleteSubscriberPackage
+
+### Description
+This request can be used to delete a prepaid package of a subscriber.
+
+
+### Request
+```json
+{
+  "deleteSubscriberPackage" : 123
+}
+```
+### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### Remark(s)
+
+- The numeric value of the request is the prepais package ID
+
+
 # 4. Prepaid package template
 ## 4.1 listPrepaidPackageTemplate
 
@@ -5501,8 +5658,8 @@ Usage type:
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2024-07-24",
-      "end" : "2024-07-19"
+      "start" : "2024-08-17",
+      "end" : "2024-08-12"
     }
   }
 }
@@ -5795,8 +5952,8 @@ Usage type:
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2024-07-24",
-      "end" : "2024-07-19"
+      "start" : "2024-08-17",
+      "end" : "2024-08-12"
     }
   }
 }
@@ -5825,8 +5982,8 @@ Usage type:
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2024-07-24",
-      "end" : "2024-07-19"
+      "start" : "2024-08-17",
+      "end" : "2024-08-12"
     }
   }
 }
@@ -5855,8 +6012,8 @@ Usage type:
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2024-07-24",
-      "end" : "2024-07-19"
+      "start" : "2024-08-17",
+      "end" : "2024-08-12"
     }
   }
 }
@@ -5885,8 +6042,8 @@ Usage type:
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2024-07-24",
-      "end" : "2024-07-19"
+      "start" : "2024-08-17",
+      "end" : "2024-08-12"
     }
   }
 }
@@ -5915,8 +6072,8 @@ Usage type:
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2024-07-24",
-      "end" : "2024-07-19"
+      "start" : "2024-08-17",
+      "end" : "2024-08-12"
     }
   }
 }
@@ -5957,8 +6114,8 @@ is delimited with a start date (included) and an end date (included). The period
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2024-07-24",
-      "end" : "2024-07-19"
+      "start" : "2024-08-17",
+      "end" : "2024-08-12"
     }
   }
 }
@@ -6063,8 +6220,8 @@ is delimited with a start date (included) and an end date (included). The period
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2024-07-24",
-      "end" : "2024-07-19"
+      "start" : "2024-08-17",
+      "end" : "2024-08-12"
     }
   }
 }
@@ -6093,8 +6250,8 @@ is delimited with a start date (included) and an end date (included). The period
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2024-07-24",
-      "end" : "2024-07-19"
+      "start" : "2024-08-17",
+      "end" : "2024-08-12"
     }
   }
 }
@@ -6123,8 +6280,8 @@ is delimited with a start date (included) and an end date (included). The period
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2024-07-24",
-      "end" : "2024-07-19"
+      "start" : "2024-08-17",
+      "end" : "2024-08-12"
     }
   }
 }
@@ -6153,8 +6310,8 @@ is delimited with a start date (included) and an end date (included). The period
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2024-07-24",
-      "end" : "2024-07-19"
+      "start" : "2024-08-17",
+      "end" : "2024-08-12"
     }
   }
 }
@@ -6183,8 +6340,8 @@ is delimited with a start date (included) and an end date (included). The period
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2024-07-24",
-      "end" : "2024-07-19"
+      "start" : "2024-08-17",
+      "end" : "2024-08-12"
     }
   }
 }
