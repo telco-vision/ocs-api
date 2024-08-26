@@ -637,7 +637,7 @@ Remarks when searching with IMSI, ICCID or MSISDN:
     },
     "networkInfo" : {
       "subscriberid" : 21046,
-      "time" : "2024-08-26T15:17:41.882554",
+      "time" : "2024-08-26T15:30:41.769205",
       "lastMcc" : 222,
       "lastMnc" : 99,
       "lastCellId" : 123456,
@@ -2980,8 +2980,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2024-08-26T15:17:41.886273",
-      "end" : "2024-09-25T15:17:41.886286"
+      "start" : "2024-08-26T15:30:41.772436",
+      "end" : "2024-09-25T15:30:41.772447"
     }
   }
 }
@@ -3217,7 +3217,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2024-08-26T13:17:41"
+    "startTimeUTC" : "2024-08-26T13:30:41"
   }
 }
 ```
@@ -3290,7 +3290,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2024-08-26T13:17:41"
+    "startTimeUTC" : "2024-08-26T13:30:41"
   }
 }
 ```
@@ -3372,7 +3372,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2024-08-26T13:17:41"
+    "startTimeUTC" : "2024-08-26T13:30:41"
   }
 }
 ```
@@ -3782,7 +3782,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2024-08-26T15:17:41"
+    "newDateUtc" : "2024-08-26T15:30:41"
   }
 }
 ```
