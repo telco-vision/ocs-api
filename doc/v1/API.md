@@ -10,6 +10,8 @@
 
 [1.5 listSponsor](#15-listsponsor)
 
+[1.6 listSteeringList](#16-liststeeringlist)
+
 ## [2 Subscriber](#21-getsinglesubscriber)
 
 [2.1 getSingleSubscriber](#21-getsinglesubscriber)
@@ -505,6 +507,52 @@ This request can be used to list the different sponsors configured for a reselle
   }
 }
 ```
+## 1.6 listSteeringList
+
+### Description
+This request can be used to list the different steering list of a reseller.
+
+
+### Inputs
+|Parameter|Presence|Description|
+|---------|--------|-----------|
+|listSteeringList|Mandatory|The ID of the reseller for which to list the steering list(s).|
+
+
+### Request
+```json
+{
+  "listSteeringList" : 12
+}
+```
+### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "listSteeringList" : [ {
+    "id" : 1,
+    "resellerId" : 12,
+    "name" : "Steering list 1"
+  }, {
+    "id" : 2,
+    "resellerId" : 12,
+    "name" : "Steering list 2"
+  }, {
+    "id" : 3,
+    "resellerId" : 12,
+    "name" : "Steering list 3"
+  } ]
+}
+```
+### Remark(s)
+
+- The numeric value in the request is the reseller ID
+
+
 # 2. Subscriber
 ## 2.1 getSingleSubscriber
 
@@ -589,7 +637,7 @@ Remarks when searching with IMSI, ICCID or MSISDN:
     },
     "networkInfo" : {
       "subscriberid" : 21046,
-      "time" : "2024-08-19T16:42:19.201895",
+      "time" : "2024-08-26T15:06:31.394474",
       "lastMcc" : 222,
       "lastMnc" : 99,
       "lastCellId" : 123456,
@@ -2932,8 +2980,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2024-08-19T16:42:19.205517",
-      "end" : "2024-09-18T16:42:19.205525"
+      "start" : "2024-08-26T15:06:31.39786",
+      "end" : "2024-09-25T15:06:31.397869"
     }
   }
 }
@@ -3169,7 +3217,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2024-08-19T14:42:19"
+    "startTimeUTC" : "2024-08-26T13:06:31"
   }
 }
 ```
@@ -3242,7 +3290,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2024-08-19T14:42:19"
+    "startTimeUTC" : "2024-08-26T13:06:31"
   }
 }
 ```
@@ -3324,7 +3372,7 @@ the next 12 hours, no package will be created.
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2024-08-19T14:42:19"
+    "startTimeUTC" : "2024-08-26T13:06:31"
   }
 }
 ```
@@ -3734,7 +3782,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2024-08-19T16:42:19"
+    "newDateUtc" : "2024-08-26T15:06:31"
   }
 }
 ```
@@ -5658,8 +5706,8 @@ Usage type:
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2024-08-19",
-      "end" : "2024-08-14"
+      "start" : "2024-08-26",
+      "end" : "2024-08-21"
     }
   }
 }
@@ -5952,8 +6000,8 @@ Usage type:
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2024-08-19",
-      "end" : "2024-08-14"
+      "start" : "2024-08-26",
+      "end" : "2024-08-21"
     }
   }
 }
@@ -5982,8 +6030,8 @@ Usage type:
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2024-08-19",
-      "end" : "2024-08-14"
+      "start" : "2024-08-26",
+      "end" : "2024-08-21"
     }
   }
 }
@@ -6012,8 +6060,8 @@ Usage type:
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2024-08-19",
-      "end" : "2024-08-14"
+      "start" : "2024-08-26",
+      "end" : "2024-08-21"
     }
   }
 }
@@ -6042,8 +6090,8 @@ Usage type:
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2024-08-19",
-      "end" : "2024-08-14"
+      "start" : "2024-08-26",
+      "end" : "2024-08-21"
     }
   }
 }
@@ -6072,8 +6120,8 @@ Usage type:
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2024-08-19",
-      "end" : "2024-08-14"
+      "start" : "2024-08-26",
+      "end" : "2024-08-21"
     }
   }
 }
@@ -6114,8 +6162,8 @@ is delimited with a start date (included) and an end date (included). The period
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2024-08-19",
-      "end" : "2024-08-14"
+      "start" : "2024-08-26",
+      "end" : "2024-08-21"
     }
   }
 }
@@ -6220,8 +6268,8 @@ is delimited with a start date (included) and an end date (included). The period
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2024-08-19",
-      "end" : "2024-08-14"
+      "start" : "2024-08-26",
+      "end" : "2024-08-21"
     }
   }
 }
@@ -6250,8 +6298,8 @@ is delimited with a start date (included) and an end date (included). The period
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2024-08-19",
-      "end" : "2024-08-14"
+      "start" : "2024-08-26",
+      "end" : "2024-08-21"
     }
   }
 }
@@ -6280,8 +6328,8 @@ is delimited with a start date (included) and an end date (included). The period
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2024-08-19",
-      "end" : "2024-08-14"
+      "start" : "2024-08-26",
+      "end" : "2024-08-21"
     }
   }
 }
@@ -6310,8 +6358,8 @@ is delimited with a start date (included) and an end date (included). The period
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2024-08-19",
-      "end" : "2024-08-14"
+      "start" : "2024-08-26",
+      "end" : "2024-08-21"
     }
   }
 }
@@ -6340,8 +6388,8 @@ is delimited with a start date (included) and an end date (included). The period
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2024-08-19",
-      "end" : "2024-08-14"
+      "start" : "2024-08-26",
+      "end" : "2024-08-21"
     }
   }
 }
