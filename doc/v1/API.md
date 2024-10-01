@@ -637,7 +637,7 @@ Remarks when searching with IMSI, ICCID or MSISDN:
     },
     "networkInfo" : {
       "subscriberid" : 21046,
-      "time" : "2024-09-30T17:19:58.498228",
+      "time" : "2024-10-01T12:40:48.919722",
       "lastMcc" : 222,
       "lastMnc" : 99,
       "lastCellId" : 123456,
@@ -2981,8 +2981,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2024-09-30T17:19:58.501993",
-      "end" : "2024-10-30T17:19:58.502004"
+      "start" : "2024-10-01T12:40:48.923079",
+      "end" : "2024-10-31T12:40:48.923087"
     }
   }
 }
@@ -3241,7 +3241,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2024-09-30T15:19:58",
+    "startTimeUTC" : "2024-10-01T10:40:48",
     "activationAtFirstUse" : false
   }
 }
@@ -3315,7 +3315,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2024-09-30T15:19:58",
+    "startTimeUTC" : "2024-10-01T10:40:48",
     "activationAtFirstUse" : false
   }
 }
@@ -3400,7 +3400,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2024-09-30T15:19:58",
+    "startTimeUTC" : "2024-10-01T10:40:48",
     "activationAtFirstUse" : false
   }
 }
@@ -3812,7 +3812,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2024-09-30T17:19:58"
+    "newDateUtc" : "2024-10-01T12:40:48"
   }
 }
 ```
@@ -5738,8 +5738,8 @@ Usage type:
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2024-09-30",
-      "end" : "2024-09-25"
+      "start" : "2024-10-01",
+      "end" : "2024-09-26"
     }
   }
 }
@@ -6032,8 +6032,8 @@ Usage type:
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2024-09-30",
-      "end" : "2024-09-25"
+      "start" : "2024-10-01",
+      "end" : "2024-09-26"
     }
   }
 }
@@ -6062,8 +6062,8 @@ Usage type:
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2024-09-30",
-      "end" : "2024-09-25"
+      "start" : "2024-10-01",
+      "end" : "2024-09-26"
     }
   }
 }
@@ -6092,8 +6092,8 @@ Usage type:
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2024-09-30",
-      "end" : "2024-09-25"
+      "start" : "2024-10-01",
+      "end" : "2024-09-26"
     }
   }
 }
@@ -6122,8 +6122,8 @@ Usage type:
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2024-09-30",
-      "end" : "2024-09-25"
+      "start" : "2024-10-01",
+      "end" : "2024-09-26"
     }
   }
 }
@@ -6152,8 +6152,8 @@ Usage type:
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2024-09-30",
-      "end" : "2024-09-25"
+      "start" : "2024-10-01",
+      "end" : "2024-09-26"
     }
   }
 }
@@ -6194,8 +6194,8 @@ is delimited with a start date (included) and an end date (included). The period
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2024-09-30",
-      "end" : "2024-09-25"
+      "start" : "2024-10-01",
+      "end" : "2024-09-26"
     }
   }
 }
@@ -6300,8 +6300,8 @@ is delimited with a start date (included) and an end date (included). The period
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2024-09-30",
-      "end" : "2024-09-25"
+      "start" : "2024-10-01",
+      "end" : "2024-09-26"
     }
   }
 }
@@ -6330,8 +6330,8 @@ is delimited with a start date (included) and an end date (included). The period
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2024-09-30",
-      "end" : "2024-09-25"
+      "start" : "2024-10-01",
+      "end" : "2024-09-26"
     }
   }
 }
@@ -6360,8 +6360,8 @@ is delimited with a start date (included) and an end date (included). The period
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2024-09-30",
-      "end" : "2024-09-25"
+      "start" : "2024-10-01",
+      "end" : "2024-09-26"
     }
   }
 }
@@ -6390,8 +6390,8 @@ is delimited with a start date (included) and an end date (included). The period
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2024-09-30",
-      "end" : "2024-09-25"
+      "start" : "2024-10-01",
+      "end" : "2024-09-26"
     }
   }
 }
@@ -6420,8 +6420,8 @@ is delimited with a start date (included) and an end date (included). The period
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2024-09-30",
-      "end" : "2024-09-25"
+      "start" : "2024-10-01",
+      "end" : "2024-09-26"
     }
   }
 }
