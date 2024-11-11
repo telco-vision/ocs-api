@@ -579,6 +579,9 @@ Remarks when searching with IMSI, ICCID or MSISDN:
 |msisdn|Optional|MSISDN of the subscribers to find.|
 |subscriberId|Optional|The ID of the subscriber.|
 |activationCode|Optional|The eSIM activation code. The request will return the subscriber having the eSIM having with this activation code|
+|withSimInfo|Optional|If set to `true`, the eSIM info of the subscriber will be returned. If not present, default value is `true`|
+|onlySubsInfo|Optional|If set to `true`, you will get the basic info of the subscriber. If set to false `false`, you will get additional info like: imsi history, msisdn history, status history. Default value is `false`|
+|withGzCounter|Optional|If set to `true`, the Green Zone counter of the subscriber will be returned. Default value is `false`|
 
 
 ### 2.1.1 IMSI
@@ -587,8 +590,7 @@ Remarks when searching with IMSI, ICCID or MSISDN:
 {
   "getSingleSubscriber" : {
     "imsi" : "9999900000",
-    "withSimInfo" : true,
-    "onlySubsInfo" : false
+    "withGzCounter" : true
   }
 }
 ```
@@ -639,13 +641,19 @@ Remarks when searching with IMSI, ICCID or MSISDN:
     },
     "networkInfo" : {
       "subscriberid" : 21046,
-      "time" : "2024-11-11T12:04:41.354789",
+      "time" : "2024-11-11T12:48:32.034846",
       "lastMcc" : 222,
       "lastMnc" : 99,
       "lastCellId" : 123456,
       "lastLac" : 456,
       "lastImei" : "789456123",
       "lastRat" : "3G - UTRAN"
+    },
+    "greenZoneCounter" : {
+      "subscriberId" : 4,
+      "volumeOnGZ" : 0,
+      "lastResetDate" : "2024-11-11T11:05:48",
+      "lastUpdateDate" : "2024-10-25T09:03:44"
     },
     "subscriberId" : 21046,
     "batchId" : "SPRK_220206_3K_eSIM__20220310192941_435",
@@ -709,7 +717,8 @@ Remarks when searching with IMSI, ICCID or MSISDN:
   "getSingleSubscriber" : {
     "msisdn" : "1234567",
     "withSimInfo" : false,
-    "onlySubsInfo" : false
+    "onlySubsInfo" : false,
+    "withGzCounter" : false
   }
 }
 ```
@@ -735,7 +744,8 @@ Remarks when searching with IMSI, ICCID or MSISDN:
   "getSingleSubscriber" : {
     "activationCode" : "activation code",
     "withSimInfo" : true,
-    "onlySubsInfo" : false
+    "onlySubsInfo" : false,
+    "withGzCounter" : true
   }
 }
 ```
@@ -762,7 +772,8 @@ Remarks when searching with IMSI, ICCID or MSISDN:
   "getSingleSubscriber" : {
     "subscriberId" : 4,
     "withSimInfo" : false,
-    "onlySubsInfo" : true
+    "onlySubsInfo" : true,
+    "withGzCounter" : true
   }
 }
 ```
@@ -2969,8 +2980,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2024-11-11T11:04:41.357525",
-    "lastUpdateDate" : "2024-11-10T23:58:41.357534"
+    "lastResetDate" : "2024-11-11T11:48:32.038051",
+    "lastUpdateDate" : "2024-11-11T00:42:32.03806"
   }
 }
 ```
@@ -2994,8 +3005,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2024-11-11T11:04:41.357525",
-    "lastUpdateDate" : "2024-11-10T23:58:41.357534"
+    "lastResetDate" : "2024-11-11T11:48:32.038051",
+    "lastUpdateDate" : "2024-11-11T00:42:32.03806"
   }
 }
 ```
@@ -3019,8 +3030,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2024-11-11T11:04:41.357525",
-    "lastUpdateDate" : "2024-11-10T23:58:41.357534"
+    "lastResetDate" : "2024-11-11T11:48:32.038051",
+    "lastUpdateDate" : "2024-11-11T00:42:32.03806"
   }
 }
 ```
@@ -3044,8 +3055,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2024-11-11T11:04:41.357525",
-    "lastUpdateDate" : "2024-11-10T23:58:41.357534"
+    "lastResetDate" : "2024-11-11T11:48:32.038051",
+    "lastUpdateDate" : "2024-11-11T00:42:32.03806"
   }
 }
 ```
@@ -3069,8 +3080,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2024-11-11T11:04:41.357525",
-    "lastUpdateDate" : "2024-11-10T23:58:41.357534"
+    "lastResetDate" : "2024-11-11T11:48:32.038051",
+    "lastUpdateDate" : "2024-11-11T00:42:32.03806"
   }
 }
 ```
@@ -3094,8 +3105,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2024-11-11T11:04:41.357525",
-    "lastUpdateDate" : "2024-11-10T23:58:41.357534"
+    "lastResetDate" : "2024-11-11T11:48:32.038051",
+    "lastUpdateDate" : "2024-11-11T00:42:32.03806"
   }
 }
 ```
@@ -3155,8 +3166,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2024-11-11T12:04:41.358413",
-      "end" : "2024-12-11T12:04:41.358424"
+      "start" : "2024-11-11T12:48:32.039133",
+      "end" : "2024-12-11T12:48:32.039141"
     }
   }
 }
@@ -3415,7 +3426,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2024-11-11T11:04:41",
+    "startTimeUTC" : "2024-11-11T11:48:32",
     "activationAtFirstUse" : false
   }
 }
@@ -3489,7 +3500,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2024-11-11T11:04:41",
+    "startTimeUTC" : "2024-11-11T11:48:32",
     "activationAtFirstUse" : false
   }
 }
@@ -3574,7 +3585,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2024-11-11T11:04:41",
+    "startTimeUTC" : "2024-11-11T11:48:32",
     "activationAtFirstUse" : false
   }
 }
@@ -3986,7 +3997,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2024-11-11T12:04:41"
+    "newDateUtc" : "2024-11-11T12:48:32"
   }
 }
 ```
