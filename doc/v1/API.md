@@ -44,6 +44,8 @@
 
 [2.15 cleanSubscriberAllPackages](#215-cleansubscriberallpackages)
 
+[2.16 resetSubsGzCounter](#216-resetsubsgzcounter)
+
 ## [3 Subscriber prepaid packages](#31-affectpackagetosubscriber)
 
 [3.1 affectPackageToSubscriber](#31-affectpackagetosubscriber)
@@ -637,7 +639,7 @@ Remarks when searching with IMSI, ICCID or MSISDN:
     },
     "networkInfo" : {
       "subscriberid" : 21046,
-      "time" : "2024-11-10T14:35:11.528884",
+      "time" : "2024-11-11T12:04:41.354789",
       "lastMcc" : 222,
       "lastMnc" : 99,
       "lastCellId" : 123456,
@@ -2931,6 +2933,178 @@ To identify the subscriber, you can use one of the following IDs:
 - This request is best used with the subscriber ID, if you already have it, use it.
 
 
+## 2.16 resetSubsGzCounter
+
+### Description
+This request can be used to reset the Green Zone counter of a subscriber.
+
+To identify the subscriber, you can use one of the following IDs:
+- Subscriber ID
+- IMSI
+- ICCID
+- MSISDN
+- Multi IMSI
+- Activation code
+
+In the answer you will get the counter with the new values.
+
+
+### 2.16.1 By subscriber ID
+#### Request
+```json
+{
+  "resetSubsGzCounter" : {
+    "subscriberId" : 1000
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "resetSubsGzCounter" : {
+    "subscriberId" : 4,
+    "volumeOnGZ" : 123456,
+    "lastResetDate" : "2024-11-11T11:04:41.357525",
+    "lastUpdateDate" : "2024-11-10T23:58:41.357534"
+  }
+}
+```
+### 2.16.2 By IMSI
+#### Request
+```json
+{
+  "resetSubsGzCounter" : {
+    "imsi" : "12345678901234"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "resetSubsGzCounter" : {
+    "subscriberId" : 4,
+    "volumeOnGZ" : 123456,
+    "lastResetDate" : "2024-11-11T11:04:41.357525",
+    "lastUpdateDate" : "2024-11-10T23:58:41.357534"
+  }
+}
+```
+### 2.16.3 By ICCID
+#### Request
+```json
+{
+  "resetSubsGzCounter" : {
+    "iccid" : "123456789012345678"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "resetSubsGzCounter" : {
+    "subscriberId" : 4,
+    "volumeOnGZ" : 123456,
+    "lastResetDate" : "2024-11-11T11:04:41.357525",
+    "lastUpdateDate" : "2024-11-10T23:58:41.357534"
+  }
+}
+```
+### 2.16.4 By MSISDN
+#### Request
+```json
+{
+  "resetSubsGzCounter" : {
+    "msisdn" : "123456789123"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "resetSubsGzCounter" : {
+    "subscriberId" : 4,
+    "volumeOnGZ" : 123456,
+    "lastResetDate" : "2024-11-11T11:04:41.357525",
+    "lastUpdateDate" : "2024-11-10T23:58:41.357534"
+  }
+}
+```
+### 2.16.5 By multi imsi
+#### Request
+```json
+{
+  "resetSubsGzCounter" : {
+    "multiImsi" : "12345678901234"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "resetSubsGzCounter" : {
+    "subscriberId" : 4,
+    "volumeOnGZ" : 123456,
+    "lastResetDate" : "2024-11-11T11:04:41.357525",
+    "lastUpdateDate" : "2024-11-10T23:58:41.357534"
+  }
+}
+```
+### 2.16.6 By Activation code
+#### Request
+```json
+{
+  "resetSubsGzCounter" : {
+    "activationCode" : "Activation code"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "resetSubsGzCounter" : {
+    "subscriberId" : 4,
+    "volumeOnGZ" : 123456,
+    "lastResetDate" : "2024-11-11T11:04:41.357525",
+    "lastUpdateDate" : "2024-11-10T23:58:41.357534"
+  }
+}
+```
+### Remark(s)
+
+- This request is best used with the subscriber ID, if you already have it, use it.
+- In the answer, the volume is byte.
+
+
 # 3. Subscriber prepaid packages
 ## 3.1 affectPackageToSubscriber
 
@@ -2981,8 +3155,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2024-11-10T14:35:11.532268",
-      "end" : "2024-12-10T14:35:11.532276"
+      "start" : "2024-11-11T12:04:41.358413",
+      "end" : "2024-12-11T12:04:41.358424"
     }
   }
 }
@@ -3241,7 +3415,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2024-11-10T13:35:11",
+    "startTimeUTC" : "2024-11-11T11:04:41",
     "activationAtFirstUse" : false
   }
 }
@@ -3315,7 +3489,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2024-11-10T13:35:11",
+    "startTimeUTC" : "2024-11-11T11:04:41",
     "activationAtFirstUse" : false
   }
 }
@@ -3400,7 +3574,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2024-11-10T13:35:11",
+    "startTimeUTC" : "2024-11-11T11:04:41",
     "activationAtFirstUse" : false
   }
 }
@@ -3812,7 +3986,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2024-11-10T14:35:11"
+    "newDateUtc" : "2024-11-11T12:04:41"
   }
 }
 ```
@@ -5738,8 +5912,8 @@ Usage type:
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2024-11-10",
-      "end" : "2024-11-05"
+      "start" : "2024-11-11",
+      "end" : "2024-11-06"
     }
   }
 }
@@ -6032,8 +6206,8 @@ Usage type:
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2024-11-10",
-      "end" : "2024-11-05"
+      "start" : "2024-11-11",
+      "end" : "2024-11-06"
     }
   }
 }
@@ -6062,8 +6236,8 @@ Usage type:
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2024-11-10",
-      "end" : "2024-11-05"
+      "start" : "2024-11-11",
+      "end" : "2024-11-06"
     }
   }
 }
@@ -6092,8 +6266,8 @@ Usage type:
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2024-11-10",
-      "end" : "2024-11-05"
+      "start" : "2024-11-11",
+      "end" : "2024-11-06"
     }
   }
 }
@@ -6122,8 +6296,8 @@ Usage type:
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2024-11-10",
-      "end" : "2024-11-05"
+      "start" : "2024-11-11",
+      "end" : "2024-11-06"
     }
   }
 }
@@ -6152,8 +6326,8 @@ Usage type:
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2024-11-10",
-      "end" : "2024-11-05"
+      "start" : "2024-11-11",
+      "end" : "2024-11-06"
     }
   }
 }
@@ -6194,8 +6368,8 @@ is delimited with a start date (included) and an end date (included). The period
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2024-11-10",
-      "end" : "2024-11-05"
+      "start" : "2024-11-11",
+      "end" : "2024-11-06"
     }
   }
 }
@@ -6300,8 +6474,8 @@ is delimited with a start date (included) and an end date (included). The period
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2024-11-10",
-      "end" : "2024-11-05"
+      "start" : "2024-11-11",
+      "end" : "2024-11-06"
     }
   }
 }
@@ -6330,8 +6504,8 @@ is delimited with a start date (included) and an end date (included). The period
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2024-11-10",
-      "end" : "2024-11-05"
+      "start" : "2024-11-11",
+      "end" : "2024-11-06"
     }
   }
 }
@@ -6360,8 +6534,8 @@ is delimited with a start date (included) and an end date (included). The period
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2024-11-10",
-      "end" : "2024-11-05"
+      "start" : "2024-11-11",
+      "end" : "2024-11-06"
     }
   }
 }
@@ -6390,8 +6564,8 @@ is delimited with a start date (included) and an end date (included). The period
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2024-11-10",
-      "end" : "2024-11-05"
+      "start" : "2024-11-11",
+      "end" : "2024-11-06"
     }
   }
 }
@@ -6420,8 +6594,8 @@ is delimited with a start date (included) and an end date (included). The period
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2024-11-10",
-      "end" : "2024-11-05"
+      "start" : "2024-11-11",
+      "end" : "2024-11-06"
     }
   }
 }
