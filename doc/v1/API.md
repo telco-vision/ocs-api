@@ -641,7 +641,7 @@ Remarks when searching with IMSI, ICCID or MSISDN:
     },
     "networkInfo" : {
       "subscriberid" : 21046,
-      "time" : "2024-12-19T09:47:42.350224",
+      "time" : "2024-12-19T11:54:55.906212",
       "lastMcc" : 222,
       "lastMnc" : 99,
       "lastCellId" : 123456,
@@ -2980,8 +2980,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2024-12-19T08:47:42.352872",
-    "lastUpdateDate" : "2024-12-18T21:41:42.352883"
+    "lastResetDate" : "2024-12-19T10:54:55.908874",
+    "lastUpdateDate" : "2024-12-18T23:48:55.908882"
   }
 }
 ```
@@ -3005,8 +3005,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2024-12-19T08:47:42.352872",
-    "lastUpdateDate" : "2024-12-18T21:41:42.352883"
+    "lastResetDate" : "2024-12-19T10:54:55.908874",
+    "lastUpdateDate" : "2024-12-18T23:48:55.908882"
   }
 }
 ```
@@ -3030,8 +3030,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2024-12-19T08:47:42.352872",
-    "lastUpdateDate" : "2024-12-18T21:41:42.352883"
+    "lastResetDate" : "2024-12-19T10:54:55.908874",
+    "lastUpdateDate" : "2024-12-18T23:48:55.908882"
   }
 }
 ```
@@ -3055,8 +3055,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2024-12-19T08:47:42.352872",
-    "lastUpdateDate" : "2024-12-18T21:41:42.352883"
+    "lastResetDate" : "2024-12-19T10:54:55.908874",
+    "lastUpdateDate" : "2024-12-18T23:48:55.908882"
   }
 }
 ```
@@ -3080,8 +3080,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2024-12-19T08:47:42.352872",
-    "lastUpdateDate" : "2024-12-18T21:41:42.352883"
+    "lastResetDate" : "2024-12-19T10:54:55.908874",
+    "lastUpdateDate" : "2024-12-18T23:48:55.908882"
   }
 }
 ```
@@ -3105,8 +3105,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2024-12-19T08:47:42.352872",
-    "lastUpdateDate" : "2024-12-18T21:41:42.352883"
+    "lastResetDate" : "2024-12-19T10:54:55.908874",
+    "lastUpdateDate" : "2024-12-18T23:48:55.908882"
   }
 }
 ```
@@ -3166,8 +3166,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2024-12-19T09:47:42.353749",
-      "end" : "2025-01-18T09:47:42.353757"
+      "start" : "2024-12-19T11:54:55.909784",
+      "end" : "2025-01-18T11:54:55.909794"
     }
   }
 }
@@ -3426,7 +3426,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2024-12-19T08:47:42",
+    "startTimeUTC" : "2024-12-19T10:54:55",
     "activationAtFirstUse" : false
   }
 }
@@ -3500,7 +3500,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2024-12-19T08:47:42",
+    "startTimeUTC" : "2024-12-19T10:54:55",
     "activationAtFirstUse" : false
   }
 }
@@ -3585,7 +3585,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2024-12-19T08:47:42",
+    "startTimeUTC" : "2024-12-19T10:54:55",
     "activationAtFirstUse" : false
   }
 }
@@ -3997,7 +3997,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2024-12-19T09:47:42"
+    "newDateUtc" : "2024-12-19T11:54:55"
   }
 }
 ```
