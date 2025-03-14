@@ -641,7 +641,7 @@ Remarks when searching with IMSI, ICCID or MSISDN:
     },
     "networkInfo" : {
       "subscriberid" : 21046,
-      "time" : "2025-03-14T08:58:02.684466",
+      "time" : "2025-03-14T09:26:05.632987",
       "lastMcc" : 222,
       "lastMnc" : 99,
       "lastCellId" : 123456,
@@ -2980,8 +2980,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-03-14T07:58:02.686901",
-    "lastUpdateDate" : "2025-03-13T20:52:02.68691"
+    "lastResetDate" : "2025-03-14T08:26:05.635283",
+    "lastUpdateDate" : "2025-03-13T21:20:05.63529"
   }
 }
 ```
@@ -3005,8 +3005,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-03-14T07:58:02.686901",
-    "lastUpdateDate" : "2025-03-13T20:52:02.68691"
+    "lastResetDate" : "2025-03-14T08:26:05.635283",
+    "lastUpdateDate" : "2025-03-13T21:20:05.63529"
   }
 }
 ```
@@ -3030,8 +3030,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-03-14T07:58:02.686901",
-    "lastUpdateDate" : "2025-03-13T20:52:02.68691"
+    "lastResetDate" : "2025-03-14T08:26:05.635283",
+    "lastUpdateDate" : "2025-03-13T21:20:05.63529"
   }
 }
 ```
@@ -3055,8 +3055,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-03-14T07:58:02.686901",
-    "lastUpdateDate" : "2025-03-13T20:52:02.68691"
+    "lastResetDate" : "2025-03-14T08:26:05.635283",
+    "lastUpdateDate" : "2025-03-13T21:20:05.63529"
   }
 }
 ```
@@ -3080,8 +3080,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-03-14T07:58:02.686901",
-    "lastUpdateDate" : "2025-03-13T20:52:02.68691"
+    "lastResetDate" : "2025-03-14T08:26:05.635283",
+    "lastUpdateDate" : "2025-03-13T21:20:05.63529"
   }
 }
 ```
@@ -3105,8 +3105,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-03-14T07:58:02.686901",
-    "lastUpdateDate" : "2025-03-13T20:52:02.68691"
+    "lastResetDate" : "2025-03-14T08:26:05.635283",
+    "lastUpdateDate" : "2025-03-13T21:20:05.63529"
   }
 }
 ```
@@ -3166,8 +3166,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2025-03-14T08:58:02.687827",
-      "end" : "2025-04-13T08:58:02.687834"
+      "start" : "2025-03-14T09:26:05.636056",
+      "end" : "2025-04-13T09:26:05.636062"
     }
   }
 }
@@ -3426,7 +3426,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2025-03-14T07:58:02",
+    "startTimeUTC" : "2025-03-14T08:26:05",
     "activationAtFirstUse" : false
   }
 }
@@ -3500,7 +3500,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2025-03-14T07:58:02",
+    "startTimeUTC" : "2025-03-14T08:26:05",
     "activationAtFirstUse" : false
   }
 }
@@ -3585,7 +3585,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2025-03-14T07:58:02",
+    "startTimeUTC" : "2025-03-14T08:26:05",
     "activationAtFirstUse" : false
   }
 }
@@ -3997,7 +3997,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2025-03-14T08:58:02"
+    "newDateUtc" : "2025-03-14T09:26:05"
   }
 }
 ```
