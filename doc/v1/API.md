@@ -4,13 +4,15 @@
 
 [1.2 modifyAccountBalance](#12-modifyaccountbalance)
 
-[1.3 getResellerInfo](#13-getresellerinfo)
+[1.3 modifyResellerBalance](#13-modifyresellerbalance)
 
-[1.4 esimStatusPerAccount](#14-esimstatusperaccount)
+[1.4 getResellerInfo](#14-getresellerinfo)
 
-[1.5 listSponsor](#15-listsponsor)
+[1.5 esimStatusPerAccount](#15-esimstatusperaccount)
 
-[1.6 listSteeringList](#16-liststeeringlist)
+[1.6 listSponsor](#16-listsponsor)
+
+[1.7 listSteeringList](#17-liststeeringlist)
 
 ## [2 Subscriber](#21-getsinglesubscriber)
 
@@ -318,7 +320,72 @@ This request is logged in the system DB and you can see them in the UI, in the `
   }
 }
 ```
-## 1.3 getResellerInfo
+## 1.3 modifyResellerBalance
+
+### Description
+This request can be used to adapt the balance of reseller. The balance can either:
+- Be adapted: You can add or remove a certain amount from the balance. The amount you need to provide in the request will be added to the current balance.  You can provide a negative amount and the balance will be decreased. Please note that balance  cannot become negative, in such a case the balance will be set to 0.
+- Set to a new value: In this case you provide the new amount you want to set the balance to.
+
+This request is logged in the system DB and you can see them in the UI, in the `Account` -> `Transaction` tab.
+
+
+### Inputs
+|Parameter|Presence|Description|
+|---------|--------|-----------|
+|resellerId|Mandatory|The ID of the reseller to modify balance|
+|type|Mandatory|Transaction type|
+|amount|Mandatory|The amount to add to the current balance|
+|setBalance|Optional|true => balance will be set to provided amount, false => balance will be adapted|
+|description|Optional|A description giving information about the reason of this balance adjustment|
+
+
+### 1.3.1 Update balance
+#### Request
+```json
+{
+  "modifyResellerBalance" : {
+    "resellerId" : 1,
+    "type" : "Wire",
+    "amount" : 123.45,
+    "description" : "Optional description"
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 1.3.2 Set balance
+#### Request
+```json
+{
+  "modifyResellerBalance" : {
+    "resellerId" : 1,
+    "type" : "Wire",
+    "amount" : 123.45,
+    "description" : "Optional description",
+    "setBalance" : true
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+## 1.4 getResellerInfo
 
 ### Description
 This request can be used to retrieve the reseller info.
@@ -377,7 +444,7 @@ will return the reseller identified by the request ID.
   }
 }
 ```
-## 1.4 esimStatusPerAccount
+## 1.5 esimStatusPerAccount
 
 ### Description
 This request can be used to retrieve the status of your eSIMs per account. You can retrieve the status
@@ -390,7 +457,7 @@ Status `Free` means that the eSIM is still available for a user. Status `Affecte
 has already been affected to a user.
 
 
-### 1.4.1 For a specific account
+### 1.5.1 For a specific account
 #### Request
 ```json
 {
@@ -430,7 +497,7 @@ has already been affected to a user.
   }
 }
 ```
-### 1.4.2 All accounts of a specific reseller
+### 1.5.2 All accounts of a specific reseller
 #### Request
 ```json
 {
@@ -470,7 +537,7 @@ has already been affected to a user.
   }
 }
 ```
-## 1.5 listSponsor
+## 1.6 listSponsor
 
 ### Description
 This request can be used to list the different sponsors configured for a reseller.
@@ -509,7 +576,7 @@ This request can be used to list the different sponsors configured for a reselle
   }
 }
 ```
-## 1.6 listSteeringList
+## 1.7 listSteeringList
 
 ### Description
 This request can be used to list the different steering list of a reseller.
@@ -641,7 +708,7 @@ Remarks when searching with IMSI, ICCID or MSISDN:
     },
     "networkInfo" : {
       "subscriberid" : 21046,
-      "time" : "2025-03-14T09:26:05.632987",
+      "time" : "2025-03-14T09:36:11.762213",
       "lastMcc" : 222,
       "lastMnc" : 99,
       "lastCellId" : 123456,
@@ -2980,8 +3047,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-03-14T08:26:05.635283",
-    "lastUpdateDate" : "2025-03-13T21:20:05.63529"
+    "lastResetDate" : "2025-03-14T08:36:11.764912",
+    "lastUpdateDate" : "2025-03-13T21:30:11.76492"
   }
 }
 ```
@@ -3005,8 +3072,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-03-14T08:26:05.635283",
-    "lastUpdateDate" : "2025-03-13T21:20:05.63529"
+    "lastResetDate" : "2025-03-14T08:36:11.764912",
+    "lastUpdateDate" : "2025-03-13T21:30:11.76492"
   }
 }
 ```
@@ -3030,8 +3097,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-03-14T08:26:05.635283",
-    "lastUpdateDate" : "2025-03-13T21:20:05.63529"
+    "lastResetDate" : "2025-03-14T08:36:11.764912",
+    "lastUpdateDate" : "2025-03-13T21:30:11.76492"
   }
 }
 ```
@@ -3055,8 +3122,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-03-14T08:26:05.635283",
-    "lastUpdateDate" : "2025-03-13T21:20:05.63529"
+    "lastResetDate" : "2025-03-14T08:36:11.764912",
+    "lastUpdateDate" : "2025-03-13T21:30:11.76492"
   }
 }
 ```
@@ -3080,8 +3147,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-03-14T08:26:05.635283",
-    "lastUpdateDate" : "2025-03-13T21:20:05.63529"
+    "lastResetDate" : "2025-03-14T08:36:11.764912",
+    "lastUpdateDate" : "2025-03-13T21:30:11.76492"
   }
 }
 ```
@@ -3105,8 +3172,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-03-14T08:26:05.635283",
-    "lastUpdateDate" : "2025-03-13T21:20:05.63529"
+    "lastResetDate" : "2025-03-14T08:36:11.764912",
+    "lastUpdateDate" : "2025-03-13T21:30:11.76492"
   }
 }
 ```
@@ -3166,8 +3233,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2025-03-14T09:26:05.636056",
-      "end" : "2025-04-13T09:26:05.636062"
+      "start" : "2025-03-14T09:36:11.76582",
+      "end" : "2025-04-13T09:36:11.765828"
     }
   }
 }
@@ -3426,7 +3493,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2025-03-14T08:26:05",
+    "startTimeUTC" : "2025-03-14T08:36:11",
     "activationAtFirstUse" : false
   }
 }
@@ -3500,7 +3567,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2025-03-14T08:26:05",
+    "startTimeUTC" : "2025-03-14T08:36:11",
     "activationAtFirstUse" : false
   }
 }
@@ -3585,7 +3652,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2025-03-14T08:26:05",
+    "startTimeUTC" : "2025-03-14T08:36:11",
     "activationAtFirstUse" : false
   }
 }
@@ -3997,7 +4064,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2025-03-14T09:26:05"
+    "newDateUtc" : "2025-03-14T09:36:11"
   }
 }
 ```
