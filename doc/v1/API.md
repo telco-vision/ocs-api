@@ -708,7 +708,7 @@ Remarks when searching with IMSI, ICCID or MSISDN:
     },
     "networkInfo" : {
       "subscriberid" : 21046,
-      "time" : "2025-03-20T18:41:57.087596",
+      "time" : "2025-03-26T17:03:18.567411",
       "lastMcc" : 222,
       "lastMnc" : 99,
       "lastCellId" : 123456,
@@ -3047,8 +3047,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-03-20T17:41:57.090322",
-    "lastUpdateDate" : "2025-03-20T06:35:57.090338"
+    "lastResetDate" : "2025-03-26T16:03:18.570361",
+    "lastUpdateDate" : "2025-03-26T04:57:18.57037"
   }
 }
 ```
@@ -3072,8 +3072,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-03-20T17:41:57.090322",
-    "lastUpdateDate" : "2025-03-20T06:35:57.090338"
+    "lastResetDate" : "2025-03-26T16:03:18.570361",
+    "lastUpdateDate" : "2025-03-26T04:57:18.57037"
   }
 }
 ```
@@ -3097,8 +3097,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-03-20T17:41:57.090322",
-    "lastUpdateDate" : "2025-03-20T06:35:57.090338"
+    "lastResetDate" : "2025-03-26T16:03:18.570361",
+    "lastUpdateDate" : "2025-03-26T04:57:18.57037"
   }
 }
 ```
@@ -3122,8 +3122,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-03-20T17:41:57.090322",
-    "lastUpdateDate" : "2025-03-20T06:35:57.090338"
+    "lastResetDate" : "2025-03-26T16:03:18.570361",
+    "lastUpdateDate" : "2025-03-26T04:57:18.57037"
   }
 }
 ```
@@ -3147,8 +3147,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-03-20T17:41:57.090322",
-    "lastUpdateDate" : "2025-03-20T06:35:57.090338"
+    "lastResetDate" : "2025-03-26T16:03:18.570361",
+    "lastUpdateDate" : "2025-03-26T04:57:18.57037"
   }
 }
 ```
@@ -3172,8 +3172,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-03-20T17:41:57.090322",
-    "lastUpdateDate" : "2025-03-20T06:35:57.090338"
+    "lastResetDate" : "2025-03-26T16:03:18.570361",
+    "lastUpdateDate" : "2025-03-26T04:57:18.57037"
   }
 }
 ```
@@ -3233,8 +3233,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2025-03-20T18:41:57.091221",
-      "end" : "2025-04-19T18:41:57.091233"
+      "start" : "2025-03-26T17:03:18.5712",
+      "end" : "2025-04-25T17:03:18.571209"
     }
   }
 }
@@ -3493,7 +3493,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2025-03-20T17:41:57",
+    "startTimeUTC" : "2025-03-26T16:03:18",
     "activationAtFirstUse" : false
   }
 }
@@ -3567,7 +3567,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2025-03-20T17:41:57",
+    "startTimeUTC" : "2025-03-26T16:03:18",
     "activationAtFirstUse" : false
   }
 }
@@ -3652,7 +3652,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2025-03-20T17:41:57",
+    "startTimeUTC" : "2025-03-26T16:03:18",
     "activationAtFirstUse" : false
   }
 }
@@ -4064,7 +4064,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2025-03-20T18:41:57"
+    "newDateUtc" : "2025-03-26T17:03:18"
   }
 }
 ```
@@ -5990,8 +5990,8 @@ Usage type:
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2025-03-20",
-      "end" : "2025-03-15"
+      "start" : "2025-03-26",
+      "end" : "2025-03-21"
     }
   }
 }
@@ -6284,8 +6284,8 @@ Usage type:
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2025-03-20",
-      "end" : "2025-03-15"
+      "start" : "2025-03-26",
+      "end" : "2025-03-21"
     }
   }
 }
@@ -6314,8 +6314,8 @@ Usage type:
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2025-03-20",
-      "end" : "2025-03-15"
+      "start" : "2025-03-26",
+      "end" : "2025-03-21"
     }
   }
 }
@@ -6344,8 +6344,8 @@ Usage type:
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2025-03-20",
-      "end" : "2025-03-15"
+      "start" : "2025-03-26",
+      "end" : "2025-03-21"
     }
   }
 }
@@ -6374,8 +6374,8 @@ Usage type:
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2025-03-20",
-      "end" : "2025-03-15"
+      "start" : "2025-03-26",
+      "end" : "2025-03-21"
     }
   }
 }
@@ -6404,8 +6404,8 @@ Usage type:
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2025-03-20",
-      "end" : "2025-03-15"
+      "start" : "2025-03-26",
+      "end" : "2025-03-21"
     }
   }
 }
@@ -6446,8 +6446,8 @@ is delimited with a start date (included) and an end date (included). The period
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2025-03-20",
-      "end" : "2025-03-15"
+      "start" : "2025-03-26",
+      "end" : "2025-03-21"
     }
   }
 }
@@ -6552,8 +6552,8 @@ is delimited with a start date (included) and an end date (included). The period
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2025-03-20",
-      "end" : "2025-03-15"
+      "start" : "2025-03-26",
+      "end" : "2025-03-21"
     }
   }
 }
@@ -6582,8 +6582,8 @@ is delimited with a start date (included) and an end date (included). The period
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2025-03-20",
-      "end" : "2025-03-15"
+      "start" : "2025-03-26",
+      "end" : "2025-03-21"
     }
   }
 }
@@ -6612,8 +6612,8 @@ is delimited with a start date (included) and an end date (included). The period
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2025-03-20",
-      "end" : "2025-03-15"
+      "start" : "2025-03-26",
+      "end" : "2025-03-21"
     }
   }
 }
@@ -6642,8 +6642,8 @@ is delimited with a start date (included) and an end date (included). The period
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2025-03-20",
-      "end" : "2025-03-15"
+      "start" : "2025-03-26",
+      "end" : "2025-03-21"
     }
   }
 }
@@ -6672,8 +6672,8 @@ is delimited with a start date (included) and an end date (included). The period
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2025-03-20",
-      "end" : "2025-03-15"
+      "start" : "2025-03-26",
+      "end" : "2025-03-21"
     }
   }
 }
