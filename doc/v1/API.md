@@ -108,6 +108,12 @@
 
 [7.1 sendMtSms](#71-sendmtsms)
 
+## [8 Network profile](#81-listnetworkprofile)
+
+[8.1 listNetworkProfile](#81-listnetworkprofile)
+
+[8.2 createLocationZone](#82-createlocationzone)
+
 ## [Error codes](#error-codes)
 
 # 1. Reseller
@@ -708,7 +714,7 @@ Remarks when searching with IMSI, ICCID or MSISDN:
     },
     "networkInfo" : {
       "subscriberid" : 21046,
-      "time" : "2025-04-04T11:13:01.76147",
+      "time" : "2025-04-11T10:38:25.379943",
       "lastMcc" : 222,
       "lastMnc" : 99,
       "lastCellId" : 123456,
@@ -3047,8 +3053,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-04-04T09:13:01.764497",
-    "lastUpdateDate" : "2025-04-03T22:07:01.764508"
+    "lastResetDate" : "2025-04-11T08:38:25.385062",
+    "lastUpdateDate" : "2025-04-10T21:32:25.385074"
   }
 }
 ```
@@ -3072,8 +3078,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-04-04T09:13:01.764497",
-    "lastUpdateDate" : "2025-04-03T22:07:01.764508"
+    "lastResetDate" : "2025-04-11T08:38:25.385062",
+    "lastUpdateDate" : "2025-04-10T21:32:25.385074"
   }
 }
 ```
@@ -3097,8 +3103,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-04-04T09:13:01.764497",
-    "lastUpdateDate" : "2025-04-03T22:07:01.764508"
+    "lastResetDate" : "2025-04-11T08:38:25.385062",
+    "lastUpdateDate" : "2025-04-10T21:32:25.385074"
   }
 }
 ```
@@ -3122,8 +3128,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-04-04T09:13:01.764497",
-    "lastUpdateDate" : "2025-04-03T22:07:01.764508"
+    "lastResetDate" : "2025-04-11T08:38:25.385062",
+    "lastUpdateDate" : "2025-04-10T21:32:25.385074"
   }
 }
 ```
@@ -3147,8 +3153,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-04-04T09:13:01.764497",
-    "lastUpdateDate" : "2025-04-03T22:07:01.764508"
+    "lastResetDate" : "2025-04-11T08:38:25.385062",
+    "lastUpdateDate" : "2025-04-10T21:32:25.385074"
   }
 }
 ```
@@ -3172,8 +3178,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-04-04T09:13:01.764497",
-    "lastUpdateDate" : "2025-04-03T22:07:01.764508"
+    "lastResetDate" : "2025-04-11T08:38:25.385062",
+    "lastUpdateDate" : "2025-04-10T21:32:25.385074"
   }
 }
 ```
@@ -3233,8 +3239,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2025-04-04T11:13:01.765421",
-      "end" : "2025-05-04T11:13:01.765431"
+      "start" : "2025-04-11T10:38:25.386716",
+      "end" : "2025-05-11T10:38:25.386734"
     }
   }
 }
@@ -3493,7 +3499,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2025-04-04T09:13:01",
+    "startTimeUTC" : "2025-04-11T08:38:25",
     "activationAtFirstUse" : false
   }
 }
@@ -3567,7 +3573,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2025-04-04T09:13:01",
+    "startTimeUTC" : "2025-04-11T08:38:25",
     "activationAtFirstUse" : false
   }
 }
@@ -3652,7 +3658,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2025-04-04T09:13:01",
+    "startTimeUTC" : "2025-04-11T08:38:25",
     "activationAtFirstUse" : false
   }
 }
@@ -4064,7 +4070,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2025-04-04T11:13:01"
+    "newDateUtc" : "2025-04-11T10:38:25"
   }
 }
 ```
@@ -5990,8 +5996,8 @@ Usage type:
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2025-04-04",
-      "end" : "2025-03-30"
+      "start" : "2025-04-11",
+      "end" : "2025-04-06"
     }
   }
 }
@@ -6284,8 +6290,8 @@ Usage type:
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2025-04-04",
-      "end" : "2025-03-30"
+      "start" : "2025-04-11",
+      "end" : "2025-04-06"
     }
   }
 }
@@ -6314,8 +6320,8 @@ Usage type:
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2025-04-04",
-      "end" : "2025-03-30"
+      "start" : "2025-04-11",
+      "end" : "2025-04-06"
     }
   }
 }
@@ -6344,8 +6350,8 @@ Usage type:
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2025-04-04",
-      "end" : "2025-03-30"
+      "start" : "2025-04-11",
+      "end" : "2025-04-06"
     }
   }
 }
@@ -6374,8 +6380,8 @@ Usage type:
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2025-04-04",
-      "end" : "2025-03-30"
+      "start" : "2025-04-11",
+      "end" : "2025-04-06"
     }
   }
 }
@@ -6404,8 +6410,8 @@ Usage type:
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2025-04-04",
-      "end" : "2025-03-30"
+      "start" : "2025-04-11",
+      "end" : "2025-04-06"
     }
   }
 }
@@ -6446,8 +6452,8 @@ is delimited with a start date (included) and an end date (included). The period
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2025-04-04",
-      "end" : "2025-03-30"
+      "start" : "2025-04-11",
+      "end" : "2025-04-06"
     }
   }
 }
@@ -6552,8 +6558,8 @@ is delimited with a start date (included) and an end date (included). The period
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2025-04-04",
-      "end" : "2025-03-30"
+      "start" : "2025-04-11",
+      "end" : "2025-04-06"
     }
   }
 }
@@ -6582,8 +6588,8 @@ is delimited with a start date (included) and an end date (included). The period
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2025-04-04",
-      "end" : "2025-03-30"
+      "start" : "2025-04-11",
+      "end" : "2025-04-06"
     }
   }
 }
@@ -6612,8 +6618,8 @@ is delimited with a start date (included) and an end date (included). The period
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2025-04-04",
-      "end" : "2025-03-30"
+      "start" : "2025-04-11",
+      "end" : "2025-04-06"
     }
   }
 }
@@ -6642,8 +6648,8 @@ is delimited with a start date (included) and an end date (included). The period
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2025-04-04",
-      "end" : "2025-03-30"
+      "start" : "2025-04-11",
+      "end" : "2025-04-06"
     }
   }
 }
@@ -6672,8 +6678,8 @@ is delimited with a start date (included) and an end date (included). The period
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2025-04-04",
-      "end" : "2025-03-30"
+      "start" : "2025-04-11",
+      "end" : "2025-04-06"
     }
   }
 }
@@ -6769,6 +6775,287 @@ Message in JSON: `Hello \\ud83d\\ude0a`
   "status" : {
     "code" : 0,
     "msg" : "OK"
+  }
+}
+```
+# 8. Network profile
+## 8.1 listNetworkProfile
+
+### Description
+This request can be used to list your Network profile(s). You can provide:
+- Both `resellerId` and `sponsorId`: the request will return the single for this specific reseller and sponsor.
+- Only `resellerId`: the request will return the Network profile(s) of this specific reseller, for all possible sponsor(s).
+- Only `sponsorId`: the request will return the Network profile(s) of this specific sponsor, for all possible reseller(s) (yours and you sub-resellers).
+- None of `resellerId` and `sponsorId`: the request will return all your Network profile(s), for all possible sponsor(s), for all possible reseller(s) (yours and you sub-resellers).
+
+
+### Inputs
+|Parameter|Presence|Description|
+|---------|--------|-----------|
+|resellerId|Optional|To restrict the search to a specific reseller. Relevant when you have sub-resellers.|
+|sponsorId|Optional|To restrict the search to a specific sponsor. Relevant when you use more than one sponsor.|
+
+
+### Outputs
+|Parameter|Presence|Description|
+|---------|--------|-----------|
+|id|Optional|Internal Id of the network profile.|
+|name|Optional|The name of the network profile.|
+|sponsorId|Optional|Internal Id of the sponsor.|
+|sponsorName|Optional|The name of the sponsor.|
+|resellerId|Optional|Internal Id of the reseller owning the network profile.|
+|resellerName|Optional|The name of the reseller owning the network profile.|
+|allowedListId|Optional|Internal Id of the HLR/HSS allowed list.|
+
+
+### 8.1.1 Both resellerId and sponsorId
+#### Request
+```json
+{
+  "listNetworkProfile" : {
+    "resellerId" : 10,
+    "sponsorId" : 108
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "listNetworkProfile" : [ {
+    "id" : 105,
+    "name" : "PDEL test Modif",
+    "sponsorId" : 108,
+    "sponsorName" : "SP05 (ID=108)",
+    "resellerId" : 10,
+    "resellerName" : "PDEL Reseller 3",
+    "allowedListId" : 162
+  } ]
+}
+```
+### 8.1.2 Only resellerId
+#### Request
+```json
+{
+  "listNetworkProfile" : {
+    "resellerId" : 10
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "listNetworkProfile" : [ {
+    "id" : 46,
+    "name" : "New list PDEL test 2",
+    "sponsorId" : 108,
+    "sponsorName" : "SP05 (ID=108)",
+    "resellerId" : 10,
+    "resellerName" : "PDEL Reseller 3",
+    "allowedListId" : 134
+  }, {
+    "id" : 105,
+    "name" : "PDEL test Modif",
+    "sponsorId" : 108,
+    "sponsorName" : "SP05 (ID=108)",
+    "resellerId" : 10,
+    "resellerName" : "PDEL Reseller 3",
+    "allowedListId" : 162
+  } ]
+}
+```
+### 8.1.3 Only sponsorId
+#### Request
+```json
+{
+  "listNetworkProfile" : {
+    "sponsorId" : 108
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "listNetworkProfile" : [ {
+    "id" : 46,
+    "name" : "New list PDEL test 2",
+    "sponsorId" : 108,
+    "sponsorName" : "SP05 (ID=108)",
+    "resellerId" : 10,
+    "resellerName" : "PDEL Reseller 3",
+    "allowedListId" : 134
+  }, {
+    "id" : 105,
+    "name" : "PDEL test Modif",
+    "sponsorId" : 108,
+    "sponsorName" : "SP05 (ID=108)",
+    "resellerId" : 10,
+    "resellerName" : "PDEL Reseller 3",
+    "allowedListId" : 162
+  } ]
+}
+```
+### 8.1.4 None of resellerId and sponsorId
+#### Request
+```json
+{
+  "listNetworkProfile" : { }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "listNetworkProfile" : [ {
+    "id" : 46,
+    "name" : "New list PDEL test 2",
+    "sponsorId" : 108,
+    "sponsorName" : "SP05 (ID=108)",
+    "resellerId" : 10,
+    "resellerName" : "PDEL Reseller 3",
+    "allowedListId" : 134
+  }, {
+    "id" : 105,
+    "name" : "PDEL test Modif",
+    "sponsorId" : 108,
+    "sponsorName" : "SP05 (ID=108)",
+    "resellerId" : 10,
+    "resellerName" : "PDEL Reseller 3",
+    "allowedListId" : 162
+  } ]
+}
+```
+## 8.2 createLocationZone
+
+### Description
+This request can be used to create a new Location zone. The backend will perform the following tests before creating the new Location zone:
+- Does the `locationZoneName` already exist in the DB (for the reseller of the `networkProfileId`).
+- Does ALL the TADIG in `tadigList` exist in the DB. In case one (or more) TADIG doesn't not exist in the DB, a dedicated error with code `10001` will be returned. The answer will also contain the list of unknown TADIG.
+- Is there already a Location zone in the DB with the exact same operators. Via the API, you cannot create a new Location zone with the same operator set of another Location zone. If another Location zone with same operator set already exist, the backend will return a dedicated error with code `10002`. The answer will contain the name and the ID of the existing Location zone. So you can reuse the existing Location zone to create a new package template, instead of duplicating the Location zone. This will prevent to create multiple identical Location zones.
+
+
+### Inputs
+|Parameter|Presence|Description|
+|---------|--------|-----------|
+|networkProfileId|Mandatory|Network profile that will own the new Location zone.|
+|locationZoneName|Mandatory|The name for the new Location zone.|
+|tadigList|Mandatory|List of TADIG of the operators to add in the new Location zone.|
+
+
+### 8.2.1 Success
+#### Request
+```json
+{
+  "createLocationZone" : {
+    "networkProfileId" : 79,
+    "locationZoneName" : "New LZ name",
+    "tadigList" : [ "AZER1", "QWER1" ]
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "createLocationZone" : {
+    "newLZ" : {
+      "Id" : 1924,
+      "name" : "new LZ 2"
+    }
+  }
+}
+```
+### 8.2.2 LZ name already exist
+#### Request
+```json
+{
+  "createLocationZone" : {
+    "networkProfileId" : 79,
+    "locationZoneName" : "New LZ name",
+    "tadigList" : [ "AZER1", "QWER1" ]
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 4,
+    "msg" : "A location zone already exist with this name (for this reseller)"
+  }
+}
+```
+### 8.2.3 Unknown operator
+#### Request
+```json
+{
+  "createLocationZone" : {
+    "networkProfileId" : 79,
+    "locationZoneName" : "New LZ name",
+    "tadigList" : [ "AZER1", "QWER1" ]
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 10001,
+    "msg" : "Unknown TADIG, see list in this answer"
+  },
+  "createLocationZone" : {
+    "invalidTadigs" : [ "AZER1", "QWER1" ]
+  }
+}
+```
+### 8.2.4 LZ with same operator(s) already exist
+#### Request
+```json
+{
+  "createLocationZone" : {
+    "networkProfileId" : 79,
+    "locationZoneName" : "New LZ name",
+    "tadigList" : [ "AZER1", "QWER1" ]
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 10002,
+    "msg" : "LZ with same operator already exist"
+  },
+  "createLocationZone" : {
+    "existingLZ" : {
+      "Id" : 1923,
+      "name" : "Name of the LZ with the same operato(s)"
+    }
   }
 }
 ```
