@@ -1,11 +1,109 @@
-## [1 Prepaid package](#11-listsubscriberprepaidpackages)
+## [1 Subscriber](#11-movesubscriberrangetoaccount)
 
-[1.1 listSubscriberPrepaidPackages](#11-listsubscriberprepaidpackages)
+[1.1 moveSubscriberRangeToAccount](#11-movesubscriberrangetoaccount)
+
+## [2 Prepaid package](#21-listsubscriberprepaidpackages)
+
+[2.1 listSubscriberPrepaidPackages](#21-listsubscriberprepaidpackages)
 
 ## [Error codes](#error-codes)
 
-# 1. Prepaid package
-## 1.1 listSubscriberPrepaidPackages
+# 1. Subscriber
+## 1.1 moveSubscriberRangeToAccount
+
+### Description
+This method can be used to move a range a subscribers from one account to another account. The range of
+subscriber can be either a range of IMSI, or a range of ICCID.
+
+Note that you can only change the Network profile of a set of subscribers. If you provide the same Account
+in `srcAccountId` and `destAccount`, plus a `destNetworkProfileId`, the system will just change the Network profile
+of the concerned subscribers.
+
+In this version, you can move subscribers between accounts of different resellers (unlike the version 1).
+
+If you move subscribers to a different reseller, you have to provide a new Network profile ID for the
+subscribers to move. If you move subscribers between accounts of the same reseller, then the new Network profile
+is optional. If one is provided, it will be affected to the moved subscribers.
+
+If you move subscribers to a different reseller, all the moved subscribers will lose their prepaid
+packages. Indeed, location zone (that is attached to each and every packages) from reseller A, is not
+visible in reseller B. Meaning packages from reseller A are not visible in reseller B, so no need to
+keep them.
+
+RESTRICTION:
+- The destination Account and the new Network profile must be from the same reseller.
+- If `destNetworkProfileId` is provided, the subscribers to move, must be from the same sponsor as the Network profile.
+
+
+### Inputs
+|Parameter|Presence|Description|
+|---------|--------|-----------|
+|rangeType|Mandatory|Indicate the type of range. Possible values: `IMSI`, `ICCID`.|
+|rangeStart|Mandatory|IMSI or ICCID of the first subscriber of the range to move|
+|rangeEnd|Mandatory|IMSI or ICCID of the last subscriber of the range to move|
+|srcAccountId|Mandatory|Current account of the subscriber to move|
+|destAccount|Mandatory|New account for the subscriber to move|
+|destNetworkProfileId|Optional|The new network profile for the subscribers to move. When moving subscribers between accounts of the same reseller, this field is optional. If it's not provided, subscribers stay in their current network profile. When moving subscribers between accounts of different resellers, then this field is mandatory|
+
+
+### Outputs
+|Parameter|Presence|Description|
+|---------|--------|-----------|
+|moveSubscriberRangeToAccount|Mandatory|The number of subscribers that has been moved.|
+
+
+### 1.1.1 IMSI range
+#### Request
+```json
+{
+  "moveSubscriberRangeToAccount" : {
+    "rangeType" : "IMSI",
+    "rangeStart" : "200010416000001",
+    "rangeEnd" : "2000104160000010",
+    "srcAccountId" : 10,
+    "destAccount" : 15,
+    "destNetworkProfileId" : 123
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "moveSubscriberRangeToAccount" : 4
+}
+```
+### 1.1.2 ICCID range
+#### Request
+```json
+{
+  "moveSubscriberRangeToAccount" : {
+    "rangeType" : "ICCID",
+    "rangeStart" : "893720000000000001",
+    "rangeEnd" : "893720000000000010",
+    "srcAccountId" : 10,
+    "destAccount" : 15,
+    "destNetworkProfileId" : 123
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "moveSubscriberRangeToAccount" : 4
+}
+```
+# 2. Prepaid package
+## 2.1 listSubscriberPrepaidPackages
 
 ### Description
 This request can be used to list all the pre paid packages of a subscriber (if any).
@@ -27,7 +125,7 @@ To identify the subscriber, you can use one of the following IDs:
 |listSubscriberPrepaidPackages.recurring|Mandatory|Array that contains all the recurring packages (still active and inactive) of the subscriber. You can find all the packages (from `packages` array) created for a recurring packages with `recurringPackage` field of the prepaid package.|
 
 
-### 1.1.1 By subscriber ID
+### 2.1.1 By subscriber ID
 #### Request
 ```json
 {
@@ -288,7 +386,7 @@ To identify the subscriber, you can use one of the following IDs:
 - If `recurringPackage` is present in a prepaid package, the package is a recurring one. It contains a reference to the recurring package (in `packages` array). To find all the prepaid package of a specific recurring package, list from `packages` the prepaid package with `recurringPackage` equals to recurring package `id`
 
 
-### 1.1.2 By IMSI
+### 2.1.2 By IMSI
 #### Request
 ```json
 {
@@ -315,7 +413,7 @@ To identify the subscriber, you can use one of the following IDs:
 - Same content as previous request
 
 
-### 1.1.3 By ICCID
+### 2.1.3 By ICCID
 #### Request
 ```json
 {
@@ -342,7 +440,7 @@ To identify the subscriber, you can use one of the following IDs:
 - Same content as previous request
 
 
-### 1.1.4 By MSISDN
+### 2.1.4 By MSISDN
 #### Request
 ```json
 {
@@ -369,7 +467,7 @@ To identify the subscriber, you can use one of the following IDs:
 - Same content as previous request
 
 
-### 1.1.5 By multi imsi
+### 2.1.5 By multi imsi
 #### Request
 ```json
 {
@@ -396,7 +494,7 @@ To identify the subscriber, you can use one of the following IDs:
 - Same content as previous request
 
 
-### 1.1.6 By Activation code
+### 2.1.6 By Activation code
 #### Request
 ```json
 {

@@ -714,7 +714,7 @@ Remarks when searching with IMSI, ICCID or MSISDN:
     },
     "networkInfo" : {
       "subscriberid" : 21046,
-      "time" : "2025-04-11T10:38:25.379943",
+      "time" : "2025-05-27T11:19:06.461268",
       "lastMcc" : 222,
       "lastMnc" : 99,
       "lastCellId" : 123456,
@@ -2031,10 +2031,13 @@ It retrieves the current limitation of the subscriber in terms of data bandwidth
 ## 2.9 moveSubscriberRangeToAccount
 
 ### Description
-This method can be used to move a range a subscriber from one account to another account. The range of
+This method can be used to move a range a subscribers from one account to another account. The range of
 subscriber can be either a range of IMSI, or a range of ICCID.
 
-If you move the subscriber to a different reseller, all the moved subscribers will lose their prepaid
+In this version, the move is restricted between accounts of the same reseller. If you need to move subscribers
+between accounts of different resellers, please use the version 2 of this request.
+
+If you move subscribers to a different reseller, all the moved subscribers will lose their prepaid
 packages. Indeed, location zone (that is attached to each and every packages) from reseller A, is not
 visible in reseller B. Meaning packages from reseller A are not visible in reseller B, so no need to
 keep them.
@@ -2046,7 +2049,7 @@ keep them.
 |rangeType|Mandatory|Indicate the type of range. Possible values: `IMSI`, `ICCID`.|
 |rangeStart|Mandatory|IMSI or ICCID of the first subscriber of the range to move|
 |rangeEnd|Mandatory|IMSI or ICCID of the last subscriber of the range to move|
-|accountId|Mandatory|Current account of the subscriber to move|
+|srcAccountId|Mandatory|Current account of the subscriber to move|
 |destAccount|Mandatory|New account for the subscriber to move|
 
 
@@ -3053,8 +3056,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-04-11T08:38:25.385062",
-    "lastUpdateDate" : "2025-04-10T21:32:25.385074"
+    "lastResetDate" : "2025-05-27T09:19:06.465521",
+    "lastUpdateDate" : "2025-05-26T22:13:06.465532"
   }
 }
 ```
@@ -3078,8 +3081,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-04-11T08:38:25.385062",
-    "lastUpdateDate" : "2025-04-10T21:32:25.385074"
+    "lastResetDate" : "2025-05-27T09:19:06.465521",
+    "lastUpdateDate" : "2025-05-26T22:13:06.465532"
   }
 }
 ```
@@ -3103,8 +3106,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-04-11T08:38:25.385062",
-    "lastUpdateDate" : "2025-04-10T21:32:25.385074"
+    "lastResetDate" : "2025-05-27T09:19:06.465521",
+    "lastUpdateDate" : "2025-05-26T22:13:06.465532"
   }
 }
 ```
@@ -3128,8 +3131,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-04-11T08:38:25.385062",
-    "lastUpdateDate" : "2025-04-10T21:32:25.385074"
+    "lastResetDate" : "2025-05-27T09:19:06.465521",
+    "lastUpdateDate" : "2025-05-26T22:13:06.465532"
   }
 }
 ```
@@ -3153,8 +3156,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-04-11T08:38:25.385062",
-    "lastUpdateDate" : "2025-04-10T21:32:25.385074"
+    "lastResetDate" : "2025-05-27T09:19:06.465521",
+    "lastUpdateDate" : "2025-05-26T22:13:06.465532"
   }
 }
 ```
@@ -3178,8 +3181,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-04-11T08:38:25.385062",
-    "lastUpdateDate" : "2025-04-10T21:32:25.385074"
+    "lastResetDate" : "2025-05-27T09:19:06.465521",
+    "lastUpdateDate" : "2025-05-26T22:13:06.465532"
   }
 }
 ```
@@ -3239,8 +3242,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2025-04-11T10:38:25.386716",
-      "end" : "2025-05-11T10:38:25.386734"
+      "start" : "2025-05-27T11:19:06.466488",
+      "end" : "2025-06-26T11:19:06.466496"
     }
   }
 }
@@ -3499,7 +3502,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2025-04-11T08:38:25",
+    "startTimeUTC" : "2025-05-27T09:19:06",
     "activationAtFirstUse" : false
   }
 }
@@ -3573,7 +3576,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2025-04-11T08:38:25",
+    "startTimeUTC" : "2025-05-27T09:19:06",
     "activationAtFirstUse" : false
   }
 }
@@ -3658,7 +3661,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2025-04-11T08:38:25",
+    "startTimeUTC" : "2025-05-27T09:19:06",
     "activationAtFirstUse" : false
   }
 }
@@ -4070,7 +4073,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2025-04-11T10:38:25"
+    "newDateUtc" : "2025-05-27T11:19:06"
   }
 }
 ```
@@ -4160,8 +4163,7 @@ Please note that to get the recurring packages of a subscriber, you need to use 
   "status" : {
     "code" : 0,
     "msg" : "OK"
-  },
-  "moveSubscriberRangeToAccount" : 4
+  }
 }
 ```
 ### 3.7.2 With subscriber ID
@@ -4181,8 +4183,7 @@ Please note that to get the recurring packages of a subscriber, you need to use 
   "status" : {
     "code" : 0,
     "msg" : "OK"
-  },
-  "moveSubscriberRangeToAccount" : 4
+  }
 }
 ```
 ### 3.7.3 With package template ID
@@ -4202,8 +4203,7 @@ Please note that to get the recurring packages of a subscriber, you need to use 
   "status" : {
     "code" : 0,
     "msg" : "OK"
-  },
-  "moveSubscriberRangeToAccount" : 4
+  }
 }
 ```
 ## 3.8 deleteSubscriberPackage
@@ -5996,8 +5996,8 @@ Usage type:
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2025-04-11",
-      "end" : "2025-04-06"
+      "start" : "2025-05-27",
+      "end" : "2025-05-22"
     }
   }
 }
@@ -6290,8 +6290,8 @@ Usage type:
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2025-04-11",
-      "end" : "2025-04-06"
+      "start" : "2025-05-27",
+      "end" : "2025-05-22"
     }
   }
 }
@@ -6320,8 +6320,8 @@ Usage type:
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2025-04-11",
-      "end" : "2025-04-06"
+      "start" : "2025-05-27",
+      "end" : "2025-05-22"
     }
   }
 }
@@ -6350,8 +6350,8 @@ Usage type:
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2025-04-11",
-      "end" : "2025-04-06"
+      "start" : "2025-05-27",
+      "end" : "2025-05-22"
     }
   }
 }
@@ -6380,8 +6380,8 @@ Usage type:
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2025-04-11",
-      "end" : "2025-04-06"
+      "start" : "2025-05-27",
+      "end" : "2025-05-22"
     }
   }
 }
@@ -6410,8 +6410,8 @@ Usage type:
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2025-04-11",
-      "end" : "2025-04-06"
+      "start" : "2025-05-27",
+      "end" : "2025-05-22"
     }
   }
 }
@@ -6452,8 +6452,8 @@ is delimited with a start date (included) and an end date (included). The period
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2025-04-11",
-      "end" : "2025-04-06"
+      "start" : "2025-05-27",
+      "end" : "2025-05-22"
     }
   }
 }
@@ -6558,8 +6558,8 @@ is delimited with a start date (included) and an end date (included). The period
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2025-04-11",
-      "end" : "2025-04-06"
+      "start" : "2025-05-27",
+      "end" : "2025-05-22"
     }
   }
 }
@@ -6588,8 +6588,8 @@ is delimited with a start date (included) and an end date (included). The period
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2025-04-11",
-      "end" : "2025-04-06"
+      "start" : "2025-05-27",
+      "end" : "2025-05-22"
     }
   }
 }
@@ -6618,8 +6618,8 @@ is delimited with a start date (included) and an end date (included). The period
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2025-04-11",
-      "end" : "2025-04-06"
+      "start" : "2025-05-27",
+      "end" : "2025-05-22"
     }
   }
 }
@@ -6648,8 +6648,8 @@ is delimited with a start date (included) and an end date (included). The period
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2025-04-11",
-      "end" : "2025-04-06"
+      "start" : "2025-05-27",
+      "end" : "2025-05-22"
     }
   }
 }
@@ -6678,8 +6678,8 @@ is delimited with a start date (included) and an end date (included). The period
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2025-04-11",
-      "end" : "2025-04-06"
+      "start" : "2025-05-27",
+      "end" : "2025-05-22"
     }
   }
 }
@@ -6783,10 +6783,10 @@ Message in JSON: `Hello \\ud83d\\ude0a`
 
 ### Description
 This request can be used to list your Network profile(s). You can provide:
-- Both `resellerId` and `sponsorId`: the request will return the single for this specific reseller and sponsor.
+- Both `resellerId` and `sponsorId`: the request will return the single Network profile for this specific reseller and sponsor.
 - Only `resellerId`: the request will return the Network profile(s) of this specific reseller, for all possible sponsor(s).
-- Only `sponsorId`: the request will return the Network profile(s) of this specific sponsor, for all possible reseller(s) (yours and you sub-resellers).
-- None of `resellerId` and `sponsorId`: the request will return all your Network profile(s), for all possible sponsor(s), for all possible reseller(s) (yours and you sub-resellers).
+- Only `sponsorId`: the request will return the Network profile(s) of this specific sponsor, for all possible reseller(s) (yours and your sub-resellers).
+- None of `resellerId` and `sponsorId`: the request will return all your Network profile(s), for all possible sponsor(s), for all possible reseller(s) (yours and your sub-resellers).
 
 
 ### Inputs
@@ -6950,6 +6950,10 @@ This request can be used to create a new Location zone. The backend will perform
 - Does the `locationZoneName` already exist in the DB (for the reseller of the `networkProfileId`).
 - Does ALL the TADIG in `tadigList` exist in the DB. In case one (or more) TADIG doesn't not exist in the DB, a dedicated error with code `10001` will be returned. The answer will also contain the list of unknown TADIG.
 - Is there already a Location zone in the DB with the exact same operators. Via the API, you cannot create a new Location zone with the same operator set of another Location zone. If another Location zone with same operator set already exist, the backend will return a dedicated error with code `10002`. The answer will contain the name and the ID of the existing Location zone. So you can reuse the existing Location zone to create a new package template, instead of duplicating the Location zone. This will prevent to create multiple identical Location zones.
+- All operator(s) provided in the request for the new location zone must be available/allowed. If you use the UI to create the LZ, the UI will propose you only the available/allowed operators. To be available/allowed, an operator needs to satisfy the following conditions:
+   - The operator must be present in your reseller tariff. If it's not the case, the subscribers won't be able to use their prepaid packages.
+   - The operator must be provided by the sponsor. If it's not the case, the subscribers won't be able to use their prepaid packages.
+   - The operator cannot be (too) expensive. We have configured a limit for the data cost. Above this limit, the operator is considered to be too expensive to be used in a location zone.
 
 
 ### Inputs
@@ -7054,8 +7058,56 @@ This request can be used to create a new Location zone. The backend will perform
   "createLocationZone" : {
     "existingLZ" : {
       "Id" : 1923,
-      "name" : "Name of the LZ with the same operato(s)"
+      "name" : "Name of the LZ with the same operator(s)"
     }
+  }
+}
+```
+### 8.2.5 Operator(s) not in reseller tariff
+#### Request
+```json
+{
+  "createLocationZone" : {
+    "networkProfileId" : 79,
+    "locationZoneName" : "New LZ name",
+    "tadigList" : [ "AZER1", "QWER1" ]
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 10003,
+    "msg" : "Some operator(s) not allowed in reseller tariff"
+  },
+  "createLocationZone" : {
+    "invalidTadigs" : [ "JPNKD" ]
+  }
+}
+```
+### 8.2.6 Operator(s) not provided by sponsor, or too expensive
+#### Request
+```json
+{
+  "createLocationZone" : {
+    "networkProfileId" : 79,
+    "locationZoneName" : "New LZ name",
+    "tadigList" : [ "AZER1", "QWER1" ]
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 10004,
+    "msg" : "Some operator(s) are not available for this operation."
+  },
+  "createLocationZone" : {
+    "invalidTadigs" : [ "BGR01", "DNKIA" ]
   }
 }
 ```
