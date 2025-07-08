@@ -718,7 +718,7 @@ Remarks when searching with IMSI, ICCID or MSISDN:
     },
     "networkInfo" : {
       "subscriberid" : 21046,
-      "time" : "2025-07-08T13:34:23.751527",
+      "time" : "2025-07-08T13:48:27.619137",
       "lastMcc" : 222,
       "lastMnc" : 99,
       "lastCellId" : 123456,
@@ -3062,8 +3062,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-07-08T11:34:23.755103",
-    "lastUpdateDate" : "2025-07-08T00:28:23.755112"
+    "lastResetDate" : "2025-07-08T11:48:27.622709",
+    "lastUpdateDate" : "2025-07-08T00:42:27.622717"
   }
 }
 ```
@@ -3087,8 +3087,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-07-08T11:34:23.755103",
-    "lastUpdateDate" : "2025-07-08T00:28:23.755112"
+    "lastResetDate" : "2025-07-08T11:48:27.622709",
+    "lastUpdateDate" : "2025-07-08T00:42:27.622717"
   }
 }
 ```
@@ -3112,8 +3112,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-07-08T11:34:23.755103",
-    "lastUpdateDate" : "2025-07-08T00:28:23.755112"
+    "lastResetDate" : "2025-07-08T11:48:27.622709",
+    "lastUpdateDate" : "2025-07-08T00:42:27.622717"
   }
 }
 ```
@@ -3137,8 +3137,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-07-08T11:34:23.755103",
-    "lastUpdateDate" : "2025-07-08T00:28:23.755112"
+    "lastResetDate" : "2025-07-08T11:48:27.622709",
+    "lastUpdateDate" : "2025-07-08T00:42:27.622717"
   }
 }
 ```
@@ -3162,8 +3162,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-07-08T11:34:23.755103",
-    "lastUpdateDate" : "2025-07-08T00:28:23.755112"
+    "lastResetDate" : "2025-07-08T11:48:27.622709",
+    "lastUpdateDate" : "2025-07-08T00:42:27.622717"
   }
 }
 ```
@@ -3187,8 +3187,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-07-08T11:34:23.755103",
-    "lastUpdateDate" : "2025-07-08T00:28:23.755112"
+    "lastResetDate" : "2025-07-08T11:48:27.622709",
+    "lastUpdateDate" : "2025-07-08T00:42:27.622717"
   }
 }
 ```
@@ -3240,7 +3240,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2025-07-07T13:34:23.755133"
+    "dateTime" : "2025-07-07T13:48:27.622737"
   }
 }
 ```
@@ -3265,7 +3265,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2025-07-07T13:34:23.755133"
+    "dateTime" : "2025-07-07T13:48:27.622737"
   }
 }
 ```
@@ -3290,7 +3290,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2025-07-07T13:34:23.755133"
+    "dateTime" : "2025-07-07T13:48:27.622737"
   }
 }
 ```
@@ -3315,7 +3315,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2025-07-07T13:34:23.755133"
+    "dateTime" : "2025-07-07T13:48:27.622737"
   }
 }
 ```
@@ -3340,7 +3340,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2025-07-07T13:34:23.755133"
+    "dateTime" : "2025-07-07T13:48:27.622737"
   }
 }
 ```
@@ -3365,7 +3365,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2025-07-07T13:34:23.755133"
+    "dateTime" : "2025-07-07T13:48:27.622737"
   }
 }
 ```
@@ -3418,8 +3418,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
   "subscriberLocation" : {
     "latitude" : 46.54557,
     "longitude" : 48.620538,
-    "accuracy" : 250,
-    "dateTime" : "2025-07-07T13:34:23.755227"
+    "accuracy" : 250
   }
 }
 ```
@@ -3473,8 +3472,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2025-07-08T13:34:23.75615",
-      "end" : "2025-08-07T13:34:23.756155"
+      "start" : "2025-07-08T13:48:27.623821",
+      "end" : "2025-08-07T13:48:27.623828"
     }
   }
 }
@@ -3733,7 +3732,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2025-07-08T11:34:23",
+    "startTimeUTC" : "2025-07-08T11:48:27",
     "activationAtFirstUse" : false
   }
 }
@@ -3807,7 +3806,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2025-07-08T11:34:23",
+    "startTimeUTC" : "2025-07-08T11:48:27",
     "activationAtFirstUse" : false
   }
 }
@@ -3892,7 +3891,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2025-07-08T11:34:23",
+    "startTimeUTC" : "2025-07-08T11:48:27",
     "activationAtFirstUse" : false
   }
 }
@@ -4304,7 +4303,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2025-07-08T13:34:23"
+    "newDateUtc" : "2025-07-08T13:48:27"
   }
 }
 ```
