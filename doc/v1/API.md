@@ -48,9 +48,9 @@
 
 [2.16 resetSubsGzCounter](#216-resetsubsgzcounter)
 
-[2.17 getSubscriberLocationByCellId](#217-getsubscriberlocationbycellid)
+[2.17 getSubscriberLocation](#217-getsubscriberlocation)
 
-[2.18 getSubscriberLocation](#218-getsubscriberlocation)
+[2.18 getSubscriberLocationByCellId](#218-getsubscriberlocationbycellid)
 
 ## [3 Subscriber prepaid packages](#31-affectpackagetosubscriber)
 
@@ -718,7 +718,7 @@ Remarks when searching with IMSI, ICCID or MSISDN:
     },
     "networkInfo" : {
       "subscriberid" : 21046,
-      "time" : "2025-06-13T13:21:06.411953",
+      "time" : "2025-07-08T13:34:23.751527",
       "lastMcc" : 222,
       "lastMnc" : 99,
       "lastCellId" : 123456,
@@ -3062,8 +3062,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-06-13T11:21:06.415755",
-    "lastUpdateDate" : "2025-06-13T00:15:06.415763"
+    "lastResetDate" : "2025-07-08T11:34:23.755103",
+    "lastUpdateDate" : "2025-07-08T00:28:23.755112"
   }
 }
 ```
@@ -3087,8 +3087,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-06-13T11:21:06.415755",
-    "lastUpdateDate" : "2025-06-13T00:15:06.415763"
+    "lastResetDate" : "2025-07-08T11:34:23.755103",
+    "lastUpdateDate" : "2025-07-08T00:28:23.755112"
   }
 }
 ```
@@ -3112,8 +3112,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-06-13T11:21:06.415755",
-    "lastUpdateDate" : "2025-06-13T00:15:06.415763"
+    "lastResetDate" : "2025-07-08T11:34:23.755103",
+    "lastUpdateDate" : "2025-07-08T00:28:23.755112"
   }
 }
 ```
@@ -3137,8 +3137,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-06-13T11:21:06.415755",
-    "lastUpdateDate" : "2025-06-13T00:15:06.415763"
+    "lastResetDate" : "2025-07-08T11:34:23.755103",
+    "lastUpdateDate" : "2025-07-08T00:28:23.755112"
   }
 }
 ```
@@ -3162,8 +3162,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-06-13T11:21:06.415755",
-    "lastUpdateDate" : "2025-06-13T00:15:06.415763"
+    "lastResetDate" : "2025-07-08T11:34:23.755103",
+    "lastUpdateDate" : "2025-07-08T00:28:23.755112"
   }
 }
 ```
@@ -3187,8 +3187,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-06-13T11:21:06.415755",
-    "lastUpdateDate" : "2025-06-13T00:15:06.415763"
+    "lastResetDate" : "2025-07-08T11:34:23.755103",
+    "lastUpdateDate" : "2025-07-08T00:28:23.755112"
   }
 }
 ```
@@ -3198,46 +3198,14 @@ In the answer you will get the counter with the new values.
 - In the answer, the volume is byte.
 
 
-## 2.17 getSubscriberLocationByCellId
+## 2.17 getSubscriberLocation
 
 ### Description
-This request can be used to get location of a subscriber by mc, mnc, lac, cell id and radio type.
+This request can be used to get the last known location of a subscriber based on the last known tower cell.
 
-In the answer you will get latitude and longitude, accuracy in meters, and datetime for which we have information about subscriber location.
-
-
-### Request
-```json
-{
-  "getSubscriberLocationByCellId" : {
-    "mcc" : 250,
-    "mnc" : 99,
-    "lac" : 9830,
-    "cellId" : 79131751,
-    "radioType" : "4G"
-  }
-}
-```
-### Answer
-
-```json
-{
-  "status" : {
-    "code" : 0,
-    "msg" : "OK"
-  },
-  "subscriberLocation" : {
-    "latitude" : 46.54557,
-    "longitude" : 48.620538,
-    "accuracy" : 250,
-    "dateTime" : "2025-06-12T13:21:06.415873"
-  }
-}
-```
-## 2.18 getSubscriberLocation
-
-### Description
-This request can be used to get location of a subscriber.
+Please note that we cannot always provide the location:
+- If we don't have any usages yet, for example the eSIM has not been activated yet.
+- If we have usages, but we didn't receive the location information.
 
 To identify the subscriber, you can use one of the following IDs:
 - Subscriber ID
@@ -3247,10 +3215,11 @@ To identify the subscriber, you can use one of the following IDs:
 - Multi IMSI
 - Activation code
 
-In the answer you will get latitude and longitude, accuracy in meters, and datetime for which we have information about subscriber location.
+In the answer you will get latitude and longitude, accuracy in meters, and date and time (UTC+0) of our last known location (last time the subscriber was "seen" by our system).
+The accuracy is the estimated median error in meters, i.e. the radius in a circle with 50% confidence level
 
 
-### 2.18.1 By subscriber ID
+### 2.17.1 By subscriber ID
 #### Request
 ```json
 {
@@ -3271,11 +3240,11 @@ In the answer you will get latitude and longitude, accuracy in meters, and datet
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2025-06-12T13:21:06.415887"
+    "dateTime" : "2025-07-07T13:34:23.755133"
   }
 }
 ```
-### 2.18.2 By IMSI
+### 2.17.2 By IMSI
 #### Request
 ```json
 {
@@ -3296,11 +3265,11 @@ In the answer you will get latitude and longitude, accuracy in meters, and datet
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2025-06-12T13:21:06.415887"
+    "dateTime" : "2025-07-07T13:34:23.755133"
   }
 }
 ```
-### 2.18.3 By ICCID
+### 2.17.3 By ICCID
 #### Request
 ```json
 {
@@ -3321,11 +3290,11 @@ In the answer you will get latitude and longitude, accuracy in meters, and datet
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2025-06-12T13:21:06.415887"
+    "dateTime" : "2025-07-07T13:34:23.755133"
   }
 }
 ```
-### 2.18.4 By MSISDN
+### 2.17.4 By MSISDN
 #### Request
 ```json
 {
@@ -3346,11 +3315,11 @@ In the answer you will get latitude and longitude, accuracy in meters, and datet
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2025-06-12T13:21:06.415887"
+    "dateTime" : "2025-07-07T13:34:23.755133"
   }
 }
 ```
-### 2.18.5 By multi imsi
+### 2.17.5 By multi imsi
 #### Request
 ```json
 {
@@ -3371,11 +3340,11 @@ In the answer you will get latitude and longitude, accuracy in meters, and datet
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2025-06-12T13:21:06.415887"
+    "dateTime" : "2025-07-07T13:34:23.755133"
   }
 }
 ```
-### 2.18.6 By Activation code
+### 2.17.6 By Activation code
 #### Request
 ```json
 {
@@ -3396,7 +3365,7 @@ In the answer you will get latitude and longitude, accuracy in meters, and datet
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2025-06-12T13:21:06.415887"
+    "dateTime" : "2025-07-07T13:34:23.755133"
   }
 }
 ```
@@ -3405,6 +3374,55 @@ In the answer you will get latitude and longitude, accuracy in meters, and datet
 - This request is best used with the subscriber ID, if you already have it, use it.
 
 
+## 2.18 getSubscriberLocationByCellId
+
+### Description
+This request can be used to get location of a subscriber based on tower cell ID: radio type, mcc, mnc, lac, cell id.
+Radio type should be one of: "2G", "3G", "4G", "5G", "NBIOT".
+
+In the answer you will get latitude and longitude, accuracy in meters.
+The accuracy is the estimated median error in meters, i.e. the radius in a circle with 50% confidence level
+
+
+### Inputs
+|Parameter|Presence|Description|
+|---------|--------|-----------|
+|radioType|Mandatory|Possible values: '2G', '3G', '4G', '5G' and 'NB-IoT'.|
+|mcc|Mandatory|Mobile country code.|
+|mnc|Mandatory|Mobile network code.|
+|lac|Mandatory|Location area code.|
+|cellId|Mandatory|The tower cell Id.|
+
+
+### Request
+```json
+{
+  "getSubscriberLocationByCellId" : {
+    "radioType" : "4G",
+    "mcc" : 250,
+    "mnc" : 99,
+    "lac" : 9830,
+    "cellId" : 79131751,
+    "signalStrength" : -89
+  }
+}
+```
+### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "subscriberLocation" : {
+    "latitude" : 46.54557,
+    "longitude" : 48.620538,
+    "accuracy" : 250,
+    "dateTime" : "2025-07-07T13:34:23.755227"
+  }
+}
+```
 # 3. Subscriber prepaid packages
 ## 3.1 affectPackageToSubscriber
 
@@ -3455,8 +3473,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2025-06-13T13:21:06.416844",
-      "end" : "2025-07-13T13:21:06.41685"
+      "start" : "2025-07-08T13:34:23.75615",
+      "end" : "2025-08-07T13:34:23.756155"
     }
   }
 }
@@ -3715,7 +3733,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2025-06-13T11:21:06",
+    "startTimeUTC" : "2025-07-08T11:34:23",
     "activationAtFirstUse" : false
   }
 }
@@ -3789,7 +3807,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2025-06-13T11:21:06",
+    "startTimeUTC" : "2025-07-08T11:34:23",
     "activationAtFirstUse" : false
   }
 }
@@ -3874,7 +3892,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2025-06-13T11:21:06",
+    "startTimeUTC" : "2025-07-08T11:34:23",
     "activationAtFirstUse" : false
   }
 }
@@ -4286,7 +4304,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2025-06-13T13:21:06"
+    "newDateUtc" : "2025-07-08T13:34:23"
   }
 }
 ```
@@ -6209,8 +6227,8 @@ Usage type:
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2025-06-13",
-      "end" : "2025-06-08"
+      "start" : "2025-07-08",
+      "end" : "2025-07-03"
     }
   }
 }
@@ -6503,8 +6521,8 @@ Usage type:
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2025-06-13",
-      "end" : "2025-06-08"
+      "start" : "2025-07-08",
+      "end" : "2025-07-03"
     }
   }
 }
@@ -6533,8 +6551,8 @@ Usage type:
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2025-06-13",
-      "end" : "2025-06-08"
+      "start" : "2025-07-08",
+      "end" : "2025-07-03"
     }
   }
 }
@@ -6563,8 +6581,8 @@ Usage type:
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2025-06-13",
-      "end" : "2025-06-08"
+      "start" : "2025-07-08",
+      "end" : "2025-07-03"
     }
   }
 }
@@ -6593,8 +6611,8 @@ Usage type:
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2025-06-13",
-      "end" : "2025-06-08"
+      "start" : "2025-07-08",
+      "end" : "2025-07-03"
     }
   }
 }
@@ -6623,8 +6641,8 @@ Usage type:
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2025-06-13",
-      "end" : "2025-06-08"
+      "start" : "2025-07-08",
+      "end" : "2025-07-03"
     }
   }
 }
@@ -6665,8 +6683,8 @@ is delimited with a start date (included) and an end date (included). The period
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2025-06-13",
-      "end" : "2025-06-08"
+      "start" : "2025-07-08",
+      "end" : "2025-07-03"
     }
   }
 }
@@ -6771,8 +6789,8 @@ is delimited with a start date (included) and an end date (included). The period
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2025-06-13",
-      "end" : "2025-06-08"
+      "start" : "2025-07-08",
+      "end" : "2025-07-03"
     }
   }
 }
@@ -6801,8 +6819,8 @@ is delimited with a start date (included) and an end date (included). The period
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2025-06-13",
-      "end" : "2025-06-08"
+      "start" : "2025-07-08",
+      "end" : "2025-07-03"
     }
   }
 }
@@ -6831,8 +6849,8 @@ is delimited with a start date (included) and an end date (included). The period
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2025-06-13",
-      "end" : "2025-06-08"
+      "start" : "2025-07-08",
+      "end" : "2025-07-03"
     }
   }
 }
@@ -6861,8 +6879,8 @@ is delimited with a start date (included) and an end date (included). The period
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2025-06-13",
-      "end" : "2025-06-08"
+      "start" : "2025-07-08",
+      "end" : "2025-07-03"
     }
   }
 }
@@ -6891,8 +6909,8 @@ is delimited with a start date (included) and an end date (included). The period
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2025-06-13",
-      "end" : "2025-06-08"
+      "start" : "2025-07-08",
+      "end" : "2025-07-03"
     }
   }
 }
