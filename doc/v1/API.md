@@ -718,7 +718,7 @@ Remarks when searching with IMSI, ICCID or MSISDN:
     },
     "networkInfo" : {
       "subscriberid" : 21046,
-      "time" : "2025-07-13T09:45:29.085375",
+      "time" : "2025-07-16T11:56:09.598477",
       "lastMcc" : 222,
       "lastMnc" : 99,
       "lastCellId" : 123456,
@@ -3062,8 +3062,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-07-13T07:45:29.088767",
-    "lastUpdateDate" : "2025-07-12T20:39:29.088776"
+    "lastResetDate" : "2025-07-16T09:56:09.603086",
+    "lastUpdateDate" : "2025-07-15T22:50:09.603096"
   }
 }
 ```
@@ -3087,8 +3087,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-07-13T07:45:29.088767",
-    "lastUpdateDate" : "2025-07-12T20:39:29.088776"
+    "lastResetDate" : "2025-07-16T09:56:09.603086",
+    "lastUpdateDate" : "2025-07-15T22:50:09.603096"
   }
 }
 ```
@@ -3112,8 +3112,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-07-13T07:45:29.088767",
-    "lastUpdateDate" : "2025-07-12T20:39:29.088776"
+    "lastResetDate" : "2025-07-16T09:56:09.603086",
+    "lastUpdateDate" : "2025-07-15T22:50:09.603096"
   }
 }
 ```
@@ -3137,8 +3137,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-07-13T07:45:29.088767",
-    "lastUpdateDate" : "2025-07-12T20:39:29.088776"
+    "lastResetDate" : "2025-07-16T09:56:09.603086",
+    "lastUpdateDate" : "2025-07-15T22:50:09.603096"
   }
 }
 ```
@@ -3162,8 +3162,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-07-13T07:45:29.088767",
-    "lastUpdateDate" : "2025-07-12T20:39:29.088776"
+    "lastResetDate" : "2025-07-16T09:56:09.603086",
+    "lastUpdateDate" : "2025-07-15T22:50:09.603096"
   }
 }
 ```
@@ -3187,8 +3187,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-07-13T07:45:29.088767",
-    "lastUpdateDate" : "2025-07-12T20:39:29.088776"
+    "lastResetDate" : "2025-07-16T09:56:09.603086",
+    "lastUpdateDate" : "2025-07-15T22:50:09.603096"
   }
 }
 ```
@@ -3240,7 +3240,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2025-07-12T09:45:29.088801"
+    "dateTime" : "2025-07-15T11:56:09.603121"
   }
 }
 ```
@@ -3265,7 +3265,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2025-07-12T09:45:29.088801"
+    "dateTime" : "2025-07-15T11:56:09.603121"
   }
 }
 ```
@@ -3290,7 +3290,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2025-07-12T09:45:29.088801"
+    "dateTime" : "2025-07-15T11:56:09.603121"
   }
 }
 ```
@@ -3315,7 +3315,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2025-07-12T09:45:29.088801"
+    "dateTime" : "2025-07-15T11:56:09.603121"
   }
 }
 ```
@@ -3340,7 +3340,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2025-07-12T09:45:29.088801"
+    "dateTime" : "2025-07-15T11:56:09.603121"
   }
 }
 ```
@@ -3365,7 +3365,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2025-07-12T09:45:29.088801"
+    "dateTime" : "2025-07-15T11:56:09.603121"
   }
 }
 ```
@@ -3391,7 +3391,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
 |mcc|Mandatory|Mobile country code.|
 |mnc|Mandatory|Mobile network code.|
 |lac|Mandatory|Location area code.|
-|cellId|Mandatory|The tower cell Id.|
+|cellId|Optional|The tower cell Id. It's optional, but if not provided, the location will be very inaccurate.|
 
 
 ### Request
@@ -3472,8 +3472,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2025-07-13T09:45:29.089753",
-      "end" : "2025-08-12T09:45:29.089759"
+      "start" : "2025-07-16T11:56:09.604176",
+      "end" : "2025-08-15T11:56:09.604183"
     }
   }
 }
@@ -3732,7 +3732,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2025-07-13T07:45:29",
+    "startTimeUTC" : "2025-07-16T09:56:09",
     "activationAtFirstUse" : false
   }
 }
@@ -3806,7 +3806,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2025-07-13T07:45:29",
+    "startTimeUTC" : "2025-07-16T09:56:09",
     "activationAtFirstUse" : false
   }
 }
@@ -3891,7 +3891,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2025-07-13T07:45:29",
+    "startTimeUTC" : "2025-07-16T09:56:09",
     "activationAtFirstUse" : false
   }
 }
@@ -4303,7 +4303,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2025-07-13T09:45:29"
+    "newDateUtc" : "2025-07-16T11:56:09"
   }
 }
 ```
@@ -6226,8 +6226,8 @@ Usage type:
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2025-07-13",
-      "end" : "2025-07-08"
+      "start" : "2025-07-16",
+      "end" : "2025-07-11"
     }
   }
 }
@@ -6520,8 +6520,8 @@ Usage type:
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2025-07-13",
-      "end" : "2025-07-08"
+      "start" : "2025-07-16",
+      "end" : "2025-07-11"
     }
   }
 }
@@ -6550,8 +6550,8 @@ Usage type:
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2025-07-13",
-      "end" : "2025-07-08"
+      "start" : "2025-07-16",
+      "end" : "2025-07-11"
     }
   }
 }
@@ -6580,8 +6580,8 @@ Usage type:
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2025-07-13",
-      "end" : "2025-07-08"
+      "start" : "2025-07-16",
+      "end" : "2025-07-11"
     }
   }
 }
@@ -6610,8 +6610,8 @@ Usage type:
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2025-07-13",
-      "end" : "2025-07-08"
+      "start" : "2025-07-16",
+      "end" : "2025-07-11"
     }
   }
 }
@@ -6640,8 +6640,8 @@ Usage type:
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2025-07-13",
-      "end" : "2025-07-08"
+      "start" : "2025-07-16",
+      "end" : "2025-07-11"
     }
   }
 }
@@ -6682,8 +6682,8 @@ is delimited with a start date (included) and an end date (included). The period
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2025-07-13",
-      "end" : "2025-07-08"
+      "start" : "2025-07-16",
+      "end" : "2025-07-11"
     }
   }
 }
@@ -6788,8 +6788,8 @@ is delimited with a start date (included) and an end date (included). The period
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2025-07-13",
-      "end" : "2025-07-08"
+      "start" : "2025-07-16",
+      "end" : "2025-07-11"
     }
   }
 }
@@ -6818,8 +6818,8 @@ is delimited with a start date (included) and an end date (included). The period
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2025-07-13",
-      "end" : "2025-07-08"
+      "start" : "2025-07-16",
+      "end" : "2025-07-11"
     }
   }
 }
@@ -6848,8 +6848,8 @@ is delimited with a start date (included) and an end date (included). The period
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2025-07-13",
-      "end" : "2025-07-08"
+      "start" : "2025-07-16",
+      "end" : "2025-07-11"
     }
   }
 }
@@ -6878,8 +6878,8 @@ is delimited with a start date (included) and an end date (included). The period
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2025-07-13",
-      "end" : "2025-07-08"
+      "start" : "2025-07-16",
+      "end" : "2025-07-11"
     }
   }
 }
@@ -6908,8 +6908,8 @@ is delimited with a start date (included) and an end date (included). The period
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2025-07-13",
-      "end" : "2025-07-08"
+      "start" : "2025-07-16",
+      "end" : "2025-07-11"
     }
   }
 }
