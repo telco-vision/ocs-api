@@ -718,7 +718,7 @@ Remarks when searching with IMSI, ICCID or MSISDN:
     },
     "networkInfo" : {
       "subscriberid" : 21046,
-      "time" : "2025-08-24T15:05:30.694925",
+      "time" : "2025-10-06T11:33:43.15272",
       "lastMcc" : 222,
       "lastMnc" : 99,
       "lastCellId" : 123456,
@@ -1985,6 +1985,8 @@ Possible values for the `limit` field:
 - KB_7680: User will be limited 7680 Kbit/sec
 - KB_10240: User will be limited 10240 Kbit/sec
 - KB_20480: User will be limited 20480 Kbit/sec
+- KB_51200: User will be limited 51200 Kbit/sec
+- KB_102400: User will be limited 102400 Kbit/sec
 - UNLIMITED: User will not be limited.
 
 
@@ -3062,8 +3064,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-08-24T13:05:30.698058",
-    "lastUpdateDate" : "2025-08-24T01:59:30.698067"
+    "lastResetDate" : "2025-10-06T09:33:43.156891",
+    "lastUpdateDate" : "2025-10-05T22:27:43.156904"
   }
 }
 ```
@@ -3087,8 +3089,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-08-24T13:05:30.698058",
-    "lastUpdateDate" : "2025-08-24T01:59:30.698067"
+    "lastResetDate" : "2025-10-06T09:33:43.156891",
+    "lastUpdateDate" : "2025-10-05T22:27:43.156904"
   }
 }
 ```
@@ -3112,8 +3114,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-08-24T13:05:30.698058",
-    "lastUpdateDate" : "2025-08-24T01:59:30.698067"
+    "lastResetDate" : "2025-10-06T09:33:43.156891",
+    "lastUpdateDate" : "2025-10-05T22:27:43.156904"
   }
 }
 ```
@@ -3137,8 +3139,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-08-24T13:05:30.698058",
-    "lastUpdateDate" : "2025-08-24T01:59:30.698067"
+    "lastResetDate" : "2025-10-06T09:33:43.156891",
+    "lastUpdateDate" : "2025-10-05T22:27:43.156904"
   }
 }
 ```
@@ -3162,8 +3164,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-08-24T13:05:30.698058",
-    "lastUpdateDate" : "2025-08-24T01:59:30.698067"
+    "lastResetDate" : "2025-10-06T09:33:43.156891",
+    "lastUpdateDate" : "2025-10-05T22:27:43.156904"
   }
 }
 ```
@@ -3187,8 +3189,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-08-24T13:05:30.698058",
-    "lastUpdateDate" : "2025-08-24T01:59:30.698067"
+    "lastResetDate" : "2025-10-06T09:33:43.156891",
+    "lastUpdateDate" : "2025-10-05T22:27:43.156904"
   }
 }
 ```
@@ -3240,7 +3242,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2025-08-23T15:05:30.698085"
+    "dateTime" : "2025-10-05T11:33:43.156926"
   }
 }
 ```
@@ -3265,7 +3267,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2025-08-23T15:05:30.698085"
+    "dateTime" : "2025-10-05T11:33:43.156926"
   }
 }
 ```
@@ -3290,7 +3292,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2025-08-23T15:05:30.698085"
+    "dateTime" : "2025-10-05T11:33:43.156926"
   }
 }
 ```
@@ -3315,7 +3317,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2025-08-23T15:05:30.698085"
+    "dateTime" : "2025-10-05T11:33:43.156926"
   }
 }
 ```
@@ -3340,7 +3342,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2025-08-23T15:05:30.698085"
+    "dateTime" : "2025-10-05T11:33:43.156926"
   }
 }
 ```
@@ -3365,7 +3367,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2025-08-23T15:05:30.698085"
+    "dateTime" : "2025-10-05T11:33:43.156926"
   }
 }
 ```
@@ -3472,8 +3474,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2025-08-24T15:05:30.698905",
-      "end" : "2025-09-23T15:05:30.69891"
+      "start" : "2025-10-06T11:33:43.158174",
+      "end" : "2025-11-05T11:33:43.158182"
     }
   }
 }
@@ -3732,7 +3734,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2025-08-24T13:05:30",
+    "startTimeUTC" : "2025-10-06T09:33:43",
     "activationAtFirstUse" : false
   }
 }
@@ -3806,7 +3808,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2025-08-24T13:05:30",
+    "startTimeUTC" : "2025-10-06T09:33:43",
     "activationAtFirstUse" : false
   }
 }
@@ -3891,7 +3893,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2025-08-24T13:05:30",
+    "startTimeUTC" : "2025-10-06T09:33:43",
     "activationAtFirstUse" : false
   }
 }
@@ -4303,7 +4305,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2025-08-24T15:05:30"
+    "newDateUtc" : "2025-10-06T11:33:43"
   }
 }
 ```
@@ -5182,6 +5184,8 @@ Please refer to OCS User guide ( available from OCS UI) for a full description o
    - 7680
    - 10240
    - 20480
+   - 51200
+   - 102400
 
 - If `recurring` is `true`, then `nbOccurrence`, `recurringPeriodicityType`, `recurringPeriodicityFrequency`, `reportUnitsPreviousPackage` are mandatory
 - If `recurring` is `true`, `nbOccurrence` remains optional, but only for monthly recurring package template. If not provided, it means there won't be any stop the recurring package (infinite number of package will be given).
@@ -5530,17 +5534,19 @@ Please refer to OCS User guide ( available from OCS UI) for a full description o
 - `throttlingThreshold1Perc` and `throttlingThreshold1Limit` are optional, but if one is set in the request, the other must be provided
 - `throttlingThreshold2Perc` and `throttlingThreshold2Limit` are optional, but if one is set in the request, the other must be provided
 - `throttlingErrorAction` is mandatory if `throttlingActive` is `true`
--             Possible values for `throttlingThreshold1Limit` and `throttlingThreshold2Limit` in request, those are speed limitation in Kbit:
-               - 128
-               - 256
-               - 384
-               - 512
-               - 1024
-               - 3072
-               - 5120
-               - 7680
-               - 10240
-               - 20480
+- Possible values for `throttlingThreshold1Limit` and `throttlingThreshold2Limit` in request, those are speed limitation in Kbit:
+   - 128
+   - 256
+   - 384
+   - 512
+   - 1024
+   - 3072
+   - 5120
+   - 7680
+   - 10240
+   - 20480
+   - 51200
+   - 102400
 
 
 
@@ -6200,6 +6206,10 @@ will return the date of the first usage and the date of the last usage of the su
 ## 6.2 subscriberUsageOverPeriod
 
 ### Description
+IMPORTANT REMARK:<br/>
+The correct URL for this request is: `/ocs-custo/as/v1?token=<api_key_sparks>`<br/>
+The previous URL is now deprecated, and will be unavailable in a month (October 20th).
+
 This request can be used to retrieve the daily usage of a subscriber over a certain period. The period
 is delimited with a start date (included) and an end date (included). The period cannot exceed 1 week.
 If you need statistics about usages over a longer period, you can use the requests using aggregated data.
@@ -6226,8 +6236,8 @@ Usage type:
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2025-08-24",
-      "end" : "2025-08-19"
+      "start" : "2025-10-06",
+      "end" : "2025-10-01"
     }
   }
 }
@@ -6520,8 +6530,8 @@ Usage type:
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2025-08-24",
-      "end" : "2025-08-19"
+      "start" : "2025-10-06",
+      "end" : "2025-10-01"
     }
   }
 }
@@ -6550,8 +6560,8 @@ Usage type:
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2025-08-24",
-      "end" : "2025-08-19"
+      "start" : "2025-10-06",
+      "end" : "2025-10-01"
     }
   }
 }
@@ -6580,8 +6590,8 @@ Usage type:
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2025-08-24",
-      "end" : "2025-08-19"
+      "start" : "2025-10-06",
+      "end" : "2025-10-01"
     }
   }
 }
@@ -6610,8 +6620,8 @@ Usage type:
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2025-08-24",
-      "end" : "2025-08-19"
+      "start" : "2025-10-06",
+      "end" : "2025-10-01"
     }
   }
 }
@@ -6640,8 +6650,8 @@ Usage type:
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2025-08-24",
-      "end" : "2025-08-19"
+      "start" : "2025-10-06",
+      "end" : "2025-10-01"
     }
   }
 }
@@ -6669,6 +6679,10 @@ Usage type:
 ## 6.3 subscriberNetworkEventsOverPeriod
 
 ### Description
+IMPORTANT REMARK:<br/>
+The correct URL for this request is: `/ocs-custo/as/v1?token=<api_key_sparks>`<br/>
+The previous URL is now deprecated, and will be unavailable in a month (October 20th).
+
 This request can be used to retrieve the network events of a subscriber over a certain period. The period
 is delimited with a start date (included) and an end date (included). The period cannot exceed 1 week.
 
@@ -6682,8 +6696,8 @@ is delimited with a start date (included) and an end date (included). The period
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2025-08-24",
-      "end" : "2025-08-19"
+      "start" : "2025-10-06",
+      "end" : "2025-10-01"
     }
   }
 }
@@ -6788,8 +6802,8 @@ is delimited with a start date (included) and an end date (included). The period
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2025-08-24",
-      "end" : "2025-08-19"
+      "start" : "2025-10-06",
+      "end" : "2025-10-01"
     }
   }
 }
@@ -6818,8 +6832,8 @@ is delimited with a start date (included) and an end date (included). The period
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2025-08-24",
-      "end" : "2025-08-19"
+      "start" : "2025-10-06",
+      "end" : "2025-10-01"
     }
   }
 }
@@ -6848,8 +6862,8 @@ is delimited with a start date (included) and an end date (included). The period
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2025-08-24",
-      "end" : "2025-08-19"
+      "start" : "2025-10-06",
+      "end" : "2025-10-01"
     }
   }
 }
@@ -6878,8 +6892,8 @@ is delimited with a start date (included) and an end date (included). The period
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2025-08-24",
-      "end" : "2025-08-19"
+      "start" : "2025-10-06",
+      "end" : "2025-10-01"
     }
   }
 }
@@ -6908,8 +6922,8 @@ is delimited with a start date (included) and an end date (included). The period
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2025-08-24",
-      "end" : "2025-08-19"
+      "start" : "2025-10-06",
+      "end" : "2025-10-01"
     }
   }
 }
@@ -7362,5 +7376,6 @@ This request can be used to create a new Location zone. The backend will perform
 | 15 | HLR_API_ERROR |
 | 16 | STEERING_API_ERROR |
 | 17 | SUBS_END_OF_LIFE |
+| 18 | TIMEOUT |
 | 100 | TRAFFIC_CONTROL_LIMIT_EXCEEDED |
 
