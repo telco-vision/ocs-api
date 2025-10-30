@@ -179,7 +179,9 @@ To identify the subscriber, you can use one of the following IDs:
       "cost" : 9.99,
       "templateId" : 2214,
       "esimId" : 64612,
-      "active" : true
+      "active" : true,
+      "resellerCost" : 0.1256611555,
+      "parentResellerCost" : 0.1256611555
     }, {
       "rdbLocationZones" : {
         "locationzoneid" : 27,
@@ -212,7 +214,9 @@ To identify the subscriber, you can use one of the following IDs:
       "templateId" : 9280,
       "esimId" : 64612,
       "active" : true,
-      "recurringPackage" : 1
+      "recurringPackage" : 1,
+      "resellerCost" : 0.1256611555,
+      "parentResellerCost" : 0.1256611555
     }, {
       "rdbLocationZones" : {
         "locationzoneid" : 27,
@@ -245,7 +249,9 @@ To identify the subscriber, you can use one of the following IDs:
       "templateId" : 9280,
       "esimId" : 64612,
       "active" : true,
-      "recurringPackage" : 3
+      "recurringPackage" : 3,
+      "resellerCost" : 0.1256611555,
+      "parentResellerCost" : 0.1256611555
     }, {
       "rdbLocationZones" : {
         "locationzoneid" : 27,
@@ -278,7 +284,9 @@ To identify the subscriber, you can use one of the following IDs:
       "templateId" : 9280,
       "esimId" : 64612,
       "active" : true,
-      "recurringPackage" : 4
+      "recurringPackage" : 4,
+      "resellerCost" : 0.1256611555,
+      "parentResellerCost" : 0.1256611555
     }, {
       "rdbLocationZones" : {
         "locationzoneid" : 27,
@@ -311,7 +319,9 @@ To identify the subscriber, you can use one of the following IDs:
       "templateId" : 9280,
       "esimId" : 64612,
       "active" : true,
-      "recurringPackage" : 5
+      "recurringPackage" : 5,
+      "resellerCost" : 0.1256611555,
+      "parentResellerCost" : 0.1256611555
     } ],
     "recurring" : [ {
       "id" : 1,
