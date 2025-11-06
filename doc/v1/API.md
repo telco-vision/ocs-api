@@ -718,7 +718,7 @@ Remarks when searching with IMSI, ICCID or MSISDN:
     },
     "networkInfo" : {
       "subscriberid" : 21046,
-      "time" : "2025-10-30T12:01:58.489889",
+      "time" : "2025-11-06T11:51:39.492934",
       "lastMcc" : 222,
       "lastMnc" : 99,
       "lastCellId" : 123456,
@@ -3064,8 +3064,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-10-30T11:01:58.493119",
-    "lastUpdateDate" : "2025-10-29T23:55:58.493127"
+    "lastResetDate" : "2025-11-06T10:51:39.496174",
+    "lastUpdateDate" : "2025-11-05T23:45:39.496182"
   }
 }
 ```
@@ -3089,8 +3089,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-10-30T11:01:58.493119",
-    "lastUpdateDate" : "2025-10-29T23:55:58.493127"
+    "lastResetDate" : "2025-11-06T10:51:39.496174",
+    "lastUpdateDate" : "2025-11-05T23:45:39.496182"
   }
 }
 ```
@@ -3114,8 +3114,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-10-30T11:01:58.493119",
-    "lastUpdateDate" : "2025-10-29T23:55:58.493127"
+    "lastResetDate" : "2025-11-06T10:51:39.496174",
+    "lastUpdateDate" : "2025-11-05T23:45:39.496182"
   }
 }
 ```
@@ -3139,8 +3139,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-10-30T11:01:58.493119",
-    "lastUpdateDate" : "2025-10-29T23:55:58.493127"
+    "lastResetDate" : "2025-11-06T10:51:39.496174",
+    "lastUpdateDate" : "2025-11-05T23:45:39.496182"
   }
 }
 ```
@@ -3164,8 +3164,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-10-30T11:01:58.493119",
-    "lastUpdateDate" : "2025-10-29T23:55:58.493127"
+    "lastResetDate" : "2025-11-06T10:51:39.496174",
+    "lastUpdateDate" : "2025-11-05T23:45:39.496182"
   }
 }
 ```
@@ -3189,8 +3189,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-10-30T11:01:58.493119",
-    "lastUpdateDate" : "2025-10-29T23:55:58.493127"
+    "lastResetDate" : "2025-11-06T10:51:39.496174",
+    "lastUpdateDate" : "2025-11-05T23:45:39.496182"
   }
 }
 ```
@@ -3242,7 +3242,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2025-10-29T12:01:58.493145"
+    "dateTime" : "2025-11-05T11:51:39.496211"
   }
 }
 ```
@@ -3267,7 +3267,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2025-10-29T12:01:58.493145"
+    "dateTime" : "2025-11-05T11:51:39.496211"
   }
 }
 ```
@@ -3292,7 +3292,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2025-10-29T12:01:58.493145"
+    "dateTime" : "2025-11-05T11:51:39.496211"
   }
 }
 ```
@@ -3317,7 +3317,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2025-10-29T12:01:58.493145"
+    "dateTime" : "2025-11-05T11:51:39.496211"
   }
 }
 ```
@@ -3342,7 +3342,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2025-10-29T12:01:58.493145"
+    "dateTime" : "2025-11-05T11:51:39.496211"
   }
 }
 ```
@@ -3367,7 +3367,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2025-10-29T12:01:58.493145"
+    "dateTime" : "2025-11-05T11:51:39.496211"
   }
 }
 ```
@@ -3474,8 +3474,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2025-10-30T12:01:58.494149",
-      "end" : "2025-11-29T12:01:58.494155"
+      "start" : "2025-11-06T11:51:39.497229",
+      "end" : "2025-12-06T11:51:39.497235"
     }
   }
 }
@@ -3734,7 +3734,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2025-10-30T11:01:58",
+    "startTimeUTC" : "2025-11-06T10:51:39",
     "activationAtFirstUse" : false
   }
 }
@@ -3808,7 +3808,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2025-10-30T11:01:58",
+    "startTimeUTC" : "2025-11-06T10:51:39",
     "activationAtFirstUse" : false
   }
 }
@@ -3893,7 +3893,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2025-10-30T11:01:58",
+    "startTimeUTC" : "2025-11-06T10:51:39",
     "activationAtFirstUse" : false
   }
 }
@@ -4316,7 +4316,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
     "newPeriod" : 45,
-    "newDateUtc" : "2025-10-30T12:01:58"
+    "newDateUtc" : "2025-11-06T11:51:39"
   }
 }
 ```
@@ -5066,6 +5066,10 @@ Please refer to OCS User guide ( available from OCS UI) for a full description o
 |throttlingThreshold1Limit|Optional|Limit to apply when the subscriber is crossing the first threshold.|
 |throttlingThreshold2Perc|Optional|Second threshold for throttling, in percentage of the total volume of the package. See possible values in below remarks.|
 |throttlingThreshold2Limit|Optional|Limit to apply when the subscriber is crossing the second threshold.|
+|throttlingThreshold3Perc|Optional|Third threshold for throttling, in percentage of the total volume of the package. See possible values in below remarks.|
+|throttlingThreshold3Limit|Optional|Limit to apply when the subscriber is crossing the third threshold.|
+|throttlingThreshold4Perc|Optional|Fourth threshold for throttling, in percentage of the total volume of the package. See possible values in below remarks.|
+|throttlingThreshold4Limit|Optional|Limit to apply when the subscriber is crossing the fourth threshold.|
 |throttlingErrorAction|Optional|What is happening to the package if the throttling request failed to reach the subscriber. Possible values are: 0=User can continue to use the template (no speed limitation), 1=Package is blocked and user cannot use it anymore.|
 |recurring|Mandatory|Indicates if the recurring feature is active for this template.|
 |nbOccurrence|Optional|Indicates the max number of package to give to the subscriber.|
@@ -5090,10 +5094,14 @@ Please refer to OCS User guide ( available from OCS UI) for a full description o
     "perioddays" : 45,
     "cost" : 15.5,
     "throttlingActive" : true,
-    "throttlingThreshold1Perc" : 70,
-    "throttlingThreshold1Limit" : 256,
-    "throttlingThreshold2Perc" : 90,
-    "throttlingThreshold2Limit" : 128,
+    "throttlingThreshold1Perc" : 60,
+    "throttlingThreshold1Limit" : 128,
+    "throttlingThreshold2Perc" : 70,
+    "throttlingThreshold2Limit" : 256,
+    "throttlingThreshold3Perc" : 80,
+    "throttlingThreshold3Limit" : 512,
+    "throttlingThreshold4Perc" : 90,
+    "throttlingThreshold4Limit" : 1024,
     "throttlingErrorAction" : 1,
     "recurring" : true,
     "nbOccurrence" : 12,
@@ -5133,10 +5141,14 @@ Please refer to OCS User guide ( available from OCS UI) for a full description o
     "cost" : 15.5,
     "uiVisible" : false,
     "throttlingActive" : true,
-    "throttlingThreshold1Perc" : 70,
-    "throttlingThreshold1Limit" : 256,
-    "throttlingThreshold2Perc" : 90,
-    "throttlingThreshold2Limit" : 128,
+    "throttlingThreshold1Perc" : 60,
+    "throttlingThreshold1Limit" : 128,
+    "throttlingThreshold2Perc" : 70,
+    "throttlingThreshold2Limit" : 256,
+    "throttlingThreshold3Perc" : 80,
+    "throttlingThreshold3Limit" : 512,
+    "throttlingThreshold4Perc" : 90,
+    "throttlingThreshold4Limit" : 1024,
     "throttlingErrorAction" : 1,
     "recurring" : true,
     "nbOccurrence" : 12,
@@ -6247,8 +6259,8 @@ Usage type:
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2025-10-30",
-      "end" : "2025-10-25"
+      "start" : "2025-11-06",
+      "end" : "2025-11-01"
     }
   }
 }
@@ -6541,8 +6553,8 @@ Usage type:
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2025-10-30",
-      "end" : "2025-10-25"
+      "start" : "2025-11-06",
+      "end" : "2025-11-01"
     }
   }
 }
@@ -6571,8 +6583,8 @@ Usage type:
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2025-10-30",
-      "end" : "2025-10-25"
+      "start" : "2025-11-06",
+      "end" : "2025-11-01"
     }
   }
 }
@@ -6601,8 +6613,8 @@ Usage type:
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2025-10-30",
-      "end" : "2025-10-25"
+      "start" : "2025-11-06",
+      "end" : "2025-11-01"
     }
   }
 }
@@ -6631,8 +6643,8 @@ Usage type:
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2025-10-30",
-      "end" : "2025-10-25"
+      "start" : "2025-11-06",
+      "end" : "2025-11-01"
     }
   }
 }
@@ -6661,8 +6673,8 @@ Usage type:
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2025-10-30",
-      "end" : "2025-10-25"
+      "start" : "2025-11-06",
+      "end" : "2025-11-01"
     }
   }
 }
@@ -6707,8 +6719,8 @@ is delimited with a start date (included) and an end date (included). The period
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2025-10-30",
-      "end" : "2025-10-25"
+      "start" : "2025-11-06",
+      "end" : "2025-11-01"
     }
   }
 }
@@ -6813,8 +6825,8 @@ is delimited with a start date (included) and an end date (included). The period
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2025-10-30",
-      "end" : "2025-10-25"
+      "start" : "2025-11-06",
+      "end" : "2025-11-01"
     }
   }
 }
@@ -6843,8 +6855,8 @@ is delimited with a start date (included) and an end date (included). The period
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2025-10-30",
-      "end" : "2025-10-25"
+      "start" : "2025-11-06",
+      "end" : "2025-11-01"
     }
   }
 }
@@ -6873,8 +6885,8 @@ is delimited with a start date (included) and an end date (included). The period
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2025-10-30",
-      "end" : "2025-10-25"
+      "start" : "2025-11-06",
+      "end" : "2025-11-01"
     }
   }
 }
@@ -6903,8 +6915,8 @@ is delimited with a start date (included) and an end date (included). The period
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2025-10-30",
-      "end" : "2025-10-25"
+      "start" : "2025-11-06",
+      "end" : "2025-11-01"
     }
   }
 }
@@ -6933,8 +6945,8 @@ is delimited with a start date (included) and an end date (included). The period
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2025-10-30",
-      "end" : "2025-10-25"
+      "start" : "2025-11-06",
+      "end" : "2025-11-01"
     }
   }
 }
