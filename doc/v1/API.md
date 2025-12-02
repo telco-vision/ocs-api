@@ -52,6 +52,8 @@
 
 [2.18 getSubscriberLocationByCellId](#218-getsubscriberlocationbycellid)
 
+[2.19 changeSimStatus](#219-changesimstatus)
+
 ## [3 Subscriber prepaid packages](#31-affectpackagetosubscriber)
 
 [3.1 affectPackageToSubscriber](#31-affectpackagetosubscriber)
@@ -69,6 +71,12 @@
 [3.7 stopResumeSubsRecurringPackage](#37-stopresumesubsrecurringpackage)
 
 [3.8 deleteSubscriberPackage](#38-deletesubscriberpackage)
+
+[3.9 modifySubscriberPrepaidPackageActivePeriod](#39-modifysubscriberprepaidpackageactiveperiod)
+
+[3.10 modifySubscriberMobilePlan](#310-modifysubscribermobileplan)
+
+[3.11 modifySubscriberVoipPlan](#311-modifysubscribervoipplan)
 
 ## [4 Prepaid package template](#41-listprepaidpackagetemplate)
 
@@ -99,6 +107,10 @@
 [5.3 listTariffRule](#53-listtariffrule)
 
 [5.4 getCustomerTariff](#54-getcustomertariff)
+
+[5.5 listSubscriberVoipTariff](#55-listsubscribervoiptariff)
+
+[5.6 listVoipTariffRule](#56-listvoiptariffrule)
 
 ## [6 Statistics](#61-getsubscriberactiveperiod)
 
@@ -718,7 +730,7 @@ Remarks when searching with IMSI, ICCID or MSISDN:
     },
     "networkInfo" : {
       "subscriberid" : 21046,
-      "time" : "2025-11-18T15:38:40.939319",
+      "time" : "2025-12-02T15:03:28.529148",
       "lastMcc" : 222,
       "lastMnc" : 99,
       "lastCellId" : 123456,
@@ -1980,6 +1992,7 @@ Possible values for the `limit` field:
 - KB_384: User will be limited 384 Kbit/sec
 - KB_512: User will be limited 512 Kbit/sec
 - KB_1024: User will be limited 1024 Kbit/sec
+- KB_2048: User will be limited 2048 Kbit/sec
 - KB_3072: User will be limited 3072 Kbit/sec
 - KB_5120: User will be limited 5120 Kbit/sec
 - KB_7680: User will be limited 7680 Kbit/sec
@@ -3064,8 +3077,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-11-18T14:38:40.942994",
-    "lastUpdateDate" : "2025-11-18T03:32:40.943006"
+    "lastResetDate" : "2025-12-02T14:03:28.532457",
+    "lastUpdateDate" : "2025-12-02T02:57:28.532467"
   }
 }
 ```
@@ -3089,8 +3102,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-11-18T14:38:40.942994",
-    "lastUpdateDate" : "2025-11-18T03:32:40.943006"
+    "lastResetDate" : "2025-12-02T14:03:28.532457",
+    "lastUpdateDate" : "2025-12-02T02:57:28.532467"
   }
 }
 ```
@@ -3114,8 +3127,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-11-18T14:38:40.942994",
-    "lastUpdateDate" : "2025-11-18T03:32:40.943006"
+    "lastResetDate" : "2025-12-02T14:03:28.532457",
+    "lastUpdateDate" : "2025-12-02T02:57:28.532467"
   }
 }
 ```
@@ -3139,8 +3152,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-11-18T14:38:40.942994",
-    "lastUpdateDate" : "2025-11-18T03:32:40.943006"
+    "lastResetDate" : "2025-12-02T14:03:28.532457",
+    "lastUpdateDate" : "2025-12-02T02:57:28.532467"
   }
 }
 ```
@@ -3164,8 +3177,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-11-18T14:38:40.942994",
-    "lastUpdateDate" : "2025-11-18T03:32:40.943006"
+    "lastResetDate" : "2025-12-02T14:03:28.532457",
+    "lastUpdateDate" : "2025-12-02T02:57:28.532467"
   }
 }
 ```
@@ -3189,8 +3202,8 @@ In the answer you will get the counter with the new values.
   "resetSubsGzCounter" : {
     "subscriberId" : 4,
     "volumeOnGZ" : 123456,
-    "lastResetDate" : "2025-11-18T14:38:40.942994",
-    "lastUpdateDate" : "2025-11-18T03:32:40.943006"
+    "lastResetDate" : "2025-12-02T14:03:28.532457",
+    "lastUpdateDate" : "2025-12-02T02:57:28.532467"
   }
 }
 ```
@@ -3242,7 +3255,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2025-11-17T15:38:40.943031"
+    "dateTime" : "2025-12-01T15:03:28.532486"
   }
 }
 ```
@@ -3267,7 +3280,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2025-11-17T15:38:40.943031"
+    "dateTime" : "2025-12-01T15:03:28.532486"
   }
 }
 ```
@@ -3292,7 +3305,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2025-11-17T15:38:40.943031"
+    "dateTime" : "2025-12-01T15:03:28.532486"
   }
 }
 ```
@@ -3317,7 +3330,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2025-11-17T15:38:40.943031"
+    "dateTime" : "2025-12-01T15:03:28.532486"
   }
 }
 ```
@@ -3342,7 +3355,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2025-11-17T15:38:40.943031"
+    "dateTime" : "2025-12-01T15:03:28.532486"
   }
 }
 ```
@@ -3367,7 +3380,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2025-11-17T15:38:40.943031"
+    "dateTime" : "2025-12-01T15:03:28.532486"
   }
 }
 ```
@@ -3424,6 +3437,53 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
   }
 }
 ```
+## 2.19 changeSimStatus
+
+### Description
+This request can be used to change the status of an eSIM by its ID.
+
+Be careful when setting the status of an eSIM back to `Free` after the eSIM has been used by one of your subscriber. The
+new subscriber that will receive this (used) eSIM won't be able to download the eSIM again.
+
+The purpose of this request is only to fix a problematic situation. When you have identified an eSIM with the wrong status
+and you need to fix it.
+
+REMARK:
+- This request must not be used after `affectPackageToSubscriber` or `affectRecurringPackageToSubscriber`. Setting the
+eSIM status is part of the logic of those requests.
+
+
+### Inputs
+|Parameter|Presence|Description|
+|---------|--------|-----------|
+|simId|Mandatory|The ID of the eSIM to update. You can get this ID from `getSingleSubscriber` and `listSubscriber` answer, see `getSingleSubscriber.sim.id`|
+|newStatus|Mandatory|The new status for the eSIM. Value can be: `Affected`, `Free`|
+
+
+### Request
+```json
+{
+  "changeSimStatus" : {
+    "simId" : 123,
+    "newStatus" : "Affected"
+  }
+}
+```
+### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### Remark(s)
+
+- The numeric value of `listDestinationListPrefix` is the id of the destination list
+
+
 # 3. Subscriber prepaid packages
 ## 3.1 affectPackageToSubscriber
 
@@ -3474,8 +3534,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2025-11-18T15:38:40.944257",
-      "end" : "2025-12-18T15:38:40.944265"
+      "start" : "2025-12-02T15:03:28.533603",
+      "end" : "2026-01-01T15:03:28.533609"
     }
   }
 }
@@ -3734,7 +3794,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2025-11-18T14:38:40",
+    "startTimeUTC" : "2025-12-02T14:03:28",
     "activationAtFirstUse" : false
   }
 }
@@ -3808,7 +3868,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2025-11-18T14:38:40",
+    "startTimeUTC" : "2025-12-02T14:03:28",
     "activationAtFirstUse" : false
   }
 }
@@ -3893,7 +3953,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2025-11-18T14:38:40",
+    "startTimeUTC" : "2025-12-02T14:03:28",
     "activationAtFirstUse" : false
   }
 }
@@ -4299,6 +4359,11 @@ This request is logged in the system DB and you can see them in the UI, in the `
 ### Description
 This request can be used to adapt the expiration date of a subscriber prepaid package.
 
+You can provide either a new expiration date, or you can provide new validity duration. You can provide
+an new validity duration no matter if the package has been activated or not. You can provide a new
+expiration date only if an expiration date already exist (package has been activated, or package will be
+active in the future but start and exp. date already provided).
+
 This request is logged in the system DB and you can see them in the UI, in the `Subscriber prepaid package` -> `History` tab.
 
 
@@ -4306,21 +4371,41 @@ This request is logged in the system DB and you can see them in the UI, in the `
 |Parameter|Presence|Description|
 |---------|--------|-----------|
 |packageId|Mandatory|The ID of the subscriber prepaid package to adapt.|
-|newPeriod|Optional|The number of days between the start validity date and the new expiration date. You don't really need to update this value, but if you want to keep data consistent, provide the correct value.|
-|newDateUtc|Mandatory|The new expiration date for the subscriber prepaid package.|
+|newValidityDuration|Optional|The new number of days for the validity duration. The new expiration date will be calculated as following, start validity date plus `newValidityDuration` days.|
+|newExpirationDate|Optional|The new expiration date for the subscriber prepaid package. Package cannot be active.|
 
 
-### Request
+### 3.5.1 Change expiration date
+#### Request
 ```json
 {
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
-    "newPeriod" : 45,
-    "newDateUtc" : "2025-11-18T15:38:40"
+    "newExpirationDate" : "2026-01-01T15:03:28"
   }
 }
 ```
-### Answer
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 3.5.2 Change validity duration
+#### Request
+```json
+{
+  "modifySubscriberPrepaidPackageExpDate" : {
+    "packageId" : 123,
+    "newValidityDuration" : 45
+  }
+}
+```
+#### Answer
 
 ```json
 {
@@ -4474,6 +4559,346 @@ This request can be used to delete a prepaid package of a subscriber.
 ### Remark(s)
 
 - The numeric value of the request is the prepais package ID
+
+
+## 3.9 modifySubscriberPrepaidPackageActivePeriod
+
+### Description
+This request can be used to adapt the active period (activation and expiration date) of a subscriber prepaid package configured
+to be activated at first use. If the package has already been activated (even if activation is in the future), the request will
+return an error.
+
+This request is logged in the system DB and you can see them in the UI, in the `Subscriber prepaid package` -> `History` tab.
+
+
+### Inputs
+|Parameter|Presence|Description|
+|---------|--------|-----------|
+|packageId|Mandatory|The ID of the subscriber prepaid package to adapt.|
+|newActivationDateUtc|Mandatory|The new activation date for the subscriber prepaid package.|
+|newExpirationDateUtc|Mandatory|The new expiration date for the subscriber prepaid package.|
+|comment|Mandatory|Some relevant comment about the active period modification. The comment will appear in package history.|
+
+
+### Request
+```json
+{
+  "modifySubscriberPrepaidPackageActivePeriod" : {
+    "packageId" : 123,
+    "newActivationDateUtc" : "2025-12-02T15:03:28",
+    "newExpirationDateUtc" : "2025-12-12T15:03:28",
+    "comment" : "Some relevant comment"
+  }
+}
+```
+### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+## 3.10 modifySubscriberMobilePlan
+
+### Description
+This request can be used to change the Mobile plan a specific subscriber.
+
+To identify the subscriber, you can use one of the following IDs:
+- Subscriber ID
+- IMSI
+- ICCID
+- MSISDN
+- Multi IMSI
+- Activation code
+
+If you don't provide `mobilePlanId`, the current mobile plan (if exist) will be removed from the subscriber.
+
+
+### 3.10.1 By subscriber ID
+#### Request
+```json
+{
+  "modifySubscriberMobilePlan" : {
+    "subscriberId" : {
+      "subscriberId" : 1000
+    },
+    "mobilePlanId" : 10
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 3.10.2 By IMSI
+#### Request
+```json
+{
+  "modifySubscriberMobilePlan" : {
+    "subscriberId" : {
+      "imsi" : "12345678901234"
+    }
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 3.10.3 By ICCID
+#### Request
+```json
+{
+  "modifySubscriberMobilePlan" : {
+    "subscriberId" : {
+      "iccid" : "123456789012345678"
+    },
+    "mobilePlanId" : 10
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 3.10.4 By MSISDN
+#### Request
+```json
+{
+  "modifySubscriberMobilePlan" : {
+    "subscriberId" : {
+      "msisdn" : "123456789123"
+    }
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 3.10.5 By multi imsi
+#### Request
+```json
+{
+  "modifySubscriberMobilePlan" : {
+    "subscriberId" : {
+      "multiImsi" : "12345678901234"
+    },
+    "mobilePlanId" : 10
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 3.10.6 By Activation code
+#### Request
+```json
+{
+  "modifySubscriberMobilePlan" : {
+    "subscriberId" : {
+      "activationCode" : "Activation code"
+    }
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### Remark(s)
+
+- This request is best used with the subscriber ID, if you already have it, use it.
+
+
+## 3.11 modifySubscriberVoipPlan
+
+### Description
+This request can be used to change the VoIP plan a specific subscriber.
+
+To identify the subscriber, you can use one of the following IDs:
+- Subscriber ID
+- IMSI
+- ICCID
+- MSISDN
+- Multi IMSI
+- Activation code
+
+If you don't provide `voipPlanId`, the current VoIP plan (if exist) will be removed from the subscriber.
+
+
+### 3.11.1 By subscriber ID
+#### Request
+```json
+{
+  "modifySubscriberVoipPlan" : {
+    "subscriberId" : {
+      "subscriberId" : 1000
+    },
+    "voipPlanId" : 12
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 3.11.2 By IMSI
+#### Request
+```json
+{
+  "modifySubscriberVoipPlan" : {
+    "subscriberId" : {
+      "imsi" : "12345678901234"
+    }
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 3.11.3 By ICCID
+#### Request
+```json
+{
+  "modifySubscriberVoipPlan" : {
+    "subscriberId" : {
+      "iccid" : "123456789012345678"
+    },
+    "voipPlanId" : 12
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 3.11.4 By MSISDN
+#### Request
+```json
+{
+  "modifySubscriberVoipPlan" : {
+    "subscriberId" : {
+      "msisdn" : "123456789123"
+    }
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 3.11.5 By multi imsi
+#### Request
+```json
+{
+  "modifySubscriberVoipPlan" : {
+    "subscriberId" : {
+      "multiImsi" : "12345678901234"
+    },
+    "voipPlanId" : 12
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### 3.11.6 By Activation code
+#### Request
+```json
+{
+  "modifySubscriberVoipPlan" : {
+    "subscriberId" : {
+      "activationCode" : "Activation code"
+    }
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  }
+}
+```
+### Remark(s)
+
+- This request is best used with the subscriber ID, if you already have it, use it.
 
 
 # 4. Prepaid package template
@@ -6067,6 +6492,146 @@ The request takes as input the reseller ID of the customer.
 - The numeric value of `getCustomerTariff` is the id of the reseller of the customer
 
 
+## 5.5 listSubscriberVoipTariff
+
+### Description
+This request can be used to list all the VoIP tariffs configured for your reseller,
+or to list all the VoIP tariffs configured for a specific reseller.
+
+You can get all the costs per prefix of a specific VoIP tariff with the request `listVoipTariffRule`.
+
+
+### 5.5.1 All visible VoIP tariff
+#### Request
+```json
+{
+  "listSubscriberVoipTariff" : { }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "listSubscriberVoipTariff" : [ {
+    "id" : 49,
+    "planName" : "TELECLUB",
+    "reseller" : {
+      "resellerId" : 10,
+      "resellerName" : "PDEL Reseller 3"
+    },
+    "provider" : {
+      "providerId" : 6,
+      "providerName" : "DIDWW (Live)"
+    },
+    "deleted" : false,
+    "costPlan" : false,
+    "maxAllowRate" : 2.0
+  }, {
+    "id" : 50,
+    "planName" : "ImsiMarket01",
+    "reseller" : {
+      "resellerId" : 10,
+      "resellerName" : "PDEL Reseller 3"
+    },
+    "deleted" : false,
+    "costPlan" : true,
+    "maxAllowRate" : 2.0
+  } ]
+}
+```
+### 5.5.2 By reseller ID
+#### Request
+```json
+{
+  "listSubscriberVoipTariff" : {
+    "resellerId" : 49
+  }
+}
+```
+#### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "listSubscriberVoipTariff" : [ {
+    "id" : 49,
+    "planName" : "TELECLUB",
+    "reseller" : {
+      "resellerId" : 10,
+      "resellerName" : "PDEL Reseller 3"
+    },
+    "provider" : {
+      "providerId" : 6,
+      "providerName" : "DIDWW (Live)"
+    },
+    "deleted" : false,
+    "costPlan" : false,
+    "maxAllowRate" : 2.0
+  } ]
+}
+```
+## 5.6 listVoipTariffRule
+
+### Description
+This request can be used to list all the costs per prefix composing a specific VoIP tariff.
+
+The numeric value provided in the request is the VoIP tariff ID, see request `listSubscriberVoipTariff`.
+
+
+### Request
+```json
+{
+  "listVoipTariffRule" : 50
+}
+```
+### Answer
+
+```json
+{
+  "status" : {
+    "code" : 0,
+    "msg" : "OK"
+  },
+  "listVoipTariffRule" : [ {
+    "price" : 0.007425,
+    "country" : "CANADA",
+    "fromdate" : "2024-01-02 00:00:00",
+    "prefix" : "1204"
+  }, {
+    "price" : 0.007425,
+    "country" : "CANADA",
+    "fromdate" : "2024-01-02 00:00:00",
+    "prefix" : "1204555"
+  }, {
+    "price" : 0.00891,
+    "country" : "UNITED STATES OF AMERICA",
+    "fromdate" : "2024-01-02 00:00:00",
+    "prefix" : "1205"
+  }, {
+    "price" : 0.009207,
+    "country" : "UNITED STATES OF AMERICA",
+    "fromdate" : "2024-01-02 00:00:00",
+    "prefix" : "1205555"
+  }, {
+    "price" : 0.298485,
+    "country" : "BELGIUM",
+    "fromdate" : "2024-01-02 00:00:00",
+    "prefix" : "322009"
+  }, {
+    "price" : 0.298485,
+    "country" : "BELGIUM",
+    "fromdate" : "2024-01-02 00:00:00",
+    "prefix" : "322203"
+  } ]
+}
+```
 # 6. Statistics
 ## 6.1 getSubscriberActivePeriod
 
@@ -6259,8 +6824,8 @@ Usage type:
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2025-11-13",
-      "end" : "2025-11-18"
+      "start" : "2025-11-27",
+      "end" : "2025-12-02"
     }
   }
 }
@@ -6553,8 +7118,8 @@ Usage type:
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2025-11-13",
-      "end" : "2025-11-18"
+      "start" : "2025-11-27",
+      "end" : "2025-12-02"
     }
   }
 }
@@ -6583,8 +7148,8 @@ Usage type:
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2025-11-13",
-      "end" : "2025-11-18"
+      "start" : "2025-11-27",
+      "end" : "2025-12-02"
     }
   }
 }
@@ -6613,8 +7178,8 @@ Usage type:
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2025-11-13",
-      "end" : "2025-11-18"
+      "start" : "2025-11-27",
+      "end" : "2025-12-02"
     }
   }
 }
@@ -6643,8 +7208,8 @@ Usage type:
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2025-11-13",
-      "end" : "2025-11-18"
+      "start" : "2025-11-27",
+      "end" : "2025-12-02"
     }
   }
 }
@@ -6673,8 +7238,8 @@ Usage type:
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2025-11-13",
-      "end" : "2025-11-18"
+      "start" : "2025-11-27",
+      "end" : "2025-12-02"
     }
   }
 }
@@ -6719,8 +7284,8 @@ is delimited with a start date (included) and an end date (included). The period
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2025-11-18",
-      "end" : "2025-11-13"
+      "start" : "2025-12-02",
+      "end" : "2025-11-27"
     }
   }
 }
@@ -6825,8 +7390,8 @@ is delimited with a start date (included) and an end date (included). The period
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2025-11-18",
-      "end" : "2025-11-13"
+      "start" : "2025-12-02",
+      "end" : "2025-11-27"
     }
   }
 }
@@ -6855,8 +7420,8 @@ is delimited with a start date (included) and an end date (included). The period
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2025-11-18",
-      "end" : "2025-11-13"
+      "start" : "2025-12-02",
+      "end" : "2025-11-27"
     }
   }
 }
@@ -6885,8 +7450,8 @@ is delimited with a start date (included) and an end date (included). The period
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2025-11-18",
-      "end" : "2025-11-13"
+      "start" : "2025-12-02",
+      "end" : "2025-11-27"
     }
   }
 }
@@ -6915,8 +7480,8 @@ is delimited with a start date (included) and an end date (included). The period
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2025-11-18",
-      "end" : "2025-11-13"
+      "start" : "2025-12-02",
+      "end" : "2025-11-27"
     }
   }
 }
@@ -6945,8 +7510,8 @@ is delimited with a start date (included) and an end date (included). The period
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2025-11-18",
-      "end" : "2025-11-13"
+      "start" : "2025-12-02",
+      "end" : "2025-11-27"
     }
   }
 }
