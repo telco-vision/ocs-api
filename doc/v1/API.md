@@ -730,7 +730,7 @@ Remarks when searching with IMSI, ICCID or MSISDN:
     },
     "networkInfo" : {
       "subscriberid" : 21046,
-      "time" : "2026-02-08T15:04:23.917689",
+      "time" : "2026-02-08T15:39:55.913145",
       "lastMcc" : 222,
       "lastMnc" : 99,
       "lastCellId" : 123456,
@@ -753,6 +753,7 @@ Remarks when searching with IMSI, ICCID or MSISDN:
       },
       "subscriberId" : 4,
       "greenZoneId" : 25,
+      "greenZoneName" : "new name",
       "volumeOnGZ" : 921269,
       "lastResetDate" : "2026-02-06T14:35:13",
       "startDateUTC" : "2026-02-06T14:35:13",
@@ -3231,7 +3232,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2026-02-07T15:04:23.920991"
+    "dateTime" : "2026-02-07T15:39:55.916425"
   }
 }
 ```
@@ -3256,7 +3257,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2026-02-07T15:04:23.920991"
+    "dateTime" : "2026-02-07T15:39:55.916425"
   }
 }
 ```
@@ -3281,7 +3282,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2026-02-07T15:04:23.920991"
+    "dateTime" : "2026-02-07T15:39:55.916425"
   }
 }
 ```
@@ -3306,7 +3307,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2026-02-07T15:04:23.920991"
+    "dateTime" : "2026-02-07T15:39:55.916425"
   }
 }
 ```
@@ -3331,7 +3332,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2026-02-07T15:04:23.920991"
+    "dateTime" : "2026-02-07T15:39:55.916425"
   }
 }
 ```
@@ -3356,7 +3357,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2026-02-07T15:04:23.920991"
+    "dateTime" : "2026-02-07T15:39:55.916425"
   }
 }
 ```
@@ -3510,8 +3511,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2026-02-08T15:04:23.922437",
-      "end" : "2026-03-10T15:04:23.922445"
+      "start" : "2026-02-08T15:39:55.917589",
+      "end" : "2026-03-10T15:39:55.917595"
     }
   }
 }
@@ -3770,7 +3771,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2026-02-08T14:04:23",
+    "startTimeUTC" : "2026-02-08T14:39:55",
     "activationAtFirstUse" : false
   }
 }
@@ -3844,7 +3845,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2026-02-08T14:04:23",
+    "startTimeUTC" : "2026-02-08T14:39:55",
     "activationAtFirstUse" : false
   }
 }
@@ -3929,7 +3930,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2026-02-08T14:04:23",
+    "startTimeUTC" : "2026-02-08T14:39:55",
     "activationAtFirstUse" : false
   }
 }
@@ -4357,7 +4358,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
 {
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
-    "newExpirationDate" : "2026-03-10T15:04:23"
+    "newExpirationDate" : "2026-03-10T15:39:55"
   }
 }
 ```
@@ -4561,8 +4562,8 @@ This request is logged in the system DB and you can see them in the UI, in the `
 {
   "modifySubscriberPrepaidPackageActivePeriod" : {
     "packageId" : 123,
-    "newActivationDateUtc" : "2026-02-08T15:04:23",
-    "newExpirationDateUtc" : "2026-02-18T15:04:23",
+    "newActivationDateUtc" : "2026-02-08T15:39:55",
+    "newExpirationDateUtc" : "2026-02-18T15:39:55",
     "comment" : "Some relevant comment"
   }
 }
