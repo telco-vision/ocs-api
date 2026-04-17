@@ -730,7 +730,7 @@ Remarks when searching with IMSI, ICCID or MSISDN:
     },
     "networkInfo" : {
       "subscriberid" : 21046,
-      "time" : "2026-02-08T15:39:55.913145",
+      "time" : "2026-04-15T17:41:26.612838",
       "lastMcc" : 222,
       "lastMnc" : 99,
       "lastCellId" : 123456,
@@ -3232,7 +3232,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2026-02-07T15:39:55.916425"
+    "dateTime" : "2026-04-14T17:41:26.616646"
   }
 }
 ```
@@ -3257,7 +3257,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2026-02-07T15:39:55.916425"
+    "dateTime" : "2026-04-14T17:41:26.616646"
   }
 }
 ```
@@ -3282,7 +3282,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2026-02-07T15:39:55.916425"
+    "dateTime" : "2026-04-14T17:41:26.616646"
   }
 }
 ```
@@ -3307,7 +3307,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2026-02-07T15:39:55.916425"
+    "dateTime" : "2026-04-14T17:41:26.616646"
   }
 }
 ```
@@ -3332,7 +3332,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2026-02-07T15:39:55.916425"
+    "dateTime" : "2026-04-14T17:41:26.616646"
   }
 }
 ```
@@ -3357,7 +3357,7 @@ The accuracy is the estimated median error in meters, i.e. the radius in a circl
     "latitude" : 47.447163,
     "longitude" : 8.55877,
     "accuracy" : 250,
-    "dateTime" : "2026-02-07T15:39:55.916425"
+    "dateTime" : "2026-04-14T17:41:26.616646"
   }
 }
 ```
@@ -3511,8 +3511,8 @@ The active period of the prepaid package is calculated as following:
       "subscriberId" : 1000
     },
     "activePeriod" : {
-      "start" : "2026-02-08T15:39:55.917589",
-      "end" : "2026-03-10T15:39:55.917595"
+      "start" : "2026-04-15T17:41:26.618101",
+      "end" : "2026-05-15T17:41:26.618113"
     }
   }
 }
@@ -3771,7 +3771,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "subscriberId" : 1000
     },
-    "startTimeUTC" : "2026-02-08T14:39:55",
+    "startTimeUTC" : "2026-04-15T15:41:26",
     "activationAtFirstUse" : false
   }
 }
@@ -3845,7 +3845,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "imsi" : "12345678901234"
     },
-    "startTimeUTC" : "2026-02-08T14:39:55",
+    "startTimeUTC" : "2026-04-15T15:41:26",
     "activationAtFirstUse" : false
   }
 }
@@ -3930,7 +3930,7 @@ be create with the closest previous valid date, in our example, the 30 of septem
     "subscriber" : {
       "multiImsi" : "12345678901234"
     },
-    "startTimeUTC" : "2026-02-08T14:39:55",
+    "startTimeUTC" : "2026-04-15T15:41:26",
     "activationAtFirstUse" : false
   }
 }
@@ -4358,7 +4358,7 @@ This request is logged in the system DB and you can see them in the UI, in the `
 {
   "modifySubscriberPrepaidPackageExpDate" : {
     "packageId" : 123,
-    "newExpirationDate" : "2026-03-10T15:39:55"
+    "newExpirationDate" : "2026-05-15T17:41:26"
   }
 }
 ```
@@ -4562,8 +4562,8 @@ This request is logged in the system DB and you can see them in the UI, in the `
 {
   "modifySubscriberPrepaidPackageActivePeriod" : {
     "packageId" : 123,
-    "newActivationDateUtc" : "2026-02-08T15:39:55",
-    "newExpirationDateUtc" : "2026-02-18T15:39:55",
+    "newActivationDateUtc" : "2026-04-15T17:41:26",
+    "newExpirationDateUtc" : "2026-04-25T17:41:26",
     "comment" : "Some relevant comment"
   }
 }
@@ -6801,8 +6801,8 @@ Usage type:
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2026-02-03",
-      "end" : "2026-02-08"
+      "start" : "2026-04-10",
+      "end" : "2026-04-15"
     }
   }
 }
@@ -7095,8 +7095,8 @@ Usage type:
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2026-02-03",
-      "end" : "2026-02-08"
+      "start" : "2026-04-10",
+      "end" : "2026-04-15"
     }
   }
 }
@@ -7125,8 +7125,8 @@ Usage type:
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2026-02-03",
-      "end" : "2026-02-08"
+      "start" : "2026-04-10",
+      "end" : "2026-04-15"
     }
   }
 }
@@ -7155,8 +7155,8 @@ Usage type:
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2026-02-03",
-      "end" : "2026-02-08"
+      "start" : "2026-04-10",
+      "end" : "2026-04-15"
     }
   }
 }
@@ -7185,8 +7185,8 @@ Usage type:
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2026-02-03",
-      "end" : "2026-02-08"
+      "start" : "2026-04-10",
+      "end" : "2026-04-15"
     }
   }
 }
@@ -7215,8 +7215,8 @@ Usage type:
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2026-02-03",
-      "end" : "2026-02-08"
+      "start" : "2026-04-10",
+      "end" : "2026-04-15"
     }
   }
 }
@@ -7261,8 +7261,8 @@ is delimited with a start date (included) and an end date (included). The period
       "subscriberId" : 1000
     },
     "period" : {
-      "start" : "2026-02-08",
-      "end" : "2026-02-03"
+      "start" : "2026-04-15",
+      "end" : "2026-04-10"
     }
   }
 }
@@ -7367,8 +7367,8 @@ is delimited with a start date (included) and an end date (included). The period
       "imsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2026-02-08",
-      "end" : "2026-02-03"
+      "start" : "2026-04-15",
+      "end" : "2026-04-10"
     }
   }
 }
@@ -7397,8 +7397,8 @@ is delimited with a start date (included) and an end date (included). The period
       "iccid" : "123456789012345678"
     },
     "period" : {
-      "start" : "2026-02-08",
-      "end" : "2026-02-03"
+      "start" : "2026-04-15",
+      "end" : "2026-04-10"
     }
   }
 }
@@ -7427,8 +7427,8 @@ is delimited with a start date (included) and an end date (included). The period
       "msisdn" : "123456789123"
     },
     "period" : {
-      "start" : "2026-02-08",
-      "end" : "2026-02-03"
+      "start" : "2026-04-15",
+      "end" : "2026-04-10"
     }
   }
 }
@@ -7457,8 +7457,8 @@ is delimited with a start date (included) and an end date (included). The period
       "multiImsi" : "12345678901234"
     },
     "period" : {
-      "start" : "2026-02-08",
-      "end" : "2026-02-03"
+      "start" : "2026-04-15",
+      "end" : "2026-04-10"
     }
   }
 }
@@ -7487,8 +7487,8 @@ is delimited with a start date (included) and an end date (included). The period
       "activationCode" : "Activation code"
     },
     "period" : {
-      "start" : "2026-02-08",
-      "end" : "2026-02-03"
+      "start" : "2026-04-15",
+      "end" : "2026-04-10"
     }
   }
 }
